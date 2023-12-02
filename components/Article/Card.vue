@@ -29,7 +29,7 @@
         <a
             :href="articleContent.link"
             target="_blank"
-            class="block space-y-1 group w-fit"
+            class="block space-y-1 group w-fit cursor-custom-pointer"
         >
             <span class="tracking-wider">Read Article</span>
             <img

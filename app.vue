@@ -1,7 +1,9 @@
 <script setup></script>
 
 <template>
-    <div class="min-h-screen bg-black text-white font-poppins overflow-y-hidden w-screen center-content">
+    <div
+        class="min-h-screen bg-black text-white font-poppins overflow-y-hidden w-screen center-content cursor-custom"
+    >
         <NuxtLayout>
             <NuxtPage />
             <div
@@ -26,4 +28,5 @@
     .center-content {
         margin: 0 auto !important;
     }
+  
 </style>

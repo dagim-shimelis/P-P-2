@@ -70,7 +70,7 @@
                     <a
                         href="https://medium.com/@dagimshimelis1992"
                         target="_blank"
-                        class="relative block space-y-1 group w-fit"
+                        class="relative block space-y-1 group w-fit cursor-custom-pointer"
                     >
                         <span class="tracking-wider">See All Article</span>
                         <img

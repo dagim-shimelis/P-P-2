@@ -9,7 +9,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     app.use(PrimeVue, {
         pt: {
             button: {
-                root: { class: 'bg-teal-500 hover:bg-teal-700 cursor-pointer text-white p-3 border-round border-none flex gap-2' },
+                root: { class: 'bg-teal-500 hover:bg-teal-700 text-white p-3 border-round border-none flex gap-2' },
                 label: 'text-white font-bold text-xl', // OR { class: 'text-white font-bold text-xl' }
                 icon: 'text-white text-2xl'
             }

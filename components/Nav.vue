@@ -40,7 +40,11 @@
                     :key="i"
                     class="uppercase font-[400] tracking-widest hover:scale-110 ease-in-out duration-150"
                 >
-                    <router-link :to="link.to">{{ link.name }}</router-link>
+                    <router-link
+                        :to="link.to"
+                        class="cursor-custom-pointer"
+                        >{{ link.name }}</router-link
+                    >
                 </li>
             </ul>
         </div>

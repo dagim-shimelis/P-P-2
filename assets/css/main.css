@@ -6,6 +6,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .cursor-custom {
+        cursor: url("https://res.cloudinary.com/drhjbn19m/image/upload/v1701557549/Portfolio/custom-cursor-image.png"),
+            auto !important;
+    }
+    .cursor-custom-pointer {
+        cursor: url("https://res.cloudinary.com/drhjbn19m/image/upload/v1701557781/Portfolio/custom-cursor-pointer-image.png"),
+            auto !important;
+    }
+}
+
 ::selection {
     @apply text-black bg-white;
 }
@@ -19,13 +30,13 @@ html {
     margin: 0 auto !important;
 }
 
-.draggable:hover {
+/* .draggable:hover {
     @apply cursor-grab;
 }
 
 .draggable:active {
     @apply cursor-grabbing;
-}
+} */
 
 .side-space {
     @apply md:max-w-[1650px] mx-auto h-full w-full px-4 sm:px-10;
@@ -84,7 +95,7 @@ html {
 }
 
 .btn {
-    @apply border border-white rounded-md font-[300] px-20 py-3 text-white  tracking-widest hover:bg-white hover:text-black;
+    @apply border border-white rounded-md font-[300] px-20 py-3 text-white  tracking-widest cursor-custom-pointer hover:bg-white hover:text-black;
 }
 
 .title-small {
