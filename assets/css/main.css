@@ -1,17 +1,102 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-    font-family: 'Fractul';
-    font-style: normal;
-    font-weight: 900;
-    font-display: auto;
-    src: url('/fonts/fractul/FractulAlt-Black.ttf') format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-        U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
-        U+FEFF, U+FFFD;
-    font-display: swap;
+::selection {
+    @apply text-black bg-white;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+
+.center-content {
+    margin: 0 auto !important;
+}
+
+.draggable:hover {
+    @apply cursor-grab;
+}
+
+.draggable:active {
+    @apply cursor-grabbing;
+}
+
+.side-space {
+    @apply md:max-w-[1650px] mx-auto h-full w-full px-4 sm:px-10;
+}
+/* ------------------------------- Scroll Bar ------------------------------- */
+/* width */
+::-webkit-scrollbar {
+    width: 3px;
+    height: 0px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    @apply bg-transparent;
+}
+
+/* hides scrollbar */
+.scroll-bar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* hides scrollbar */
+.scroll-bar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-white;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-white/50;
+}
+
+/* -------------------------------- Hero page ------------------------------- */
+
+.hero:hover .cutout3 {
+    transform: translateX(4rem) translateY(-4rem);
+    opacity: 0.9;
+}
+
+.hero:hover .cutout2 {
+    transform: translateX(2rem) translateY(-2rem);
+    opacity: 1;
+}
+
+.hero:hover .cutout1 {
+    opacity: 1;
+}
+
+/* ---------------------------- Common components --------------------------- */
+.btn-small {
+    @apply w-fit btn;
+}
+
+.btn {
+    @apply border border-white rounded-md font-[300] px-20 py-3 text-white  tracking-widest hover:bg-white hover:text-black;
+}
+
+.title-small {
+    @apply text-sm font-[200] whitespace-nowrap;
+}
+.title-big {
+    @apply uppercase font-[600] text-8xl;
+}
+.title-box {
+    @apply flex gap-x-6 items-end;
+}
+
+.input {
+    @apply font-[200] border-0 border-b border-white w-full py-4 bg-transparent focus:outline-none;
 }

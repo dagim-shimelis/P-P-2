@@ -1,8 +1,12 @@
 <script setup></script>
 
 <template>
-    <div>
-        <h1>New page file for index</h1>
+    <div class="h-full overflow-y-clip">
+        <Landing-Hero />
+        <Landing-About />
+        <Landing-Projects />
+        <Landing-Articles />
+        <Landing-Contact />
     </div>
 </template>
 
