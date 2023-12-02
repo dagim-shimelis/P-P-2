@@ -40,11 +40,11 @@
     </Head>
 
     <div class="h-full overflow-y-clip">
-        <Landing-Hero />
-        <Landing-About />
-        <Landing-Projects />
-        <Landing-Articles />
-        <Landing-Contact />
+        <Landing-Hero id="home" />
+        <Landing-About id="about" />
+        <Landing-Projects id="projects" />
+        <Landing-Articles id="articles" />
+        <Landing-Contact id="contact" />
     </div>
 </template>
 

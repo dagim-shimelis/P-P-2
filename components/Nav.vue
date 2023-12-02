@@ -2,23 +2,23 @@
     const links = ref([
         {
             name: "home",
-            to: "#",
+            to: "#home",
         },
         {
             name: "about",
-            to: "#",
+            to: "#about",
         },
         {
             name: "projects",
-            to: "#",
+            to: "#projects",
         },
         {
             name: "articles",
-            to: "#",
+            to: "#articles",
         },
         {
             name: "contact",
-            to: "#",
+            to: "#contact",
         },
     ]);
 </script>
@@ -38,7 +38,7 @@
                 <li
                     v-for="(link, i) in links"
                     :key="i"
-                    class="uppercase font-[400] tracking-widest"
+                    class="uppercase font-[400] tracking-widest hover:scale-110 ease-in-out duration-150"
                 >
                     <router-link :to="link.to">{{ link.name }}</router-link>
                 </li>
