@@ -64,12 +64,16 @@
                         bring your digital dreams to life. Let's build something
                         great together!
                     </p>
-                    <div class="relative">
-                        <button class="btn-small mt-8">Let's Talk</button>
+                    <div class="group relative">
+                        <router-link
+                            to="#contact"
+                            class="btn-small mt-8"
+                            >Let's Talk</router-link
+                        >
                         <img
                             src="@/assets/image/graphic-lines/landing-2.png"
                             alt="graphic-lines-landing-2"
-                            class="absolute -bottom-[150px] right-20"
+                            class="absolute -bottom-[150px] right-20 group-hover:-translate-x-4 group-hover:-translate-y-4 ease-in-out duration-300"
                         />
                     </div>
                 </div>

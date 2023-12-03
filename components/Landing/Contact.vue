@@ -20,15 +20,21 @@
             <!--Contact Form -->
 
             <form
+                accept-charset="utf-8"
+                action="https://formspree.io/f/xgejjbzg"
+                method="post"
                 class="flex max-w-[900px] mx-auto flex-col items-center justify-center !mt-24 gap-y-32"
             >
                 <div class="flex gap-x-16 w-full">
                     <input
+                        name="name"
                         type="text"
                         placeholder="Name"
                         class="input"
+                        required
                     />
                     <input
+                        name="email"
                         type="email"
                         placeholder="Email"
                         class="input"
@@ -36,6 +42,7 @@
                     />
                 </div>
                 <textarea
+                    name="message"
                     placeholder="Message"
                     class="input h-[200px]"
                     required

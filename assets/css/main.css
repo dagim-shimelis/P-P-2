@@ -8,12 +8,16 @@
 
 @layer components {
     .cursor-custom {
-        cursor: url("https://res.cloudinary.com/drhjbn19m/image/upload/v1701557549/Portfolio/custom-cursor-image.png"),
-            auto !important;
+        cursor: url("../image/graphic-lines/cursor/default.png"), auto !important;
     }
     .cursor-custom-pointer {
-        cursor: url("https://res.cloudinary.com/drhjbn19m/image/upload/v1701557781/Portfolio/custom-cursor-pointer-image.png"),
-            auto !important;
+        cursor: url("../image/graphic-lines/cursor/pointer.png"), auto !important;
+    }
+    .cursor-custom-grab {
+        cursor: url("../image/graphic-lines/cursor/grab.png"), auto !important;
+    }
+    .cursor-custom-grabbing {
+        cursor: url("../image/graphic-lines/cursor/grabbing.png"), auto !important;
     }
 }
 
@@ -30,13 +34,13 @@ html {
     margin: 0 auto !important;
 }
 
-/* .draggable:hover {
-    @apply cursor-grab;
+.draggable:hover {
+    @apply cursor-custom-grab;
 }
 
 .draggable:active {
-    @apply cursor-grabbing;
-} */
+    @apply cursor-custom-grabbing;
+}
 
 .side-space {
     @apply md:max-w-[1650px] mx-auto h-full w-full px-4 sm:px-10;
@@ -95,7 +99,7 @@ html {
 }
 
 .btn {
-    @apply border border-white rounded-md font-[300] px-20 py-3 text-white  tracking-widest cursor-custom-pointer hover:bg-white hover:text-black;
+    @apply flex items-center gap-x-4 border border-white rounded-md font-[300] px-20 py-3 text-white  tracking-widest cursor-custom-pointer hover:bg-white hover:text-black;
 }
 
 .title-small {
