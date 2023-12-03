@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-    <div class="relative min-h-screen">
+    <div class="relative min-h-screen ">
         <div class="side-space pt-10">
             <!-- Contact Content -->
 
@@ -68,7 +68,7 @@
         </div>
 
         <!-- /* ------------------------------ Graphic lines ----------------------------- */ -->
-        <div class="absolute bottom-0 left-0">
+        <div class="absolute bottom-0 left-0 z-10">
             <img
                 src="@/assets/image/graphic-lines/landing-8.png"
                 alt="graphic-lines-landing-0"
