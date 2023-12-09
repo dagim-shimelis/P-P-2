@@ -27,9 +27,11 @@
 
 <template>
     <header class="relative">
-        <div class="side-space !h-20 !z-50 flex items-center justify-between">
+        <div
+            class="side-space !h-20 !z-50 flex items-center justify-between !pt-10"
+        >
             <!-- Logo -->
-            <div class="absolute top-4">
+            <div class="absolute top-2 sm:top-4">
                 <img
                     src="/icons/logo.png"
                     alt="logo"
@@ -42,11 +44,11 @@
                 <li
                     v-for="(navigator, i) in navigation"
                     :key="i"
-                    class="nav-link cursor-custom-pointer"
+                    class="nav-link"
                 >
                     <router-link
                         :to="navigator.to"
-                        class=""
+                        class="cursor-custom-pointer"
                         >{{ navigator.name }}</router-link
                     >
                 </li>
@@ -55,7 +57,7 @@
             <div class="lg:hidden ml-auto">
                 <button
                     @click="visibleSideNav = true"
-                    class="menu-button absolute top-5 right-5 z-50"
+                    class="menu-button absolute top-3 sm:top-5 right-4 sm:right-8 z-50"
                 >
                     <Icon
                         name="uil:bars"
@@ -70,7 +72,7 @@
                     <template #header>
                         <button
                             @click="visibleSideNav = false"
-                            class="menu-button absolute top-5 right-5 z-10"
+                            class="menu-button absolute top-3 sm:top-5 right-4 sm:right-8 z-10"
                         >
                             <Icon
                                 name="uil:multiply"
@@ -100,7 +102,7 @@
                                 <NuxtLink
                                     @click="visibleSideNav = false"
                                     :to="navigator.to"
-                                    class="nav-link cursor-custom-pointer"
+                                    class="nav-link"
                                 >
                                     <p>{{ navigator.name }}</p></NuxtLink
                                 >
@@ -125,7 +127,7 @@
         </div>
 
         <!-- /* ------------------------------ Graphic lines ----------------------------- */ -->
-        <div class="absolute top-0 right-1">
+        <div class="absolute top-0 right-0">
             <img
                 src="@/assets/image/graphic-lines/landing-1.png"
                 alt="graphic-lines-landing-1"

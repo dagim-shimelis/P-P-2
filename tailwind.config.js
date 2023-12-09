@@ -4,7 +4,8 @@ export default {
     content: [],
     theme: {
         screens: {
-            xs: "321px",
+            "2xs": "360px",
+            xs: "480px",
             sm: "640px",
             md: "768px",
             lg: "1024px",
