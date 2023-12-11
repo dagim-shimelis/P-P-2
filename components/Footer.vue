@@ -24,31 +24,35 @@
 </script>
 
 <template>
-    <footer class="space-y-8 mb-6">
-        <ul class="flex items-center gap-x-8 justify-center">
-            <li
-                v-for="(social, i) in socials"
-                :key="i"
-                :title="social.name"
-                class="hover:scale-110 ease-in-out duration-150"
-            >
-                <a
-                    :href="social.link"
-                    class="cursor-custom-pointer"
+    <footer class="md:absolute bottom-0 space-y-8 w-full flex justify-center">
+        <div>
+            <ul class="flex items-center gap-x-8 justify-center">
+                <li
+                    v-for="(social, i) in socials"
+                    :key="i"
+                    :title="social.name"
+                    class="hover:scale-110 ease-in-out duration-150"
                 >
-                    <!-- <img
-                        :src="social.image"
-                        alt
-                        class="w-fit"
-                    /> -->
-                    <Icon
-                        :name="social.icon"
-                        class="w-[31px] h-[31px]"
-                    />
-                </a>
-            </li>
-        </ul>
-        <p class="text-sm font-[200] text-center my-4">© 2023 Dagim Shimelis</p>
+                    <a
+                        :href="social.link"
+                        class="cursor-custom-pointer"
+                    >
+                        <!-- <img
+                            :src="social.image"
+                            alt
+                            class="w-fit"
+                        /> -->
+                        <Icon
+                            :name="social.icon"
+                            class="w-[31px] h-[31px]"
+                        />
+                    </a>
+                </li>
+            </ul>
+            <p class="text-sm font-[200] text-center my-4">
+                © 2023 Dagim Shimelis
+            </p>
+        </div>
     </footer>
 </template>
 

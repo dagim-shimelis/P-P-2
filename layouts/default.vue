@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="relative">
         <Nav></Nav>
         <slot></slot>
         <Footer></Footer>
