@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-    <div class="relative min-h-screen ">
+    <div class="relative min-h-screen">
         <div class="side-space pt-10">
             <!-- Contact Content -->
 
@@ -12,7 +12,7 @@
                     <img
                         src="@/assets/image/graphic-lines/underline.svg"
                         alt="title-underline"
-                        class="w-full"
+                        class="title-underline"
                     />
                 </div>
                 <p class="title-small">me</p>
@@ -23,9 +23,9 @@
                 accept-charset="utf-8"
                 action="https://formspree.io/f/xgejjbzg"
                 method="post"
-                class="flex max-w-[900px] mx-auto flex-col items-center justify-center !mt-24 gap-y-32"
+                class="flex max-w-[900px] mx-auto flex-col items-center justify-center !mt-24 gap-y-16 md:gap-y-32"
             >
-                <div class="flex gap-x-16 w-full">
+                <div class="flex flex-col md:flex-row gap-16 w-full">
                     <input
                         name="name"
                         type="text"
@@ -55,7 +55,7 @@
                         Send
                     </button>
                     <div
-                        class="absolute -bottom-20 -right-80 group-hover:-translate-x-8 ease-in-out duration-300"
+                        class="hidden md:absolute -bottom-20 right-20 md:-right-80 group-hover:-translate-x-8 ease-in-out duration-300"
                     >
                         <img
                             src="@/assets/image/graphic-lines/arrow-3.png"
@@ -73,6 +73,7 @@
                 src="@/assets/image/graphic-lines/landing-8.png"
                 alt="graphic-lines-landing-0"
                 :draggable="false"
+                class="w-[100px] xl:w-[200px] 3xl:w-full"
             />
         </div>
     </div>

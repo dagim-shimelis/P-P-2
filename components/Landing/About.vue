@@ -44,20 +44,21 @@
 </script>
 
 <template>
-    <div class="relative h-screen">
+    <div class="relative min-h-screen">
         <div
-            class="side-space pt-40 relative grid grid-rows-2 md:grid-cols-2 md:grid-rows-1"
+            class="side-space !z-10  mt-20 md:mt-0 pt-20 xs:pt-40 relative lg:grid grid-rows-2 md:grid-cols-2 md:grid-rows-1"
         >
             <!-- About Image -->
-            <div class="z-10">
+            <div class=" h-fit">
                 <img
                     src="@/assets/image/about-image.png"
                     alt="Me"
+                    class="w-[80%] md:w-[60%] lg:w-fit mx-auto"
                     :draggable="false"
                 />
             </div>
             <!-- About Content -->
-            <div class="flex flex-col gap-y-16 justify-start mx-auto">
+            <div class="flex flex-col gap-y-16 justify-center lg:justify-start mx-auto mt-32 lg:mt-0 w-fit">
                 <!-- Title -->
                 <div class="title-box">
                     <p class="title-small">A few things</p>
@@ -66,7 +67,7 @@
                         <img
                             src="@/assets/image/graphic-lines/underline.svg"
                             alt="title-underline"
-                            class="w-fit"
+                            class="title-underline"
                         />
                     </div>
                     <p class="title-small">me</p>
@@ -76,7 +77,7 @@
                     class="flex flex-col gap-y-6 text-base font-[200] leading-8"
                 >
                     <p>
-                        I'm Dagim Shimelis, a professional and talented Product
+                        I'm a professional and talented Product
                         Designer with front end & back end development skills. I
                         am passionate about leveraging my diverse backgrounds to
                         decipher challenging problems and create delightful
@@ -98,11 +99,11 @@
                     </p>
                 </div>
                 <!-- Tools -->
-                <div class="!space-y-4">
+                <div class="!space-y-4 -mt-6 md:mt-0">
                     <p class=" text-base tracking-wider">
                         Some of my favorite tools that I use
                     </p>
-                    <ul class="flex items-center gap-x-6">
+                    <ul class="flex items-center gap-x-4 sm:gap-x-6">
                         <li
                             v-for="(tool, i) in tools"
                             :key="i"
@@ -112,6 +113,7 @@
                                 <img
                                     :src="tool.image"
                                     :alt="tool.name"
+                                    class="w-[20px] sm:w-full"
                                 />
                             </a>
                         </li>
@@ -128,11 +130,12 @@
                 :draggable="false"
             />
         </div>
-        <div class="absolute -top-20 left-0">
+        <div class="absolute top-0 lg:-top-20 left-0">
             <img
                 src="@/assets/image/graphic-lines/landing-3.png"
                 alt="graphic-lines-landing-3"
                 :draggable="false"
+                class="w-[200px] md:w-[400px] lg:w-full"
             />
         </div>
     </div>

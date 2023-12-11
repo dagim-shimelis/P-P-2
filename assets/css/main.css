@@ -99,17 +99,20 @@ html {
 }
 
 .btn {
-    @apply flex items-center justify-center gap-x-4 border border-white rounded-md font-[300] px-20 py-3 text-white  tracking-widest cursor-custom-pointer hover:bg-white hover:text-black;
+    @apply flex items-center justify-center gap-x-4 bg-black border border-white rounded-md font-[300] px-20 py-3 text-white  tracking-widest cursor-custom-pointer hover:bg-white hover:text-black;
 }
 
 .title-small {
-    @apply text-sm font-[200] whitespace-nowrap;
+    @apply text-sm font-[200] whitespace-nowrap hidden md:inline;
 }
 .title-big {
-    @apply uppercase font-[600] text-8xl;
+    @apply uppercase font-[600] text-5xl md:text-8xl w-fit ;
 }
 .title-box {
-    @apply flex gap-x-6 items-end;
+    @apply flex gap-x-6 items-end  mx-auto lg:mx-0 scale-90 sm:scale-100;
+}
+.title-underline {
+    @apply w-[50%] md:w-fit;
 }
 
 .input {

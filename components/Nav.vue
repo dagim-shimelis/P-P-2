@@ -143,6 +143,6 @@
         mix-blend-mode: difference;
     }
     .menu-button {
-        @apply p-2 aspect-square rounded-lg bg-white/10 text-white;
+        @apply p-2 aspect-square rounded-lg  text-white;
     }
 </style>

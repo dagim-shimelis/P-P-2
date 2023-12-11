@@ -37,8 +37,12 @@
     // any settings not specified will fallback to the carousel settings
     const breakpoints = ref({
         // 1024 and up
+        780: {
+            itemsToShow: 1.8,
+            snapAlign: "start",
+        },
         1024: {
-            itemsToShow: 2.3,
+            itemsToShow: 2.5,
             snapAlign: "start",
         },
         // 1536 and up
@@ -62,7 +66,7 @@
                             <img
                                 src="@/assets/image/graphic-lines/underline.svg"
                                 alt="title-underline"
-                                class="w-full"
+                                class="title-underline"
                             />
                         </div>
                     </div>
@@ -70,13 +74,15 @@
                     <a
                         href="https://medium.com/@dagimshimelis1992"
                         target="_blank"
-                        class="relative block space-y-1 group w-fit cursor-custom-pointer"
+                        class="hidden md:block relative space-y-1 group w-fit cursor-custom-pointer"
                     >
-                        <span class="tracking-wider">See All Article</span>
+                        <span class="text-xs md:text-base tracking-wider"
+                            >See All Article</span
+                        >
                         <img
                             src="@/assets/image/graphic-lines/arrow-2.png"
                             alt="arrow"
-                            class="absolute -top-1 -left-10 group-hover:translate-x-4 group-hover:-translate-y-2 ease-in-out duration-300"
+                            class="absolute -top-1 -left-5 md:-left-10 md:group-hover:translate-x-4 md:group-hover:-translate-y-2 ease-in-out duration-300"
                         />
                     </a>
                 </div>
@@ -85,7 +91,7 @@
                     <carousel
                         :settings="settings"
                         :breakpoints="breakpoints"
-                        class="w-full mt-5 md:mt-10"
+                        class="w-full mt-5 md:mt-10 mb-auto"
                     >
                         <slide
                             v-for="(article, i) in articles"
@@ -97,15 +103,31 @@
                             ></ArticleCard> </slide
                     ></carousel>
                 </div>
+
+                <a
+                    href="https://medium.com/@dagimshimelis1992"
+                    target="_blank"
+                    class="md:hidden relative ml-12 mt-12 block space-y-1 group w-fit cursor-custom-pointer"
+                >
+                    <span class="text-base tracking-wider"
+                        >See All Article</span
+                    >
+                    <img
+                        src="@/assets/image/graphic-lines/arrow-2.png"
+                        alt="arrow"
+                        class="absolute -top-1 -left-10 md:group-hover:translate-x-4 md:group-hover:-translate-y-2 ease-in-out duration-300"
+                    />
+                </a>
             </div>
         </div>
 
         <!-- /* ------------------------------ Graphic lines ----------------------------- */ -->
-        <div class="absolute -bottom-32 right-0">
+        <div class="absolute bottom-4 md:-bottom-32 right-0">
             <img
                 src="@/assets/image/graphic-lines/landing-7.png"
                 alt="graphic-lines-landing-7"
                 :draggable="false"
+                class="w-[200px] xl:w-[200px] 3xl:w-full"
             />
         </div>
     </div>
