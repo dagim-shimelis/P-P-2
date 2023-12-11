@@ -1,24 +1,24 @@
 <script setup>
     const socials = ref([
         {
-            name: "Gmail",
-            image: "/icons/socials/gmail.png",
-            link: "#",
-        },
-        {
             name: "LinkedIn",
-            image: "/icons/socials/linkedin.png",
-            link: "#",
-        },
-        {
-            name: "X",
-            image: "/icons/socials/x.png",
-            link: "#",
+            icon: "mdi:linkedin",
+            link: "https://www.linkedin.com/in/dagim-shimelis/",
         },
         {
             name: "Github",
-            image: "/icons/socials/github.png",
-            link: "#",
+            icon: "mdi:github",
+            link: "https://github.com/dagim-shimelis",
+        },
+        {
+            name: "X",
+            icon: "fa6-brands:x-twitter",
+            link: "https://twitter.com/Dagim__Shimelis",
+        },
+        {
+            name: "Medium",
+            icon: "mingcute:medium-fill",
+            link: "https://medium.com/@dagimshimelis1992",
         },
     ]);
 </script>
@@ -29,16 +29,21 @@
             <li
                 v-for="(social, i) in socials"
                 :key="i"
-                :title="social.name" class="hover:scale-110 ease-in-out duration-150"
+                :title="social.name"
+                class="hover:scale-110 ease-in-out duration-150"
             >
                 <a
                     :href="social.link"
                     class="cursor-custom-pointer"
                 >
-                    <img
+                    <!-- <img
                         :src="social.image"
                         alt
                         class="w-fit"
+                    /> -->
+                    <Icon
+                        :name="social.icon"
+                        class="w-[31px] h-[31px]"
                     />
                 </a>
             </li>
