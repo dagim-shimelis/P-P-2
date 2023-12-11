@@ -35,6 +35,7 @@
                 >
                     <a
                         :href="social.link"
+                        target="_blank"
                         class="cursor-custom-pointer"
                     >
                         <!-- <img
@@ -44,7 +45,7 @@
                         /> -->
                         <Icon
                             :name="social.icon"
-                            class="w-[31px] h-[31px]"
+                            class="w-[23px] sm:w-[31px] h-[23px] sm:h-[31px]"
                         />
                     </a>
                 </li>

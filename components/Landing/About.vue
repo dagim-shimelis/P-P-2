@@ -2,43 +2,51 @@
     const tools = ref([
         {
             name: "Vue",
-            link: "#",
-            image: "/icons/tools/vue.svg",
+            icon: "mdi:vuejs",
+            originalIcon: "vscode-icons:file-type-vue",
+            link: "https://vuejs.org/",
         },
         {
             name: "Nuxt",
-            link: "#",
-            image: "/icons/tools/nuxt.svg",
+            icon: "simple-icons:nuxtdotjs",
+            originalIcon: "logos:nuxt-icon",
+            link: "https://nuxt.com/",
         },
         {
             name: "React",
-            link: "#",
-            image: "/icons/tools/react.svg",
+            icon: "simple-icons:react",
+            originalIcon: "logos:react",
+            link: "https://legacy.reactjs.org/",
         },
         {
             name: "NodeJS",
-            link: "#",
-            image: "/icons/tools/nodejs.svg",
+            icon: "devicon-plain:nodejs",
+            originalIcon: "devicon:nodejs",
+            link: "https://nodejs.org/en",
         },
         {
             name: "MongoDB",
-            link: "#",
-            image: "/icons/tools/mongodb.svg",
+            icon: "devicon-plain:mongodb-wordmark",
+            originalIcon: "devicon:mongodb-wordmark",
+            link: "https://www.mongodb.com/",
         },
         {
             name: "Typescript",
-            link: "#",
-            image: "/icons/tools/typescript.svg",
+            icon: "cib:typescript",
+            originalIcon: "devicon:typescript",
+            link: "https://www.typescriptlang.org/",
         },
         {
             name: "GraphQL",
-            link: "#",
-            image: "/icons/tools/graph-ql.svg",
+            icon: "simple-icons:graphql",
+            originalIcon: "logos:graphql",
+            link: "https://graphql.org/",
         },
         {
             name: "Tailwind",
-            link: "#",
-            image: "/icons/tools/tailwind.svg",
+            icon: "file-icons:tailwind",
+            originalIcon: "devicon:tailwindcss",
+            link: "https://tailwindcss.com/",
         },
     ]);
 </script>
@@ -46,10 +54,10 @@
 <template>
     <div class="relative min-h-screen">
         <div
-            class="side-space !z-10  mt-20 md:mt-0 pt-20 xs:pt-40 relative lg:grid grid-rows-2 md:grid-cols-2 md:grid-rows-1"
+            class="side-space !z-10 mt-20 md:mt-0 pt-20 xs:pt-40 relative lg:grid grid-rows-2 md:grid-cols-2 md:grid-rows-1"
         >
             <!-- About Image -->
-            <div class=" h-fit">
+            <div class="h-fit">
                 <img
                     src="@/assets/image/about-image.png"
                     alt="Me"
@@ -58,7 +66,9 @@
                 />
             </div>
             <!-- About Content -->
-            <div class="flex flex-col gap-y-16 justify-center lg:justify-start mx-auto mt-32 lg:mt-0 w-fit">
+            <div
+                class="flex flex-col gap-y-16 justify-center lg:justify-start mx-auto mt-32 lg:mt-0 w-fit"
+            >
                 <!-- Title -->
                 <div class="title-box">
                     <p class="title-small">A few things</p>
@@ -77,11 +87,10 @@
                     class="flex flex-col gap-y-6 text-base font-[200] leading-8"
                 >
                     <p>
-                        I'm a professional and talented Product
-                        Designer with front end & back end development skills. I
-                        am passionate about leveraging my diverse backgrounds to
-                        decipher challenging problems and create delightful
-                        experiences.
+                        I'm a professional and talented Product Designer with
+                        front end & back end development skills. I am passionate
+                        about leveraging my diverse backgrounds to decipher
+                        challenging problems and create delightful experiences.
                     </p>
                     <p>
                         I develop websites with HTML, CSS and JavaScript. I have
@@ -100,7 +109,7 @@
                 </div>
                 <!-- Tools -->
                 <div class="!space-y-4 -mt-6 md:mt-0">
-                    <p class=" text-base tracking-wider">
+                    <p class="text-base tracking-wider">
                         Some of my favorite tools that I use
                     </p>
                     <ul class="flex items-center gap-x-4 sm:gap-x-6">
@@ -109,11 +118,18 @@
                             :key="i"
                             :title="tool.name"
                         >
-                            <a :href="tool.link">
-                                <img
-                                    :src="tool.image"
-                                    :alt="tool.name"
-                                    class="w-[20px] sm:w-full"
+                            <a
+                                :href="tool.link"
+                                target="_blank"
+                                class="hover:cursor-custom-pointer group"
+                            >
+                                <Icon
+                                    :name="tool.icon"
+                                    class="group-hover:hidden tool-icons"
+                                />
+                                <Icon
+                                    :name="tool.originalIcon"
+                                    class="!hidden group-hover:!inline group-hover:scale-125 tool-icons"
                                 />
                             </a>
                         </li>
@@ -141,4 +157,8 @@
     </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+    .tool-icon {
+        @apply w-[24px] sm:w-[25px] sm:h-[25px];
+    }
+</style>
