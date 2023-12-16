@@ -74,7 +74,7 @@ html.lenis {
 
 /* Track */
 ::-webkit-scrollbar-track {
-    @apply bg-transparent;
+    @apply bg-black;
 }
 
 /* hides scrollbar */

@@ -25,9 +25,13 @@
 </script>
 
 <template>
-    <div class="relative min-h-screen">
+    <div
+        id="projectsWrapper"
+        class="relative min-h-screen overflow-x-clip"
+    >
         <div
-            class="px-4 lg:px-44 lg:overflow-x-auto pt-24 relative lg:flex gap-x-28 z-10"
+            id="projectsList"
+            class="px-4 lg:px-44 pt-24 relative lg:flex gap-x-28 z-10"
         >
             <!-- Projects Content -->
             <div
@@ -75,7 +79,7 @@
                 </div>
             </div>
             <!-- Projects list -->
-            <div class="flex items-center gap-x-8 mt-20 md:mt-0">
+            <div class="flex items-center gap-x-8 mt-20 md:mt-0 pr-20">
                 <!-- Desktop View -->
                 <div
                     v-for="i in 4"
@@ -98,13 +102,13 @@
                     <slide
                         v-for="i in 4"
                         :key="i"
-                        class=" mx-4 px-0 md:px-3 xl:px-3 2xl:px-2 draggable"
+                        class="mx-4 px-0 md:px-3 xl:px-3 2xl:px-2 draggable"
                     >
                         <img
                             src="/images/project-1.jpg"
                             alt="project screenshot"
                             :draggable="false"
-                            class="object-fill w-[90%] !rounded-xl "
+                            class="object-fill w-[90%] !rounded-xl"
                         /> </slide
                 ></carousel>
             </div>

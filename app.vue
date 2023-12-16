@@ -1,9 +1,78 @@
-<script setup></script>
+<script setup>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
+
+    const loadingPage = ref(false);
+
+    // onBeforeMount(() => {
+    //     loadingPage.value = true;
+    // });
+    onMounted(() => {
+        /* ----------------------------- Initial Loading ---------------------------- */
+        loadingPage.value = false;
+        let tl = gsap.timeline();
+        tl.to(".blinder:nth-child(3)", {
+            y: "-100vh",
+            duration: 1,
+            ease: "power4.inOut",
+        })
+            .to(
+                ".blinder:nth-child(2)",
+                {
+                    y: "-100vh",
+                    duration: 1,
+                    ease: "power4.inOut",
+                },
+                "-=0.8",
+            )
+            .to(
+                ".blinder:nth-child(1)",
+                {
+                    y: "-100vh",
+                    duration: 1,
+                    ease: "power4.inOut",
+                },
+                "-=0.8",
+            );
+
+        /* ---------------------------- Projects Section ---------------------------- */
+        const projects = document.querySelector("#projectsList");
+
+        function getScrollAmount() {
+            let projectsWidth = projects.scrollWidth;
+            return -(projectsWidth - window.innerWidth);
+        }
+        const tween = gsap.to(projects, {
+            x: getScrollAmount,
+            duration: 15,
+            ease: "none",
+        });
+
+        ScrollTrigger.create({
+            trigger: "#projects",
+            start: "top top",
+            end: () => `+=${getScrollAmount() * -1 + 1000}`,
+            pin: true,
+            animation: tween,
+            scrub: 1,
+            invalidateOnRefresh: true,
+            markers: true,
+        });
+    });
+</script>
 
 <template>
     <div
-        class="min-h-screen bg-black text-white font-poppins overflow-y-hidden w-screen center-content cursor-custom"
+        class="relative min-h-screen bg-black text-white font-poppins overflow-y-hidden w-screen center-content cursor-custom"
     >
+        <InitialLoader v-if="loadingPage" />
+        <div class="blinder-container">
+            <div class="blinder blinder-b"></div>
+            <div class="blinder blinder-w"></div>
+            <div class="blinder blinder-b"></div>
+        </div>
+
         <NuxtLayout>
             <lenis>
                 <NuxtPage />
@@ -30,5 +99,18 @@
 <style>
     .center-content {
         margin: 0 auto !important;
+    }
+
+    .blinder-container {
+        @apply fixed z-40;
+    }
+    .blinder {
+        @apply absolute w-[100vw] h-[100vh];
+    }
+    .blinder-w {
+        @apply bg-white;
+    }
+    .blinder-b {
+        @apply bg-black;
     }
 </style>
