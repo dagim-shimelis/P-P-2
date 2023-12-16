@@ -104,7 +104,7 @@
             </div>
         </div>
         <div
-            class="bg-white h-24 w-full -mt-24 flex items-center overflow-x-hidden -skew-y-2 z-10"
+            class="h-24 w-full -mt-24 flex items-center overflow-x-hidden z-10"
         >
             <Vue3Marquee
                 :direction="scrollDirection"
@@ -114,7 +114,7 @@
                 <img
                     src="@/assets/image/product-companies.png"
                     alt=""
-                    class="invert h-[120px]"
+                    class=""
                 />
             </Vue3Marquee>
         </div>
