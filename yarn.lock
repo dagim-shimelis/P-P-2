@@ -6458,6 +6458,11 @@ vue3-carousel@^0.1.40:
   resolved "https://registry.yarnpkg.com/vue3-carousel/-/vue3-carousel-0.1.48.tgz#cca2daaa84cee5024e9f045990817b953363e5bc"
   integrity sha512-B0rAsQr2D6VO1oi2+QXItWsRZUyXG0kF0fQHFC0oA6MQK7dKFMAhKMsy9HJkRJ7tXB/lBl/EfHhOqw16TncZ3Q==
 
+vue3-marquee@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/vue3-marquee/-/vue3-marquee-4.1.0.tgz#145baa65dd40059358e4079d51ab596c2ccf1299"
+  integrity sha512-AkvpNC6+7CwvIBgiAr8qMs1XvhGhfSS2ahlMEp80YXAmDOP8nDdn/smQ6eWtusf+hLX21yTaSOoKGcill4bCRg==
+
 vue@^3.3.4:
   version "3.3.4"
   resolved "https://registry.yarnpkg.com/vue/-/vue-3.3.4.tgz#8ed945d3873667df1d0fcf3b2463ada028f88bd6"

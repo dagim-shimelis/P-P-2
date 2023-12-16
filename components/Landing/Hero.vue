@@ -1,10 +1,30 @@
-<script setup></script>
+<script setup>
+    import { gsap } from "gsap";
+    import { Vue3Marquee } from "vue3-marquee";
+
+    onMounted(() => {
+        const companies = document.querySelector("#companiesList");
+
+        function getScrollAmount() {
+            let companiesWidth = companies.scrollWidth;
+            return -(companiesWidth - window.innerWidth);
+        }
+        gsap.to(companies, {
+            x: getScrollAmount,
+            duration: 15,
+            ease: "none",
+            repeat: -1,
+        });
+    });
+</script>
 
 <template>
-    <div class="relative min-h-[80vh]">
-        <div class="side-space mt-10 lg:mt-16 3xl:mt-8 4xl:mt-20">
+    <div class="relative min-h-[80vh] mb-32">
+        <div
+            class="side-space mt-10 lg:mt-16 3xl:mt-8 4xl:mt-20 h-[70vh] md:h-[80vh] lg:h-screen"
+        >
             <div
-                class="hero h-[70vh] md:h-[80vh] lg:h-screen grid  lg:grid-cols-2 gap-x-10"
+                class="hero grid lg:grid-cols-2 gap-x-10"
                 id="hero"
             >
                 <!-- Hero Image -->
@@ -47,7 +67,9 @@
                     </div>
                 </div>
                 <!-- Hero Content -->
-                <div class="flex flex-col gap-y-8 xl:gap-y-12 justify-start mt-20 3xl:mt-28 lg:mx-auto">
+                <div
+                    class="flex flex-col gap-y-8 xl:gap-y-12 justify-start mt-20 3xl:mt-28 lg:mx-auto"
+                >
                     <p class="text-base font-[300] tracking-widest">
                         <span class="grayscale">👋</span> Hi there, I'm
                     </p>
@@ -57,7 +79,9 @@
                         class="w-full sm:w-[80%] lg:w-[400px] xl:w-[550px]"
                         :draggable="false"
                     />
-                    <p class="text-base font-[200] tracking-wider leading-8 w-full sm:w-[440px] xl:w-[500px]">
+                    <p
+                        class="text-base font-[200] tracking-wider leading-8 w-full sm:w-[440px] xl:w-[500px]"
+                    >
                         From eye-catching designs to seamless functionality,
                         I've got you covered. With expertise in web design,
                         frontend development, and backend development, I'll
@@ -78,6 +102,21 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div
+            class="bg-white h-24 w-full -mt-24 flex items-center overflow-x-hidden -skew-y-2 z-10"
+        >
+            <Vue3Marquee
+                :direction="scrollDirection"
+                duration="100"
+                :clone="true"
+            >
+                <img
+                    src="@/assets/image/product-companies.png"
+                    alt=""
+                    class="invert h-[120px]"
+                />
+            </Vue3Marquee>
         </div>
     </div>
 </template>

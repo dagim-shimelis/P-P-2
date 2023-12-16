@@ -82,7 +82,7 @@
             <div class="flex items-center gap-x-8 pr-20">
                 <!-- Desktop View -->
                 <div
-                    v-for="i in 6"
+                    v-for="i in 7"
                     :key="i"
                     class="hidden lg:inline !h-screen !w-screen rounded-xl overflow-clip"
                 >

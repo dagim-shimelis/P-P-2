@@ -57,13 +57,13 @@
             animation: tween,
             scrub: 1,
             invalidateOnRefresh: true,
-            markers: true,
         });
     });
 </script>
 
 <template>
     <div
+        id="parent"
         class="relative min-h-screen bg-black text-white font-poppins overflow-y-hidden w-screen center-content cursor-custom"
     >
         <InitialLoader v-if="loadingPage" />

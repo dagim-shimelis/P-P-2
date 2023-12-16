@@ -25,6 +25,7 @@
         "nuxt-lenis": "^1.0.4",
         "pinia": "^2.1.6",
         "primevue": "^3.35.0",
-        "vue3-carousel": "^0.1.40"
+        "vue3-carousel": "^0.1.40",
+        "vue3-marquee": "^4.1.0"
     }
 }
