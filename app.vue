@@ -3,11 +3,11 @@
     import { ScrollTrigger } from "gsap/ScrollTrigger";
     gsap.registerPlugin(ScrollTrigger);
 
-    const loadingPage = ref(false);
+    const loadingPage = ref(true);
 
-    // onBeforeMount(() => {
-    //     loadingPage.value = true;
-    // });
+    onBeforeMount(() => {
+        loadingPage.value = true;
+    });
     onMounted(() => {
         /* ----------------------------- Initial Loading ---------------------------- */
         loadingPage.value = false;
@@ -52,7 +52,7 @@
         ScrollTrigger.create({
             trigger: "#projects",
             start: "top top",
-            end: () => `+=${getScrollAmount() * -1 + 1000}`,
+            end: () => `+=${getScrollAmount() * -1}`,
             pin: true,
             animation: tween,
             scrub: 1,

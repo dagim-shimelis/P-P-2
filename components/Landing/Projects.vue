@@ -27,15 +27,15 @@
 <template>
     <div
         id="projectsWrapper"
-        class="relative min-h-screen overflow-x-clip"
+        class="relative overflow-x-clip"
     >
         <div
             id="projectsList"
-            class="px-4 lg:px-44 pt-24 relative lg:flex gap-x-28 z-10"
+            class="min-h-screen px-4 lg:px-44 relative lg:flex gap-x-28 z-10"
         >
             <!-- Projects Content -->
             <div
-                class="lg:w-[1200px] flex flex-col gap-y-16 justify-start mx-auto"
+                class="lg:w-[1200px] flex flex-col gap-y-16 justify-start m-auto"
             >
                 <!-- Title -->
                 <div class="title-box">
@@ -79,15 +79,15 @@
                 </div>
             </div>
             <!-- Projects list -->
-            <div class="flex items-center gap-x-8 mt-20 md:mt-0 pr-20">
+            <div class="flex items-center gap-x-8 pr-20">
                 <!-- Desktop View -->
                 <div
-                    v-for="i in 4"
+                    v-for="i in 6"
                     :key="i"
-                    class="hidden lg:inline !h-[494px] !w-[900px] rounded-xl overflow-clip"
+                    class="hidden lg:inline !h-screen !w-screen rounded-xl overflow-clip"
                 >
                     <img
-                        src="/images/project-1.jpg"
+                        :src="`/images/projects/${i}.png`"
                         alt="project screenshot"
                         :draggable="false"
                         class="object-fill w-full"
@@ -113,23 +113,6 @@
                 ></carousel>
             </div>
         </div>
-        <!-- Swipe direction -->
-        <div class="hidden md:flex items-end mt-8 mr-8 w-fit ml-auto">
-            <p class="text-lg font-[200] tracking-wider">Swipe this way</p>
-            <img
-                src="@/assets/image/graphic-lines/landing-5.png"
-                alt="graphic-lines-landing-5"
-            />
-        </div>
-        <!-- Companies list -->
-        <div class="side-space !space-y-4 mt-10 lg:!pl-20">
-            <p class="text-base tracking-wider">Made projects with</p>
-            <img
-                src="@/assets/image/product-companies.png"
-                alt=""
-            />
-        </div>
-
         <!-- /* ------------------------------ Graphic lines ----------------------------- */ -->
         <div class="absolute top-0 lg:-top-40 right-0">
             <img
