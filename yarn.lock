@@ -1288,6 +1288,11 @@
     "@sigstore/protobuf-specs" "^0.2.1"
     tuf-js "^2.1.0"
 
+"@studio-freight/lenis@^1.0.25":
+  version "1.0.29"
+  resolved "https://registry.yarnpkg.com/@studio-freight/lenis/-/lenis-1.0.29.tgz#d7fcbf16c2ca1ddcb0d19007851e2920006985d4"
+  integrity sha512-z/qS8ato5m2wlxQREYj5iALcxMrhhm06vEiLqYzLI+3HmpPzPscmJ8cXNiay4bj692vOot2hyTA3WP++AQVoKA==
+
 "@tootallnate/once@2":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-2.0.0.tgz#f544a148d3ab35801c1f633a7441fd87c2e484bf"
@@ -3149,6 +3154,11 @@ graphql@^16.6.0:
   resolved "https://registry.yarnpkg.com/graphql/-/graphql-16.8.1.tgz#1930a965bef1170603702acdb68aedd3f3cf6f07"
   integrity sha512-59LZHPdGZVh695Ud9lRzPBVTtlX9ZCV150Er2W43ro37wVof0ctenSaskPPjN7lVTIN8mSZt8PHUNKZuNQUuxw==
 
+gsap@^3.12.4:
+  version "3.12.4"
+  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.12.4.tgz#b9383fe16bb14968e2c7db2a7c0e308edf551e7b"
+  integrity sha512-1ByAq8dD0W4aBZ/JArgaQvc0gyUfkGkP8mgAQa0qZGdpOKlSOhOf+WNXjoLimKaKG3Z4Iu6DKZtnyszqQeyqWQ==
+
 gzip-size@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/gzip-size/-/gzip-size-7.0.0.tgz#9f9644251f15bc78460fccef4055ae5a5562ac60"
@@ -4506,6 +4516,14 @@ nuxt-icon@^0.5.0:
   dependencies:
     "@iconify/vue" "^4.1.1"
     "@nuxt/kit" "^3.6.5"
+
+nuxt-lenis@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/nuxt-lenis/-/nuxt-lenis-1.0.4.tgz#966f25d02c7a1e0641b6a59b87c99b46d795d0b6"
+  integrity sha512-RW6QlVlpBb1sSM4DAHiAUUVvM7Ua0fsdZO22KlB5+Ic8nfg4woo+2uaHtS+NS6IKZf+6TcYrEpzLyl85B/zryA==
+  dependencies:
+    "@nuxt/kit" "^3.6.5"
+    "@studio-freight/lenis" "^1.0.25"
 
 nuxt@^3.7.4:
   version "3.7.4"

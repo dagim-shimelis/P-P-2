@@ -5,7 +5,9 @@
         class="min-h-screen bg-black text-white font-poppins overflow-y-hidden w-screen center-content cursor-custom"
     >
         <NuxtLayout>
-            <NuxtPage />
+            <lenis>
+                <NuxtPage />
+            </lenis>
             <div
                 class="fixed px-3 py-2 text-sm font-bold text-white bg-gray-900 rounded bottom-4 left-4 z-50"
             >
@@ -29,5 +31,4 @@
     .center-content {
         margin: 0 auto !important;
     }
-  
 </style>

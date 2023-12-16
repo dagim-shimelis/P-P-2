@@ -11,6 +11,7 @@ export default defineNuxtConfig({
         "@nuxtjs/color-mode",
         "@pinia/nuxt",
         "nuxt-icon",
+        "nuxt-lenis",
     ],
     colorMode: {
         preference: "system", // default value of $colorMode.preference

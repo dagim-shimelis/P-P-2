@@ -25,9 +25,29 @@
     @apply text-black bg-white;
 }
 
-html {
-    scroll-behavior: smooth;
+/* html {
+    scroll-behavior: smooth !important;
     -webkit-font-smoothing: antialiased;
+} */
+
+html.lenis {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+    pointer-events: none;
 }
 
 .center-content {
@@ -106,7 +126,7 @@ html {
     @apply text-sm font-[200] whitespace-nowrap hidden md:inline;
 }
 .title-big {
-    @apply uppercase font-[600] text-5xl md:text-8xl w-fit ;
+    @apply uppercase font-[600] text-5xl md:text-8xl w-fit;
 }
 .title-box {
     @apply flex gap-x-6 items-end  mx-auto lg:mx-0 scale-90 sm:scale-100;
