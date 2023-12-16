@@ -158,7 +158,7 @@
 </template>
 
 <style scoped>
-    .tool-icon {
+    .tool-icons {
         @apply w-[24px] sm:w-[25px] sm:h-[25px];
     }
 </style>

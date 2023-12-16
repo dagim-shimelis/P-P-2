@@ -90,7 +90,7 @@
                         :src="`/images/projects/${i}.png`"
                         alt="project screenshot"
                         :draggable="false"
-                        class="object-fill w-full"
+                        class="object-fill !h-screen !w-full"
                     />
                 </div>
                 <!-- Mobile View -->
@@ -127,7 +127,7 @@
                 src="@/assets/image/graphic-lines/landing-6.png"
                 alt="graphic-lines-landing-6"
                 :draggable="false"
-                class="w-[100px] xl:w-[200px] 3xl:w-full"
+                class="w-[100px] xl:w-[200px]"
             />
         </div>
     </div>
