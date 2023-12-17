@@ -51,30 +51,22 @@
                     <p class="title-small">I've worked on</p>
                 </div>
                 <!-- About me text -->
-                <div
-                    class="flex flex-col gap-y-6 text-base font-[200] leading-8 tracking-wider"
-                >
-                    <p>
-                        Over the past two years, I've embarked on an exciting
-                        journey as a frontend web developer, crafting digital
-                        experiences that marry form and function. This section
-                        serves as a window into the world of my recent web
-                        development endeavors. Each project here represents a
-                        fusion of creativity, technical skill, and a relentless
-                        pursuit of excellence
+                <div class="flex flex-col gap-y-6">
+                    <p class="para-text">
+                        As I navigate this dynamic field, I embrace new
+                        challenges and technologies, constantly seeking
+                        innovative ways to elevate user experiences. This
+                        section serves as a window into the world of my recent
+                        web development endeavors. Each project here represents
+                        a fusion of creativity, technical skill, and a
+                        relentless pursuit of excellence.
                     </p>
-                    <p>
-                        As you explore the projects listed below, you'll see the
-                        diverse range of work I've undertaken, from dynamic web
-                        apps. Each project tells a unique story of challenges
-                        met, problems solved, and innovation realized.
-                    </p>
-                    <p>
-                        I honed my skills on web development, technical writing,
-                        and product design at Addis Ababa Science and Technology
-                        University. Being a diligent, hardworking and result
-                        oriented person, I always work towards achieving best
-                        result on each project I lay my hands on.
+                    <p class="para-text">
+                        As you explore the projects, you'll see the diverse
+                        range of work I've undertaken, from dynamic web apps to
+                        static landing pages. Each project tells a unique story
+                        of challenges met, problems solved, and innovation
+                        realized.
                     </p>
                 </div>
             </div>
