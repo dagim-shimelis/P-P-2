@@ -22,6 +22,34 @@
             snapAlign: "start",
         },
     });
+
+    const projects = ref([
+        {
+            name: "HaHuJobs Primary",
+            link: "#",
+            thumbnailImage: "/images/projects/1.png",
+        },
+        {
+            name: "Kena",
+            link: "#",
+            thumbnailImage: "/images/projects/2.png",
+        },
+        {
+            name: "Awaqi Centers",
+            link: "#",
+            thumbnailImage: "/images/projects/3.png",
+        },
+        {
+            name: "Sheger Gebeta",
+            link: "#",
+            thumbnailImage: "/images/projects/4.png",
+        },
+        {
+            name: "Abstract Technologies",
+            link: "#",
+            thumbnailImage: "/images/projects/5.png",
+        },
+    ]);
 </script>
 
 <template>
@@ -73,27 +101,23 @@
             <!-- Projects list -->
             <div class="flex items-center gap-x-8 pr-20">
                 <!-- Desktop View -->
-                <div
-                    v-for="i in 3"
+                <router-link
+                    v-for="(project, i) in projects"
                     :key="i"
-                    class="hidden lg:inline !h-[80vh] !w-[80vw] rounded-xl overflow-clip"
+                    :to="project.link"
+                    class="hidden lg:inline !h-[80vh] !w-[80vw] rounded-xl overflow-clip cursor-custom-pointer"
                 >
-                    <router-link
-                        to="#"
-                        class="flex items-center justify-end mb-4 cursor-custom-pointer"
-                    >
-                        <p class="text-end text-3xl font-[600]">
-                            HahuJobs Primary
-                        </p>
-                    </router-link>
+                    <p class="text-end text-3xl font-[600]">
+                        {{ project.name }}
+                    </p>
 
                     <img
-                        :src="`/images/projects/${i}.png`"
+                        :src="project.thumbnailImage"
                         alt="project screenshot"
                         :draggable="false"
-                        class="object-fill !h-full !w-full rounded-xl overflow-clip cursor-custom-pointer"
+                        class="object-fill !h-full !w-full rounded-xl overflow-clip"
                     />
-                </div>
+                </router-link>
                 <!-- Mobile View -->
                 <carousel
                     :settings="settings"
