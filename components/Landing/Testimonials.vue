@@ -1,5 +1,6 @@
 <script setup>
     import { Carousel, Slide, Pagination } from "vue3-carousel";
+    import { Vue3Marquee } from "vue3-marquee";
     import "vue3-carousel/dist/carousel.css";
 
     const testimonials = ref([
@@ -31,14 +32,14 @@
         itemsToShow: 1,
         snapAlign: "center",
         wrapAround: "true",
-        autoplay: "4000",
+        // autoplay: "4000",
     });
 </script>
 
 <template>
     <div class="relative min-h-screen">
         <div class="side-space pt-10">
-            <!-- About Content -->
+            <!-- Testimonial Content -->
             <div class="flex flex-col gap-y-5 justify-start mx-auto">
                 <div class="flex items-center justify-between">
                     <!-- Title -->
@@ -57,7 +58,7 @@
                 <div class="w-full">
                     <carousel
                         :settings="settings"
-                        class="w-full mt-5 md:mt-32 mb-auto"
+                        class="w-full mt-5 md:mt-24 mb-auto"
                     >
                         <slide
                             v-for="(testimonial, i) in testimonials"
@@ -113,6 +114,26 @@
                 </div>
             </div>
         </div>
+        <div
+            class="side-space h-24 mt-24 flex items-center overflow-x-hidden z-10"
+        >
+            <Vue3Marquee
+                direction="reverse"
+                duration="100"
+                :clone="true"
+                :pauseOnHover="true"
+                :pauseOnClick="true"
+                :gradient="true"
+                :gradientColor="[21, 21, 21]"
+                gradientWidth="200px"
+            >
+                <img
+                    src="@/assets/image/product-companies.png"
+                    alt=""
+                    :draggable="false"
+                />
+            </Vue3Marquee>
+        </div>
 
         <!-- /* ------------------------------ Graphic lines ----------------------------- */ -->
         <div class="absolute top-0 right-0">
@@ -123,6 +144,7 @@
                 class="w-[100px] xl:w-[200px] 3xl:w-full"
             />
         </div>
+     
     </div>
 </template>
 

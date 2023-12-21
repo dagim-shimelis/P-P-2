@@ -1,21 +1,5 @@
 <script setup>
-    import { gsap } from "gsap";
     import { Vue3Marquee } from "vue3-marquee";
-
-    onMounted(() => {
-        const companies = document.querySelector("#companiesList");
-
-        function getScrollAmount() {
-            let companiesWidth = companies.scrollWidth;
-            return -(companiesWidth - window.innerWidth);
-        }
-        gsap.to(companies, {
-            x: getScrollAmount,
-            duration: 15,
-            ease: "none",
-            repeat: -1,
-        });
-    });
 </script>
 
 <template>
@@ -104,17 +88,21 @@
             </div>
         </div>
         <div
-            class="h-24 w-full -mt-24 flex items-center overflow-x-hidden z-10"
+            class="side-space h-24 -mt-24 flex items-center overflow-x-hidden z-10"
         >
             <Vue3Marquee
-                :direction="scrollDirection"
                 duration="100"
                 :clone="true"
+                :pauseOnHover="true"
+                :pauseOnClick="true"
+                :gradient="true"
+                :gradientColor="[21, 21, 21]"
+                gradientWidth="200px"
             >
                 <img
                     src="@/assets/image/product-companies.png"
                     alt=""
-                    class=""
+                    :draggable="false"
                 />
             </Vue3Marquee>
         </div>

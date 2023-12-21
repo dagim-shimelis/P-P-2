@@ -82,15 +82,15 @@
             <div class="flex items-center gap-x-8 pr-20">
                 <!-- Desktop View -->
                 <div
-                    v-for="i in 0"
+                    v-for="i in 7"
                     :key="i"
-                    class="hidden lg:inline !h-screen !w-screen rounded-xl overflow-clip"
+                    class="hidden lg:inline !h-[80vh] !w-[80vw] rounded-xl overflow-clip"
                 >
                     <img
                         :src="`/images/projects/${i}.png`"
                         alt="project screenshot"
                         :draggable="false"
-                        class="object-fill !h-screen !w-full"
+                        class="object-fill !h-full !w-full"
                     />
                 </div>
                 <!-- Mobile View -->
@@ -114,7 +114,15 @@
             </div>
         </div>
         <!-- /* ------------------------------ Graphic lines ----------------------------- */ -->
-        <div class="lg:absolute -bottom-16 left-0">
+        <!-- <div class="absolute top-0 right-0">
+            <img
+                src="@/assets/image/graphic-lines/landing-4.png"
+                alt="graphic-lines-landing-4"
+                :draggable="false"
+                class="w-[100px] xl:w-[200px] 3xl:w-full"
+            />
+        </div> -->
+        <div class="lg:absolute bottom-0 left-0">
             <img
                 src="@/assets/image/graphic-lines/landing-6.png"
                 alt="graphic-lines-landing-6"
