@@ -72,7 +72,7 @@
         <div class="absolute bottom-0 left-0 z-10">
             <img
                 src="@/assets/image/graphic-lines/landing-8.png"
-                alt="graphic-lines-landing-0"
+                alt="graphic-lines-landing-8"
                 :draggable="false"
                 class="w-[100px] xl:w-[200px] 3xl:w-full"
             />

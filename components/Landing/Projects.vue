@@ -82,7 +82,7 @@
             <div class="flex items-center gap-x-8 pr-20">
                 <!-- Desktop View -->
                 <div
-                    v-for="i in 7"
+                    v-for="i in 0"
                     :key="i"
                     class="hidden lg:inline !h-screen !w-screen rounded-xl overflow-clip"
                 >
@@ -114,14 +114,6 @@
             </div>
         </div>
         <!-- /* ------------------------------ Graphic lines ----------------------------- */ -->
-        <div class="absolute top-0 lg:-top-40 right-0">
-            <img
-                src="@/assets/image/graphic-lines/landing-4.png"
-                alt="graphic-lines-landing-4"
-                :draggable="false"
-                class="w-[100px] xl:w-[200px] 3xl:w-full"
-            />
-        </div>
         <div class="lg:absolute -bottom-16 left-0">
             <img
                 src="@/assets/image/graphic-lines/landing-6.png"

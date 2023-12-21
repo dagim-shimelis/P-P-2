@@ -43,6 +43,7 @@
         <Landing-Hero id="home" />
         <Landing-About id="about" />
         <Landing-Projects id="projects" />
+        <Landing-Testimonials id="testimonials" />
         <Landing-Articles id="articles" />
         <Landing-Contact id="contact" />
     </div>

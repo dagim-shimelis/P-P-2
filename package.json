@@ -21,6 +21,7 @@
     },
     "dependencies": {
         "@pinia/nuxt": "^0.4.11",
+        "daisyui": "^4.4.23",
         "gsap": "^3.12.4",
         "nuxt-lenis": "^1.0.4",
         "pinia": "^2.1.6",

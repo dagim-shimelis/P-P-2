@@ -30,6 +30,38 @@
     -webkit-font-smoothing: antialiased;
 } */
 
+/* --------------------------- Carousel Pagination -------------------------- */
+:root {
+    /* Color */
+    --vc-clr-primary: #00dcac00 !important;
+    --vc-clr-secondary: #eee !important;
+    --vc-clr-white: #ffffff !important;
+    --vc-clr-hsecondary: #eee1010 !important;
+    --vc-clr-pagprimary: #eee !important;
+
+    /* Icon */
+    --vc-icn-width: 1.2em;
+
+    /* Navigation */
+    --vc-nav-width: 100px;
+    --vc-nav-color: #eee !important;
+    --vc-nav-background-color: #00dcac00 !important;
+    --vc-pgn-background-color: #eee !important;
+    --vc-pgn-active-color: #eee !important;
+}
+
+.carousel__icon {
+    z-index: 1000;
+}
+
+.carousel__pagination-button {
+    background-color: #eeeeee50 !important;
+}
+
+.carousel__pagination-button--active {
+    background-color: #eee !important;
+}
+
 html.lenis {
     height: auto;
 }
