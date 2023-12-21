@@ -82,15 +82,24 @@
             <div class="flex items-center gap-x-8 pr-20">
                 <!-- Desktop View -->
                 <div
-                    v-for="i in 7"
+                    v-for="i in 3"
                     :key="i"
                     class="hidden lg:inline !h-[80vh] !w-[80vw] rounded-xl overflow-clip"
                 >
+                    <router-link
+                        to="#"
+                        class="flex items-center justify-end mb-4 cursor-custom-pointer"
+                    >
+                        <p class="text-end text-3xl font-[600]">
+                            HahuJobs Primary
+                        </p>
+                    </router-link>
+
                     <img
                         :src="`/images/projects/${i}.png`"
                         alt="project screenshot"
                         :draggable="false"
-                        class="object-fill !h-full !w-full"
+                        class="object-fill !h-full !w-full rounded-xl overflow-clip cursor-custom-pointer"
                     />
                 </div>
                 <!-- Mobile View -->
