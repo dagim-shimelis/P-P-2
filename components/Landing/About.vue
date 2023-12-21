@@ -83,28 +83,30 @@
                     <p class="title-small">me</p>
                 </div>
                 <!-- About me text -->
-                <div
-                    class="flex flex-col gap-y-6 text-base font-[200] leading-8"
-                >
-                    <p>
-                        I'm a professional and talented Product Designer with
-                        front end & back end development skills. I am passionate
-                        about leveraging my diverse backgrounds to decipher
-                        challenging problems and create delightful experiences.
+                <div class="flex flex-col gap-y-6">
+                    <p class="para-text">
+                        With a passion for web development that spans over two
+                        years, I specialize in both front-end and back-end work,
+                        although my heart lies in crafting immersive and
+                        visually captivating front-end experiences. I am
+                        dedicated to merging aesthetics with functionality,
+                        creating digital landscapes that not only look stunning
+                        but also perform seamlessly.
                     </p>
-                    <p>
-                        I develop websites with HTML, CSS and JavaScript. I have
-                        top skills in using design softwares like Figma, Adobe
-                        XD, and PhotoShop. I also have expirience developing
-                        full stack projects with MEVN (MongoDB, Express, VueJs,
-                        & NodeJs).
+                    <p class="para-text">
+                        My approach to web development is driven by a meticulous
+                        attention to detail, ensuring that every pixel and line
+                        of code contributes meaningfully to the overall user
+                        experience. I thrive on challenges and am task-oriented,
+                        consistently striving for excellence in every project I
+                        undertake.
                     </p>
-                    <p>
-                        I honed my skills on web development, technical writing,
-                        and product design at Addis Ababa Science and Technology
-                        University. Being a diligent, hardworking and result
-                        oriented person, I always work towards achieving best
-                        result on each project I lay my hands on.
+                    <p class="para-text">
+                        Throughout the past 2 years I've honed my skills to
+                        blend creativity and technical expertise. Whether it's
+                        designing sleek user interfaces or architecting robust
+                        backend systems, I am committed to delivering solutions
+                        that exceed expectations.
                     </p>
                 </div>
                 <!-- Tools -->

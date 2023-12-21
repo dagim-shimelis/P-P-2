@@ -170,3 +170,7 @@ html.lenis {
 .input {
     @apply font-[200] border-0 border-b border-white w-full py-4 bg-transparent focus:outline-none;
 }
+
+.para-text {
+    @apply text-base font-[200] leading-8 tracking-wider;
+}

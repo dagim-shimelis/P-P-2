@@ -63,9 +63,7 @@
                         class="w-full sm:w-[80%] lg:w-[400px] xl:w-[550px]"
                         :draggable="false"
                     />
-                    <p
-                        class="text-base font-[200] tracking-wider leading-8 w-full sm:w-[440px] xl:w-[500px]"
-                    >
+                    <p class="para-text w-full sm:w-[440px] xl:w-[500px]">
                         From eye-catching designs to seamless functionality,
                         I've got you covered. With expertise in web design,
                         frontend development, and backend development, I'll
