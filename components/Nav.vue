@@ -2,23 +2,23 @@
     const navigation = ref([
         {
             name: "home",
-            to: "#home",
+            to: "/#home",
         },
         {
             name: "about",
-            to: "#about",
+            to: "/#about",
         },
         {
             name: "projects",
-            to: "#projects",
+            to: "/#projects",
         },
         {
             name: "articles",
-            to: "#articles",
+            to: "/#articles",
         },
         {
             name: "contact",
-            to: "#contact",
+            to: "/#contact",
         },
     ]);
 

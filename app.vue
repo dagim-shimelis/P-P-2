@@ -3,10 +3,10 @@
     import { ScrollTrigger } from "gsap/ScrollTrigger";
     gsap.registerPlugin(ScrollTrigger);
 
-    const loadingPage = ref(true);
+    const loadingPage = ref(false);
 
     onBeforeMount(() => {
-        loadingPage.value = true;
+        loadingPage.value = false;
     });
     onMounted(() => {
         /* ----------------------------- Initial Loading ---------------------------- */
