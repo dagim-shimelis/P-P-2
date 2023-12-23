@@ -26,7 +26,10 @@
 </script>
 
 <template>
-    <header class="relative">
+    <header
+        id="home"
+        class="relative"
+    >
         <div
             class="side-space !h-20 !z-50 flex items-center justify-between !pt-10"
         >

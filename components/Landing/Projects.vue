@@ -1,6 +1,9 @@
 <script setup>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
     import { Carousel, Slide, Pagination } from "vue3-carousel";
     import "vue3-carousel/dist/carousel.css";
+    gsap.registerPlugin(ScrollTrigger);
 
     // carousel settings
     const settings = ref({
@@ -45,6 +48,31 @@
             thumbnailImage: "/images/projects/4.png",
         },
     ]);
+
+    onMounted(() => {
+        /* ---------------------------- Projects Section ---------------------------- */
+        const projectsElement = document.querySelector("#projectsList");
+
+        function getScrollAmount() {
+            let projectsWidth = projectsElement.scrollWidth;
+            return -(projectsWidth - window.innerWidth);
+        }
+        const tween = gsap.to(projectsElement, {
+            x: getScrollAmount,
+            duration: 15,
+            ease: "none",
+        });
+
+        ScrollTrigger.create({
+            trigger: "#projects",
+            start: "top top",
+            end: () => `+=${getScrollAmount() * -1}`,
+            pin: true,
+            animation: tween,
+            scrub: 1,
+            invalidateOnRefresh: true,
+        });
+    });
 </script>
 
 <template>

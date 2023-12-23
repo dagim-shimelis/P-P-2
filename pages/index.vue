@@ -40,7 +40,7 @@
     </Head>
 
     <div class="h-full overflow-y-clip">
-        <Landing-Hero id="home" />
+        <Landing-Hero />
         <Landing-About id="about" />
         <Landing-Projects id="projects" />
         <Landing-Testimonials id="testimonials" />

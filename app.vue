@@ -35,29 +35,6 @@
                 },
                 "-=0.8",
             );
-
-        /* ---------------------------- Projects Section ---------------------------- */
-        const projects = document.querySelector("#projectsList");
-
-        function getScrollAmount() {
-            let projectsWidth = projects.scrollWidth;
-            return -(projectsWidth - window.innerWidth);
-        }
-        const tween = gsap.to(projects, {
-            x: getScrollAmount,
-            duration: 15,
-            ease: "none",
-        });
-
-        ScrollTrigger.create({
-            trigger: "#projects",
-            start: "top top",
-            end: () => `+=${getScrollAmount() * -1}`,
-            pin: true,
-            animation: tween,
-            scrub: 1,
-            invalidateOnRefresh: true,
-        });
     });
 </script>
 
