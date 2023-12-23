@@ -10,7 +10,7 @@
         },
         {
             name: "projects",
-            to: "/#projects",
+            to: "/projects",
         },
         {
             name: "articles",

@@ -24,17 +24,11 @@
             thumbnailImage: "/images/projects/4.png",
             cardDescription: "Site for foodies and chefs",
         },
-        {
-            name: "Abstract Technologies",
-            link: "#",
-            thumbnailImage: "/images/projects/5.png",
-            cardDescription: "Not my site but I wish it was",
-        },
     ]);
 </script>
 
 <template>
-    <div class="relative min-h-screen pt-24 !pb-40">
+    <div class="relative min-h-screen pt-24 !pb-[300px]">
         <div class="side-space">
             <div class="title-box w-fit !mx-auto">
                 <p class="font-[200]">Some of the</p>
@@ -48,10 +42,11 @@
                 </div>
                 <p class="font-[200]">I've worked on</p>
             </div>
-            <p class="mt-10 text-center mx-auto w-[900px] font-[200]">
-                Welcome to my web of wonders! Brace yourself for a digital
-                journey through my coding chronicles - where pixels meet
-                perfection and bugs fear to tread!
+            <p class="mt-10 text-center mx-auto w-[800px] font-[200] leading-8">
+                As you explore the projects, you'll see the diverse range of
+                work I've undertaken, from dynamic web apps to static landing
+                pages. Each project tells a unique story of challenges met,
+                problems solved, and innovation realized.
             </p>
             <div class="mt-20 grid grid-cols-2 gap-x-14 gap-y-28">
                 <router-link
@@ -74,6 +69,16 @@
                     </p>
                 </router-link>
             </div>
+        </div>
+
+        <!-- /* ------------------------------ Graphic lines ----------------------------- */ -->
+        <div class="absolute bottom-0 left-0 z-10">
+            <img
+                src="@/assets/image/graphic-lines/landing-8.png"
+                alt="graphic-lines-landing-8"
+                :draggable="false"
+                class="w-[100px] xl:w-[200px]"
+            />
         </div>
     </div>
 </template>

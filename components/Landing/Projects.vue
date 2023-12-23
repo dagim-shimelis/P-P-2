@@ -44,11 +44,6 @@
             link: "#",
             thumbnailImage: "/images/projects/4.png",
         },
-        {
-            name: "Abstract Technologies",
-            link: "#",
-            thumbnailImage: "/images/projects/5.png",
-        },
     ]);
 </script>
 
