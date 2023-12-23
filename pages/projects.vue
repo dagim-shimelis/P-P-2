@@ -53,7 +53,7 @@
                     v-for="(project, i) in projects"
                     :key="i"
                     :to="project.link"
-                    class="cursor-custom-pointer border border-transparent hover:border-white/5 h-full p-2 pb-6 rounded-2xl"
+                    class="cursor-custom-pointer border border-transparent hover:border-white/5 h-full p-2 pb-6 rounded-[20px]"
                 >
                     <img
                         :src="project.thumbnailImage"
