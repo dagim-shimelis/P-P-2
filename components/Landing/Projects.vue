@@ -55,18 +55,16 @@
 <template>
     <div
         id="projectsWrapper"
-        class="relative overflow-x-clip"
+        class="relative overflow-x-clip w-screen"
     >
         <div
             id="projectsList"
             class="min-h-screen px-4 lg:px-44 relative lg:flex gap-x-28 z-10"
         >
             <!-- Projects Content -->
-            <div
-                class="lg:w-[1200px] flex flex-col gap-y-16 justify-start m-auto"
-            >
+            <div class="flex flex-col gap-y-16 justify-start m-auto">
                 <!-- Title -->
-                <div class="title-box">
+                <div class="title-box !w-[800px]">
                     <p class="title-small">Some of the</p>
                     <div>
                         <h1 class="title-big">projects</h1>

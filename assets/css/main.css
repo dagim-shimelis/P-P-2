@@ -151,11 +151,12 @@ html.lenis {
 }
 
 .btn {
-    @apply flex items-center justify-center gap-x-4 bg-black border border-white rounded-md font-[300] px-20 py-3 text-white  tracking-widest cursor-custom-pointer hover:bg-white hover:text-black;
+    @apply flex items-center justify-center gap-x-4 bg-black border border-white rounded-md font-[300] px-20 py-3 text-white  tracking-widest cursor-custom-pointer hover:bg-white hover:text-black hover:font-[600];
 }
 
+/* TODO Remove class and related elements if not used */
 .title-small {
-    @apply text-sm font-[200] whitespace-nowrap hidden md:inline;
+    @apply text-sm font-[200] whitespace-nowrap hidden;
 }
 .title-big {
     @apply uppercase font-[600] text-5xl md:text-8xl w-fit;

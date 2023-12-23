@@ -37,7 +37,7 @@
 </script>
 
 <template>
-    <div class="relative min-h-screen">
+    <div class="relative min-h-screen mb-28">
         <div class="side-space pt-10">
             <!-- Testimonial Content -->
             <div class="flex flex-col gap-y-5 justify-start mx-auto">

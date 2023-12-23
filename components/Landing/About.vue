@@ -20,8 +20,8 @@
         },
         {
             name: "NodeJS",
-            icon: "devicon-plain:nodejs",
-            originalIcon: "devicon:nodejs",
+            icon: "fontisto:nodejs",
+            originalIcon: "logos:nodejs-icon",
             link: "https://nodejs.org/en",
         },
         {
@@ -47,6 +47,12 @@
             icon: "file-icons:tailwind",
             originalIcon: "devicon:tailwindcss",
             link: "https://tailwindcss.com/",
+        },
+        {
+            name: "GSAP",
+            icon: "simple-icons:greensock",
+            originalIcon: "logos:greensock-icon",
+            link: "https://gsap.com/",
         },
     ]);
 </script>
