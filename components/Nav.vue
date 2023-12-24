@@ -10,7 +10,7 @@
         },
         {
             name: "projects",
-            to: "/projects",
+            to: "/projects/list",
         },
         {
             name: "articles",
@@ -38,7 +38,7 @@
                 <img
                     src="/icons/logo.png"
                     alt="logo"
-                    class="w-10 lg:w-fit"
+                    class="w-10 lg:w-[60px]"
                     draggable="false"
                 />
             </div>
@@ -56,6 +56,12 @@
                     >
                 </li>
             </ul>
+            <button class="cursor-custom-pointer z-50">
+                <Icon
+                    name="solar:file-download-outline"
+                    class="hidden lg:block w-6 h-6"
+                />
+            </button>
             <!-- /* ------------------------------- Mobile Nav ------------------------------- */ -->
             <div class="lg:hidden ml-auto">
                 <button
@@ -135,6 +141,7 @@
                 src="@/assets/image/graphic-lines/landing-1.png"
                 alt="graphic-lines-landing-1"
                 :draggable="false"
+                class="w-[400px]"
             />
         </div>
     </header>

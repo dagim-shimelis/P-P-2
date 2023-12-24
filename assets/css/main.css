@@ -50,6 +50,10 @@
     --vc-pgn-active-color: #eee !important;
 }
 
+p {
+    mix-blend-mode: difference;
+}
+
 .carousel__icon {
     z-index: 1000;
 }
@@ -174,4 +178,8 @@ html.lenis {
 
 .para-text {
     @apply text-base font-[200] leading-8 tracking-wider;
+}
+
+.tiny-icon {
+    @apply w-4 h-4;
 }

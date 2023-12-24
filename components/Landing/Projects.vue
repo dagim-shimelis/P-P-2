@@ -28,23 +28,23 @@
 
     const projects = ref([
         {
-            name: "HaHuJobs Primary",
-            link: "#",
+            name: "HahuJobs Primary",
+            link: "/projects/hahujobs-primary",
             thumbnailImage: "/images/projects/1.png",
         },
         {
             name: "Kena",
-            link: "#",
+            link: "/projects/hahujobs-primary",
             thumbnailImage: "/images/projects/2.png",
         },
         {
             name: "Awaqi Centers",
-            link: "#",
+            link: "/projects/hahujobs-primary",
             thumbnailImage: "/images/projects/3.png",
         },
         {
             name: "Sheger Gebeta",
-            link: "#",
+            link: "/projects/hahujobs-primary",
             thumbnailImage: "/images/projects/4.png",
         },
     ]);
