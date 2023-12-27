@@ -56,7 +56,7 @@
                     >
                 </li>
             </ul>
-            <button class="cursor-custom-pointer z-50">
+            <button class="cursor-custom-pointer z-30">
                 <Icon
                     name="solar:file-download-outline"
                     class="hidden lg:block w-6 h-6"
