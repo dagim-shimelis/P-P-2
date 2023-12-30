@@ -157,6 +157,9 @@ html.lenis {
 .btn {
     @apply flex items-center justify-center gap-x-4 bg-black border border-white rounded-md font-[300] px-20 py-3 text-white  tracking-widest cursor-custom-pointer hover:bg-white hover:text-black hover:font-[600];
 }
+.btn-inverse {
+    @apply flex items-center justify-center gap-x-4 bg-white border border-black rounded-md  hover:font-[300] px-20 py-3 text-black  tracking-widest cursor-custom-pointer hover:bg-black hover:text-white font-[600];
+}
 
 /* TODO Remove class and related elements if not used */
 .title-small {

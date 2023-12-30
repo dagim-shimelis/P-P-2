@@ -120,7 +120,7 @@
                 </div>
             </div>
             <!-- Projects list -->
-            <div class="flex items-center gap-x-8 pr-20">
+            <div class="flex items-center gap-x-8 pr-40">
                 <!-- Desktop View -->
                 <router-link
                     v-for="(project, i) in projects"
@@ -138,6 +138,31 @@
                         :draggable="false"
                         class="object-fill !h-full !w-full rounded-xl overflow-clip"
                     />
+                </router-link>
+                <!-- More project CTA -->
+                <router-link
+                    to="/projects"
+                    class="relative hidden lg:inline !h-[80vh] !w-[80vw] rounded-xl overflow-clip cursor-custom-pointer"
+                >
+                    <img
+                        src="/images/projects/1.png"
+                        alt="project screenshot"
+                        :draggable="false"
+                        class="object-fill !h-full !w-full rounded-xl overflow-clip"
+                    />
+                    <!-- TODO D Remove this if not used -->
+                    <!-- <img
+                        src="@/assets/image/graphic-lines/collection.png"
+                        alt="project screenshot"
+                        :draggable="false"
+                        class="absolute top-0 left-0 z-10 object-fill h-[80vh] !w-[80vw] rounded-xl overflow-clip"
+                    /> -->
+                    <div
+                        class="absolute top-0 left-0 z-20 w-full h-full flex flex-col items-center justify-center gap-y-8 from-black/0 to-black bg-gradient-to-r"
+                    >
+                        <p class="title-big">+7</p>
+                        <button class="btn-inverse">See more projects</button>
+                    </div>
                 </router-link>
                 <!-- Mobile View -->
                 <carousel
