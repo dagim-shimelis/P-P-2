@@ -37,6 +37,11 @@ export default defineNuxtConfig({
     routeRules: {
         // "/": { ssr: false },
     },
+    router: {
+        options: {
+            scrollBehaviorType: "smooth",
+        },
+    },
 
     app: {
         // pageTransition: {

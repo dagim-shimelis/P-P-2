@@ -56,12 +56,13 @@
                     >
                 </li>
             </ul>
-            <button class="cursor-custom-pointer z-30">
+            <!-- <button class="cursor-custom-pointer z-30">
                 <Icon
                     name="solar:file-download-outline"
                     class="hidden lg:block w-6 h-6"
                 />
-            </button>
+            </button> -->
+            <div></div>
             <!-- /* ------------------------------- Mobile Nav ------------------------------- */ -->
             <div class="lg:hidden ml-auto">
                 <button

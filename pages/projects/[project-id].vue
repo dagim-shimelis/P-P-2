@@ -21,24 +21,34 @@
         "/images/projects/hahujobs-primary/m-profile.png",
         "/images/projects/hahujobs-primary/m-calendar.png",
     ]);
+
+    onMounted(() => {
+        console.log("projects detail page has mounted");
+        window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scrolling
+    });
 </script>
 
 <template>
-    <div class="relative min-h-screen pt-14 !pb-[300px]">
+    <div
+        id="top"
+        class="relative min-h-screen pt-14 !pb-[100px]"
+    >
         <div class="side-space">
             <!-- navigator -->
             <div class="flex items-end justify-between">
                 <!-- Prev -->
                 <router-link
                     to="#"
-                    class="space-y-2 cursor-custom-pointer w-[300px]"
+                    class="z-30 mix-blend-difference space-y-2 cursor-custom-pointer w-[300px]"
                 >
-                    <div class="flex items-center text-white/30">
+                    <div class="flex items-center">
                         <Icon
                             name="uil-arrow-left"
                             class="tiny-icon"
                         />
-                        <p class="font-[200] text-sm">Previews</p>
+                        <p class="font-[100] text-xs tracking-widest">
+                            Previous
+                        </p>
                     </div>
                     <p class="font-[200] text-lg">Sheger Gebeta</p>
                 </router-link>
@@ -49,10 +59,12 @@
                 <!-- Next -->
                 <router-link
                     to="#"
-                    class="space-y-2 text-end cursor-custom-pointer w-[300px]"
+                    class="z-30 mix-blend-difference space-y-2 text-end cursor-custom-pointer w-[300px]"
                 >
-                    <div class="flex items-center text-white/30 w-fit ml-auto">
-                        <p class="font-[200] text-sm !mix-blend-difference">
+                    <div class="flex items-center w-fit ml-auto">
+                        <p
+                            class="font-[100] text-xs !mix-blend-difference tracking-widest"
+                        >
                             Next
                         </p>
                         <Icon
@@ -164,6 +176,20 @@
                     </p>
                 </li>
             </ul>
+        </div>
+        <div class="w-full flex justify-end pr-14 mt-40">
+            <router-link
+                to="#top"
+                class="group ml-auto relative cursor-custom-pointer h-[70px]"
+            >
+                <img
+                    src="@/assets/image/graphic-lines/arrow-4.png"
+                    alt="project screenshot"
+                    :draggable="false"
+                    class="-top-[40px] w-[100px] xl:w-[100px] group-hover:-translate-y-2 ease-in-out duration-300"
+                />
+                <span>Back to top</span></router-link
+            >
         </div>
     </div>
 </template>
