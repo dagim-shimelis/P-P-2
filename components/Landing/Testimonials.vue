@@ -1,6 +1,5 @@
 <script setup>
     import { Carousel, Slide, Pagination } from "vue3-carousel";
-    import { Vue3Marquee } from "vue3-marquee";
     import "vue3-carousel/dist/carousel.css";
 
     const testimonials = ref([
@@ -117,22 +116,7 @@
         <div
             class="side-space h-24 mt-24 flex items-center overflow-x-hidden z-10"
         >
-            <Vue3Marquee
-                direction="reverse"
-                duration="100"
-                :clone="true"
-                :pauseOnHover="true"
-                :pauseOnClick="true"
-                :gradient="true"
-                :gradientColor="[21, 21, 21]"
-                gradientWidth="200px"
-            >
-                <img
-                    src="@/assets/image/product-companies.png"
-                    alt=""
-                    :draggable="false"
-                />
-            </Vue3Marquee>
+            <Common-Companies />
         </div>
 
         <!-- /* ------------------------------ Graphic lines ----------------------------- */ -->
@@ -144,7 +128,6 @@
                 class="w-[100px] xl:w-[200px] 3xl:w-full"
             />
         </div>
-     
     </div>
 </template>
 

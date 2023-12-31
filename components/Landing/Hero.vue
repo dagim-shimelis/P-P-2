@@ -1,6 +1,4 @@
-<script setup>
-    import { Vue3Marquee } from "vue3-marquee";
-</script>
+<script setup></script>
 
 <template>
     <div class="relative min-h-[80vh] mb-32">
@@ -88,21 +86,7 @@
         <div
             class="side-space h-24 -mt-24 flex items-center overflow-x-hidden z-10"
         >
-            <Vue3Marquee
-                duration="100"
-                :clone="true"
-                :pauseOnHover="true"
-                :pauseOnClick="true"
-                :gradient="true"
-                :gradientColor="[21, 21, 21]"
-                gradientWidth="200px"
-            >
-                <img
-                    src="@/assets/image/product-companies.png"
-                    alt=""
-                    :draggable="false"
-                />
-            </Vue3Marquee>
+            <Common-Companies />
         </div>
     </div>
 </template>
