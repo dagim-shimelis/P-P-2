@@ -67,7 +67,7 @@
             <div class="lg:hidden ml-auto">
                 <button
                     @click="visibleSideNav = true"
-                    class="menu-button absolute top-3 sm:top-5 right-4 sm:right-8 z-50"
+                    class="menu-button absolute top-3 sm:top-5 right-4 sm:right-8 z-10"
                 >
                     <Icon
                         name="uil:bars"
