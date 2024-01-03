@@ -58,7 +58,7 @@
 </script>
 
 <template>
-    <div class="relative min-h-screen">
+    <div class="relative min-h-screen pb-32 xl:pb-0">
         <div
             class="side-space !z-10 mt-20 md:mt-0 pt-20 xs:pt-40 relative lg:grid grid-rows-2 md:grid-cols-2 md:grid-rows-1"
         >
