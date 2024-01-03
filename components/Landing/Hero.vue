@@ -1,9 +1,9 @@
 <script setup></script>
 
 <template>
-    <div class="relative min-h-[80vh] mb-32">
+    <div class="relative mb-32 h-full">
         <div
-            class="side-space mt-10 lg:mt-16 3xl:mt-8 4xl:mt-20 h-[70vh] md:h-[80vh] lg:h-screen"
+            class="side-space mt-10 lg:mt-3 3xl:mt-8 4xl:mt-20 "
         >
             <div
                 class="hero grid lg:grid-cols-2 gap-x-10"
@@ -84,7 +84,7 @@
             </div>
         </div>
         <div
-            class="side-space h-24 -mt-24 flex items-center overflow-x-hidden z-10"
+            class="side-space h-24 mt-28 xs:mt-40  flex items-center overflow-x-hidden z-10"
         >
             <Common-Companies />
         </div>
