@@ -133,7 +133,7 @@
                     :to="project.link"
                     class="relative hidden lg:inline !w-[80vw] rounded-xl overflow-clip cursor-custom-pointer"
                 >
-                    <p class="text-end text-3xl font-[600]">
+                    <p class="text-end text-3xl font-[600] mb-3">
                         {{ project.name }}
                     </p>
 
@@ -182,7 +182,10 @@
                     </slide>
                 </carousel>
             </div>
-            <router-link to="/projects" class="lg:hidden w-full">
+            <router-link
+                to="/projects"
+                class="lg:hidden w-full"
+            >
                 <button class="btn whitespace-nowrap !text-sm !px-2 mx-auto">
                     See more projects
                 </button>
