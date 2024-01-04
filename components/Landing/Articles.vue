@@ -27,18 +27,16 @@
         },
     ]);
 
-    // carousel settings
-    const settings = ref({
-        itemsToShow: 1.3,
-        snapAlign: "center",
-    });
-
     // breakpoints are mobile first
     // any settings not specified will fallback to the carousel settings
     const breakpoints = ref({
         // 1024 and up
         780: {
-            itemsToShow: 1.8,
+            itemsToShow: 1,
+            snapAlign: "start",
+        },
+        924: {
+            itemsToShow: 1.5,
             snapAlign: "start",
         },
         1024: {
@@ -89,19 +87,20 @@
                 <!-- Article List -->
                 <div class="w-full">
                     <carousel
-                        :settings="settings"
                         :breakpoints="breakpoints"
                         class="w-full mt-5 md:mt-10 mb-auto"
                     >
                         <slide
                             v-for="(article, i) in articles"
                             :key="i"
-                            class="px-0 md:px-3 xl:px-3 2xl:px-2 draggable"
+                            class="!mb-8 px-6 md:px-3 draggable"
                         >
                             <ArticleCard
                                 :articleContent="article"
-                            ></ArticleCard> </slide
-                    ></carousel>
+                            ></ArticleCard>
+                        </slide>
+                        <template #addons> <pagination /> </template>
+                    </carousel>
                 </div>
 
                 <a

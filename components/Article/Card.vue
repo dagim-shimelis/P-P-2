@@ -9,7 +9,7 @@
 
 <template>
     <div
-        class="h-full max-w-[420px] text-left border border-transparent hover:border-white/5 rounded-[20px]"
+        class="h-full max-w-[420px] text-left border border-white/5 lg:border-transparent hover:border-white/5 rounded-[20px]"
     >
         <!-- Image -->
         <img
