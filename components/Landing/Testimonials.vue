@@ -62,31 +62,35 @@
                         <slide
                             v-for="(testimonial, i) in testimonials"
                             :key="i"
-                            class="py-32 px-0 md:px-3 xl:px-3 2xl:px-2 draggable"
+                            class="py-32 px-16 xl:px-3 draggable mx-10 md:mx-0"
                         >
                             <div
-                                class="w-[800px] flex flex-col justify-center items-center gap-y-12"
+                                class="w-[800px] flex flex-col justify-center items-center gap-y-32 lg:gap-y-40"
                             >
                                 <div class="relative">
                                     <!-- route graphics -->
-                                    <div class="absolute -top-16 -left-10">
+                                    <div
+                                        class="absolute -top-16 lg:-top-24 -left-10"
+                                    >
                                         <img
                                             src="@/assets/image/graphic-lines/quotes-1.png"
                                             alt="graphic-lines-quotes-1"
                                             :draggable="false"
-                                            class="w-[100px] xl:w-[200px] 3xl:w-full"
+                                            class="w-[70px] 3xl:w-full"
                                         />
                                     </div>
-                                    <div class="absolute -bottom-10 -right-10">
+                                    <div
+                                        class="absolute -bottom-16 lg:-bottom-24 -right-10"
+                                    >
                                         <img
                                             src="@/assets/image/graphic-lines/quotes-2.png"
                                             alt="graphic-lines-quotes-2"
                                             :draggable="false"
-                                            class="w-[100px] xl:w-[200px] 3xl:w-full"
+                                            class="w-[70px] 3xl:w-full"
                                         />
                                     </div>
                                     <p
-                                        class="text-center text-base font-[200] leading-8 tracking-wider"
+                                        class="text-center text-sm lg:text-base font-[200] leading-8 tracking-wider"
                                     >
                                         {{ testimonials[0].testimony }}
                                     </p>
@@ -95,13 +99,17 @@
                                     <img
                                         :src="testimonials[0].image"
                                         alt=""
-                                        class="!w-[80px] h-[80px] rounded-full border border-white"
+                                        class="w-[50px] h-[50px] lg:!w-[80px] lg:h-[80px] rounded-full border border-white"
                                     />
-                                    <div>
-                                        <p class="font-[600] text-lg">
+                                    <div class="text-left">
+                                        <p
+                                            class="font-[600] text-base lg:text-lg"
+                                        >
                                             {{ testimonials[0].name }}
                                         </p>
-                                        <p class="font-[200]">
+                                        <p
+                                            class="text-sm lg:text-base font-[200]"
+                                        >
                                             {{ testimonials[0].title }}
                                         </p>
                                     </div>
@@ -120,7 +128,7 @@
         </div>
 
         <!-- /* ------------------------------ Graphic lines ----------------------------- */ -->
-        <div class="absolute top-0 right-0">
+        <div class="hidden lg:inline absolute top-0 right-0">
             <img
                 src="@/assets/image/graphic-lines/landing-4.png"
                 alt="graphic-lines-landing-4"
