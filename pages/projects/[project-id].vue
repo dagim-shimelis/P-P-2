@@ -39,40 +39,46 @@
                 <!-- Prev -->
                 <router-link
                     to="#"
-                    class="z-30 mix-blend-difference space-y-2 cursor-custom-pointer w-[300px]"
+                    class="z-30 mix-blend-difference space-y-4 cursor-custom-pointer w-[300px]"
                 >
                     <div class="flex items-center">
                         <Icon
-                            name="uil-arrow-left"
-                            class="tiny-icon"
+                            name="lucide:chevron-left"
+                            class="medium-icon md:tiny-icon"
                         />
-                        <p class="font-[100] text-xs tracking-widest">
+                        <p
+                            class="hidden md:inline font-[100] text-xs tracking-widest"
+                        >
                             Previous
                         </p>
                     </div>
-                    <p class="font-[200] text-lg">Sheger Gebeta</p>
+                    <p class="hidden md:inline font-[200] text-lg ml-5">
+                        Sheger Gebeta
+                    </p>
                 </router-link>
                 <!-- Current -->
-                <h1 class="text-2xl tracking-tight font-[600] dark:text-white">
+                <h1
+                    class="w-fit whitespace-nowrap md:text-2xl tracking-tight font-[600] dark:text-white"
+                >
                     HahuJobs Primary
                 </h1>
                 <!-- Next -->
                 <router-link
                     to="#"
-                    class="z-30 mix-blend-difference space-y-2 text-end cursor-custom-pointer w-[300px]"
+                    class="z-30 mix-blend-difference space-y-4 text-end cursor-custom-pointer w-[300px]"
                 >
                     <div class="flex items-center w-fit ml-auto">
                         <p
-                            class="font-[100] text-xs !mix-blend-difference tracking-widest"
+                            class="hidden md:inline font-[100] text-xs !mix-blend-difference tracking-widest"
                         >
                             Next
                         </p>
                         <Icon
-                            name="uil-arrow-right"
-                            class="tiny-icon mix-blend-difference"
+                            name="lucide:chevron-right"
+                            class="medium-icon md:tiny-icon mix-blend-difference"
                         />
                     </div>
-                    <p class="font-[200] text-lg">Kena</p>
+                    <p class="hidden md:inline font-[200] text-lg mr-5">Kena</p>
                 </router-link>
             </div>
             <!-- Main detail header -->
@@ -88,7 +94,7 @@
             <div
                 class="relative max-w-8xl pb-6 mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6"
             >
-                <dl class="relative flex flex-wrap h-14 overflow-hidden">
+                <dl class="relative flex flex-wrap h-14 overflow-hidden mt-8">
                     <div>
                         <dt class="project-info-title">Technologies</dt>
                         <dd class="project-info-value">
@@ -111,8 +117,8 @@
                     </div>
                 </dl>
                 <a
-                    aria-label="Visit Shopify"
-                    class="btn-small lg:!px-8 !text-center !w-full xs:!w-fit mt-4 xl:mt-8"
+                    aria-label="Visit site"
+                    class="btn-small lg:!px-8 !text-center !w-full sm:!w-fit mt-4 xl:mt-8 whitespace-nowrap !px-6"
                     href="https://www.hahu.jobs/"
                     >Go to website <span aria-hidden="true">→</span></a
                 >
@@ -139,7 +145,7 @@
             <!-- Mobile view section -->
             <div class="mb-32">
                 <ul
-                    class="h-full w-full mx-auto flex items-start justify-between"
+                    class="h-full w-full mx-auto flex items-start justify-between gap-8"
                 >
                     <li
                         v-for="(mobileProjectImage, i) in mobileProjectImages"
@@ -177,10 +183,10 @@
                 </li>
             </ul>
         </div>
-        <div class="w-full flex justify-end pr-14 mt-40">
+        <div class="w-full flex justify-center md:justify-end md:pr-14 mt-20 md:mt-40">
             <router-link
                 to="#top"
-                class="group ml-auto relative cursor-custom-pointer h-[70px]"
+                class="group w-fit relative cursor-custom-pointer h-[70px]"
             >
                 <img
                     src="@/assets/image/graphic-lines/arrow-4.png"
@@ -208,9 +214,9 @@
         @apply object-fill !h-full !w-full rounded-xl aspect-video overflow-clip;
     }
     .project-section-description {
-        @apply text-sm font-[200] mt-4 w-[50%] border-l pl-4;
+        @apply text-sm font-[200] mt-4 md:w-[50%] border-l pl-4;
     }
     .project-mobile-image {
-        @apply object-fill !h-[888px] !w-[444px] rounded-xl aspect-video overflow-clip;
+        @apply object-fill !h-full !w-[444px] rounded-md sm:rounded-xl overflow-clip;
     }
 </style>

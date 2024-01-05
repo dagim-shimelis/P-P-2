@@ -186,3 +186,6 @@ html.lenis {
 .tiny-icon {
     @apply w-4 h-4;
 }
+.medium-icon {
+    @apply w-6 h-6;
+}
