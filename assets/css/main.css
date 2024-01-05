@@ -169,7 +169,7 @@ html.lenis {
     @apply uppercase font-[600] text-5xl md:text-8xl w-fit;
 }
 .title-box {
-    @apply flex gap-x-6 items-end  mx-auto lg:mx-0 scale-90 sm:scale-100;
+    @apply flex !flex-col md:!flex-row !items-start md:!items-end !gap-y-2  gap-x-6 lg:mx-0 scale-90 sm:scale-100;
 }
 .title-underline {
     @apply w-[50%] md:w-fit;
