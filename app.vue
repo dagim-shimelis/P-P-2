@@ -51,6 +51,10 @@
         </div>
 
         <NuxtLayout>
+            <NuxtLoadingIndicator
+                height="5"
+                color="#eeeeee"
+            />
             <lenis>
                 <NuxtPage />
             </lenis>
