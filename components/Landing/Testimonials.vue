@@ -51,7 +51,7 @@
                                 class="title-underline"
                             />
                         </div>
-                        <p class="title-small">& Praises</p>
+                        <p class="title-small">From Clients & Colleagues </p>
                     </div>
                 </div>
                 <!-- Article List -->

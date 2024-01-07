@@ -40,7 +40,7 @@
         class="relative !h-20"
     >
         <div
-            class="fixed w-full !h-20 !z-50  from-black  via-black/90 via-30% to-transparent to-90% bg-gradient-to-b"
+            class="fixed w-full !h-20 !z-40 from-black via-black/90 via-30% to-transparent to-90% bg-gradient-to-b"
         >
             <div
                 class="side-space !h-20 flex items-center justify-between !pt-2"
@@ -58,7 +58,9 @@
                     />
                 </router-link>
                 <!-- /* ------------------------------- Desktop Nav ------------------------------ */ -->
-                <ul class="hidden lg:flex items-center gap-x-16 w-fit mx-auto !z-50">
+                <ul
+                    class="hidden lg:flex items-center gap-x-16 w-fit mx-auto !z-50"
+                >
                     <li
                         v-for="(navigator, i) in navigation"
                         :key="i"
@@ -82,7 +84,7 @@
                 <div class="lg:hidden ml-auto">
                     <button
                         @click="visibleSideNav = true"
-                        class="menu-button absolute top-3 sm:top-5 right-4 sm:right-8 z-50"
+                        class="menu-button absolute top-3 sm:top-5 right-4 sm:right-8 z-10"
                     >
                         <Icon
                             name="uil:bars"
@@ -97,7 +99,7 @@
                         <template #header>
                             <button
                                 @click="visibleSideNav = false"
-                                class="menu-button absolute top-3 sm:top-5 right-4 sm:right-8 z-50"
+                                class="menu-button absolute top-3 sm:top-5 right-4 sm:right-8 z-10"
                             >
                                 <Icon
                                     name="uil:multiply"
@@ -106,7 +108,7 @@
                             </button>
                         </template>
                         <nav
-                            class="absolute top-0 right-0 ml-auto w-full h-full bg-black p-6 flex flex-col justify-center gap-y-10"
+                            class="absolute top-0 right-0 ml-auto w-full h-screen bg-black p-6 md:pt-28 flex flex-col justify-center gap-y-10 overflow-y-scroll"
                         >
                             <NuxtLink
                                 @click="visibleSideNav = false"
@@ -135,19 +137,18 @@
                                     >
                                 </li>
                             </ul>
+                            <div class="!text-white mt-auto">
+                                <Footer></Footer>
+                            </div>
                             <!-- Graphic line -->
-                            <!-- <img
-                                src="/images/graphic-lines/crossed-line.png"
-                                alt=""
-                                class="absolute top-5 -left-5 z-20 -scale-y-100 -rotate-90"
-                                draggable="false"
-                            />
-                            <img
-                                src="/images/graphic-lines/ellipse-line.png"
-                                alt=""
-                                class="absolute bottom-0 left-0 z-20 scale-x-100"
-                                draggable="false"
-                            /> -->
+                            <div class="absolute top-0 left-0 z-40">
+                                <img
+                                    src="@/assets/image/graphic-lines/landing-4.png"
+                                    alt="graphic-lines-landing-4"
+                                    :draggable="false"
+                                    class="w-[100px] md:w-[200px] -scale-x-100"
+                                />
+                            </div>
                         </nav>
                     </Sidebar>
                 </div>
@@ -155,7 +156,7 @@
         </div>
 
         <!-- /* ------------------------------ Graphic lines ----------------------------- */ -->
-        <div class="absolute top-0 right-0 z-40">
+        <div class="absolute top-0 right-0 z-30">
             <img
                 src="@/assets/image/graphic-lines/landing-1.png"
                 alt="graphic-lines-landing-1"

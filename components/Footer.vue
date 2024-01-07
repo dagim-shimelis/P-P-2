@@ -51,7 +51,7 @@
                 </li>
             </ul>
             <p class="text-sm font-[200] text-center my-8 mb-4">
-                © 2023 Dagim Shimelis
+                © 2024 Dagim Shimelis
             </p>
         </div>
     </footer>
