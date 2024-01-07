@@ -31,7 +31,7 @@
 <template>
     <div
         id="top"
-        class="relative min-h-screen pt-14 !pb-[100px]"
+        class="relative min-h-screen pt-2 md:pt-16 !pb-[100px]"
     >
         <div class="side-space">
             <!-- navigator -->

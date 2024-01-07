@@ -67,6 +67,7 @@
                                 class="title-underline"
                             />
                         </div>
+                        <p class="title-small">I've Written</p>
                     </div>
                     <!-- Read All CTO -->
                     <a
@@ -106,7 +107,7 @@
                 <a
                     href="https://medium.com/@dagimshimelis1992"
                     target="_blank"
-                    class="md:hidden relative ml-12 mt-12 block space-y-1 group w-fit cursor-custom-pointer"
+                    class="md:hidden relative ml-12 my-12 block space-y-1 group w-fit cursor-custom-pointer"
                 >
                     <span class="text-base tracking-wider"
                         >See All Article</span

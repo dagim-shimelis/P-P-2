@@ -23,7 +23,7 @@
                 accept-charset="utf-8"
                 action="https://formspree.io/f/xgejjbzg"
                 method="post"
-                class="pb-36 md:pb-0 flex max-w-[900px] mx-auto flex-col items-center justify-center !mt-24 gap-y-16 md:gap-y-32"
+                class="pb-36 lg:pb-60 4xl:pb-0 flex max-w-[900px] mx-auto flex-col items-center justify-center !mt-24 gap-y-16 md:gap-y-32"
             >
                 <div class="flex flex-col md:flex-row gap-16 w-full">
                     <input

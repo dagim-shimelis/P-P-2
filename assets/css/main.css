@@ -161,15 +161,14 @@ html.lenis {
     @apply flex items-center justify-center gap-x-4 bg-white border border-black rounded-md  hover:font-[300] px-20 py-3 text-black  tracking-widest cursor-custom-pointer hover:bg-black hover:text-white font-[600];
 }
 
-/* TODO Remove class and related elements if not used */
 .title-small {
-    @apply text-sm font-[200] whitespace-nowrap hidden;
+    @apply text-sm font-[200] whitespace-nowrap;
 }
 .title-big {
-    @apply uppercase font-[600] text-5xl md:text-8xl w-fit;
+    @apply uppercase font-[600] text-4xl 2xs:text-5xl md:text-8xl w-fit;
 }
 .title-box {
-    @apply flex !flex-col md:!flex-row !items-start md:!items-end !gap-y-2  gap-x-6 lg:mx-0 scale-90 sm:scale-100;
+    @apply flex !flex-col md:!flex-row !items-start md:!items-end !gap-y-2  gap-x-6 lg:mx-0 sm:scale-100;
 }
 .title-underline {
     @apply w-[50%] md:w-fit;

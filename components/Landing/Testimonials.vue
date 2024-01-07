@@ -51,6 +51,7 @@
                                 class="title-underline"
                             />
                         </div>
+                        <p class="title-small">& Praises</p>
                     </div>
                 </div>
                 <!-- Article List -->

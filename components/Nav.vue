@@ -1,4 +1,5 @@
 <script setup>
+    const route = useRoute();
     const navigation = ref([
         {
             name: "home",
@@ -23,6 +24,14 @@
     ]);
 
     const visibleSideNav = ref(false);
+    const shrinkGraphicLine = ref(false);
+
+    watch(
+        () => route.params?.projectid,
+        (newValue, _) => {
+            shrinkGraphicLine.value = Boolean(newValue);
+        },
+    );
 </script>
 
 <template>
@@ -34,14 +43,17 @@
             class="side-space !h-20 !z-50 flex items-center justify-between !pt-10"
         >
             <!-- Logo -->
-            <div class="absolute top-2 sm:top-4">
+            <router-link
+                to="/"
+                class="absolute top-2 sm:top-4"
+            >
                 <img
                     src="/icons/logo.png"
                     alt="logo"
                     class="w-10 lg:w-[60px]"
                     draggable="false"
                 />
-            </div>
+            </router-link>
             <!-- /* ------------------------------- Desktop Nav ------------------------------ */ -->
             <ul class="hidden lg:flex items-center gap-x-16 w-fit mx-auto">
                 <li
@@ -143,6 +155,7 @@
                 alt="graphic-lines-landing-1"
                 :draggable="false"
                 class="w-[400px]"
+                :class="shrinkGraphicLine && '!w-[200px]'"
             />
         </div>
     </header>

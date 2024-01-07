@@ -73,7 +73,7 @@
             </div>
             <!-- About Content -->
             <div
-                class="flex flex-col gap-y-16 justify-center lg:justify-start mx-auto mt-32 lg:mt-0 w-fit"
+                class="flex flex-col gap-y-8 sm:gap-y-16 justify-center lg:justify-start mx-auto mt-32 lg:mt-0 w-fit"
             >
                 <!-- Title -->
                 <div class="title-box">
