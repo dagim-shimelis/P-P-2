@@ -10,10 +10,11 @@
                 return projects[i];
             }
         }
-        // TODO: Route to 404 page
-        return null; // Return null if project with given title is not found
+        navigateTo("/404");
     }
-    const project = findProjectByTitle(route.params.projectid);
+    const project = computed(() => {
+        return findProjectByTitle(route.params.projectid);
+    });
 
     onMounted(() => {
         console.log("projects detail page has mounted");
@@ -107,7 +108,12 @@
                     <div class="project-info-divider">
                         <dt class="project-info-title">URL</dt>
                         <dd class="project-info-value">
-                            <a :href="project.link">{{ project.shortLink }}</a>
+                            <a
+                                :href="project.link"
+                                target="_blank"
+                                class="cursor-custom-pointer"
+                                >{{ project.shortLink }}
+                            </a>
                         </dd>
                     </div>
                 </dl>
@@ -115,6 +121,7 @@
                     aria-label="Visit site"
                     class="btn-small lg:!px-8 !text-center !w-full sm:!w-fit mt-4 xl:mt-8 whitespace-nowrap !px-6"
                     :href="project.link"
+                    target="_blank"
                     >Go to website <span aria-hidden="true">→</span></a
                 >
             </div>
