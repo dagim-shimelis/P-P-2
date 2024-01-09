@@ -1,44 +1,6 @@
 <script setup>
     import { Vue3Marquee } from "vue3-marquee";
-
-    const companies = ref([
-        {
-            image: "/images/companies/hahujobs.png",
-            name: "HahuJobs",
-        },
-        {
-            image: "/images/companies/snv.png",
-            name: "SNV",
-        },
-        {
-            image: "/images/companies/first_consult.png",
-            name: "First Consult",
-        },
-        {
-            image: "/images/companies/eyea.png",
-            name: "EYEA",
-        },
-        {
-            image: "/images/companies/minab.png",
-            name: "Minab IT Solutions",
-        },
-        {
-            image: "/images/companies/kena.png",
-            name: "Kena",
-        },
-        {
-            image: "/images/companies/mesmer.png",
-            name: "Mesmer",
-        },
-        {
-            image: "/images/companies/shabaka.png",
-            name: "Shabaka",
-        },
-        {
-            image: "/images/companies/plan_international.png",
-            name: "Plan International",
-        },
-    ]);
+    import companies from "@/data/companies.json";
 </script>
 
 <template>

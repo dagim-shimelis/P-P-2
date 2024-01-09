@@ -1,30 +1,7 @@
 <script setup>
     import { Carousel, Slide, Pagination } from "vue3-carousel";
     import "vue3-carousel/dist/carousel.css";
-
-    const testimonials = ref([
-        {
-            testimony:
-                "“Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo fassasd dasaw rsasgvas.”",
-            image: "/images/testimony/TEMP-profile-image.png",
-            name: "Darren Dunlap",
-            title: "CEO & Founder at company",
-        },
-        {
-            testimony:
-                "“Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo fassasd dasaw rsasgvas.”",
-            image: "/images/testimony/TEMP-profile-image.png",
-            name: "Darren Dunlap",
-            title: "CEO & Founder at company",
-        },
-        {
-            testimony:
-                "“Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo fassasd dasaw rsasgvas.”",
-            image: "/images/testimony/TEMP-profile-image.png",
-            name: "Darren Dunlap",
-            title: "CEO & Founder at company",
-        },
-    ]);
+    import testimonials from "@/data/testimonials.json";
 
     // carousel settings
     const settings = ref({
@@ -51,7 +28,7 @@
                                 class="title-underline"
                             />
                         </div>
-                        <p class="title-small">From Clients & Colleagues </p>
+                        <p class="title-small">From Clients & Colleagues</p>
                     </div>
                 </div>
                 <!-- Article List -->

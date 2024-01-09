@@ -3,6 +3,7 @@
     import { ScrollTrigger } from "gsap/ScrollTrigger";
     import { Carousel, Slide, Pagination } from "vue3-carousel";
     import "vue3-carousel/dist/carousel.css";
+    import projects from "@/data/landing-projects.json";
     gsap.registerPlugin(ScrollTrigger);
 
     // carousel settings
@@ -25,34 +26,6 @@
             snapAlign: "start",
         },
     });
-
-    const projects = ref([
-        {
-            name: "HahuJobs Primary",
-            link: "/projects/hahujobs-primary",
-            thumbnailImage: "/images/projects/1.png",
-        },
-        {
-            name: "Kena",
-            link: "/projects/hahujobs-primary",
-            thumbnailImage: "/images/projects/2.png",
-        },
-        {
-            name: "Awaqi Centers",
-            link: "/projects/hahujobs-primary",
-            thumbnailImage: "/images/projects/3.png",
-        },
-        {
-            name: "Sheger Gebeta",
-            link: "/projects/hahujobs-primary",
-            thumbnailImage: "/images/projects/4.png",
-        },
-        {
-            name: "More Projects",
-            link: "/projects",
-            thumbnailImage: "/images/projects/1.png",
-        },
-    ]);
 
     onMounted(() => {
         /* ---------------------------- Projects Section ---------------------------- */

@@ -1,26 +1,19 @@
 <script setup>
-    const projectSections = ref([
-        {
-            image: "/images/projects/hahujobs-primary/filtered.png",
-            description:
-                "Advanced filters to help users accurately search for jobs that fit their needs.",
-        },
-        {
-            image: "/images/projects/hahujobs-primary/tour-guide.png",
-            description:
-                "A tour guide to help new users navigate the site and use everything it has to offer",
-        },
-        {
-            image: "/images/projects/hahujobs-primary/for-you.png",
-            description:
-                "A list of recommended jobs that match the users profile",
-        },
-    ]);
-    const mobileProjectImages = ref([
-        "/images/projects/hahujobs-primary/m-landing.png",
-        "/images/projects/hahujobs-primary/m-profile.png",
-        "/images/projects/hahujobs-primary/m-calendar.png",
-    ]);
+    import projects from "@/data/projects-detail.json";
+
+    const route = useRoute();
+
+    // Function to find a project by its title
+    function findProjectByTitle(id) {
+        for (let i = 0; i < projects.length; i++) {
+            if (projects[i].id === id) {
+                return projects[i];
+            }
+        }
+        // TODO: Route to 404 page
+        return null; // Return null if project with given title is not found
+    }
+    const project = findProjectByTitle(route.params.projectid);
 
     onMounted(() => {
         console.log("projects detail page has mounted");
@@ -38,7 +31,7 @@
             <div class="flex items-end justify-between">
                 <!-- Prev -->
                 <router-link
-                    to="#"
+                    :to="project.previousProject.link"
                     class="z-30 mix-blend-difference space-y-4 cursor-custom-pointer w-[300px]"
                 >
                     <div class="flex items-center">
@@ -53,18 +46,18 @@
                         </p>
                     </div>
                     <p class="hidden md:inline font-[200] text-lg ml-5">
-                        Sheger Gebeta
+                        {{ project.previousProject.name }}
                     </p>
                 </router-link>
                 <!-- Current -->
                 <h1
                     class="w-fit whitespace-nowrap md:text-2xl tracking-tight font-[600] dark:text-white"
                 >
-                    HahuJobs Primary
+                    {{ project.title }}
                 </h1>
                 <!-- Next -->
                 <router-link
-                    to="#"
+                    :to="project.nextProject.link"
                     class="z-30 mix-blend-difference space-y-4 text-end cursor-custom-pointer w-[300px]"
                 >
                     <div class="flex items-center w-fit ml-auto">
@@ -78,13 +71,15 @@
                             class="medium-icon md:tiny-icon mix-blend-difference"
                         />
                     </div>
-                    <p class="hidden md:inline font-[200] text-lg mr-5">Kena</p>
+                    <p class="hidden md:inline font-[200] text-lg mr-5">
+                        {{ project.nextProject.name }}
+                    </p>
                 </router-link>
             </div>
             <!-- Main detail header -->
             <div class="!mt-4">
                 <img
-                    src="/images/projects/hahujobs-primary/landing.png"
+                    :src="project.thumbnailImage"
                     alt="project screenshot"
                     :draggable="false"
                     class="object-fill !h-full !w-full rounded-xl aspect-video overflow-clip"
@@ -98,28 +93,28 @@
                     <div>
                         <dt class="project-info-title">Technologies</dt>
                         <dd class="project-info-value">
-                            Next/Vue, Apollo, Tailwind
+                            {{ project.technologies.join(", ") }}
                         </dd>
                     </div>
                     <div class="project-info-divider">
                         <dt class="project-info-title">Date</dt>
                         <dd class="project-info-value">
-                            <time datetime="2023-01-31T00:00:00.000Z"
-                                >January 31, 2023</time
-                            >
+                            <time datetime="2023-01-31T00:00:00.000Z">{{
+                                project.date
+                            }}</time>
                         </dd>
                     </div>
                     <div class="project-info-divider">
                         <dt class="project-info-title">URL</dt>
                         <dd class="project-info-value">
-                            <a href="https://www.hahu.jobs/">hahu.jobs</a>
+                            <a :href="project.link">{{ project.shortLink }}</a>
                         </dd>
                     </div>
                 </dl>
                 <a
                     aria-label="Visit site"
                     class="btn-small lg:!px-8 !text-center !w-full sm:!w-fit mt-4 xl:mt-8 whitespace-nowrap !px-6"
-                    href="https://www.hahu.jobs/"
+                    :href="project.link"
                     >Go to website <span aria-hidden="true">→</span></a
                 >
             </div>
@@ -130,15 +125,11 @@
                 <h2
                     class="mt-4 max-w-5xl text-3xl sm:text-6xl tracking-tight font-bold text-white"
                 >
-                    HahuJobs Primary
+                    {{ project.title }}
                 </h2>
                 <div class="mt-4 max-w-3xl font-[200]">
                     <p>
-                        With over a thousand vacancies from 15 different sectors
-                        hahujobs primary is the ideal place to find the perfect
-                        job for job seekers. It offers customized profile that
-                        is caters to land anyone a job in their felid of
-                        expertise
+                        {{ project.description }}
                     </p>
                 </div>
             </div>
@@ -148,12 +139,14 @@
                     class="h-full w-full mx-auto flex items-start justify-between gap-8"
                 >
                     <li
-                        v-for="(mobileProjectImage, i) in mobileProjectImages"
+                        v-for="(
+                            mobilePreviewImage, i
+                        ) in project.mobilePreviewImages"
                         :key="i"
                         class="h-full"
                     >
                         <img
-                            :src="mobileProjectImage"
+                            :src="mobilePreviewImage"
                             alt="project screenshot"
                             :draggable="false"
                             class="project-mobile-image"
@@ -161,29 +154,30 @@
                     </li>
                 </ul>
                 <p class="project-section-description">
-                    Every webpage is carefully made to be responsive for all
-                    devices.
+                    {{ project.mobilePreviewDescription }}
                 </p>
             </div>
             <!-- Feature section -->
             <ul class="flex flex-col gap-y-32 justify-start">
                 <li
-                    v-for="(projectSection, i) in projectSections"
+                    v-for="(featurePreview, i) in project.featurePreviews"
                     :key="i"
                 >
                     <img
-                        :src="projectSection.image"
+                        :src="featurePreview.image"
                         alt="project screenshot"
                         :draggable="false"
                         class="project-section-image"
                     />
                     <p class="project-section-description">
-                        {{ projectSection.description }}
+                        {{ featurePreview.description }}
                     </p>
                 </li>
             </ul>
         </div>
-        <div class="w-full flex justify-center md:justify-end md:pr-14 mt-20 md:mt-40">
+        <div
+            class="w-full flex justify-center md:justify-end md:pr-14 mt-20 md:mt-40"
+        >
             <router-link
                 to="#top"
                 class="group w-fit relative cursor-custom-pointer h-[70px]"

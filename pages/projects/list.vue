@@ -1,30 +1,5 @@
 <script setup>
-    const projects = ref([
-        {
-            name: "HahuJobs Primary",
-            link: "/projects/hahujobs-primary",
-            thumbnailImage: "/images/projects/1.png",
-            cardDescription: "Job market provider for job seekers",
-        },
-        {
-            name: "Kena",
-            link: "/projects/hahujobs-primary",
-            thumbnailImage: "/images/projects/2.png",
-            cardDescription: "Youth support organization",
-        },
-        {
-            name: "Awaqi Centers",
-            link: "/projects/hahujobs-primary",
-            thumbnailImage: "/images/projects/3.png",
-            cardDescription: "Information site for Awaqi Centers",
-        },
-        {
-            name: "Sheger Gebeta",
-            link: "/projects/hahujobs-primary",
-            thumbnailImage: "/images/projects/4.png",
-            cardDescription: "Site for foodies and chefs",
-        },
-    ]);
+    import projects from "@/data/projects-list.json";
 </script>
 
 <template>
@@ -42,7 +17,9 @@
                 </div>
                 <p class="font-[200]">I've worked on</p>
             </div>
-            <p class="mt-10 text-left lg:text-center mx-auto lg:w-[800px] font-[200] leading-8">
+            <p
+                class="mt-10 text-left lg:text-center mx-auto lg:w-[800px] font-[200] leading-8"
+            >
                 As you explore the projects, you'll see the diverse range of
                 work I've undertaken, from dynamic web apps to static landing
                 pages. Each project tells a unique story of challenges met,

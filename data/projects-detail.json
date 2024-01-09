@@ -1,0 +1,65 @@
+[
+    {
+        "id": "hahujobs-primary",
+        "title": "HahuJobs Primary",
+        "previousProject": {
+            "name": "Sheger Gebeta",
+            "link": "/projects/sheger-gebeta"
+        },
+        "nextProject": {
+            "name": "Kena",
+            "link": "/projects/kena"
+        },
+        "thumbnailImage": "/images/projects/hahujobs-primary/landing.png",
+        "technologies": ["Next/Vue", "Apollo", "Tailwind"],
+        "date": "January 31, 2023",
+        "link": "https://www.hahu.jobs/",
+        "shortLink": "hahu.jobs",
+        "description": "With over a thousand vacancies from 15 different sectors hahujobs primary is the ideal place to find the perfect job for job seekers. It offers customized profile that is caters to land anyone a job in their felid of expertise",
+        "mobilePreviewImages": [
+            "/images/projects/hahujobs-primary/m-landing.png",
+            "/images/projects/hahujobs-primary/m-profile.png",
+            "/images/projects/hahujobs-primary/m-calendar.png"
+        ],
+        "mobilePreviewDescription": "Every webpage is carefully made to be responsive for all devices.",
+        "featurePreviews": [
+            {
+                "image": "/images/projects/hahujobs-primary/filtered.png",
+                "description": "Advanced filters to help users accurately search for jobs that fit their needs."
+            },
+            {
+                "image": "/images/projects/hahujobs-primary/tour-guide.png",
+                "description": "A tour guide to help new users navigate the site and use everything it has to offer"
+            },
+            {
+                "image": "/images/projects/hahujobs-primary/for-you.png",
+                "description": "A list of recommended jobs that match the users profile"
+            }
+        ]
+    },
+    {
+        "id": "boilerplate",
+        "title": "",
+        "previousProject": {
+            "name": "",
+            "link": ""
+        },
+        "nextProject": {
+            "name": "",
+            "link": ""
+        },
+        "thumbnailImage": "",
+        "technologies": [""],
+        "date": "",
+        "link": "",
+        "description": "",
+        "mobilePreviewImages": [""],
+        "mobilePreviewDescription": "",
+        "featurePreviews": [
+            {
+                "image": "",
+                "description": ""
+            }
+        ]
+    }
+]
