@@ -41,11 +41,15 @@
 
     <div class="h-full overflow-y-clip">
         <Landing-Hero />
+        
         <Landing-About id="about" />
         <Landing-Projects id="projects" />
+        <Landing-UnderDevelopmentModal />
         <Landing-Testimonials id="testimonials" />
         <Landing-Articles id="articles" />
         <Landing-Contact id="contact" />
+
+        <!-- Under development modal -->
     </div>
 </template>
 
