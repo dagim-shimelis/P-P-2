@@ -59,6 +59,7 @@
                 <NuxtPage />
             </lenis>
             <div
+                v-if="useRuntimeConfig().public.mode == 'development'"
                 class="fixed px-3 py-2 text-sm font-bold text-white bg-gray-900 rounded bottom-4 left-4 z-50"
             >
                 <span class="hidden 2xs:inline-block xs:hidden">2XS</span>

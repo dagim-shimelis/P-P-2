@@ -43,6 +43,11 @@ export default defineNuxtConfig({
             scrollBehaviorType: "smooth",
         },
     },
+    runtimeConfig: {
+        public: {
+            mode: process.env.MODE,
+        },
+    },
 
     app: {
         // pageTransition: {
