@@ -35,6 +35,24 @@
                 },
                 "-=0.8",
             );
+
+        /* --------------------------------- Cursor --------------------------------- */
+        const cursor = document.querySelector(".cursor");
+        document.addEventListener("mousemove", (e) => {
+            let leftPosition = e.clientX + 11;
+            let topPosition = e.clientY + 11;
+
+            cursor.animate(
+                {
+                    left: `${leftPosition}px`,
+                    top: `${topPosition}px`,
+                },
+                {
+                    duration: 500,
+                    fill: "forwards",
+                },
+            );
+        });
     });
 </script>
 
@@ -50,6 +68,9 @@
             <div class="blinder blinder-b"></div>
         </div>
 
+        <div class="cursor !hidden md:!inline">
+            <div class="w-7 h-7 rounded-full bg-white/30 mix-blend-difference"></div>
+        </div>
         <NuxtLayout>
             <NuxtLoadingIndicator
                 height="5"

@@ -8,16 +8,16 @@
 
 @layer components {
     .cursor-custom {
-        cursor: url("../image/graphic-lines/cursor/default.png"), auto !important;
+        cursor: url("../image/graphic-lines/cursor/dot.png"), auto !important;
     }
     .cursor-custom-pointer {
-        cursor: url("../image/graphic-lines/cursor/pointer.png"), auto !important;
+        cursor: url("../image/graphic-lines/cursor/dot.png"), auto !important;
     }
     .cursor-custom-grab {
-        cursor: url("../image/graphic-lines/cursor/default-big.png"), auto !important;
+        cursor: url("../image/graphic-lines/cursor/dot.png"), auto !important;
     }
     .cursor-custom-grabbing {
-        cursor: url("../image/graphic-lines/cursor/default.png"), auto !important;
+        cursor: url("../image/graphic-lines/cursor/dot.png"), auto !important;
     }
 }
 
@@ -187,4 +187,16 @@ html.lenis {
 }
 .medium-icon {
     @apply w-6 h-6;
+}
+
+/* --------------------------------- Cursor --------------------------------- */
+.cursor {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    z-index: 50;
+    left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: width 1000ms, height 1000ms;
 }
