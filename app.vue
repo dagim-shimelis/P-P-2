@@ -38,9 +38,10 @@
 
         /* --------------------------------- Cursor --------------------------------- */
         const cursor = document.querySelector(".cursor");
+        const cursorF = document.querySelector(".cursor-f");
         document.addEventListener("mousemove", (e) => {
-            let leftPosition = e.clientX + 11;
-            let topPosition = e.clientY + 11;
+            let leftPosition = e.clientX;
+            let topPosition = e.clientY;
 
             cursor.animate(
                 {
@@ -52,6 +53,18 @@
                     fill: "forwards",
                 },
             );
+            cursorF.style.left = `${leftPosition + 8}px`;
+            cursorF.style.top = `${topPosition + 8}px`;
+            // cursorF.animate(
+            //     {
+            //         left: `${leftPosition + 8}px`,
+            //         top: `${topPosition + 8}px`,
+            //     },
+            //     {
+            //         duration: 0,
+            //         fill: "forwards",
+            //     },
+            // );
         });
     });
 </script>
@@ -68,9 +81,8 @@
             <div class="blinder blinder-b"></div>
         </div>
 
-        <div class="cursor !hidden md:!inline">
-            <div class="w-7 h-7 rounded-full bg-white/30 mix-blend-difference"></div>
-        </div>
+        <div class="cursor !hidden md:!inline"></div>
+        <div class="cursor-f !hidden md:!inline"></div>
         <NuxtLayout>
             <NuxtLoadingIndicator
                 height="5"

@@ -8,16 +8,16 @@
 
 @layer components {
     .cursor-custom {
-        cursor: url("../image/graphic-lines/cursor/dot.png"), auto !important;
+        cursor: url("../image/graphic-lines/cursor/dummy-cursor-white.png"), auto !important;
     }
     .cursor-custom-pointer {
-        cursor: url("../image/graphic-lines/cursor/dot.png"), auto !important;
+        cursor: url("../image/graphic-lines/cursor/dummy-cursor-white.png"), auto !important;
     }
     .cursor-custom-grab {
-        cursor: url("../image/graphic-lines/cursor/dot.png"), auto !important;
+        cursor: url("../image/graphic-lines/cursor/dummy-cursor-white.png"), auto !important;
     }
     .cursor-custom-grabbing {
-        cursor: url("../image/graphic-lines/cursor/dot.png"), auto !important;
+        cursor: url("../image/graphic-lines/cursor/dummy-cursor-white.png"), auto !important;
     }
 }
 
@@ -89,14 +89,14 @@ html.lenis {
 .center-content {
     margin: 0 auto !important;
 }
-
+/* 
 .draggable:hover {
     @apply cursor-custom-grab;
 }
 
 .draggable:active {
     @apply cursor-custom-grabbing;
-}
+} */
 
 .side-space {
     @apply md:max-w-[1650px] mx-auto h-full w-full px-4 sm:px-10;
@@ -155,10 +155,10 @@ html.lenis {
 }
 
 .btn {
-    @apply flex items-center justify-center gap-x-4 bg-black border border-white rounded-md font-[300] px-20 py-3 text-white  tracking-widest cursor-custom-pointer hover:bg-white hover:text-black hover:font-[600];
+    @apply flex items-center justify-center gap-x-4 bg-black border border-white rounded-md font-[300] px-20 py-3 text-white  tracking-widest hover:bg-white hover:text-black hover:font-[600];
 }
 .btn-inverse {
-    @apply flex items-center justify-center gap-x-4 bg-white border border-black rounded-md  hover:font-[300] px-20 py-3 text-black  tracking-widest cursor-custom-pointer hover:bg-black hover:text-white font-[600];
+    @apply flex items-center justify-center gap-x-4 bg-white border border-black rounded-md  hover:font-[300] px-20 py-3 text-black  tracking-widest hover:bg-black hover:text-white font-[600];
 }
 
 .title-small {
@@ -192,11 +192,28 @@ html.lenis {
 /* --------------------------------- Cursor --------------------------------- */
 .cursor {
     position: fixed;
-    width: 40px;
-    height: 40px;
-    z-index: 50;
+    width: 35px;
+    height: 35px;
+    z-index: 888;
+    border-width: 1px;
+    border-color: white;
+    border-radius: 9999px;
     left: 0;
     transform: translate(-50%, -50%);
     pointer-events: none;
     transition: width 1000ms, height 1000ms;
+    mix-blend-mode: difference;
+}
+.cursor-f {
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    z-index: 999;
+    background: white;
+    border-radius: 9999px;
+    left: 0;
+    pointer-events: none;
+    transform: translate(-100%, -100%);
+    transition: width 1000ms, height 1000ms;
+    mix-blend-mode: difference;
 }
