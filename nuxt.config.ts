@@ -6,6 +6,9 @@ export default defineNuxtConfig({
     build: {
         transpile: ["primevue"],
     },
+    image: {
+        inject: true,
+    },
     modules: [
         "@nuxtjs/tailwindcss",
         "@nuxtjs/apollo",
@@ -13,6 +16,7 @@ export default defineNuxtConfig({
         "@pinia/nuxt",
         "nuxt-icon",
         "nuxt-lenis",
+        "@nuxt/image",
     ],
     colorMode: {
         preference: "system", // default value of $colorMode.preference

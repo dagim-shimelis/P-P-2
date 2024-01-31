@@ -17,7 +17,6 @@
     });
 
     onMounted(() => {
-        console.log("projects detail page has mounted");
         window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scrolling
     });
 </script>
@@ -83,7 +82,7 @@
                     :src="project.thumbnailImage"
                     alt="project screenshot"
                     :draggable="false"
-                    class="object-fill !h-full !w-full rounded-xl aspect-video overflow-clip"
+                    class="project-section-image"
                 />
             </div>
             <!-- Main detail info -->
@@ -143,7 +142,7 @@
             <!-- Mobile view section -->
             <div class="mb-32">
                 <ul
-                    class="h-full w-full mx-auto flex items-start justify-between gap-8"
+                    class="h-full w-full mx-auto grid grid-cols-3 items-start justify-between gap-8"
                 >
                     <li
                         v-for="(
@@ -170,12 +169,14 @@
                     v-for="(featurePreview, i) in project.featurePreviews"
                     :key="i"
                 >
-                    <img
-                        :src="featurePreview.image"
-                        alt="project screenshot"
-                        :draggable="false"
-                        class="project-section-image"
-                    />
+                    <div>
+                        <img
+                            :src="featurePreview.image"
+                            alt="project screenshot"
+                            :draggable="false"
+                            class="project-section-image"
+                        />
+                    </div>
                     <p class="project-section-description">
                         {{ featurePreview.description }}
                     </p>
@@ -212,12 +213,12 @@
         @apply border-l border-slate-500/10 dark:border-slate-400/10 ml-6 pl-6 lg:ml-8 lg:pl-8;
     }
     .project-section-image {
-        @apply object-fill !h-full !w-full rounded-xl aspect-video overflow-clip;
+        @apply object-fill !h-full !w-full rounded-xl aspect-video overflow-clip bg-white/5;
     }
     .project-section-description {
         @apply text-sm font-[200] mt-4 md:w-[50%] border-l pl-4;
     }
     .project-mobile-image {
-        @apply object-fill !h-full !w-[444px] rounded-md sm:rounded-xl overflow-clip;
+        @apply object-fill !h-full !w-[444px] rounded-md sm:rounded-xl overflow-clip bg-white/5 aspect-[9/16];
     }
 </style>

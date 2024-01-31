@@ -24,14 +24,6 @@
     ]);
 
     const visibleSideNav = ref(false);
-    const shrinkGraphicLine = ref(false);
-
-    watch(
-        () => route.params?.projectid,
-        (newValue, _) => {
-            shrinkGraphicLine.value = Boolean(newValue);
-        },
-    );
 </script>
 
 <template>
@@ -162,7 +154,7 @@
                 alt="graphic-lines-landing-1"
                 :draggable="false"
                 class="w-[400px]"
-                :class="shrinkGraphicLine && '!w-[200px]'"
+                :class="route.params?.projectid && '!w-[200px]'"
             />
         </div>
     </header>

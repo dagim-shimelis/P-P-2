@@ -104,7 +104,7 @@
                     v-for="(project, i) in projects"
                     :key="i"
                     :to="project.link"
-                    class="relative hidden lg:inline !w-[80vw] rounded-xl overflow-clip cursor-custom-pointer"
+                    class="relative hidden lg:inline !w-[80vw] rounded-xl overflow-clip cursor-custom-pointer scale-90"
                 >
                     <p class="text-end text-3xl font-[600] mb-3">
                         {{ project.name }}
@@ -114,7 +114,7 @@
                         :src="project.thumbnailImage"
                         alt="project screenshot"
                         :draggable="false"
-                        class="object-fill !h-full !w-full rounded-xl overflow-clip"
+                        class="object-fill !h-full !w-full rounded-xl overflow-clip bg-white/5 aspect-video"
                     />
                     <div
                         v-if="i == projects.length - 1"

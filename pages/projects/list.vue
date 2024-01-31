@@ -36,7 +36,7 @@
                         :src="project.thumbnailImage"
                         alt="project screenshot"
                         :draggable="false"
-                        class="object-fill !w-full rounded-xl overflow-clip aspect-video"
+                        class="object-fill !w-full rounded-xl overflow-clip aspect-video bg-white/5"
                     />
                     <p class="ml-4 text-2xl mt-6 font-[200]">
                         {{ project.name }}
