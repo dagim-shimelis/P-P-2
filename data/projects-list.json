@@ -2,19 +2,61 @@
     {
         "name": "HahuJobs Primary",
         "link": "https://hahu.jobs",
-        "thumbnailImage": "/images/projects/1.png",
+        "thumbnailImage": "/images/projects/hahu-jobs-primary.png",
         "cardDescription": "Job market provider for job seekers"
+    },
+    {
+        "name": "HahuJobs Enterprise",
+        "link": "https://enterprise.hahu.jobs/",
+        "thumbnailImage": "/images/projects/hahu-jobs-enterprise.png",
+        "cardDescription": "HR platform for job providers"
     },
     {
         "name": "Kena",
         "link": "https://kena.eyea.et",
-        "thumbnailImage": "/images/projects/2.png",
+        "thumbnailImage": "/images/projects/kena.png",
         "cardDescription": "Youth support organization"
     },
     {
         "name": "Awaqi Centers",
         "link": "https://awaqi-centers.bridges-fc.com/",
-        "thumbnailImage": "/images/projects/3.png",
+        "thumbnailImage": "/images/projects/awaqi.png",
         "cardDescription": "Information site for Awaqi Centers"
+    },
+    {
+        "name": "Philia",
+        "link": "https://wearephilia.com/",
+        "thumbnailImage": "/images/projects/philia.png",
+        "cardDescription": "Philia is a social sharing app for increased productivity and improved mental health."
+    },
+    {
+        "name": "Foundo",
+        "link": "https://foundo-web-client.vercel.app",
+        "thumbnailImage": "/images/projects/foundo.png",
+        "cardDescription": "Company website for a visa provider located in london"
+    },
+    {
+        "name": "RAYEE SNV",
+        "link": "https://www.rayeesnv.com/",
+        "thumbnailImage": "/images/projects/snv.png",
+        "cardDescription": "Digital data management system for RAYEE"
+    },
+    {
+        "name": "Bridge",
+        "link": "https://bridges-fc.com/",
+        "thumbnailImage": "/images/projects/bridge.png",
+        "cardDescription": "This platform is built to provide a multi-tier reporting and data tracking for the bridges programme."
+    },
+    {
+        "name": "Mesmer",
+        "link": "https://ethiomesmer.com/",
+        "thumbnailImage": "/images/projects/mesmer.png",
+        "cardDescription": "MESMER offers MSME loans with lower interest rate and flexible collateral requirements."
+    },
+    {
+        "name": "Venture Meda",
+        "link": "https://app.venturemeda.com/",
+        "thumbnailImage": "/images/projects/venture-meda.png",
+        "cardDescription": "This platform is built to facilitate a multi-tier reporting and data tracking for the Venture Meda program."
     }
 ]

@@ -2,21 +2,21 @@
     {
         "name": "HahuJobs Primary",
         "link": "https://hahu.jobs",
-        "thumbnailImage": "/images/projects/1.png"
+        "thumbnailImage": "/images/projects/hahu-jobs-primary.png"
     },
     {
         "name": "Kena",
         "link": "https://kena.eyea.et",
-        "thumbnailImage": "/images/projects/2.png"
+        "thumbnailImage": "/images/projects/kena.png"
     },
     {
         "name": "Awaqi Centers",
         "link": "https://awaqi-centers.bridges-fc.com/",
-        "thumbnailImage": "/images/projects/3.png"
+        "thumbnailImage": "/images/projects/awaqi.png"
     },
     {
         "name": "More Projects",
         "link": "/projects",
-        "thumbnailImage": "/images/projects/1.png"
+        "thumbnailImage": "/images/projects/foundo.png"
     }
 ]

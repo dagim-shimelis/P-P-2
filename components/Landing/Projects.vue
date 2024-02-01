@@ -147,7 +147,7 @@
                                 @click.stop="router.push('/projects/list')"
                             >
                                 <p class="title-big">+7</p>
-                                <button class="btn-inverse">
+                                <button class="btn">
                                     See more projects
                                 </button>
                             </div>
