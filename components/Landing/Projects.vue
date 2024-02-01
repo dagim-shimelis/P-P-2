@@ -6,6 +6,7 @@
     import projects from "@/data/landing-projects.json";
     gsap.registerPlugin(ScrollTrigger);
 
+    const router = useRouter();
     // carousel settings
     const settings = ref({
         itemsToShow: 1.3,
@@ -100,30 +101,59 @@
             <!-- Projects list -->
             <div class="flex items-center gap-x-8 lg:pr-28 4xl:pr-40">
                 <!-- Desktop View -->
-                <router-link
-                    v-for="(project, i) in projects"
-                    :key="i"
-                    :to="project.link"
-                    class="relative hidden lg:inline !w-[80vw] rounded-xl overflow-clip cursor-custom-pointer scale-90"
+                <ul
+                    class="hidden lg:flex items-center gap-x-8 lg:pr-28 4xl:pr-40"
                 >
-                    <p class="text-end text-3xl font-[600] mb-3">
-                        {{ project.name }}
-                    </p>
-
-                    <img
-                        :src="project.thumbnailImage"
-                        alt="project screenshot"
-                        :draggable="false"
-                        class="object-fill !h-full !w-full rounded-xl overflow-clip bg-white/5 aspect-video"
-                    />
-                    <div
-                        v-if="i == projects.length - 1"
-                        class="absolute top-0 left-0 z-20 w-full h-full flex flex-col items-center justify-center gap-y-8 from-black/0 to-black bg-gradient-to-r"
+                    <li
+                        v-for="(project, i) in projects"
+                        :key="i"
+                        class="!w-[80vw] scale-90"
+                        :class="i == projects.length - 1 && 'hidden'"
                     >
-                        <p class="title-big">+7</p>
-                        <button class="btn-inverse">See more projects</button>
-                    </div>
-                </router-link>
+                        <a
+                            :href="project.link"
+                            target="_blank"
+                            class="relative rounded-xl overflow-clip cursor-custom-pointer"
+                        >
+                            <p class="text-end text-3xl font-[600] mb-3">
+                                {{ project.name }}
+                            </p>
+                            <img
+                                :src="project.thumbnailImage"
+                                alt="project screenshot"
+                                :draggable="false"
+                                class="object-fill !h-full !w-full rounded-xl overflow-clip bg-white/5 aspect-video"
+                            />
+                        </a>
+                    </li>
+                    <li class="!w-[80vw] scale-90">
+                        <router-link
+                            :to="projects[projects.length - 1].link"
+                            class="relative rounded-xl overflow-clip cursor-custom-pointer"
+                        >
+                            <p class="text-end text-3xl font-[600] mb-3">
+                                {{ projects[projects.length - 1].name }}
+                            </p>
+                            <img
+                                :src="
+                                    projects[projects.length - 1].thumbnailImage
+                                "
+                                alt="project screenshot"
+                                :draggable="false"
+                                class="object-fill !h-full !w-full rounded-xl overflow-clip bg-white/5 aspect-video"
+                            />
+                            <div
+                                class="absolute top-0 left-0 z-20 w-full h-full flex flex-col items-center justify-center gap-y-8 from-black/0 to-black bg-gradient-to-r"
+                                @click.stop="router.push('/projects/list')"
+                            >
+                                <p class="title-big">+7</p>
+                                <button class="btn-inverse">
+                                    See more projects
+                                </button>
+                            </div>
+                        </router-link>
+                    </li>
+                </ul>
                 <!-- Mobile View -->
                 <carousel
                     :settings="settings"

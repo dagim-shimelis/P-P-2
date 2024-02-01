@@ -26,10 +26,11 @@
                 problems solved, and innovation realized.
             </p>
             <div class="mt-20 grid md:grid-cols-2 gap-14 md:gap-y-28">
-                <router-link
+                <a
                     v-for="(project, i) in projects"
                     :key="i"
-                    :to="project.link"
+                    :href="project.link"
+                    target="_blank"
                     class="cursor-custom-pointer border border-white/5 md:border-transparent hover:border-white/5 h-full p-2 pb-6 rounded-[20px]"
                 >
                     <img
@@ -44,7 +45,7 @@
                     <p class="ml-4 font-[200] opacity-60">
                         {{ project.cardDescription }}
                     </p>
-                </router-link>
+                </a>
             </div>
         </div>
 

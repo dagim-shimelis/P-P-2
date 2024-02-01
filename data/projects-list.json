@@ -1,26 +1,20 @@
 [
     {
         "name": "HahuJobs Primary",
-        "link": "/projects/hahujobs-primary",
+        "link": "https://hahu.jobs",
         "thumbnailImage": "/images/projects/1.png",
         "cardDescription": "Job market provider for job seekers"
     },
     {
         "name": "Kena",
-        "link": "/projects/hahujobs-primary",
+        "link": "https://kena.eyea.et",
         "thumbnailImage": "/images/projects/2.png",
         "cardDescription": "Youth support organization"
     },
     {
         "name": "Awaqi Centers",
-        "link": "/projects/hahujobs-primary",
+        "link": "https://awaqi-centers.bridges-fc.com/",
         "thumbnailImage": "/images/projects/3.png",
         "cardDescription": "Information site for Awaqi Centers"
-    },
-    {
-        "name": "Sheger Gebeta",
-        "link": "/projects/hahujobs-primary",
-        "thumbnailImage": "/images/projects/4.png",
-        "cardDescription": "Site for foodies and chefs"
     }
 ]
