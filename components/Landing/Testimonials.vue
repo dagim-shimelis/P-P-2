@@ -13,7 +13,7 @@
 </script>
 
 <template>
-    <div class="relative min-h-screen mb-28">
+    <div class="relative min-h-screen my-14">
         <div class="side-space pt-10">
             <!-- Testimonial Content -->
             <div class="flex flex-col gap-y-5 justify-start mx-auto">
@@ -99,11 +99,11 @@
                 </div>
             </div>
         </div>
-        <div
+        <!-- <div
             class="side-space h-24 mt-24 flex items-center overflow-x-hidden z-10"
         >
             <Common-Companies />
-        </div>
+        </div> -->
 
         <!-- /* ------------------------------ Graphic lines ----------------------------- */ -->
         <div class="hidden lg:inline absolute top-0 right-0">

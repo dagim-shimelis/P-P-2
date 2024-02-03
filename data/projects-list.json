@@ -24,16 +24,40 @@
         "cardDescription": "Information site for Awaqi Centers"
     },
     {
+        "name": "Foundo",
+        "link": "https://foundo-web-client.vercel.app",
+        "thumbnailImage": "/images/projects/foundo.png",
+        "cardDescription": "Company website for a visa provider located in london"
+    },
+    {
+        "name": "Hey Mobile Store",
+        "link": "https://heymobile.store/",
+        "thumbnailImage": "/images/projects/hey-mobile-store.png",
+        "cardDescription": "Hey Mobile is a division of hey trading plc specializing in sourcing and retail of electronic devices like laptops, computers, digital accessories and smartphones. "
+    },
+    {
         "name": "Philia",
         "link": "https://wearephilia.com/",
         "thumbnailImage": "/images/projects/philia.png",
         "cardDescription": "Philia is a social sharing app for increased productivity and improved mental health."
     },
     {
-        "name": "Foundo",
-        "link": "https://foundo-web-client.vercel.app",
-        "thumbnailImage": "/images/projects/foundo.png",
-        "cardDescription": "Company website for a visa provider located in london"
+        "name": "Taya",
+        "link": "https://taya-ha-hu-jobs.vercel.app ",
+        "thumbnailImage": "/images/projects/taya.png",
+        "cardDescription": "A personal website for a consulting firm."
+    },
+    {
+        "name": "EYEA",
+        "link": "https://ethiomesmer.com/",
+        "thumbnailImage": "/images/projects/eyea.png",
+        "cardDescription": "The Ethiopian Youth Entrepreneurs Association is a youth led non profit civic society legally registered under the laws of the Ethiopia Federal Democratic Republic with both local and international reach."
+    },
+    {
+        "name": "Zelela",
+        "link": "https://zelela.eyea.et/",
+        "thumbnailImage": "/images/projects/zelela.png",
+        "cardDescription": "Zelela is a monthly policy advocacy and networking platform."
     },
     {
         "name": "RAYEE SNV",

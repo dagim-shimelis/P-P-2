@@ -18,13 +18,13 @@
                 "A  Comprehensive Guide to Staying Laser-Focused in a World of Distractions",
             link: "https://medium.com/@dagimshimelis1992/mastering-the-art-of-laser-focused-productivity-65123baa340e",
         },
-        {
-            image: "/images/articles/sleep.png",
-            date: "30 Oct 2023",
-            title: "To sleep or not to sleep, that is the question",
-            subTitle: "The importance of sleep explained ",
-            link: "#",
-        },
+        // {
+        //     image: "/images/articles/sleep.png",
+        //     date: "30 Oct 2023",
+        //     title: "To sleep or not to sleep, that is the question",
+        //     subTitle: "The importance of sleep explained ",
+        //     link: "#",
+        // },
     ]);
 
     // breakpoints are mobile first
@@ -40,14 +40,18 @@
             snapAlign: "start",
         },
         1024: {
-            itemsToShow: 2.5,
+            itemsToShow: 2,
             snapAlign: "start",
         },
-        // 1536 and up
-        1359: {
-            itemsToShow: 3,
-            snapAlign: "start",
-        },
+        // 1024: {
+        //     itemsToShow: 2.5,
+        //     snapAlign: "start",
+        // },
+        // // 1536 and up
+        // 1359: {
+        //     itemsToShow: 3,
+        //     snapAlign: "start",
+        // },
     });
 </script>
 
@@ -86,7 +90,7 @@
                     </a>
                 </div>
                 <!-- Article List -->
-                <div class="w-full">
+                <div class="w-full md:mt-10">
                     <carousel
                         :breakpoints="breakpoints"
                         class="w-full mt-5 md:mt-10 mb-auto"

@@ -146,7 +146,7 @@
                                 class="absolute top-0 left-0 z-20 w-full h-full flex flex-col items-center justify-center gap-y-8 from-black/0 to-black bg-gradient-to-r"
                                 @click.stop="router.push('/projects/list')"
                             >
-                                <p class="title-big">+7</p>
+                                <p class="title-big">+11</p>
                                 <button class="btn">
                                     See more projects
                                 </button>
@@ -179,7 +179,7 @@
                                 v-if="i == projects.length - 1"
                                 class="absolute top-0 left-0 z-20 w-full h-full flex flex-col items-center justify-center gap-y-8 from-black/0 to-black bg-gradient-to-r"
                             >
-                                <p class="text-3xl">+7</p>
+                                <p class="text-3xl">+11</p>
                             </div>
                         </router-link>
                     </slide>
