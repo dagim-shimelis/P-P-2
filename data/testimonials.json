@@ -1,20 +1,8 @@
 [
     {
-        "title": "CEO & Founder at company",
-        "name": "Darren Dunlap",
-        "testimony": "\"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo fassasd dasaw rsasgvas.\"",
-        "image": "/images/testimony/TEMP-profile-image.png"
-    },
-    {
-        "title": "CEO & Founder at company",
-        "name": "Darren Dunlap",
-        "testimony": "\"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo fassasd dasaw rsasgvas.\"",
-        "image": "/images/testimony/TEMP-profile-image.png"
-    },
-    {
-        "title": "CEO & Founder at company",
-        "name": "Darren Dunlap",
-        "testimony": "\"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo fassasd dasaw rsasgvas.\"",
+        "title": "CTO & Co-founder at Minab IT Solutions",
+        "name": "Michael Sahlu",
+        "testimony": "\"Dagim is a meticulous frontend developer who excels in delivering clean, organized work with great attention to detail. his passion for perfection shines through in every project he undertakes. I would highly recommend Dagim for any open source or front end development.\"",
         "image": "/images/testimony/TEMP-profile-image.png"
     }
 ]

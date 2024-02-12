@@ -73,13 +73,15 @@
                                         {{ testimonials[0].testimony }}
                                     </p>
                                 </div>
-                                <div class="flex items-center gap-x-4">
-                                    <img
+                                <div
+                                    class="flex items-center gap-x-4 text-center"
+                                >
+                                    <!-- <img
                                         :src="testimonials[0].image"
                                         alt=""
                                         class="w-[50px] h-[50px] lg:!w-[80px] lg:h-[80px] rounded-full border border-white"
-                                    />
-                                    <div class="text-left">
+                                    /> -->
+                                    <div class="text-center">
                                         <p
                                             class="font-[600] text-base lg:text-lg"
                                         >
