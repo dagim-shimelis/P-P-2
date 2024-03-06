@@ -1,5 +1,5 @@
 <script setup>
-    import { Carousel, Slide, Pagination } from "vue3-carousel";
+    import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
     import "vue3-carousel/dist/carousel.css";
     import testimonials from "@/data/testimonials.json";
 
@@ -96,7 +96,7 @@
                                 </div>
                             </div>
                         </slide>
-                        <template #addons> <pagination /> </template
+                        <template #addons>  <navigation /> <pagination /> </template
                     ></carousel>
                 </div>
             </div>
