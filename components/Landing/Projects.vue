@@ -146,10 +146,8 @@
                                 class="absolute top-0 left-0 z-20 w-full h-full flex flex-col items-center justify-center gap-y-8 from-black/0 to-black bg-gradient-to-r"
                                 @click.stop="router.push('/projects/list')"
                             >
-                                <p class="title-big">+11</p>
-                                <button class="btn">
-                                    See more projects
-                                </button>
+                                <p class="title-big">+12</p>
+                                <button class="btn">See more projects</button>
                             </div>
                         </router-link>
                     </li>
@@ -194,15 +192,6 @@
                 </button>
             </router-link>
         </div>
-        <!-- /* ------------------------------ Graphic lines ----------------------------- */ -->
-        <!-- <div class="absolute top-0 right-0">
-            <img
-                src="@/assets/image/graphic-lines/landing-4.png"
-                alt="graphic-lines-landing-4"
-                :draggable="false"
-                class="w-[100px] xl:w-[200px] 3xl:w-full"
-            />
-        </div> -->
         <div class="lg:absolute bottom-0 left-0">
             <img
                 src="@/assets/image/graphic-lines/landing-6.png"

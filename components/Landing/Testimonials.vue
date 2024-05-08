@@ -76,11 +76,6 @@
                                 <div
                                     class="flex items-center gap-x-4 text-center"
                                 >
-                                    <!-- <img
-                                        :src="testimonials[0].image"
-                                        alt=""
-                                        class="w-[50px] h-[50px] lg:!w-[80px] lg:h-[80px] rounded-full border border-white"
-                                    /> -->
                                     <div class="text-center">
                                         <p
                                             class="font-[600] text-base lg:text-lg"
@@ -96,17 +91,12 @@
                                 </div>
                             </div>
                         </slide>
-                        <template #addons>  <navigation /> <pagination /> </template
+                        <template #addons>
+                            <navigation /> <pagination /> </template
                     ></carousel>
                 </div>
             </div>
         </div>
-        <!-- <div
-            class="side-space h-24 mt-24 flex items-center overflow-x-hidden z-10"
-        >
-            <Common-Companies />
-        </div> -->
-
         <!-- /* ------------------------------ Graphic lines ----------------------------- */ -->
         <div class="hidden lg:inline absolute top-0 right-0">
             <img

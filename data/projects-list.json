@@ -18,6 +18,12 @@
         "cardDescription": "Youth support organization"
     },
     {
+        "name": "Sabi",
+        "link": "https://sabi.works",
+        "thumbnailImage": "/images/projects/sabi.png",
+        "cardDescription": "Sabi is a platform that provides vetted tech talent for startups and businesses"
+    },
+    {
         "name": "Awaqi Centers",
         "link": "https://awaqi-centers.bridges-fc.com/",
         "thumbnailImage": "/images/projects/awaqi.png",
