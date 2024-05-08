@@ -40,11 +40,10 @@
                         fit="cover"
                         width="100%"
                         height="100%"
-                        class="rounded-xl overflow-clip bg-white/5"
+                        class="rounded-xl overflow-clip bg-white/5 object-fill !w-full aspect-video"
                         quality="75"
                         loading="lazy"
                         blur="40"
-                    />
                     />
                     <p class="ml-4 text-2xl mt-6 font-[200]">
                         {{ project.name }}
