@@ -9,6 +9,8 @@
         loadingPage.value = true;
     });
     onMounted(() => {
+        document.documentElement.lang = "en"; // and Language html attribute
+        
         /* ----------------------------- Initial Loading ---------------------------- */
         loadingPage.value = false;
         let tl = gsap.timeline();
@@ -55,16 +57,6 @@
             );
             cursorF.style.left = `${leftPosition + 8}px`;
             cursorF.style.top = `${topPosition + 8}px`;
-            // cursorF.animate(
-            //     {
-            //         left: `${leftPosition + 8}px`,
-            //         top: `${topPosition + 8}px`,
-            //     },
-            //     {
-            //         duration: 0,
-            //         fill: "forwards",
-            //     },
-            // );
         });
     });
 </script>

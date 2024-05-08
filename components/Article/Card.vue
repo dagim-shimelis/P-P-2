@@ -29,11 +29,11 @@
                 {{ articleContent.title }}
             </h1>
             <!-- Sub Title -->
-            <h3
+            <h2
                 class="text-sm md:text-base font-[200] tracking-wider opacity-60"
             >
                 {{ articleContent.subTitle }}
-            </h3>
+            </h2>
             <!-- CTA -->
             <a
                 :href="articleContent.link"

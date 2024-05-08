@@ -129,6 +129,7 @@
                             <a
                                 :href="tool.link"
                                 target="_blank"
+                                aria-label="Read more about this tool in their website"
                                 class="hover:cursor-custom-pointer group"
                             >
                                 <Icon

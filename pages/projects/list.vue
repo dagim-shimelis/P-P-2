@@ -33,11 +33,18 @@
                     target="_blank"
                     class="cursor-custom-pointer border border-white/5 md:border-transparent hover:border-white/5 h-full p-2 pb-6 rounded-[20px]"
                 >
-                    <img
+                    <nuxt-img
                         :src="project.thumbnailImage"
                         alt="project screenshot"
                         :draggable="false"
-                        class="object-fill !w-full rounded-xl overflow-clip aspect-video bg-white/5"
+                        fit="cover"
+                        width="100%"
+                        height="100%"
+                        class="rounded-xl overflow-clip bg-white/5"
+                        quality="75"
+                        loading="lazy"
+                        blur="40"
+                    />
                     />
                     <p class="ml-4 text-2xl mt-6 font-[200]">
                         {{ project.name }}

@@ -1,13 +1,12 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     ssr: true,
     devtools: { enabled: process.env.MODE == "development" },
     app: {
         head: {
             title: "Dagim Shimelis",
-            htmlAttrs: {
-                lang: "en",
-            },
+            // htmlAttrs: {
+            //     lang: "en",
+            // },
             meta: [
                 {
                     name: "viewport",
@@ -118,11 +117,6 @@ export default defineNuxtConfig({
                         "https://res.cloudinary.com/drhjbn19m/image/upload/v1701553194/Portfolio/gqxmceo3wtqmqzepxn8e.png",
                 },
             ],
-            // script: [
-            //   {
-            //     src: `https://www.google.com/recaptcha/enterprise.js?render=${process.env.RECAPTCHA_SITE_KEY}`
-            //   }
-            // ]
         },
     },
     css: ["@/assets/css/main.css"],
@@ -132,6 +126,7 @@ export default defineNuxtConfig({
     image: {
         inject: true,
     },
+    // plugins: ["@/plugins/htmlLang.js"],
     modules: [
         "@nuxtjs/tailwindcss",
         "@nuxtjs/apollo",
@@ -162,9 +157,6 @@ export default defineNuxtConfig({
     },
 
     // here we are setting the route rules for the SPA and SSR routes
-    routeRules: {
-        // "/": { ssr: false },
-    },
     router: {
         options: {
             scrollBehaviorType: "smooth",
@@ -174,16 +166,5 @@ export default defineNuxtConfig({
         public: {
             mode: process.env.MODE,
         },
-    },
-
-    app: {
-        // pageTransition: {
-        //   name: "page", // default
-        //   mode: "out-in",
-        // },
-        // layoutTransition: {
-        //   name: "layout",
-        //   mode: "out-in", // default
-        // },
     },
 });

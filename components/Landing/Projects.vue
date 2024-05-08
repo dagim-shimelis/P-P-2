@@ -118,11 +118,18 @@
                             <p class="text-end text-3xl font-[600] mb-3">
                                 {{ project.name }}
                             </p>
-                            <img
+                            <nuxt-img
                                 :src="project.thumbnailImage"
                                 alt="project screenshot"
-                                :draggable="false"
                                 class="object-fill !h-full !w-full rounded-xl overflow-clip bg-white/5 aspect-video"
+                                :srcset="`
+                                    ${project.thumbnailImage}?format=webp&w=400 400w,
+                                    ${project.thumbnailImage}?format=webp&w=800 800w,
+                                    ${project.thumbnailImage}?format=webp&w=1200 1200w
+                                `"
+                                fit="cover"
+                                loading="lazy"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             />
                         </a>
                     </li>

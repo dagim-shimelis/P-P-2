@@ -65,17 +65,12 @@
                         >
                     </li>
                 </ul>
-                <!-- <button class="cursor-custom-pointer z-30">
-                    <Icon
-                        name="solar:file-download-outline"
-                        class="hidden lg:block w-6 h-6"
-                    />
-                </button> -->
                 <div></div>
                 <!-- /* ------------------------------- Mobile Nav ------------------------------- */ -->
                 <div class="lg:hidden ml-auto">
                     <button
                         @click="visibleSideNav = true"
+                        aria-label="Open Navigation"
                         class="menu-button absolute top-3 sm:top-5 right-4 sm:right-8 z-10"
                     >
                         <Icon
@@ -91,6 +86,7 @@
                         <template #header>
                             <button
                                 @click="visibleSideNav = false"
+                                aria-label="Close Navigation"
                                 class="menu-button absolute top-3 sm:top-5 right-4 sm:right-8 z-10"
                             >
                                 <Icon
