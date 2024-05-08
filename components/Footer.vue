@@ -36,13 +36,9 @@
                     <a
                         :href="social.link"
                         target="_blank"
+                        aria-label="Visit site"
                         class="cursor-custom-pointer"
                     >
-                        <!-- <img
-                            :src="social.image"
-                            alt
-                            class="w-fit"
-                        /> -->
                         <Icon
                             :name="social.icon"
                             class="w-[23px] sm:w-[31px] h-[23px] sm:h-[31px]"

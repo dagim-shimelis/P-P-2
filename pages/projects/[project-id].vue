@@ -110,6 +110,7 @@
                             <a
                                 :href="project.link"
                                 target="_blank"
+                                aria-label="Visit project site"
                                 class="cursor-custom-pointer"
                                 >{{ project.shortLink }}
                             </a>
@@ -117,7 +118,7 @@
                     </div>
                 </dl>
                 <a
-                    aria-label="Visit site"
+                    aria-label="Visit project site"
                     class="btn-small lg:!px-8 !text-center !w-full sm:!w-fit mt-4 xl:mt-8 whitespace-nowrap !px-6"
                     :href="project.link"
                     target="_blank"

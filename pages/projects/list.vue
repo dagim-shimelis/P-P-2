@@ -31,6 +31,7 @@
                     :key="i"
                     :href="project.link"
                     target="_blank"
+                    aria-label="Visit project site"
                     class="cursor-custom-pointer border border-white/5 md:border-transparent hover:border-white/5 h-full p-2 pb-6 rounded-[20px]"
                 >
                     <nuxt-img

@@ -38,6 +38,7 @@
             <a
                 :href="articleContent.link"
                 target="_blank"
+                aria-label="Read Article"
                 class="block space-y-1 group w-fit cursor-custom-pointer"
             >
                 <span class="text-sm md:text-base tracking-wider"

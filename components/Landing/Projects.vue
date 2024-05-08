@@ -113,6 +113,7 @@
                         <a
                             :href="project.link"
                             target="_blank"
+                            aria-label="Visit project site"
                             class="relative rounded-xl overflow-clip cursor-custom-pointer"
                         >
                             <p class="text-end text-3xl font-[600] mb-3">

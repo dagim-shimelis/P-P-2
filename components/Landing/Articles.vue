@@ -77,6 +77,7 @@
                     <a
                         href="https://medium.com/@dagimshimelis1992"
                         target="_blank"
+                        aria-label="See All Article"
                         class="hidden md:block relative space-y-1 group w-fit cursor-custom-pointer"
                     >
                         <span class="text-xs md:text-base tracking-wider"
@@ -111,6 +112,7 @@
                 <a
                     href="https://medium.com/@dagimshimelis1992"
                     target="_blank"
+                    aria-label="See All Article"
                     class="md:hidden relative ml-12 my-12 block space-y-1 group w-fit cursor-custom-pointer"
                 >
                     <span class="text-base tracking-wider"
