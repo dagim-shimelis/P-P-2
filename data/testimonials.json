@@ -3,6 +3,14 @@
         "title": "CTO & Co-founder at Minab IT Solutions",
         "name": "Michael Sahlu",
         "testimony": "\"Dagim is a meticulous frontend developer who excels in delivering clean, organized work with great attention to detail. his passion for perfection shines through in every project he undertakes. I would highly recommend Dagim for any open source or front end development.\"",
-        "image": "/images/testimony/TEMP-profile-image.png"
+        "image": "/images/testimony/TEMP-profile-image.png",
+        "linkedin_link": "https://www.linkedin.com/in/michael-sahlu/"
+    },
+    {
+        "title": "CEO at Sabi",
+        "name": "Abdulaziz Yesuf",
+        "testimony": "\"Working with Dagim on our recent project was a remarkable experience. He quickly translated our designs into a functional and visually appealing web application. His code was not only delivered promptly but was also of exceptional quality, showcasing his thorough understanding of frontend development. Dagim’s proactive communication and attention to detail ensured a seamless development process. He is truly an asset to any team, blending speed and precision masterfully.\"",
+        "image": "/images/testimony/TEMP-profile-image.png",
+        "linkedin_link": "https://www.linkedin.com/in/abdulaziz-yesuf-74a664178/"
     }
 ]

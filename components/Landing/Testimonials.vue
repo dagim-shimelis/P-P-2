@@ -70,24 +70,28 @@
                                     <p
                                         class="text-center text-sm lg:text-base font-[200] leading-8 tracking-wider"
                                     >
-                                        {{ testimonials[0].testimony }}
+                                        {{ testimonial.testimony }}
                                     </p>
                                 </div>
                                 <div
                                     class="flex items-center gap-x-4 text-center"
                                 >
-                                    <div class="text-center">
+                                    <a
+                                        :href="testimonial.linkedin_link"
+                                        target="_blank"
+                                        class="text-center"
+                                    >
                                         <p
-                                            class="font-[600] text-base lg:text-lg"
+                                            class="font-[600] text-base lg:text-lg underline underline-offset-2"
                                         >
-                                            {{ testimonials[0].name }}
+                                            {{ testimonial.name }}
                                         </p>
                                         <p
                                             class="text-sm lg:text-base font-[200]"
                                         >
-                                            {{ testimonials[0].title }}
+                                            {{ testimonial.title }}
                                         </p>
-                                    </div>
+                                    </a>
                                 </div>
                             </div>
                         </slide>
