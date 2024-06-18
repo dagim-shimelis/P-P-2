@@ -12,6 +12,12 @@
         "cardDescription": "HR platform for job providers"
     },
     {
+        "name": "EYEA",
+        "link": "https://www.eyea.et/",
+        "thumbnailImage": "/images/projects/eyea.png",
+        "cardDescription": "The Ethiopian Youth Entrepreneurs Association is a youth led non profit civic society legally registered under the laws of the Ethiopia Federal Democratic Republic with both local and international reach."
+    },
+    {
         "name": "Kena",
         "link": "https://kena.eyea.et",
         "thumbnailImage": "/images/projects/kena.png",
@@ -28,12 +34,6 @@
         "link": "https://hire-pilot.ai/",
         "thumbnailImage": "/images/projects/hire-pilot.png",
         "cardDescription": "HirePilot is an AI copilot that streamlines hiring by enhancing decision-making, reducing biases, and effortlessly connecting you with top talent."
-    },
-    {
-        "name": "Awaqi Centers",
-        "link": "https://awaqi-centers.bridges-fc.com/",
-        "thumbnailImage": "/images/projects/awaqi.png",
-        "cardDescription": "Information site for Awaqi Centers"
     },
     {
         "name": "Foundo",
@@ -60,10 +60,10 @@
         "cardDescription": "A personal website for a consulting firm."
     },
     {
-        "name": "EYEA",
-        "link": "https://ethiomesmer.com/",
-        "thumbnailImage": "/images/projects/eyea.png",
-        "cardDescription": "The Ethiopian Youth Entrepreneurs Association is a youth led non profit civic society legally registered under the laws of the Ethiopia Federal Democratic Republic with both local and international reach."
+        "name": "Awaqi Centers",
+        "link": "https://awaqi-centers.bridges-fc.com/",
+        "thumbnailImage": "/images/projects/awaqi.png",
+        "cardDescription": "Information site for Awaqi Centers"
     },
     {
         "name": "Zelela",
