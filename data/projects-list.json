@@ -24,6 +24,12 @@
         "cardDescription": "Sabi is a platform that provides vetted tech talent for startups and businesses"
     },
     {
+        "name": "Hire Pilot",
+        "link": "https://hire-pilot.ai/",
+        "thumbnailImage": "/images/projects/hire-pilot.png",
+        "cardDescription": "HirePilot is an AI copilot that streamlines hiring by enhancing decision-making, reducing biases, and effortlessly connecting you with top talent."
+    },
+    {
         "name": "Awaqi Centers",
         "link": "https://awaqi-centers.bridges-fc.com/",
         "thumbnailImage": "/images/projects/awaqi.png",
