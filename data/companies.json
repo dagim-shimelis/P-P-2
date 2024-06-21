@@ -16,16 +16,12 @@
         "name": "EYEA"
     },
     {
-        "image": "/images/companies/minab.png",
+        "image": "/images/companies/minab.svg",
         "name": "Minab IT Solutions"
     },
     {
         "image": "/images/companies/kena.png",
         "name": "Kena"
-    },
-    {
-        "image": "/images/companies/mesmer.png",
-        "name": "Mesmer"
     },
     {
         "image": "/images/companies/sabi.png",
@@ -38,5 +34,17 @@
     {
         "image": "/images/companies/plan_international.png",
         "name": "Plan International"
+    },
+    {
+        "image": "/images/companies/boosty.svg",
+        "name": "Boosty"
+    },
+    {
+        "image": "/images/companies/hire-pilot.svg",
+        "name": "Hire Pilot"
+    },
+    {
+        "image": "/images/companies/mesmer.png",
+        "name": "Mesmer"
     }
 ]
