@@ -3,96 +3,96 @@
         "name": "HahuJobs Primary",
         "link": "https://hahu.jobs",
         "thumbnailImage": "/images/projects/hahu-jobs-primary.png",
-        "cardDescription": "Job market provider for job seekers"
+        "cardDescription": "HaHuJobs primarily offers services aimed at Ethiopian job-seekers, utilizing both online and assisted models. The platform is designed to facilitate the job search process across all employment levels."
     },
     {
         "name": "HahuJobs Enterprise",
         "link": "https://enterprise.hahu.jobs/",
         "thumbnailImage": "/images/projects/hahu-jobs-enterprise.png",
-        "cardDescription": "HR platform for job providers"
+        "cardDescription": "A cloud platform designed to simplify your HR and recruitment processes, from vacancy announcements and hiring to complete digital HR management. Gives access to all necessary services in one platform."
     },
     {
         "name": "EYEA",
         "link": "https://www.eyea.et/",
         "thumbnailImage": "/images/projects/eyea.png",
-        "cardDescription": "The Ethiopian Youth Entrepreneurs Association is a youth led non profit civic society legally registered under the laws of the Ethiopia Federal Democratic Republic with both local and international reach."
+        "cardDescription": "The Ethiopian Youth Entrepreneurs Association (EYEA) website is a comprehensive platform designed for a youth-led nonprofit civic society. The association is dedicated to empowering young entrepreneurs across Ethiopia."
     },
     {
         "name": "Kena",
         "link": "https://kena.eyea.et",
         "thumbnailImage": "/images/projects/kena.png",
-        "cardDescription": "Youth support organization"
+        "cardDescription": "Kena is a capacity-building service product of the EYEA, with an objective to provide training, mentorship, access to finance, and market exposure to youth-founded or run businesses."
     },
     {
         "name": "Sabi",
         "link": "https://sabi.works",
         "thumbnailImage": "/images/projects/sabi.png",
-        "cardDescription": "Sabi is a platform that provides vetted tech talent for startups and businesses"
+        "cardDescription": "Sabi is a platform that connects startups and businesses with vetted tech talent, offering a reliable source of skilled professionals to meet their technological needs."
     },
     {
         "name": "Hire Pilot",
         "link": "https://hire-pilot.ai/",
         "thumbnailImage": "/images/projects/hire-pilot.png",
-        "cardDescription": "HirePilot is an AI copilot that streamlines hiring by enhancing decision-making, reducing biases, and effortlessly connecting you with top talent."
+        "cardDescription": "HirePilot is an AI copilot that streamlines the hiring process by improving decision-making, minimizing biases, and efficiently connecting employers with top talent, making recruitment more effective and fair."
     },
     {
         "name": "Foundo",
         "link": "https://foundo.io",
         "thumbnailImage": "/images/projects/foundo.png",
-        "cardDescription": "Company website for a visa provider located in london"
+        "cardDescription": "Foundo is a pioneering card issuing company located in the UK, revolutionizing financial empowerment for businesses worldwide through seamless transactions and global reach."
     },
     {
         "name": "Hey Mobile Store",
         "link": "https://heymobile.store/",
         "thumbnailImage": "/images/projects/hey-mobile-store.png",
-        "cardDescription": "Hey Mobile is a division of hey trading plc specializing in sourcing and retail of electronic devices like laptops, computers, digital accessories and smartphones. "
+        "cardDescription": "Hey Mobile's website features a diverse array of laptops, computers, digital accessories, and smartphones, ensuring competitive pricing and a seamless, user-friendly shopping experience for customers."
     },
     {
         "name": "Philia",
         "link": "https://wearephilia.com/",
         "thumbnailImage": "/images/projects/philia.png",
-        "cardDescription": "Philia is a social sharing app for increased productivity and improved mental health."
+        "cardDescription": "Philia is a productivity and mental health-focused social sharing app designed to enhance efficiency and well-being through collaborative tools and support features."
     },
     {
         "name": "Taya",
         "link": "https://taya-ha-hu-jobs.vercel.app ",
         "thumbnailImage": "/images/projects/taya.png",
-        "cardDescription": "A personal website for a consulting firm."
+        "cardDescription": "A bespoke website for a consulting firm, showcasing expertise, services, and client success stories with a professional and user-friendly interface."
     },
     {
         "name": "Awaqi Centers",
         "link": "https://awaqi-centers.bridges-fc.com/",
         "thumbnailImage": "/images/projects/awaqi.png",
-        "cardDescription": "Information site for Awaqi Centers"
+        "cardDescription": "Awaqi Company Centers: Information hubs for Ethiopian youth, enhancing accessibility to Awaqi services. These centers host resources and are strategically located across cities in Ethiopia."
     },
     {
         "name": "Zelela",
         "link": "https://zelela.eyea.et/",
         "thumbnailImage": "/images/projects/zelela.png",
-        "cardDescription": "Zelela is a monthly policy advocacy and networking platform."
+        "cardDescription": "Zelela is a monthly platform for policy advocacy and networking, aimed at empowering young Ethiopians by addressing challenges in entrepreneurship through skills, finance, advocacy, networking, and bureaucratic solutions."
     },
     {
         "name": "RAYEE SNV",
         "link": "https://www.rayeesnv.com/",
         "thumbnailImage": "/images/projects/snv.png",
-        "cardDescription": "Digital data management system for RAYEE"
+        "cardDescription": "RAYEE integrates a robust data management system with a specialized analytics dashboard, supporting efficient project oversight across multiple regions to empower 240,000 youth, predominantly women, by 2024."
     },
     {
         "name": "Bridge",
         "link": "https://bridges-fc.com/",
         "thumbnailImage": "/images/projects/bridge.png",
-        "cardDescription": "This platform is built to provide a multi-tier reporting and data tracking for the bridges programme."
+        "cardDescription": "This platform offers multi-tier reporting and data tracking tailored for the Bridges program, ensuring comprehensive oversight and impactful data management for its initiatives."
     },
     {
         "name": "Mesmer",
         "link": "https://ethiomesmer.com/",
         "thumbnailImage": "/images/projects/mesmer.png",
-        "cardDescription": "MESMER offers MSME loans with lower interest rate and flexible collateral requirements."
+        "cardDescription": "MESMER provides MSME loans with competitive interest rates and flexible collateral terms, catering specifically to the needs of micro, small, and medium enterprises."
     },
     {
         "name": "Venture Meda",
         "link": "https://app.venturemeda.com/",
         "thumbnailImage": "/images/projects/venture-meda.png",
-        "cardDescription": "This platform is built to facilitate a multi-tier reporting and data tracking for the Venture Meda program."
+        "cardDescription": "This platform facilitates multi-tier reporting and data tracking tailored for the Venture Meda program, enhancing oversight and management of its initiatives effectively."
     }
 ]
