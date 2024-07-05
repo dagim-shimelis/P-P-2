@@ -4,9 +4,6 @@ export default defineNuxtConfig({
     app: {
         head: {
             title: "Dagim Shimelis",
-            // htmlAttrs: {
-            //     lang: "en",
-            // },
             meta: [
                 {
                     name: "viewport",
