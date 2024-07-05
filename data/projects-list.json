@@ -42,6 +42,12 @@
         "cardDescription": "Foundo is a pioneering card issuing company located in the UK, revolutionizing financial empowerment for businesses worldwide through seamless transactions and global reach."
     },
     {
+        "name": "Boosty",
+        "link": "https://tryboosty.com/",
+        "thumbnailImage": "/images/projects/boosty.png",
+        "cardDescription": "Boosty streamlines business formation by handling EIN registration, registered agent services, annual filings, and federal tax filings. A dedicated account manager provides expert guidance, allowing clients to focus on their business operations."
+    },
+    {
         "name": "Hey Mobile Store",
         "link": "https://heymobile.store/",
         "thumbnailImage": "/images/projects/hey-mobile-store.png",
@@ -76,29 +82,5 @@
         "link": "https://awaqi-centers.bridges-fc.com/",
         "thumbnailImage": "/images/projects/awaqi.png",
         "cardDescription": "Awaqi Company Centers: Information hubs for Ethiopian youth, enhancing accessibility to Awaqi services. These centers host resources and are strategically located across cities in Ethiopia."
-    },
-    {
-        "name": "Boosty",
-        "link": "https://tryboosty.com/",
-        "thumbnailImage": "/images/projects/boosty.png",
-        "cardDescription": "Boosty streamlines business formation by handling EIN registration, registered agent services, annual filings, and federal tax filings. A dedicated account manager provides expert guidance, allowing clients to focus on their business operations."
-    },
-    {
-        "name": "Bridge",
-        "link": "https://bridges-fc.com/",
-        "thumbnailImage": "/images/projects/bridge.png",
-        "cardDescription": "This platform offers multi-tier reporting and data tracking tailored for the Bridges program, ensuring comprehensive oversight and impactful data management for its initiatives."
-    },
-    {
-        "name": "Mesmer",
-        "link": "https://ethiomesmer.com/",
-        "thumbnailImage": "/images/projects/mesmer.png",
-        "cardDescription": "MESMER provides MSME loans with competitive interest rates and flexible collateral terms, catering specifically to the needs of micro, small, and medium enterprises."
-    },
-    {
-        "name": "Venture Meda",
-        "link": "https://app.venturemeda.com/",
-        "thumbnailImage": "/images/projects/venture-meda.png",
-        "cardDescription": "This platform facilitates multi-tier reporting and data tracking tailored for the Venture Meda program, enhancing oversight and management of its initiatives effectively."
     }
 ]
