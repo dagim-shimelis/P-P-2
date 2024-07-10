@@ -4,9 +4,6 @@ export default defineNuxtConfig({
     app: {
         head: {
             title: "Dagim Shimelis",
-            // htmlAttrs: {
-            //     lang: "en",
-            // },
             meta: [
                 {
                     name: "viewport",
@@ -15,7 +12,7 @@ export default defineNuxtConfig({
                 {
                     hid: "Dagim Shimelis",
                     name: "description",
-                    content: "Dagim Shimelis",
+                    content: "From eye-catching designs to seamless functionality, I've got you covered. With expertise in web design, frontend development, and backend development, I'll bring your digital dreams to life. Let's build something great together!",
                 },
                 { name: "robots", content: "index, follow" },
                 {

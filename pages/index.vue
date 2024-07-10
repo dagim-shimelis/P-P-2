@@ -13,19 +13,19 @@
             data-n-head="ssr"
             data-hid="og:description"
             property="og:description"
-            content="Full-stack developer"
+            content="From eye-catching designs to seamless functionality, I've got you covered. With expertise in web design, frontend development, and backend development, I'll bring your digital dreams to life. Let's build something great together!"
         />
         <Meta
             data-n-head="ssr"
             data-hid="description"
             name="description"
-            content="Full-stack developer"
+            content="From eye-catching designs to seamless functionality, I've got you covered. With expertise in web design, frontend development, and backend development, I'll bring your digital dreams to life. Let's build something great together!"
         />
         <Meta
             data-n-head="ssr"
             data-hid="og:url"
             property="og:url"
-            content="https://kena.eyea.et/"
+            content="https://dagim-shimelis.me/"
         />
         <Meta
             data-n-head="ssr"
