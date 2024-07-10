@@ -91,7 +91,7 @@
                 <!-- About me text -->
                 <div class="flex flex-col gap-y-6">
                     <p class="para-text">
-                        With a passion for web development that spans over two
+                        With a passion for web development that spans over three
                         years, I specialize in both front-end and back-end work,
                         although my heart lies in crafting immersive and
                         visually captivating front-end experiences. I am
@@ -108,7 +108,7 @@
                         undertake.
                     </p>
                     <p class="para-text">
-                        Throughout the past 2 years I've honed my skills to
+                        Throughout the past 3 years I've honed my skills to
                         blend creativity and technical expertise. Whether it's
                         designing sleek user interfaces or architecting robust
                         backend systems, I am committed to delivering solutions
