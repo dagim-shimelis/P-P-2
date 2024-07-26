@@ -171,7 +171,7 @@
                         :key="i"
                         class="mx-4 px-0 md:px-3 xl:px-3 2xl:px-2 draggable"
                     >
-                        <a
+                        <div
                             :href="project.link"
                             target="_blank"
                             class="w-[90%]"
@@ -188,7 +188,7 @@
                             >
                                 <p class="text-3xl">+11</p>
                             </div>
-                        </a>
+                        </div>
                     </slide>
                 </carousel>
             </div>
