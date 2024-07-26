@@ -135,8 +135,9 @@
                         </a>
                     </li>
                     <li class="!w-[80vw] scale-90">
-                        <router-link
-                            :to="projects[projects.length - 1].link"
+                        <a
+                            :href="projects[projects.length - 1].link"
+                            target="_blank"
                             class="relative rounded-xl overflow-clip cursor-custom-pointer"
                         >
                             <p class="text-end text-3xl font-[600] mb-3">
@@ -157,7 +158,7 @@
                                 <p class="title-big">+12</p>
                                 <button class="btn">See more projects</button>
                             </div>
-                        </router-link>
+                        </a>
                     </li>
                 </ul>
                 <!-- Mobile View -->
