@@ -135,9 +135,8 @@
                         </a>
                     </li>
                     <li class="!w-[80vw] scale-90">
-                        <a
-                            :href="projects[projects.length - 1].link"
-                            target="_blank"
+                        <router-link
+                            :to="projects[projects.length - 1].link"
                             class="relative rounded-xl overflow-clip cursor-custom-pointer"
                         >
                             <p class="text-end text-3xl font-[600] mb-3">
@@ -158,7 +157,7 @@
                                 <p class="title-big">+12</p>
                                 <button class="btn">See more projects</button>
                             </div>
-                        </a>
+                        </router-link>
                     </li>
                 </ul>
                 <!-- Mobile View -->
@@ -172,8 +171,9 @@
                         :key="i"
                         class="mx-4 px-0 md:px-3 xl:px-3 2xl:px-2 draggable"
                     >
-                        <router-link
-                            :to="project.link"
+                        <a
+                            :href="project.link"
+                            target="_blank"
                             class="w-[90%]"
                         >
                             <img
@@ -188,7 +188,7 @@
                             >
                                 <p class="text-3xl">+11</p>
                             </div>
-                        </router-link>
+                        </a>
                     </slide>
                 </carousel>
             </div>
