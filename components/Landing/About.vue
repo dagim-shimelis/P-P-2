@@ -91,7 +91,7 @@
                 <!-- About me text -->
                 <div class="flex flex-col gap-y-6">
                     <p class="para-text">
-                        With a passion for web development that spans over three
+                        With a passion for web development that spans over 4
                         years, I specialize in both front-end and back-end work,
                         although my heart lies in crafting immersive and
                         visually captivating front-end experiences. I am
