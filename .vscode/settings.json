@@ -8,14 +8,16 @@
         "activityBarBadge.background": "#df9f9f",
         "activityBarBadge.foreground": "#15202b",
         "statusBar.background": "#eeeeee",
-        "statusBar.debuggingBackground": "#eeeeee",
-        "statusBar.debuggingForeground": "#15202b",
         "statusBar.foreground": "#15202b",
         "statusBarItem.hoverBackground": "#d4d4d4",
         "titleBar.activeBackground": "#eeeeee",
         "titleBar.activeForeground": "#15202b",
         "titleBar.inactiveBackground": "#eeeeee99",
-        "titleBar.inactiveForeground": "#15202b99"
+        "titleBar.inactiveForeground": "#15202b99",
+        "commandCenter.border": "#15202b99",
+        "sash.hoverBorder": "#ffffff",
+        "statusBarItem.remoteBackground": "#eeeeee",
+        "statusBarItem.remoteForeground": "#15202b"
     },
     "peacock.color": "#eeeeee",
     "cSpell.words": [
