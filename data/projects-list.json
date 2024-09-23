@@ -82,5 +82,11 @@
         "link": "https://awaqi-centers.bridges-fc.com/",
         "thumbnailImage": "/images/projects/awaqi.png",
         "cardDescription": "Awaqi Company Centers: Information hubs for Ethiopian youth, enhancing accessibility to Awaqi services. These centers host resources and are strategically located across cities in Ethiopia."
+    },
+    {
+        "name": "Neba's Design",
+        "link": "https://nebas.design/",
+        "thumbnailImage": "/images/projects/nebas-design.png",
+        "cardDescription": "A personal portfolio site for Neba's Design. Neba is a UI/UX designer based in Addis Ababa, Ethiopia. He specializes in UI/UX design, branding, and digital marketing."
     }
 ]
