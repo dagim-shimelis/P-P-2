@@ -88,5 +88,11 @@
         "link": "https://nebas.design/",
         "thumbnailImage": "/images/projects/nebas-design.png",
         "cardDescription": "A personal portfolio site for Neba's Design. Neba is a UI/UX designer based in Addis Ababa, Ethiopia. He specializes in UI/UX design, branding, and digital marketing."
+    },
+    {
+        "name": "Papira",
+        "link": "https://papira-staging.vercel.app/",
+        "thumbnailImage": "/images/projects/papira.png",
+        "cardDescription": "An African Skill and Talent platform. A platform for skill development, and professional development. It offers a wide range of courses and training programs."
     }
 ]
