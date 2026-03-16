@@ -1,7 +1,9 @@
 <script setup>
-    import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
+    import { Carousel, Slide } from "vue3-carousel";
     import "vue3-carousel/dist/carousel.css";
     import testimonials from "@/data/testimonials.json";
+
+    const carouselRef = ref(null);
 
     // carousel settings
     const settings = ref({
@@ -13,102 +15,70 @@
 </script>
 
 <template>
-    <div class="relative min-h-screen my-14">
-        <div class="side-space pt-10">
-            <!-- Testimonial Content -->
-            <div class="flex flex-col gap-y-5 justify-start mx-auto">
-                <div class="flex items-center justify-between">
-                    <!-- Title -->
-                    <div class="title-box">
-                        <div>
-                            <h1 class="title-big">testimonials</h1>
-                            <img
-                                src="@/assets/image/graphic-lines/underline-big.svg"
-                                alt="title-underline"
-                                class="title-underline"
-                            />
-                        </div>
-                        <p class="title-small">From Clients & Colleagues</p>
-                    </div>
-                </div>
-                <!-- Article List -->
-                <div class="w-full">
-                    <carousel
-                        :settings="settings"
-                        class="w-full mt-5 md:mt-24 mb-auto"
+    <div class="relative min-h-screen py-32 flex flex-col items-center justify-center">
+        <div class="side-space relative z-10 w-full">
+            <div class="flex flex-col items-center mb-24">
+                <p class="text-xs uppercase tracking-[0.5em] text-green-400 mb-4 font-[600]">Peer_Validation</p>
+                <h2 class="title-big">THE_FEEDBACK</h2>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <carousel
+                    ref="carouselRef"
+                    :settings="settings"
+                    class="w-full"
+                >
+                    <slide
+                        v-for="(testimonial, i) in testimonials"
+                        :key="i"
+                        class="px-4"
                     >
-                        <slide
-                            v-for="(testimonial, i) in testimonials"
-                            :key="i"
-                            class="py-32 px-16 xl:px-3 draggable mx-10 md:mx-0"
-                        >
-                            <div
-                                class="w-[800px] flex flex-col justify-center items-center gap-y-32 lg:gap-y-40"
-                            >
-                                <div class="relative">
-                                    <!-- route graphics -->
-                                    <div
-                                        class="absolute -top-16 lg:-top-24 -left-10"
-                                    >
-                                        <img
-                                            src="@/assets/image/graphic-lines/quotes-1.png"
-                                            alt="graphic-lines-quotes-1"
-                                            :draggable="false"
-                                            class="w-[70px] 3xl:w-full"
-                                        />
-                                    </div>
-                                    <div
-                                        class="absolute -bottom-16 lg:-bottom-24 -right-10"
-                                    >
-                                        <img
-                                            src="@/assets/image/graphic-lines/quotes-2.png"
-                                            alt="graphic-lines-quotes-2"
-                                            :draggable="false"
-                                            class="w-[70px] 3xl:w-full"
-                                        />
-                                    </div>
-                                    <p
-                                        class="text-center text-sm lg:text-base font-[200] leading-8 tracking-wider"
-                                    >
-                                        {{ testimonial.testimony }}
+                        <div class="flex flex-col items-center text-center gap-12 p-12 border border-green-400/10 bg-green-400/5 backdrop-blur-sm relative">
+                            <div class="absolute top-0 left-0 w-2 h-2 border-t border-l border-green-400"></div>
+                            <div class="absolute top-0 right-0 w-2 h-2 border-t border-r border-green-400"></div>
+                            <div class="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-green-400"></div>
+                            <div class="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-green-400"></div>
+
+                            <p class="text-xl md:text-2xl font-[300] leading-relaxed italic text-green-50/90">
+                                "{{ testimonial.testimony }}"
+                            </p>
+
+                            <div class="flex flex-col items-center">
+                                <a :href="testimonial.linkedin_link" target="_blank" class="group">
+                                    <p class="text-green-400 font-[700] uppercase tracking-widest mb-1 group-hover:underline">
+                                        {{ testimonial.name }}
                                     </p>
-                                </div>
-                                <div
-                                    class="flex items-center gap-x-4 text-center"
-                                >
-                                    <a
-                                        :href="testimonial.linkedin_link"
-                                        target="_blank"
-                                        class="text-center"
-                                    >
-                                        <p
-                                            class="font-[600] text-base lg:text-lg underline underline-offset-2"
-                                        >
-                                            {{ testimonial.name }}
-                                        </p>
-                                        <p
-                                            class="text-sm lg:text-base font-[200]"
-                                        >
-                                            {{ testimonial.title }}
-                                        </p>
-                                    </a>
-                                </div>
+                                    <p class="text-[10px] font-mono text-green-400/50 uppercase tracking-[0.2em]">
+                                        {{ testimonial.title }}
+                                    </p>
+                                </a>
                             </div>
-                        </slide>
-                        <template #addons>
-                            <navigation /> <pagination /> </template
-                    ></carousel>
+                        </div>
+                    </slide>
+                </carousel>
+
+                <div class="mt-12 flex justify-center items-center gap-6">
+                    <button
+                        @click="carouselRef?.prev()"
+                        class="w-10 h-10 border border-green-400/30 flex items-center justify-center text-green-400 hover:bg-green-400/10 hover:border-green-400 transition-all duration-300"
+                        aria-label="Previous testimonial"
+                    >
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 18l-6-6 6-6" />
+                        </svg>
+                    </button>
+                    <span class="text-[10px] font-mono text-green-400/50 uppercase tracking-[0.3em]">Navigate</span>
+                    <button
+                        @click="carouselRef?.next()"
+                        class="w-10 h-10 border border-green-400/30 flex items-center justify-center text-green-400 hover:bg-green-400/10 hover:border-green-400 transition-all duration-300"
+                        aria-label="Next testimonial"
+                    >
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6" />
+                        </svg>
+                    </button>
                 </div>
             </div>
-        </div>
-        <!-- /* ------------------------------ Graphic lines ----------------------------- */ -->
-        <div class="hidden lg:inline absolute top-0 right-0">
-            <img
-                src="@/assets/image/graphic-lines/landing-4.png"
-                alt="graphic-lines-landing-4"
-                :draggable="false"
-                class="w-[100px] xl:w-[200px] 3xl:w-full"
-            />
         </div>
     </div>
 </template>

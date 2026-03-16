@@ -15,6 +15,16 @@
         "thumbnailImage": "/images/projects/hire-pilot.png"
     },
     {
+        "name": "Sabi",
+        "link": "https://sabi.works",
+        "thumbnailImage": "/images/projects/sabi.png"
+    },
+    {
+        "name": "Boosty",
+        "link": "https://tryboosty.com/",
+        "thumbnailImage": "/images/projects/boosty.png"
+    },
+    {
         "name": "More Projects",
         "link": "/projects",
         "thumbnailImage": "/images/projects/foundo.png"

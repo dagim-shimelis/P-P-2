@@ -40,83 +40,74 @@ const showMessage = (success) => {
 </script>
 
 <template>
-  <div class="relative min-h-screen">
-    <div class="side-space pt-10">
-      <!-- Contact Content -->
-
+  <div class="relative min-h-screen py-32 flex flex-col items-center justify-center">
+    <div class="side-space relative z-10 w-full">
       <!-- Title -->
-      <div class="title-box">
-        <div>
-          <h1 class="title-big">contact</h1>
-          <img
-            src="@/assets/image/graphic-lines/underline.svg"
-            alt="title-underline"
-            class="title-underline"
-          />
-        </div>
-        <p class="title-small">me</p>
+      <div class="flex flex-col items-center mb-24">
+        <p class="text-xs uppercase tracking-[0.5em] text-green-400 mb-4 font-[600]">Communication_Protocol</p>
+        <h2 class="title-big">THE_LINK</h2>
       </div>
-      <!--Contact Form -->
 
       <form
         @submit.prevent="handleSubmit"
-        class="pb-36 lg:pb-60 4_2xl:pb-40 flex max-w-[900px] mx-auto flex-col items-center justify-center !mt-24 gap-y-16 md:gap-y-32"
+        class="max-w-2xl mx-auto flex flex-col gap-12"
       >
-        <div class="flex flex-col md:flex-row gap-16 w-full">
-          <input
-            v-model="item.name"
-            name="name"
-            type="text"
-            placeholder="Name"
-            class="input"
-            required
-          />
-          <input
-            v-model="item.email"
-            name="email"
-            type="email"
-            placeholder="Email"
-            class="input"
-            required
-          />
-        </div>
-        <textarea
-          v-model="item.message"
-          name="message"
-          placeholder="Message"
-          class="input h-[200px]"
-          required
-        ></textarea>
-        <div class="relative group w-full md:w-fit">
-          <button type="submit" class="btn !w-full">
-            <span v-if="isLoading"
-              ><Icon name="eos-icons:three-dots-loading"
-            /></span>
-            <span v-else>Send</span>
-          </button>
-          <div v-if="message" class="font-light mt-4">{{ message }}</div>
-          <div
-            class="hidden md:inline absolute -bottom-4 xl:-bottom-16 right-20 md:-right-40 xl:-right-80 group-hover:-translate-x-8 ease-in-out duration-300"
-          >
-            <img
-              src="@/assets/image/graphic-lines/arrow-3.png"
-              alt="graphic-lines-arrow-3"
-              :draggable="false"
-              class="w-[100px] xl:w-[200px]"
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="relative group">
+            <input
+              v-model="item.name"
+              name="name"
+              type="text"
+              placeholder="NAME"
+              class="w-full bg-green-400/5 border border-green-400/20 px-6 py-4 font-mono text-sm focus:border-green-400 focus:outline-none transition-colors placeholder:text-green-400/30"
+              required
             />
+            <div class="absolute top-0 left-0 w-1 h-full bg-green-400 scale-y-0 group-focus-within:scale-y-100 transition-transform origin-top"></div>
+          </div>
+          <div class="relative group">
+            <input
+              v-model="item.email"
+              name="email"
+              type="email"
+              placeholder="EMAIL_ADDRESS"
+              class="w-full bg-green-400/5 border border-green-400/20 px-6 py-4 font-mono text-sm focus:border-green-400 focus:outline-none transition-colors placeholder:text-green-400/30"
+              required
+            />
+            <div class="absolute top-0 left-0 w-1 h-full bg-green-400 scale-y-0 group-focus-within:scale-y-100 transition-transform origin-top"></div>
           </div>
         </div>
-      </form>
-    </div>
+        <div class="relative group">
+          <textarea
+            v-model="item.message"
+            name="message"
+            placeholder="SYSTEM_MESSAGE"
+            class="w-full bg-green-400/5 border border-green-400/20 px-6 py-4 font-mono text-sm focus:border-green-400 focus:outline-none transition-colors h-48 placeholder:text-green-400/30"
+            required
+          ></textarea>
+          <div class="absolute top-0 left-0 w-1 h-full bg-green-400 scale-y-0 group-focus-within:scale-y-100 transition-transform origin-top"></div>
+        </div>
 
-    <!-- /* ------------------------------ Graphic lines ----------------------------- */ -->
-    <div class="absolute bottom-0 left-0 z-10">
-      <img
-        src="@/assets/image/graphic-lines/landing-8.png"
-        alt="graphic-lines-landing-8"
-        :draggable="false"
-        class="w-[100px] xl:w-[200px] 3xl:w-full"
-      />
+        <div class="flex flex-col items-center gap-6">
+          <button type="submit" class="btn w-full md:w-auto min-w-[300px] flex items-center justify-center gap-4">
+            <span v-if="isLoading">
+              <Icon name="eos-icons:three-dots-loading" class="text-2xl" />
+            </span>
+            <span v-else class="flex items-center gap-4">
+              EXECUTE_SEND <Icon name="material-symbols:send-outline" />
+            </span>
+          </button>
+          <Transition
+            enter-active-class="transition-all duration-500 ease-out"
+            enter-from-class="opacity-0 -translate-y-4"
+            leave-active-class="transition-all duration-500 ease-in"
+            leave-to-class="opacity-0 translate-y-4"
+          >
+            <div v-if="message" class="text-xs font-mono text-green-400 uppercase tracking-widest border border-green-400/30 px-6 py-2 bg-green-400/5">
+              {{ message }}
+            </div>
+          </Transition>
+        </div>
+      </form>
     </div>
   </div>
 </template>

@@ -1,93 +1,23 @@
 <template>
-    <div class="splash-screen">
-        <div class="spinner-wrapper">
-            <div class="spinner">
-                <div class="dot1"></div>
-                <div class="dot2"></div>
+    <div class="splash-screen flex flex-col items-center justify-center gap-8 bg-[#1c1c1e]">
+        <div class="relative w-24 h-24">
+            <div class="absolute inset-0 border-2 border-green-400/20 rounded-full animate-[ping_2s_infinite]"></div>
+            <div class="absolute inset-0 border-2 border-green-400 rounded-full animate-[spin_3s_linear_infinite]"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-8 h-8 bg-green-400 animate-[pulse_1.5s_infinite]"></div>
             </div>
+        </div>
+        <div class="font-mono text-xs tracking-[0.5em] text-green-400 uppercase animate-pulse">
+            Booting_System_v4
         </div>
     </div>
 </template>
 
 <style scoped>
     .splash-screen {
-        background: #151515;
         width: 100vw;
         height: 100vh;
         position: fixed;
         z-index: 50;
-    }
-
-    .spinner-wrapper {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-
-        transform: translate(-50%, -50%);
-    }
-    .spinner {
-        margin: 100px auto;
-        width: 40px;
-        height: 40px;
-        position: relative;
-        text-align: center;
-
-        -webkit-animation: sk-rotate 2s infinite linear;
-        animation: sk-rotate 2s infinite linear;
-    }
-
-    .dot1,
-    .dot2 {
-        width: 60%;
-        height: 60%;
-        display: inline-block;
-        position: absolute;
-        top: 0;
-        background-color: #eee;
-        border-radius: 100%;
-
-        -webkit-animation: sk-bounce 2s infinite ease-in-out;
-        animation: sk-bounce 2s infinite ease-in-out;
-    }
-
-    .dot2 {
-        top: auto;
-        bottom: 0;
-        -webkit-animation-delay: -1s;
-        animation-delay: -1s;
-    }
-
-    @-webkit-keyframes sk-rotate {
-        100% {
-            -webkit-transform: rotate(360deg);
-        }
-    }
-    @keyframes sk-rotate {
-        100% {
-            transform: rotate(360deg);
-            -webkit-transform: rotate(360deg);
-        }
-    }
-
-    @-webkit-keyframes sk-bounce {
-        0%,
-        100% {
-            -webkit-transform: scale(0);
-        }
-        50% {
-            -webkit-transform: scale(1);
-        }
-    }
-
-    @keyframes sk-bounce {
-        0%,
-        100% {
-            transform: scale(0);
-            -webkit-transform: scale(0);
-        }
-        50% {
-            transform: scale(1);
-            -webkit-transform: scale(1);
-        }
     }
 </style>

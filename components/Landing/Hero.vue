@@ -1,94 +1,51 @@
 <script setup></script>
 
 <template>
-    <div class="relative mb-32 h-full">
-        <div
-            class="side-space mt-10 lg:mt-3 3xl:mt-8 4xl:mt-20 "
-        >
-            <div
-                class="hero grid lg:grid-cols-2 gap-x-10"
-                id="hero"
-            >
-                <!-- Hero Image -->
-                <div
-                    class="hidden lg:inline row-span-1 row-start-2 row-end-2 md:row-start-auto md:row-end-auto 2xl:-mt-[18vh] !z-0"
-                >
-                    <div class="relative overflow-y-visible">
-                        <img
-                            class="relative left-0 top-0"
-                            src="@/assets/image/mac-box.jpg"
-                            alt="mac-pc"
-                            width="100%"
-                            height="100%"
-                            :draggable="false"
-                        />
-                        <img
-                            class="absolute left-0 top-0 ease-in-out duration-1000 overflow-hidden cutout1"
-                            src="@/assets/image/binary-cutout.png"
-                            alt="mac-pc-screen"
-                            width="100%"
-                            height="100%"
-                            :draggable="false"
-                        />
-                        <img
-                            class="absolute left-0 top-0 ease-in-out duration-1000 overflow-hidden cutout2"
-                            src="@/assets/image/code-cutout.png"
-                            alt="mac-pc-screen"
-                            width="100%"
-                            height="100%"
-                            :draggable="false"
-                        />
-                        <img
-                            class="absolute left-0 top-0 ease-in-out duration-1000 overflow-hidden cutout3"
-                            src="@/assets/image/project-cutout.png"
-                            alt="mac-pc-screen"
-                            width="100%"
-                            height="100%"
-                            :draggable="false"
-                        />
-                    </div>
+    <div class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+        <Landing-Engine />
+
+        <div class="relative z-10 flex flex-col items-center text-center w-full" id="hero">
+            <div class="flex flex-col items-center gap-y-12 max-w-5xl px-4">
+
+                <!-- Title — twice as big -->
+                <div class="flex flex-col items-center">
+                    <h1
+                        class="[font-size:clamp(4rem,12vw,12rem)] font-bold tracking-[-0.04em] leading-[0.85] [text-shadow:0_0_80px_rgba(28,28,30,1),0_0_160px_rgba(28,28,30,0.8)] text-white uppercase"
+                    >
+                        Dagim<span class="text-green-400">.</span>
+                    </h1>
                 </div>
-                <!-- Hero Content -->
-                <div
-                    class="flex flex-col gap-y-8 xl:gap-y-12 justify-start mt-20 3xl:mt-28 lg:mx-auto"
-                >
-                    <p class="text-base font-[300] tracking-widest">
-                        <span class="grayscale">👋</span> Hi there, I'm
-                    </p>
-                    <img
-                        src="@/assets/image/dagim-shimelis.svg"
-                        alt="name"
-                        class="w-full sm:w-[80%] lg:w-[400px] xl:w-[550px]"
-                        :draggable="false"
-                    />
-                    <p class="para-text w-full sm:w-[440px] xl:w-[500px]">
-                        From eye-catching designs to seamless functionality,
-                        I've got you covered. With expertise in web design,
-                        frontend development, and backend development, I'll
-                        bring your digital dreams to life. Let's build something
-                        great together!
-                    </p>
-                    <div class="group relative">
-                        <router-link
-                            to="#contact"
-                            class="btn-small !text-center !w-full xs:!w-fit mt-4 xl:mt-8"
-                            >Let's Talk</router-link
-                        >
-                        <img
-                            src="@/assets/image/graphic-lines/landing-2.png"
-                            alt="graphic-lines-landing-2"
-                            class="hidden lg:inline absolute -bottom-[150px] left-60 group-hover:-translate-x-4 group-hover:-translate-y-4 ease-in-out duration-300"
-                        />
-                    </div>
-                </div>
+
+                <!-- Subtitle — runreal-sized (~32px on desktop) -->
+                <p class="[font-size:clamp(2rem,3vw,3.5rem)] font-normal tracking-[-0.02em] [text-shadow:0_0_40px_rgba(28,28,30,1),0_0_80px_rgba(28,28,30,0.9)] text-white text-center leading-snug max-w-3xl">
+                    Full-Stack Developer &amp; UI/UX Designer
+                </p>
+
+                <!-- Description — mono, muted -->
+                <p class="font-mono font-normal uppercase text-center leading-relaxed tracking-[0.12em] text-white max-w-xl">
+                    Architecting digital experiences with
+                    precision and creativity
+                </p>
+
+                <!-- Dashed separator -->
+                <div class="w-44 border-t border-dashed border-white/20"></div>
+
+                <!-- CTA -->
+                <!-- <div class="flex items-center gap-x-16">
+                    <router-link
+                        to="#projects"
+                        class="[font-size:clamp(0.7rem,1vw,0.85rem)] [text-shadow:0_0_20px_rgba(28,28,30,1),0_0_40px_rgba(28,28,30,0.9)] font-mono uppercase tracking-[0.12em] text-white/70 hover:text-white transition-colors"
+                    >
+                        Explore Projects
+                    </router-link>
+                    <router-link
+                        to="#contact"
+                        class="[font-size:clamp(0.7rem,1vw,0.85rem)] [text-shadow:0_0_20px_rgba(28,28,30,1),0_0_40px_rgba(28,28,30,0.9)] font-mono uppercase tracking-[0.12em] text-white/70 hover:text-white transition-colors"
+                    >
+                        Contact
+                    </router-link>
+                </div> -->
             </div>
-        </div>
-        <div
-            class="side-space h-24 mt-28 xs:mt-40  flex items-center overflow-x-hidden z-10"
-        >
-            <Common-Companies />
         </div>
     </div>
 </template>
-
-<style scoped></style>

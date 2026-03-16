@@ -6,7 +6,7 @@
 
 <template>
     <div
-        class="relative flex flex-col items-center justify-center gap-y-6 text-center min-h-screen bg-black text-white font-poppins overflow-y-hidden w-screen center-content cursor-custom"
+        class="relative flex flex-col items-center justify-center gap-y-6 text-center min-h-screen bg-black text-white font-poppins overflow-y-hidden w-screen center-content"
     >
         <h2
             class="uppercase font-[600] text-8xl"

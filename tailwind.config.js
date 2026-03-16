@@ -23,8 +23,13 @@ export default {
                 "lexend-deca": ["Lexend Deca", "sans-serif"],
             },
             colors: {
-                black: "#151515",
+                black: "#1c1c1e",
                 white: "#eeeeee",
+                green: {
+                    50: "#f0fdf4",
+                    100: "#dcfce7",
+                    400: "#28D466",
+                },
             },
         },
     },

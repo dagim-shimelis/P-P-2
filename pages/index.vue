@@ -39,7 +39,7 @@
         />
     </Head>
 
-    <div class="h-full overflow-y-clip min-h-screen">
+    <div class="h-full overflow-y-clip min-h-screen bg-[#1c1c1e] text-green-50">
         <Landing-Hero />
         <Landing-About id="about" />
         <Landing-Projects id="projects" />

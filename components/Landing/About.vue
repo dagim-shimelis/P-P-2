@@ -58,110 +58,60 @@
 </script>
 
 <template>
-    <div class="relative min-h-screen pb-32 xl:pb-0">
-        <div
-            class="side-space !z-10 mt-20 md:mt-0 pt-20 xs:pt-40 relative lg:grid grid-rows-2 md:grid-cols-2 md:grid-rows-1"
-        >
-            <!-- About Image -->
-            <div class="h-fit">
-                <img
-                    src="@/assets/image/about-image.png"
-                    alt="Me"
-                    class="w-[80%] md:w-[60%] lg:w-fit mx-auto"
-                    :draggable="false"
-                />
-            </div>
-            <!-- About Content -->
-            <div
-                class="flex flex-col gap-y-8 sm:gap-y-16 justify-center lg:justify-start mx-auto mt-32 lg:mt-0 w-fit"
-            >
-                <!-- Title -->
-                <div class="title-box">
-                    <p class="title-small">A few things</p>
-                    <div>
-                        <h1 class="title-big">about</h1>
-                        <img
-                            src="@/assets/image/graphic-lines/underline.svg"
-                            alt="title-underline"
-                            class="title-underline"
-                        />
+    <div class="relative min-h-screen py-32 overflow-hidden">
+        <div class="side-space relative z-10">
+            <div class="flex flex-col lg:flex-row gap-20 items-center">
+                <!-- Text Content -->
+                <div class="flex-1 flex flex-col gap-y-12">
+                    <div class="flex flex-col">
+                        <p class="text-xs uppercase tracking-[0.5em] text-green-400 mb-4 font-[600]">Technical Specification</p>
+                        <h2 class="title-big">THE_ENGINEER</h2>
                     </div>
-                    <p class="title-small">me</p>
+                    <div class="flex flex-col gap-y-6">
+                        <p class="para-text">
+                            With a focus on high-performance architectures and 
+                            pixel-perfect implementations, I build digital 
+                            systems that are as robust as they are elegant. 
+                            My approach combines mathematical precision with 
+                            creative intuition.
+                        </p>
+                        <div class="grid grid-cols-2 gap-8 mt-8">
+                            <div class="border-l border-green-400/30 pl-6">
+                                <h4 class="text-green-400 font-mono text-xs mb-2 uppercase">Core_Logic</h4>
+                                <p class="text-sm">Frontend Architecture, UI/UX Systems</p>
+                            </div>
+                            <div class="border-l border-green-400/30 pl-6">
+                                <h4 class="text-green-400 font-mono text-xs mb-2 uppercase">Backend_Sync</h4>
+                                <p class="text-sm">Scalable APIs, Database Optimization</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tools -->
+                    <div class="flex flex-col gap-y-4">
+                        <p class="text-xs uppercase tracking-widest text-green-400/50">Integrated_Modules</p>
+                        <ul class="flex flex-wrap items-center gap-6">
+                            <li v-for="(tool, i) in tools" :key="i" :title="tool.name">
+                                <a :href="tool.link" target="_blank" class="grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110 block">
+                                    <Icon :name="tool.icon" class="w-6 h-6 text-green-400" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <!-- About me text -->
-                <div class="flex flex-col gap-y-6">
-                    <p class="para-text">
-                        With a passion for web development that spans over 4
-                        years, I specialize in both front-end and back-end work,
-                        although my heart lies in crafting immersive and
-                        visually captivating front-end experiences. I am
-                        dedicated to merging aesthetics with functionality,
-                        creating digital landscapes that not only look stunning
-                        but also perform seamlessly.
-                    </p>
-                    <p class="para-text">
-                        My approach to web development is driven by a meticulous
-                        attention to detail, ensuring that every pixel and line
-                        of code contributes meaningfully to the overall user
-                        experience. I thrive on challenges and am task-oriented,
-                        consistently striving for excellence in every project I
-                        undertake.
-                    </p>
-                    <p class="para-text">
-                        Throughout the past 3 years I've honed my skills to
-                        blend creativity and technical expertise. Whether it's
-                        designing sleek user interfaces or architecting robust
-                        backend systems, I am committed to delivering solutions
-                        that exceed expectations.
-                    </p>
-                </div>
-                <!-- Tools -->
-                <div class="!space-y-4 -mt-6 md:mt-0">
-                    <p class="text-base tracking-wider">
-                        Some of my favorite tools that I use
-                    </p>
-                    <ul class="flex items-center gap-x-4 sm:gap-x-6">
-                        <li
-                            v-for="(tool, i) in tools"
-                            :key="i"
-                            :title="tool.name"
-                        >
-                            <a
-                                :href="tool.link"
-                                target="_blank"
-                                aria-label="Read more about this tool in their website"
-                                class="hover:cursor-custom-pointer group"
-                            >
-                                <Icon
-                                    :name="tool.icon"
-                                    class="group-hover:hidden tool-icons"
-                                />
-                                <Icon
-                                    :name="tool.originalIcon"
-                                    class="!hidden group-hover:!inline group-hover:scale-125 tool-icons"
-                                />
-                            </a>
-                        </li>
-                    </ul>
+                <!-- Visual/Image -->
+                <div class="flex-1 relative">
+                    <div class="relative border border-green-400/20 p-8 backdrop-blur-sm bg-green-400/5 group overflow-hidden">
+                        <img
+                            class="grayscale contrast-125 opacity-80 group-hover:scale-105 transition-transform duration-700"
+                            src="@/assets/image/about-image.png"
+                            alt="about-image"
+                        />
+                        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute -top-2 -right-2 w-4 h-4 border-t-2 border-r-2 border-green-400"></div>
+                        <div class="absolute -bottom-2 -left-2 w-4 h-4 border-b-2 border-l-2 border-green-400"></div>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <!-- /* ------------------------------ Graphic lines ----------------------------- */ -->
-        <div class="absolute top-[208px] w-full">
-            <img
-                src="@/assets/image/git-grid.png"
-                alt="git-grid"
-                :draggable="false"
-            />
-        </div>
-        <div class="absolute top-0 lg:-top-20 left-0">
-            <img
-                src="@/assets/image/graphic-lines/landing-3.png"
-                alt="graphic-lines-landing-3"
-                :draggable="false"
-                class="w-[200px] md:w-[400px] lg:w-full"
-            />
         </div>
     </div>
 </template>

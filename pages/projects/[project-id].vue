@@ -32,7 +32,7 @@
                 <!-- Prev -->
                 <router-link
                     :to="project.previousProject.link"
-                    class="z-30 mix-blend-difference space-y-4 cursor-custom-pointer w-[300px]"
+                    class="z-30 mix-blend-difference space-y-4 w-[300px]"
                 >
                     <div class="flex items-center">
                         <Icon
@@ -58,7 +58,7 @@
                 <!-- Next -->
                 <router-link
                     :to="project.nextProject.link"
-                    class="z-30 mix-blend-difference space-y-4 text-end cursor-custom-pointer w-[300px]"
+                    class="z-30 mix-blend-difference space-y-4 text-end w-[300px]"
                 >
                     <div class="flex items-center w-fit ml-auto">
                         <p
@@ -189,7 +189,7 @@
         >
             <router-link
                 to="#top"
-                class="group w-fit relative cursor-custom-pointer h-[70px]"
+                class="group w-fit relative h-[70px]"
             >
                 <img
                     src="@/assets/image/graphic-lines/arrow-4.png"

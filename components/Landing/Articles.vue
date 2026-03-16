@@ -1,6 +1,8 @@
 <script setup>
-    import { Carousel, Slide, Pagination } from "vue3-carousel";
+    import { Carousel, Slide } from "vue3-carousel";
     import "vue3-carousel/dist/carousel.css";
+
+    const carouselRef = ref(null);
 
     const articles = ref([
         {
@@ -56,85 +58,63 @@
 </script>
 
 <template>
-    <div class="relative min-h-screen">
-        <div class="side-space pt-10">
-            <!-- About Content -->
-            <div class="flex flex-col gap-y-5 justify-start mx-auto">
-                <div class="flex items-center justify-between">
-                    <!-- Title -->
-                    <div class="title-box">
-                        <div>
-                            <h1 class="title-big">articles</h1>
-                            <img
-                                src="@/assets/image/graphic-lines/underline.svg"
-                                alt="title-underline"
-                                class="title-underline"
-                            />
-                        </div>
-                        <p class="title-small">I've Written</p>
-                    </div>
-                    <!-- Read All CTO -->
-                    <a
-                        href="https://medium.com/@dagimshimelis1992"
-                        target="_blank"
-                        aria-label="See All Article"
-                        class="hidden md:block relative space-y-1 group w-fit cursor-custom-pointer"
+    <div class="relative min-h-screen py-32">
+        <div class="side-space relative z-10">
+            <div class="flex flex-col items-center mb-24">
+                <p class="text-xs uppercase tracking-[0.5em] text-green-400 mb-4 font-[600]">Intellectual_Output</p>
+                <h2 class="title-big">THE_THOUGHTS</h2>
+            </div>
+            
+            <div class="w-full">
+                <carousel
+                    ref="carouselRef"
+                    :breakpoints="breakpoints"
+                    class="w-full"
+                >
+                    <slide
+                        v-for="(article, i) in articles"
+                        :key="i"
+                        class="px-4"
                     >
-                        <span class="text-xs md:text-base tracking-wider"
-                            >See All Article</span
-                        >
-                        <img
-                            src="@/assets/image/graphic-lines/arrow-2.png"
-                            alt="arrow"
-                            class="absolute -top-1 -left-5 md:-left-10 md:group-hover:translate-x-4 md:group-hover:-translate-y-2 ease-in-out duration-300"
-                        />
-                    </a>
-                </div>
-                <!-- Article List -->
-                <div class="w-full md:mt-10">
-                    <carousel
-                        :breakpoints="breakpoints"
-                        class="w-full mt-5 md:mt-10 mb-auto"
-                    >
-                        <slide
-                            v-for="(article, i) in articles"
-                            :key="i"
-                            class="!mb-8 px-6 md:px-3 draggable"
-                        >
-                            <ArticleCard
-                                :articleContent="article"
-                            ></ArticleCard>
-                        </slide>
-                        <template #addons> <pagination /> </template>
-                    </carousel>
-                </div>
+                        <ArticleCard
+                            :articleContent="article"
+                            class="border border-green-400/20 bg-green-400/5 backdrop-blur-sm transition-all duration-500 hover:border-green-400"
+                        ></ArticleCard>
+                    </slide>
+                </carousel>
 
+                <div class="mt-12 flex justify-center items-center gap-6">
+                    <button
+                        @click="carouselRef?.prev()"
+                        class="w-10 h-10 border border-green-400/30 flex items-center justify-center text-green-400 hover:bg-green-400/10 hover:border-green-400 transition-all duration-300"
+                        aria-label="Previous article"
+                    >
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 18l-6-6 6-6" />
+                        </svg>
+                    </button>
+                    <span class="text-[10px] font-mono text-green-400/50 uppercase tracking-[0.3em]">Navigate</span>
+                    <button
+                        @click="carouselRef?.next()"
+                        class="w-10 h-10 border border-green-400/30 flex items-center justify-center text-green-400 hover:bg-green-400/10 hover:border-green-400 transition-all duration-300"
+                        aria-label="Next article"
+                    >
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex justify-center mt-20">
                 <a
                     href="https://medium.com/@dagimshimelis1992"
                     target="_blank"
-                    aria-label="See All Article"
-                    class="md:hidden relative ml-12 my-12 block space-y-1 group w-fit cursor-custom-pointer"
+                    class="btn flex items-center gap-4"
                 >
-                    <span class="text-base tracking-wider"
-                        >See All Article</span
-                    >
-                    <img
-                        src="@/assets/image/graphic-lines/arrow-2.png"
-                        alt="arrow"
-                        class="absolute -top-1 -left-10 md:group-hover:translate-x-4 md:group-hover:-translate-y-2 ease-in-out duration-300"
-                    />
+                    Access Archive <Icon name="mdi:medium" />
                 </a>
             </div>
-        </div>
-
-        <!-- /* ------------------------------ Graphic lines ----------------------------- */ -->
-        <div class="absolute bottom-4 md:-bottom-32 right-0">
-            <img
-                src="@/assets/image/graphic-lines/landing-7.png"
-                alt="graphic-lines-landing-7"
-                :draggable="false"
-                class="w-[200px] xl:w-[200px] 3xl:w-full"
-            />
         </div>
     </div>
 </template>

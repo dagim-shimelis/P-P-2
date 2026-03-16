@@ -27,131 +27,64 @@
 </script>
 
 <template>
-    <header
-        id="home"
-        class="relative !h-20"
-    >
-        <div
-            class="fixed w-full !h-20 !z-40 from-black via-black/90 via-30% to-transparent to-90% bg-gradient-to-b"
-        >
-            <div
-                class="side-space !h-20 flex items-center justify-between !pt-2"
-            >
+    <header id="home" class="fixed w-full z-50 transition-all duration-300">
+        <div class="backdrop-blur-md bg-black/20 border-b border-green-400/10">
+            <div class="side-space h-20 flex items-center justify-between">
                 <!-- Logo -->
-                <router-link
-                    to="/"
-                    class="absolute top-2 sm:top-4"
-                >
-                    <img
-                        src="/icons/logo.png"
-                        alt="logo"
-                        class="w-10 lg:w-[60px]"
-                        draggable="false"
-                    />
+                <router-link to="/" class="flex items-center gap-2 group">
+                    <div class="w-8 h-8 border border-green-400 flex items-center justify-center font-mono text-green-400 font-bold group-hover:bg-green-400 group-hover:text-black transition-all">
+                        DS
+                    </div>
+                    <span class="font-mono text-xs tracking-[0.3em] text-green-400/50 hidden sm:inline uppercase">Engine_v4</span>
                 </router-link>
-                <!-- /* ------------------------------- Desktop Nav ------------------------------ */ -->
-                <ul
-                    class="hidden lg:flex items-center gap-x-16 w-fit mx-auto !z-50"
-                >
-                    <li
-                        v-for="(navigator, i) in navigation"
-                        :key="i"
-                        class="nav-link"
-                    >
-                        <router-link
-                            :to="navigator.to"
-                            class="cursor-custom-pointer"
-                            >{{ navigator.name }}</router-link
-                        >
-                    </li>
-                </ul>
-                <div></div>
-                <!-- /* ------------------------------- Mobile Nav ------------------------------- */ -->
-                <div class="lg:hidden ml-auto">
-                    <button
-                        @click="visibleSideNav = true"
-                        aria-label="Open Navigation"
-                        class="menu-button absolute top-3 sm:top-5 right-4 sm:right-8 z-10"
-                    >
-                        <Icon
-                            name="uil:bars"
-                            class="text-2xl"
-                        />
-                    </button>
-                    <Sidebar
-                        v-model:visible="visibleSideNav"
-                        position="right"
-                        class="relative w-full"
-                    >
-                        <template #header>
-                            <button
-                                @click="visibleSideNav = false"
-                                aria-label="Close Navigation"
-                                class="menu-button absolute top-3 sm:top-5 right-4 sm:right-8 z-10"
+
+                <!-- Desktop Nav -->
+                <nav class="hidden lg:block">
+                    <ul class="flex items-center gap-x-12">
+                        <li v-for="(navigator, i) in navigation" :key="i">
+                            <router-link
+                                :to="navigator.to"
+                                class="nav-link text-xs tracking-[0.4em] uppercase font-[600] text-green-400/60 hover:text-green-400 transition-colors relative group"
                             >
-                                <Icon
-                                    name="uil:multiply"
-                                    class="text-2xl"
-                                />
-                            </button>
-                        </template>
-                        <nav
-                            class="absolute top-0 right-0 ml-auto w-full h-screen bg-black p-6 md:pt-28 flex flex-col justify-center gap-y-10 overflow-y-scroll"
-                        >
-                            <NuxtLink
-                                @click="visibleSideNav = false"
-                                to="/"
-                                class="w-fit h-fit mx-auto z-30 mt-20"
-                            >
-                                <img
-                                    src="/icons/logo.png"
-                                    alt="logo"
-                                    draggable="false"
-                                />
-                            </NuxtLink>
-                            <ul
-                                class="z-30 flex flex-col text-center gap-y-[59px]"
-                            >
-                                <li
-                                    v-for="(navigator, i) in navigation"
-                                    :key="i"
-                                >
-                                    <NuxtLink
-                                        @click="visibleSideNav = false"
-                                        :to="navigator.to"
-                                        class="nav-link"
-                                    >
-                                        <p>{{ navigator.name }}</p></NuxtLink
-                                    >
-                                </li>
-                            </ul>
-                            <div class="!text-white mt-auto">
-                                <Footer></Footer>
-                            </div>
-                            <!-- Graphic line -->
-                            <div class="absolute top-0 left-0 z-40">
-                                <img
-                                    src="@/assets/image/graphic-lines/landing-4.png"
-                                    alt="graphic-lines-landing-4"
-                                    :draggable="false"
-                                    class="w-[100px] md:w-[200px] -scale-x-100"
-                                />
-                            </div>
-                        </nav>
-                    </Sidebar>
+                                {{ navigator.name }}
+                                <span class="absolute -bottom-1 left-0 w-0 h-[1px] bg-green-400 transition-all duration-300 group-hover:w-full"></span>
+                            </router-link>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Status Indicator -->
+                <div class="hidden sm:flex items-center gap-4 font-mono text-[10px] text-green-400/40">
+                    <span class="flex h-2 w-2 relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-green-400"></span>
+                    </span>
+                    SYSTEM_ONLINE
                 </div>
+
+                <!-- Mobile Menu Button -->
+                <button @click="visibleSideNav = true" class="lg:hidden text-green-400">
+                    <Icon name="uil:bars" class="text-2xl" />
+                </button>
             </div>
         </div>
 
-        <!-- /* ------------------------------ Graphic lines ----------------------------- */ -->
-        <div class="absolute top-0 right-0 z-30">
-            <img
-                src="@/assets/image/graphic-lines/landing-1.png"
-                alt="graphic-lines-landing-1"
-                :draggable="false"
-                class="w-[400px]"
-                :class="route.params?.projectid && '!w-[200px]'"
-            />
+        <!-- Mobile Nav Sidebar (Simplified for brevity) -->
+        <div v-if="visibleSideNav" class="fixed inset-0 bg-black z-[100] flex flex-col items-center justify-center gap-12">
+            <button @click="visibleSideNav = false" class="absolute top-6 right-6 text-green-400">
+                <Icon name="uil:multiply" class="text-3xl" />
+            </button>
+            <ul class="flex flex-col items-center gap-8">
+                <li v-for="(navigator, i) in navigation" :key="i">
+                    <router-link
+                        @click="visibleSideNav = false"
+                        :to="navigator.to"
+                        class="text-2xl tracking-[0.5em] uppercase text-green-400"
+                    >
+                        {{ navigator.name }}
+                    </router-link>
+                </li>
+            </ul>
         </div>
     </header>
 </template>

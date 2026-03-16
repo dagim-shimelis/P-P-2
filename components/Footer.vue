@@ -24,31 +24,37 @@
 </script>
 
 <template>
-    <footer class="md:absolute bottom-0 space-y-8 w-full flex justify-center">
-        <div>
+    <footer class="py-12 border-t border-green-400/10 mt-32 relative z-10">
+        <div class="side-space flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex flex-col items-center md:items-start">
+                <p class="text-[10px] font-mono text-green-400/50 uppercase tracking-[0.3em]">Build_Checksum</p>
+                <p class="text-xs font-mono text-green-400/80">HASH_7A2B9C4D_2026</p>
+            </div>
+            
             <ul class="flex items-center gap-x-8 justify-center">
                 <li
                     v-for="(social, i) in socials"
                     :key="i"
                     :title="social.name"
-                    class="hover:scale-110 ease-in-out duration-150"
+                    class="transition-all duration-300 hover:-translate-y-1"
                 >
                     <a
                         :href="social.link"
                         target="_blank"
-                        aria-label="Visit site"
-                        class="cursor-custom-pointer"
+                        class="text-green-400/60 hover:text-green-400"
                     >
                         <Icon
                             :name="social.icon"
-                            class="w-[23px] sm:w-[31px] h-[23px] sm:h-[31px]"
+                            class="w-6 h-6"
                         />
                     </a>
                 </li>
             </ul>
-            <p class="text-sm font-[200] text-center my-8 mb-4">
-                © 2024 Dagim Shimelis
-            </p>
+
+            <div class="flex flex-col items-center md:items-end">
+                <p class="text-[10px] font-mono text-green-400/50 uppercase tracking-[0.3em]">Status</p>
+                <p class="text-xs font-mono text-green-400/80">© 2026 DAGIM_SHIMELIS // ALL_SYSTEMS_GO</p>
+            </div>
         </div>
     </footer>
 </template>

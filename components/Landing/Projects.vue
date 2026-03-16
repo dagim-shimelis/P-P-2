@@ -57,157 +57,65 @@
 <template>
     <div
         id="projectsWrapper"
-        class="relative overflow-x-clip w-screen"
+        class="relative overflow-x-clip w-screen min-h-screen py-32"
     >
         <div
             id="projectsList"
-            class="min-h-screen px-4 md:px-16 3xl:px-44 relative lg:flex gap-x-28 z-10"
+            class="px-4 md:px-16 3xl:px-44 relative lg:flex flex-col gap-y-32 z-10"
         >
             <!-- Projects Content -->
-            <div class="flex flex-col gap-y-16 justify-start m-auto">
+            <div class="flex flex-col gap-y-16 justify-center max-w-4xl mx-auto text-center items-center">
                 <!-- Title -->
-                <div class="title-box lg:!w-[800px]">
-                    <p class="title-small">Some of the</p>
-                    <div>
-                        <h1 class="title-big">projects</h1>
-                        <img
-                            src="@/assets/image/graphic-lines/underline.svg"
-                            alt="title-underline"
-                            class="title-underline"
-                        />
-                    </div>
-                    <p class="title-small">I've worked on</p>
+                <div class="flex flex-col items-center">
+                    <p class="text-xs uppercase tracking-[0.5em] text-green-400 mb-4 font-[600]">Technical Showcases</p>
+                    <h2 class="title-big">THE_PROJECTS</h2>
                 </div>
                 <!-- About me text -->
                 <div class="flex flex-col gap-y-6">
                     <p class="para-text">
-                        As I navigate this dynamic field, I embrace new
-                        challenges and technologies, constantly seeking
-                        innovative ways to elevate user experiences. This
-                        section serves as a window into the world of my recent
-                        web development endeavors. Each project here represents
-                        a fusion of creativity, technical skill, and a
-                        relentless pursuit of excellence.
-                    </p>
-                    <p class="para-text">
-                        As you explore the projects, you'll see the diverse
-                        range of work I've undertaken, from dynamic web apps to
-                        static landing pages. Each project tells a unique story
-                        of challenges met, problems solved, and innovation
-                        realized.
+                        A repository of digital machines and web architectures. 
+                        Each project represents a specific engineering challenge solved through 
+                        modern stack integration and creative problem-solving.
                     </p>
                 </div>
             </div>
             <!-- Projects list -->
-            <div class="flex items-center gap-x-8 lg:pr-28 4xl:pr-40">
-                <!-- Desktop View -->
-                <ul
-                    class="hidden lg:flex items-center gap-x-8 lg:pr-28 4xl:pr-40"
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:px-28">
+                <div
+                    v-for="(project, i) in projects"
+                    :key="i"
+                    class="group relative border border-green-400/20 p-4 transition-all duration-500 hover:border-green-400 hover:bg-green-400/5"
                 >
-                    <li
-                        v-for="(project, i) in projects"
-                        :key="i"
-                        class="!w-[80vw] scale-90"
-                        :class="i == projects.length - 1 && 'hidden'"
+                    <a
+                        :href="project.link"
+                        target="_blank"
+                        class="block"
                     >
-                        <a
-                            :href="project.link"
-                            target="_blank"
-                            aria-label="Visit project site"
-                            class="relative rounded-xl overflow-clip cursor-custom-pointer"
-                        >
-                            <p class="text-end text-3xl font-[600] mb-3">
-                                {{ project.name }}
-                            </p>
-                            <nuxt-img
+                        <div class="mb-4 overflow-hidden grayscale contrast-125 transition-all duration-500 group-hover:grayscale-0 group-hover:contrast-100">
+                             <img
                                 :src="project.thumbnailImage"
                                 alt="project screenshot"
-                                class="object-fill !h-full !w-full rounded-xl overflow-clip bg-white/5 aspect-video"
-                                :srcset="`
-                                    ${project.thumbnailImage}?format=webp&w=400 400w,
-                                    ${project.thumbnailImage}?format=webp&w=800 800w,
-                                    ${project.thumbnailImage}?format=webp&w=1200 1200w
-                                `"
-                                fit="cover"
-                                loading="lazy"
-                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                class="object-cover w-full aspect-video border border-green-400/10"
                             />
-                        </a>
-                    </li>
-                    <li class="!w-[80vw] scale-90">
-                        <router-link
-                            :to="projects[projects.length - 1].link"
-                            class="relative rounded-xl overflow-clip cursor-custom-pointer"
-                        >
-                            <p class="text-end text-3xl font-[600] mb-3">
-                                {{ projects[projects.length - 1].name }}
-                            </p>
-                            <img
-                                :src="
-                                    projects[projects.length - 1].thumbnailImage
-                                "
-                                alt="project screenshot"
-                                :draggable="false"
-                                class="object-fill !h-full !w-full rounded-xl overflow-clip bg-white/5 aspect-video"
-                            />
-                            <div
-                                class="absolute top-0 left-0 z-20 w-full h-full flex flex-col items-center justify-center gap-y-8 from-black/0 to-black bg-gradient-to-r"
-                                @click.stop="router.push('/projects/list')"
-                            >
-                                <p class="title-big">+12</p>
-                                <button class="btn">See more projects</button>
-                            </div>
-                        </router-link>
-                    </li>
-                </ul>
-                <!-- Mobile View -->
-                <carousel
-                    :settings="settings"
-                    :breakpoints="breakpoints"
-                    class="lg:hidden w-full mt-5 mb-16 md:mt-10 space-x-8"
-                >
-                    <slide
-                        v-for="(project, i) in projects"
-                        :key="i"
-                        class="mx-4 px-0 md:px-3 xl:px-3 2xl:px-2 draggable"
-                    >
-                        <div
-                            :href="project.link"
-                            target="_blank"
-                            class="w-[90%]"
-                        >
-                            <img
-                                :src="project.thumbnailImage"
-                                alt="project screenshot"
-                                :draggable="false"
-                                class="object-fill !rounded-xl"
-                            />
-                            <div
-                                v-if="i == projects.length - 1"
-                                class="absolute top-0 left-0 z-20 w-full h-full flex flex-col items-center justify-center gap-y-8 from-black/0 to-black bg-gradient-to-r"
-                            >
-                                <p class="text-3xl">+11</p>
-                            </div>
                         </div>
-                    </slide>
-                </carousel>
+                        <div class="flex justify-between items-end">
+                            <div>
+                                <p class="text-xs text-green-400 font-mono mb-1">PROJECT_{{ i.toString().padStart(2, '0') }}</p>
+                                <h3 class="text-2xl font-[700] uppercase tracking-tighter">{{ project.name }}</h3>
+                            </div>
+                            <span class="text-green-400 group-hover:translate-x-2 transition-transform duration-300">→</span>
+                        </div>
+                    </a>
+                </div>
             </div>
-            <router-link
-                to="/projects"
-                class="lg:hidden w-full"
-            >
-                <button class="btn whitespace-nowrap !text-sm !px-2 mx-auto">
-                    See more projects
-                </button>
-            </router-link>
-        </div>
-        <div class="lg:absolute bottom-0 left-0">
-            <img
-                src="@/assets/image/graphic-lines/landing-6.png"
-                alt="graphic-lines-landing-6"
-                :draggable="false"
-                class="w-[100px] 2xl:w-[200px]"
-            />
+            <div class="flex justify-center mt-20">
+                <router-link
+                    to="/projects"
+                    class="btn"
+                >
+                    Access Full Registry
+                </router-link>
+            </div>
         </div>
     </div>
 </template>

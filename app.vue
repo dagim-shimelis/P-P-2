@@ -1,92 +1,42 @@
 <script setup>
-    import { gsap } from "gsap";
-    import { ScrollTrigger } from "gsap/ScrollTrigger";
-    gsap.registerPlugin(ScrollTrigger);
-
     const loadingPage = ref(true);
 
     onBeforeMount(() => {
         loadingPage.value = true;
     });
     onMounted(() => {
-        document.documentElement.lang = "en"; // and Language html attribute
+        document.documentElement.lang = "en";
         
-        /* ----------------------------- Initial Loading ---------------------------- */
-        loadingPage.value = false;
-        let tl = gsap.timeline();
-        tl.to(".blinder:nth-child(3)", {
-            y: "-100vh",
-            duration: 1,
-            ease: "power4.inOut",
-        })
-            .to(
-                ".blinder:nth-child(2)",
-                {
-                    y: "-100vh",
-                    duration: 1,
-                    ease: "power4.inOut",
-                },
-                "-=0.8",
-            )
-            .to(
-                ".blinder:nth-child(1)",
-                {
-                    y: "-100vh",
-                    duration: 1,
-                    ease: "power4.inOut",
-                },
-                "-=0.8",
-            );
+        // Disable loading after a short delay
+        setTimeout(() => {
+            loadingPage.value = false;
+        }, 2000);
 
-        /* --------------------------------- Cursor --------------------------------- */
-        const cursor = document.querySelector(".cursor");
-        const cursorF = document.querySelector(".cursor-f");
-        document.addEventListener("mousemove", (e) => {
-            let leftPosition = e.clientX;
-            let topPosition = e.clientY;
-
-            cursor.animate(
-                {
-                    left: `${leftPosition}px`,
-                    top: `${topPosition}px`,
-                },
-                {
-                    duration: 500,
-                    fill: "forwards",
-                },
-            );
-            cursorF.style.left = `${leftPosition + 8}px`;
-            cursorF.style.top = `${topPosition + 8}px`;
-        });
     });
 </script>
 
 <template>
     <div
         id="parent"
-        class="relative min-h-screen bg-black text-white font-poppins overflow-y-hidden w-screen center-content cursor-custom"
+        class="relative min-h-screen bg-[#1c1c1e] text-green-50 font-lexend overflow-x-hidden w-screen selection:bg-green-400 selection:text-black"
     >
         <InitialLoader v-if="loadingPage" />
-        <div class="blinder-container">
-            <div class="blinder blinder-b"></div>
-            <div class="blinder blinder-w"></div>
-            <div class="blinder blinder-b"></div>
-        </div>
 
-        <div class="cursor !hidden md:!inline"></div>
-        <div class="cursor-f !hidden md:!inline"></div>
         <NuxtLayout>
             <NuxtLoadingIndicator
-                height="5"
-                color="#eeeeee"
+                height="2"
+                color="#28D466"
             />
             <lenis>
                 <NuxtPage />
             </lenis>
+            
+            <!-- Screen Size Indicator (Dev Only) -->
             <div
                 v-if="useRuntimeConfig().public.mode == 'development'"
-                class="fixed px-3 py-2 text-sm font-bold text-white bg-gray-900 rounded bottom-4 left-4 z-50"
+                class="fixed px-3 py-1 text-[10px] font-mono text-green-400 bg-green-400/5 border border-green-400/20 bottom-4 left-4 z-50 uppercase tracking-widest"
             >
+                Viewport: 
                 <span class="hidden 2xs:inline-block xs:hidden">2XS</span>
                 <span class="hidden xs:inline-block sm:hidden">XS</span>
                 <span class="hidden sm:inline-block md:hidden">SM</span>
@@ -104,20 +54,8 @@
 </template>
 
 <style>
-    .center-content {
-        margin: 0 auto !important;
-    }
-
-    .blinder-container {
-        @apply fixed z-40;
-    }
-    .blinder {
-        @apply absolute w-[100vw] h-[100vh];
-    }
-    .blinder-w {
-        @apply bg-white;
-    }
-    .blinder-b {
-        @apply bg-black;
+    body {
+        background-color: #1c1c1e;
+        margin: 0;
     }
 </style>
