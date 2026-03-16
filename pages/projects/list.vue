@@ -25,7 +25,7 @@
                         target="_blank"
                         class="block"
                     >
-                        <div class="mb-4 overflow-hidden grayscale contrast-125 transition-all duration-500 group-hover:grayscale-0 group-hover:contrast-100">
+                        <div class="mb-4 overflow-hidden transition-all duration-500">
                              <img
                                 :src="project.thumbnailImage"
                                 alt="project screenshot"

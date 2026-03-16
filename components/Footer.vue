@@ -20,17 +20,17 @@
             icon: "mingcute:medium-fill",
             link: "https://medium.com/@dagimshimelis1992",
         },
+        {
+            name: "Gmail",
+            icon: "mdi:email",
+            link: "mailto:dagimshimelis1992@gmail.com",
+        },
     ]);
 </script>
 
 <template>
     <footer class="py-12 border-t border-green-400/10 mt-32 relative z-10">
-        <div class="side-space flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="flex flex-col items-center md:items-start">
-                <p class="text-[10px] font-mono text-green-400/50 uppercase tracking-[0.3em]">Build_Checksum</p>
-                <p class="text-xs font-mono text-green-400/80">HASH_7A2B9C4D_2026</p>
-            </div>
-            
+        <div class="side-space flex flex-col items-center gap-8">
             <ul class="flex items-center gap-x-8 justify-center">
                 <li
                     v-for="(social, i) in socials"
@@ -51,10 +51,7 @@
                 </li>
             </ul>
 
-            <div class="flex flex-col items-center md:items-end">
-                <p class="text-[10px] font-mono text-green-400/50 uppercase tracking-[0.3em]">Status</p>
-                <p class="text-xs font-mono text-green-400/80">© 2026 DAGIM_SHIMELIS // ALL_SYSTEMS_GO</p>
-            </div>
+            <p class="text-xs font-mono text-green-400/50">© 2026 DAGIM_SHIMELIS</p>
         </div>
     </footer>
 </template>

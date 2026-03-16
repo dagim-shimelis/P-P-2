@@ -1,5 +1,17 @@
 [
     {
+        "name": "Dwight Prompt",
+        "link": "https://www.dwightprompt.com/",
+        "thumbnailImage": "/images/projects/dwightprompt.png",
+        "cardDescription": "Dwight is a prompt assistant that helps users craft better prompts for AI, enabling more effective and precise responses through improved prompt engineering."
+    },
+    {
+        "name": "Lunaria",
+        "link": "https://lunaria.tech",
+        "thumbnailImage": "/images/projects/lunaria.png",
+        "cardDescription": "Lunaria is a document intelligence platform that lets you ask your documents anything and get instant answers. No folders, no digging — just AI-powered answers from your PDFs, images, scans, and receipts."
+    },
+    {
         "name": "HahuJobs Primary",
         "link": "https://hahu.jobs",
         "thumbnailImage": "/images/projects/hahu-jobs-primary.png",

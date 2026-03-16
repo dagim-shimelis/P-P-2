@@ -31,11 +31,8 @@
         <div class="backdrop-blur-md bg-black/20 border-b border-green-400/10">
             <div class="side-space h-20 flex items-center justify-between">
                 <!-- Logo -->
-                <router-link to="/" class="flex items-center gap-2 group">
-                    <div class="w-8 h-8 border border-green-400 flex items-center justify-center font-mono text-green-400 font-bold group-hover:bg-green-400 group-hover:text-black transition-all">
-                        DS
-                    </div>
-                    <span class="font-mono text-xs tracking-[0.3em] text-green-400/50 hidden sm:inline uppercase">Engine_v4</span>
+                <router-link to="/" class="text-lg font-bold tracking-tight text-white uppercase hover:opacity-80 transition-opacity">
+                    Dagim<span class="text-green-400">.</span>
                 </router-link>
 
                 <!-- Desktop Nav -->

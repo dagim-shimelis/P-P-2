@@ -1,20 +1,20 @@
 [
     {
+        "name": "Dwight Prompt",
+        "link": "https://www.dwightprompt.com/",
+        "thumbnailImage": "/images/projects/dwightprompt.png"
+    },
+    {
+        "name": "Lunaria",
+        "link": "https://lunaria.tech",
+        "thumbnailImage": "/images/projects/lunaria.png"
+    },
+    {
         "name": "HahuJobs Primary",
         "link": "https://hahu.jobs",
         "thumbnailImage": "/images/projects/hahu-jobs-primary.png"
     },
-    {
-        "name": "Ethiopian Youth Entrepreneurs Association (EYEA)",
-        "link": "https://www.eyea.et/",
-        "thumbnailImage": "/images/projects/eyea.png"
-    },
-    {
-        "name": "Hire Pilot",
-        "link": "https://hire-pilot.ai/",
-        "thumbnailImage": "/images/projects/hire-pilot.png"
-    },
-    {
+{
         "name": "Sabi",
         "link": "https://sabi.works",
         "thumbnailImage": "/images/projects/sabi.png"
