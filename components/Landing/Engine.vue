@@ -96,8 +96,88 @@ onMounted(async () => {
   // Shift plane up so dots sit behind the title area, not the buttons
   // Tilt slightly on Z axis like runreal
   points.position.y = 1.2;
-  points.rotation.z = Math.PI / 12; // ~15 degrees
+  points.rotation.x = -Math.PI; // -180 degrees
+  points.rotation.y = -Math.PI; // -180 degrees
+  points.rotation.z = -Math.PI; // -180 degrees
   scene.add(points);
+
+  // === Rotation Controller (commented out for future use) ===
+  // const controller = document.createElement('div');
+  // controller.style.cssText = `
+  //   position: absolute; bottom: 20px; right: 20px; z-index: 50;
+  //   background: rgba(0,0,0,0.85); border: 1px solid rgba(40,212,102,0.3);
+  //   border-radius: 10px; padding: 16px; min-width: 220px;
+  //   font-family: monospace; font-size: 13px; color: #ccc;
+  //   backdrop-filter: blur(8px); user-select: none;
+  // `;
+  //
+  // const axes = [
+  //   { label: 'X', prop: 'x', value: points.rotation.x },
+  //   { label: 'Y', prop: 'y', value: points.rotation.y },
+  //   { label: 'Z', prop: 'z', value: points.rotation.z },
+  // ];
+  //
+  // const toDeg = (rad) => (rad * 180 / Math.PI).toFixed(1);
+  // const toRad = (deg) => deg * Math.PI / 180;
+  //
+  // const title = document.createElement('div');
+  // title.textContent = 'Rotation Control';
+  // title.style.cssText = 'color: #28D466; font-weight: bold; margin-bottom: 12px; font-size: 14px;';
+  // controller.appendChild(title);
+  //
+  // axes.forEach((axis) => {
+  //   const row = document.createElement('div');
+  //   row.style.cssText = 'display: flex; align-items: center; gap: 8px; margin-bottom: 10px;';
+  //
+  //   const lbl = document.createElement('span');
+  //   lbl.textContent = axis.label;
+  //   lbl.style.cssText = 'color: #28D466; width: 14px; font-weight: bold;';
+  //
+  //   const slider = document.createElement('input');
+  //   slider.type = 'range';
+  //   slider.min = '-180';
+  //   slider.max = '180';
+  //   slider.step = '0.5';
+  //   slider.value = toDeg(axis.value);
+  //   slider.style.cssText = `
+  //     flex: 1; height: 4px; accent-color: #28D466; cursor: pointer;
+  //     -webkit-appearance: none; background: rgba(40,212,102,0.2); border-radius: 2px;
+  //   `;
+  //
+  //   const val = document.createElement('span');
+  //   val.textContent = toDeg(axis.value) + '°';
+  //   val.style.cssText = 'width: 52px; text-align: right; color: #fff; font-size: 12px;';
+  //
+  //   slider.addEventListener('input', () => {
+  //     const deg = parseFloat(slider.value);
+  //     points.rotation[axis.prop] = toRad(deg);
+  //     val.textContent = deg.toFixed(1) + '°';
+  //   });
+  //
+  //   row.appendChild(lbl);
+  //   row.appendChild(slider);
+  //   row.appendChild(val);
+  //   controller.appendChild(row);
+  // });
+  //
+  // const resetBtn = document.createElement('button');
+  // resetBtn.textContent = 'Reset';
+  // resetBtn.style.cssText = `
+  //   width: 100%; padding: 6px; margin-top: 4px;
+  //   background: rgba(40,212,102,0.15); border: 1px solid rgba(40,212,102,0.3);
+  //   border-radius: 6px; color: #28D466; cursor: pointer; font-family: monospace; font-size: 12px;
+  // `;
+  // resetBtn.addEventListener('click', () => {
+  //   points.rotation.set(-Math.PI, -Math.PI, -Math.PI);
+  //   controller.querySelectorAll('input[type=range]').forEach((s) => {
+  //     s.value = -180;
+  //     s.nextElementSibling.textContent = '-180.0°';
+  //   });
+  // });
+  // controller.appendChild(resetBtn);
+  //
+  // container.appendChild(controller);
+  // === End Rotation Controller ===
 
   // Perlin noise
   const perm = new Uint8Array(512);
