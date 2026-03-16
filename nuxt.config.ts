@@ -132,7 +132,7 @@ export default defineNuxtConfig({
         "nuxt-icon",
         "nuxt-lenis",
         "@nuxt/image",
-        "@vercel/analytics",
+        "@vercel/analytics/nuxt",
     ],
     colorMode: {
         preference: "system", // default value of $colorMode.preference
