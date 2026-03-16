@@ -18,7 +18,7 @@
 
                 <!-- Subtitle — runreal-sized (~32px on desktop) -->
                 <p class="[font-size:clamp(2rem,3vw,3.5rem)] font-normal tracking-[-0.02em] [text-shadow:0_0_40px_rgba(28,28,30,1),0_0_80px_rgba(28,28,30,0.9)] text-white text-center leading-snug max-w-3xl">
-                    Full-Stack Developer &amp; UI/UX Designer
+                    Frontend Engineer &amp; UI/UX Designer
                 </p>
 
                 <!-- Description — mono, muted -->

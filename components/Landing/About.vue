@@ -65,7 +65,7 @@
                 <div class="flex-1 flex flex-col gap-y-12">
                     <div class="flex flex-col">
                         <p class="text-xs uppercase tracking-[0.5em] text-green-400 mb-4 font-[600]">About Me</p>
-                        <h2 class="title-big">Who I Am</h2>
+                        <h2 class="title-big">THE_ENGINEER</h2>
                     </div>
                     <div class="flex flex-col gap-y-6">
                         <p class="para-text">

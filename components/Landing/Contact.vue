@@ -45,7 +45,7 @@ const showMessage = (success) => {
       <!-- Title -->
       <div class="flex flex-col items-center mb-24">
         <p class="text-xs uppercase tracking-[0.5em] text-green-400 mb-4 font-[600]">Get in Touch</p>
-        <h2 class="title-big">Contact</h2>
+        <h2 class="title-big">THE_LINK</h2>
       </div>
 
       <form

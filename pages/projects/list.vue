@@ -7,7 +7,7 @@
         <div class="side-space relative z-10">
             <div class="flex flex-col items-center mb-24 text-center">
                 <p class="text-xs uppercase tracking-[0.5em] text-green-400 mb-4 font-[600]">Full List</p>
-                <h1 class="title-big">All Projects</h1>
+                <h1 class="title-big">ALL_THE_PROJECTS</h1>
                 <p class="mt-10 max-w-2xl para-text">
                     Everything I've worked on — from client websites and web apps
                     to personal experiments. Each project tells its own story.

@@ -23,10 +23,6 @@
         <InitialLoader v-if="loadingPage" />
 
         <NuxtLayout>
-            <NuxtLoadingIndicator
-                height="2"
-                color="#28D466"
-            />
             <lenis>
                 <NuxtPage />
             </lenis>

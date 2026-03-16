@@ -49,24 +49,6 @@ body {
     @apply md:max-w-[1650px] mx-auto h-full w-full px-4 sm:px-10 relative z-10;
 }
 
-/* width */
-::-webkit-scrollbar {
-    width: 2px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-    @apply bg-black;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    @apply bg-green-400/50;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    @apply bg-green-400;
-}
 .title-box {
     @apply flex !flex-col md:!flex-row !items-start md:!items-end !gap-y-2  gap-x-6 lg:mx-0 sm:scale-100;
 }
