@@ -6,11 +6,11 @@
     <div class="relative min-h-screen pt-32 pb-32 bg-[#1c1c1e] text-green-50">
         <div class="side-space relative z-10">
             <div class="flex flex-col items-center mb-24 text-center">
-                <p class="text-xs uppercase tracking-[0.5em] text-green-400 mb-4 font-[600]">Archive_Index</p>
-                <h1 class="title-big">ALL_THE_PROJECTS</h1>
+                <p class="text-xs uppercase tracking-[0.5em] text-green-400 mb-4 font-[600]">Full List</p>
+                <h1 class="title-big">All Projects</h1>
                 <p class="mt-10 max-w-2xl para-text">
-                    A comprehensive log of developed modules, web architectures, and 
-                    digital machines. Each entry represents a unique engineering cycle.
+                    Everything I've worked on — from client websites and web apps
+                    to personal experiments. Each project tells its own story.
                 </p>
             </div>
 
@@ -35,7 +35,7 @@
                         <div class="flex flex-col gap-2">
                             <div class="flex justify-between items-end">
                                 <div>
-                                    <p class="text-[10px] text-green-400 font-mono mb-1">REG_ID_{{ i.toString().padStart(3, '0') }}</p>
+                                    <p class="text-[10px] text-green-400 font-mono mb-1">{{ (i + 1).toString().padStart(3, '0') }}</p>
                                     <h3 class="text-xl font-[700] uppercase tracking-tighter">{{ project.name }}</h3>
                                 </div>
                                 <span class="text-green-400 group-hover:translate-x-2 transition-transform duration-300">→</span>

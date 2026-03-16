@@ -61,8 +61,8 @@
     <div class="relative min-h-screen py-32">
         <div class="side-space relative z-10">
             <div class="flex flex-col items-center mb-24">
-                <p class="text-xs uppercase tracking-[0.5em] text-green-400 mb-4 font-[600]">Intellectual_Output</p>
-                <h2 class="title-big">THE_THOUGHTS</h2>
+                <p class="text-xs uppercase tracking-[0.5em] text-green-400 mb-4 font-[600]">Writing</p>
+                <h2 class="title-big">Articles</h2>
             </div>
             
             <div class="w-full">
@@ -112,7 +112,7 @@
                     target="_blank"
                     class="btn flex items-center gap-4"
                 >
-                    Access Archive <Icon name="mdi:medium" />
+                    Read More on Medium <Icon name="mdi:medium" />
                 </a>
             </div>
         </div>

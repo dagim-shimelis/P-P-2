@@ -23,8 +23,8 @@
 
                 <!-- Description — mono, muted -->
                 <p class="font-mono font-normal uppercase text-center leading-relaxed tracking-[0.12em] text-white max-w-xl">
-                    Architecting digital experiences with
-                    precision and creativity
+                    Building thoughtful web experiences
+                    from idea to launch
                 </p>
 
                 <!-- Dashed separator -->

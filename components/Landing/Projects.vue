@@ -67,15 +67,15 @@
             <div class="flex flex-col gap-y-16 justify-center max-w-4xl mx-auto text-center items-center">
                 <!-- Title -->
                 <div class="flex flex-col items-center">
-                    <p class="text-xs uppercase tracking-[0.5em] text-green-400 mb-4 font-[600]">Technical Showcases</p>
-                    <h2 class="title-big">THE_PROJECTS</h2>
+                    <p class="text-xs uppercase tracking-[0.5em] text-green-400 mb-4 font-[600]">Selected Work</p>
+                    <h2 class="title-big">Projects</h2>
                 </div>
                 <!-- About me text -->
                 <div class="flex flex-col gap-y-6">
                     <p class="para-text">
-                        A repository of digital machines and web architectures. 
-                        Each project represents a specific engineering challenge solved through 
-                        modern stack integration and creative problem-solving.
+                        A collection of websites and apps I've designed and built.
+                        Each one was a unique challenge that pushed me to think creatively
+                        and deliver real results.
                     </p>
                 </div>
             </div>
@@ -100,7 +100,7 @@
                         </div>
                         <div class="flex justify-between items-end">
                             <div>
-                                <p class="text-xs text-green-400 font-mono mb-1">PROJECT_{{ i.toString().padStart(2, '0') }}</p>
+                                <p class="text-xs text-green-400 font-mono mb-1">{{ (i + 1).toString().padStart(2, '0') }}</p>
                                 <h3 class="text-2xl font-[700] uppercase tracking-tighter">{{ project.name }}</h3>
                             </div>
                             <span class="text-green-400 group-hover:translate-x-2 transition-transform duration-300">→</span>
@@ -113,7 +113,7 @@
                     to="/projects"
                     class="btn"
                 >
-                    Access Full Registry
+                    View All Projects
                 </router-link>
             </div>
         </div>

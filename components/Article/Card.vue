@@ -29,7 +29,7 @@
             <!-- Header -->
             <div class="flex justify-between items-center">
                 <p class="text-[10px] font-mono text-green-400/50 uppercase tracking-[0.2em]">
-                    LOG_TS_{{ articleContent.date.replace(/ /g, '_').toUpperCase() }}
+                    {{ articleContent.date }}
                 </p>
                 <div class="w-1 h-1 bg-green-400 animate-pulse"></div>
             </div>
@@ -54,7 +54,7 @@
                 target="_blank"
                 class="flex items-center gap-4 text-xs font-mono text-green-400 uppercase tracking-[0.3em] group/link mt-6"
             >
-                READ_LOG 
+                Read More 
                 <span class="group-hover/link:translate-x-2 transition-transform duration-300">→</span>
             </a>
         </div>

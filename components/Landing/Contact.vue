@@ -44,8 +44,8 @@ const showMessage = (success) => {
     <div class="side-space relative z-10 w-full">
       <!-- Title -->
       <div class="flex flex-col items-center mb-24">
-        <p class="text-xs uppercase tracking-[0.5em] text-green-400 mb-4 font-[600]">Communication_Protocol</p>
-        <h2 class="title-big">THE_LINK</h2>
+        <p class="text-xs uppercase tracking-[0.5em] text-green-400 mb-4 font-[600]">Get in Touch</p>
+        <h2 class="title-big">Contact</h2>
       </div>
 
       <form
@@ -80,7 +80,7 @@ const showMessage = (success) => {
           <textarea
             v-model="item.message"
             name="message"
-            placeholder="SYSTEM_MESSAGE"
+            placeholder="YOUR MESSAGE"
             class="w-full bg-green-400/5 border border-green-400/20 px-6 py-4 font-mono text-sm focus:border-green-400 focus:outline-none transition-colors h-48 placeholder:text-green-400/30"
             required
           ></textarea>
@@ -93,7 +93,7 @@ const showMessage = (success) => {
               <Icon name="eos-icons:three-dots-loading" class="text-2xl" />
             </span>
             <span v-else class="flex items-center gap-4">
-              EXECUTE_SEND <Icon name="material-symbols:send-outline" />
+              Send Message <Icon name="material-symbols:send-outline" />
             </span>
           </button>
           <Transition

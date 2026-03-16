@@ -18,8 +18,8 @@
     <div class="relative min-h-screen py-32 flex flex-col items-center justify-center">
         <div class="side-space relative z-10 w-full">
             <div class="flex flex-col items-center mb-24">
-                <p class="text-xs uppercase tracking-[0.5em] text-green-400 mb-4 font-[600]">Peer_Validation</p>
-                <h2 class="title-big">THE_FEEDBACK</h2>
+                <p class="text-xs uppercase tracking-[0.5em] text-green-400 mb-4 font-[600]">Kind Words</p>
+                <h2 class="title-big">Testimonials</h2>
             </div>
             
             <div class="max-w-4xl mx-auto">

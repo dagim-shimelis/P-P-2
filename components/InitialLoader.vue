@@ -8,7 +8,7 @@
             </div>
         </div>
         <div class="font-mono text-xs tracking-[0.5em] text-green-400 uppercase animate-pulse">
-            Booting_System_v4
+            Loading
         </div>
     </div>
 </template>
