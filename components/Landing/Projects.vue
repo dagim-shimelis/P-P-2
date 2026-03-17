@@ -68,7 +68,7 @@
                 <!-- Title -->
                 <div class="flex flex-col items-center">
                     <p class="text-xs uppercase tracking-[0.5em] text-green-400 mb-4 font-[600]">Selected Work</p>
-                    <h2 class="title-big">THE_PROJECTS</h2>
+                    <h2 class="title-big">THE_PROJECT</h2>
                 </div>
                 <!-- About me text -->
                 <div class="flex flex-col gap-y-6">
@@ -113,7 +113,7 @@
                     to="/projects"
                     class="btn"
                 >
-                    View All Projects
+                    View All
                 </router-link>
             </div>
         </div>

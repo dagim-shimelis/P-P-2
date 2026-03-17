@@ -62,7 +62,7 @@
         <div class="side-space relative z-10">
             <div class="flex flex-col items-center mb-24">
                 <p class="text-xs uppercase tracking-[0.5em] text-green-400 mb-4 font-[600]">Writing</p>
-                <h2 class="title-big">THE_THOUGHTS</h2>
+                <h2 class="title-big">THE_THOUGHT</h2>
             </div>
             
             <div class="w-full">

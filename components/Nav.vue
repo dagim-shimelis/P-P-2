@@ -10,11 +10,11 @@
             to: "/#about",
         },
         {
-            name: "projects",
+            name: "project",
             to: "/projects/list",
         },
         {
-            name: "articles",
+            name: "thought",
             to: "/#articles",
         },
         {
