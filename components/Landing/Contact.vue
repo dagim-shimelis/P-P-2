@@ -1,41 +1,41 @@
 <script setup>
-const isLoading = ref(false);
-const message = ref(false);
-const item = ref({});
+const copied = ref(null);
 
-const handleSubmit = async (_) => {
-  isLoading.value = true;
+const email = "dagimshimelis1992@gmail.com";
 
-  const formSpree = await useFetch("/api/submit", {
-    method: "post",
-    body: {
-      name: item.value.name,
-      email: item.value.email,
-      message: item.value.message,
-    },
-  });
-  if (formSpree?.data?.value?.response?.ok) {
-    setTimeout(() => {
-      isLoading.value = false;
-      showMessage(true);
-      item.value = {};
-    }, 1000);
-  } else {
-    setTimeout(() => {
-      isLoading.value = false;
-      showMessage(false);
-    }, 1000);
-  }
-};
+const links = [
+  {
+    name: "LinkedIn",
+    icon: "mdi:linkedin",
+    url: "https://www.linkedin.com/in/dagim-shimelis/",
+    label: "linkedin.com/in/dagim-shimelis",
+  },
+  {
+    name: "GitHub",
+    icon: "mdi:github",
+    url: "https://github.com/dagim-shimelis",
+    label: "github.com/dagim-shimelis",
+  },
+  {
+    name: "X",
+    icon: "fa6-brands:x-twitter",
+    url: "https://twitter.com/Dagim__Shimelis",
+    label: "twitter.com/Dagim__Shimelis",
+  },
+  {
+    name: "Medium",
+    icon: "mingcute:medium-fill",
+    url: "https://medium.com/@dagimshimelis1992",
+    label: "medium.com/@dagimshimelis1992",
+  },
+];
 
-const showMessage = (success) => {
-  message.value = success
-    ? "Message sent Successfully!"
-    : "Something went wrong! Please try again.";
-
+const copyToClipboard = async (text, id) => {
+  await navigator.clipboard.writeText(text);
+  copied.value = id;
   setTimeout(() => {
-    message.value = null;
-  }, 3000);
+    copied.value = null;
+  }, 2000);
 };
 </script>
 
@@ -48,66 +48,89 @@ const showMessage = (success) => {
         <h2 class="title-big">THE_LINK</h2>
       </div>
 
-      <form
-        @submit.prevent="handleSubmit"
-        class="max-w-2xl mx-auto flex flex-col gap-12"
-      >
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="relative group">
-            <input
-              v-model="item.name"
-              name="name"
-              type="text"
-              placeholder="NAME"
-              class="w-full bg-green-400/5 border border-green-400/20 px-6 py-4 font-mono text-sm focus:border-green-400 focus:outline-none transition-colors placeholder:text-green-400/30"
-              required
+      <div class="max-w-4xl mx-auto flex flex-col gap-6">
+        <!-- Email Row - 2 columns -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div
+            class="relative group md:col-span-2 border border-green-400/20 bg-green-400/5 p-8 overflow-hidden hover:border-green-400/40 transition-all duration-500"
+          >
+            <!-- Background Icon -->
+            <Icon
+              name="mdi:email-outline"
+              class="absolute -right-4 -bottom-4 text-[10rem] text-green-400/[0.04] pointer-events-none group-hover:text-green-400/[0.08] transition-all duration-500"
             />
-            <div class="absolute top-0 left-0 w-1 h-full bg-green-400 scale-y-0 group-focus-within:scale-y-100 transition-transform origin-top"></div>
+
+            <div class="relative z-10 flex flex-col sm:flex-row sm:items-center gap-6">
+              <div class="flex-1 min-w-0">
+                <p class="text-xs uppercase tracking-[0.3em] text-green-400/60 mb-2 font-mono">Email</p>
+                <p class="text-green-50 font-mono text-sm sm:text-base truncate">{{ email }}</p>
+              </div>
+              <div class="flex gap-3 shrink-0">
+                <button
+                  @click="copyToClipboard(email, 'email')"
+                  class="btn !px-6 !py-2 !text-xs"
+                >
+                  <Icon
+                    :name="copied === 'email' ? 'mdi:check' : 'mdi:content-copy'"
+                    class="text-base"
+                  />
+                  {{ copied === "email" ? "Copied" : "Copy" }}
+                </button>
+                <a
+                  :href="'mailto:' + email"
+                  class="btn !px-6 !py-2 !text-xs"
+                >
+                  <Icon name="mdi:send" class="text-base" />
+                  Send Mail
+                </a>
+              </div>
+            </div>
           </div>
-          <div class="relative group">
-            <input
-              v-model="item.email"
-              name="email"
-              type="email"
-              placeholder="EMAIL_ADDRESS"
-              class="w-full bg-green-400/5 border border-green-400/20 px-6 py-4 font-mono text-sm focus:border-green-400 focus:outline-none transition-colors placeholder:text-green-400/30"
-              required
-            />
-            <div class="absolute top-0 left-0 w-1 h-full bg-green-400 scale-y-0 group-focus-within:scale-y-100 transition-transform origin-top"></div>
-          </div>
-        </div>
-        <div class="relative group">
-          <textarea
-            v-model="item.message"
-            name="message"
-            placeholder="YOUR MESSAGE"
-            class="w-full bg-green-400/5 border border-green-400/20 px-6 py-4 font-mono text-sm focus:border-green-400 focus:outline-none transition-colors h-48 placeholder:text-green-400/30"
-            required
-          ></textarea>
-          <div class="absolute top-0 left-0 w-1 h-full bg-green-400 scale-y-0 group-focus-within:scale-y-100 transition-transform origin-top"></div>
         </div>
 
-        <div class="flex flex-col items-center gap-6">
-          <button type="submit" class="btn w-full md:w-auto min-w-[300px] flex items-center justify-center gap-4">
-            <span v-if="isLoading">
-              <Icon name="eos-icons:three-dots-loading" class="text-2xl" />
-            </span>
-            <span v-else class="flex items-center gap-4">
-              Send Message <Icon name="material-symbols:send-outline" />
-            </span>
-          </button>
-          <Transition
-            enter-active-class="transition-all duration-500 ease-out"
-            enter-from-class="opacity-0 -translate-y-4"
-            leave-active-class="transition-all duration-500 ease-in"
-            leave-to-class="opacity-0 translate-y-4"
+        <!-- Links Grid - 2x2 -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div
+            v-for="link in links"
+            :key="link.name"
+            class="relative group border border-green-400/20 bg-green-400/5 p-8 overflow-hidden hover:border-green-400/40 transition-all duration-500"
           >
-            <div v-if="message" class="text-xs font-mono text-green-400 uppercase tracking-widest border border-green-400/30 px-6 py-2 bg-green-400/5">
-              {{ message }}
+            <!-- Background Icon -->
+            <Icon
+              :name="link.icon"
+              class="absolute -right-4 -bottom-4 text-[10rem] text-green-400/[0.04] pointer-events-none group-hover:text-green-400/[0.08] transition-all duration-500"
+            />
+
+            <div class="relative z-10 flex flex-col gap-5">
+              <div>
+                <p class="text-xs uppercase tracking-[0.3em] text-green-400/60 mb-2 font-mono">{{ link.name }}</p>
+                <p class="text-green-50 font-mono text-sm truncate">{{ link.label }}</p>
+              </div>
+              <div class="flex gap-3">
+                <button
+                  @click="copyToClipboard(link.url, link.name)"
+                  class="btn !px-5 !py-2 !text-xs"
+                >
+                  <Icon
+                    :name="copied === link.name ? 'mdi:check' : 'mdi:content-copy'"
+                    class="text-base"
+                  />
+                  {{ copied === link.name ? "Copied" : "Copy" }}
+                </button>
+                <a
+                  :href="link.url"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn !px-5 !py-2 !text-xs"
+                >
+                  <Icon name="mdi:open-in-new" class="text-base" />
+                  Take me there
+                </a>
+              </div>
             </div>
-          </Transition>
+          </div>
         </div>
-      </form>
+      </div>
     </div>
   </div>
 </template>
