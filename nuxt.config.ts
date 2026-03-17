@@ -33,7 +33,7 @@ export default defineNuxtConfig({
                 },
                 {
                     property: "og:image",
-                    content: "/images/og-image.png",
+                    content: "https://dagim.codes/images/og-image.png",
                 },
                 {
                     property: "og:image:width",
@@ -42,6 +42,10 @@ export default defineNuxtConfig({
                 {
                     property: "og:image:height",
                     content: "630",
+                },
+                {
+                    property: "og:url",
+                    content: "https://dagim.codes",
                 },
                 // Twitter
                 {
@@ -58,7 +62,7 @@ export default defineNuxtConfig({
                 },
                 {
                     name: "twitter:image",
-                    content: "/images/og-image.png",
+                    content: "https://dagim.codes/images/og-image.png",
                 },
             ],
         },
