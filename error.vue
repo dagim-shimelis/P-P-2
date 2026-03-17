@@ -1,70 +1,47 @@
 <script setup>
-    const props = defineProps({
-        error: Object,
-    });
+const props = defineProps({
+    error: Object,
+});
+
+const handleError = () => clearError({ redirect: '/' });
 </script>
 
 <template>
     <div
-        class="relative flex flex-col items-center justify-center gap-y-6 text-center min-h-screen bg-black text-white font-poppins overflow-y-hidden w-screen center-content"
+        class="relative flex flex-col items-center justify-center min-h-screen bg-[#1c1c1e] text-white font-poppins overflow-hidden w-screen"
     >
-        <h2
-            class="uppercase font-[600] text-8xl"
-        >
-            {{ error.statusCode }}
-        </h2>
-        <!-- Lost Description -->
-        <p v-if="error?.statusCode === 404">
-            Oops! Looks like you've wandered into the unknown. <br />
-            Click here to find your way back.
-        </p>
-        <!-- Problem Description -->
-        <p v-else>
-            Uh-oh! Looks like something is wrong. <br />
-            Click here to find your way back.
-        </p>
-        <router-link to="/">
+        <!-- Dots Engine Background -->
+        <Landing-Engine />
+
+        <div class="relative z-10 flex flex-col items-center text-center gap-y-8 px-4">
+            <!-- Error Code -->
+            <h1
+                class="font-['Chakra_Petch'] font-bold text-green-400 leading-none tracking-[-0.02em]"
+                style="font-size: clamp(6rem, 15vw, 14rem);"
+            >
+                {{ error.statusCode }}<span class="text-green-400">.</span>
+            </h1>
+
+            <!-- Dashed separator -->
+            <div class="w-32 border-t border-dashed border-white/20"></div>
+
+            <!-- Description -->
+            <p class="font-mono font-normal uppercase text-center leading-relaxed tracking-[0.12em] text-white/70 max-w-md text-sm">
+                <template v-if="error?.statusCode === 404">
+                    Oops! Looks like you've wandered into the unknown.
+                </template>
+                <template v-else>
+                    Uh-oh! Looks like something went wrong.
+                </template>
+            </p>
+
+            <!-- Go Home Button -->
             <button
                 @click="handleError"
-                class="btn mt-10"
+                class="mt-4 px-8 py-3 font-mono text-sm uppercase tracking-[0.15em] text-green-400 border border-green-400/30 hover:border-green-400 hover:bg-green-400/5 transition-all duration-300"
             >
                 Go Home
             </button>
-        </router-link>
-
-        <!-- /* ------------------------------ Graphic lines ----------------------------- */ -->
-
-        <div class="absolute -top-9 left-0">
-            <img
-                src="@/assets/image/graphic-lines/landing-7.png"
-                alt="graphic-lines-landing-7"
-                :draggable="false"
-                class="w-[200px] xl:w-[200px] 3xl:w-full -scale-x-100 -scale-y-100"
-            />
         </div>
-        <!-- <div class="absolute -top-9 right-0">
-            <img
-                src="@/assets/image/graphic-lines/landing-7.png"
-                alt="graphic-lines-landing-7"
-                :draggable="false"
-                class="w-[200px] xl:w-[200px] 3xl:w-full -scale-y-100"
-            />
-        </div> -->
-        <div class="absolute bottom-0 right-0 z-10">
-            <img
-                src="@/assets/image/graphic-lines/landing-8.png"
-                alt="graphic-lines-landing-8"
-                :draggable="false"
-                class="w-[100px] xl:w-[200px] 3xl:w-full -scale-x-100"
-            />
-        </div>
-        <!-- <div class="absolute bottom-0 left-0 z-10">
-            <img
-                src="@/assets/image/graphic-lines/landing-8.png"
-                alt="graphic-lines-landing-8"
-                :draggable="false"
-                class="w-[100px] xl:w-[200px] 3xl:w-full"
-            />
-        </div> -->
     </div>
 </template>

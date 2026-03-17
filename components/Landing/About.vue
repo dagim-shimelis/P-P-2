@@ -54,6 +54,12 @@
             originalIcon: "logos:greensock-icon",
             link: "https://gsap.com/",
         },
+        {
+            name: "Figma",
+            icon: "simple-icons:figma",
+            originalIcon: "logos:figma",
+            link: "https://www.figma.com/",
+        },
     ]);
 </script>
 
@@ -69,19 +75,26 @@
                     </div>
                     <div class="flex flex-col gap-y-6">
                         <p class="para-text">
-                            I focus on building clean, performant websites
-                            and apps that look great and work smoothly.
-                            I care about the details — from layout and interaction
-                            design to the code that powers it all.
+                            With 5 years of experience across big corporate
+                            environments and freelance work, I build end-to-end
+                            web experiences — from pixel-perfect interfaces and
+                            thoughtful design systems on the frontend, to robust
+                            APIs and scalable architecture on the backend. I care
+                            about the full picture, making sure every layer works
+                            together seamlessly.
                         </p>
-                        <div class="grid grid-cols-2 gap-8 mt-8">
+                        <div class="grid grid-cols-3 gap-8 mt-8">
+                            <div class="border-l border-green-400/30 pl-6">
+                                <h4 class="text-green-400 font-mono text-xs mb-2 uppercase">Design</h4>
+                                <p class="text-sm">UI/UX, Design Systems, Prototyping</p>
+                            </div>
                             <div class="border-l border-green-400/30 pl-6">
                                 <h4 class="text-green-400 font-mono text-xs mb-2 uppercase">Frontend</h4>
-                                <p class="text-sm">UI/UX Design, Web Interfaces</p>
+                                <p class="text-sm">Responsive Interfaces, Animations, SPAs</p>
                             </div>
                             <div class="border-l border-green-400/30 pl-6">
                                 <h4 class="text-green-400 font-mono text-xs mb-2 uppercase">Backend</h4>
-                                <p class="text-sm">Scalable APIs, Database Optimization</p>
+                                <p class="text-sm">REST & GraphQL APIs, Databases, Auth</p>
                             </div>
                         </div>
                     </div>

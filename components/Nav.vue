@@ -50,14 +50,15 @@
                     </ul>
                 </nav>
 
-                <!-- Status Indicator -->
-                <div class="hidden sm:flex items-center gap-4 font-mono text-[10px] text-green-400/40">
-                    <span class="flex h-2 w-2 relative">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-green-400"></span>
-                    </span>
-                    Available
-                </div>
+                <!-- Resume Download -->
+                <a
+                    href="/file/DagimShimelisResume.pdf"
+                    download="DagimShimelisResume.pdf"
+                    class="hidden sm:flex items-center gap-3 font-mono text-[10px] tracking-[0.3em] uppercase bg-green-400 text-black hover:bg-green-300 px-4 py-2 transition-all duration-300"
+                >
+                    <Icon name="uil:download-alt" class="text-sm" />
+                    Resume
+                </a>
 
                 <!-- Mobile Menu Button -->
                 <button @click="visibleSideNav = true" class="lg:hidden text-green-400">
@@ -82,6 +83,14 @@
                     </router-link>
                 </li>
             </ul>
+            <a
+                href="/file/DagimShimelisResume.pdf"
+                download="DagimShimelisResume.pdf"
+                class="flex items-center gap-3 font-mono text-sm tracking-[0.3em] uppercase bg-green-400 text-black hover:bg-green-300 px-6 py-3 transition-all duration-300"
+            >
+                <Icon name="uil:download-alt" class="text-lg" />
+                Resume
+            </a>
         </div>
     </header>
 </template>

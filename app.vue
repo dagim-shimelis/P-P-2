@@ -1,17 +1,11 @@
 <script setup>
-    const loadingPage = ref(true);
+    const pageLoaded = ref(false);
 
-    onBeforeMount(() => {
-        loadingPage.value = true;
-    });
+    provide('pageLoaded', pageLoaded);
+
     onMounted(() => {
         document.documentElement.lang = "en";
-        
-        // Disable loading after a short delay
-        setTimeout(() => {
-            loadingPage.value = false;
-        }, 2000);
-
+        pageLoaded.value = true;
     });
 </script>
 
@@ -20,19 +14,17 @@
         id="parent"
         class="relative min-h-screen bg-[#1c1c1e] text-green-50 font-lexend overflow-x-hidden w-screen selection:bg-green-400 selection:text-black"
     >
-        <InitialLoader v-if="loadingPage" />
-
         <NuxtLayout>
             <lenis>
                 <NuxtPage />
             </lenis>
-            
+
             <!-- Screen Size Indicator (Dev Only) -->
             <div
                 v-if="useRuntimeConfig().public.mode == 'development'"
                 class="fixed px-3 py-1 text-[10px] font-mono text-green-400 bg-green-400/5 border border-green-400/20 bottom-4 left-4 z-50 uppercase tracking-widest"
             >
-                Viewport: 
+                Viewport:
                 <span class="hidden 2xs:inline-block xs:hidden">2XS</span>
                 <span class="hidden xs:inline-block sm:hidden">XS</span>
                 <span class="hidden sm:inline-block md:hidden">SM</span>

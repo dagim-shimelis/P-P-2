@@ -118,7 +118,7 @@ export default defineNuxtConfig({
     },
     css: ["@/assets/css/main.css"],
     build: {
-        transpile: ["primevue"],
+        transpile: ["primevue", "gsap"],
     },
     image: {
         inject: true,
@@ -126,14 +126,11 @@ export default defineNuxtConfig({
     // plugins: ["@/plugins/htmlLang.js"],
     modules: [
         "@nuxtjs/tailwindcss",
-        "@nuxtjs/apollo",
         "@nuxtjs/color-mode",
-        "@pinia/nuxt",
         "nuxt-icon",
         "nuxt-lenis",
         "@nuxt/image",
         "@vercel/analytics/nuxt",
-        "@vercel/speed-insights/nuxt",
     ],
     colorMode: {
         preference: "system", // default value of $colorMode.preference
@@ -145,16 +142,6 @@ export default defineNuxtConfig({
         classSuffix: "",
         storageKey: "nuxt-color-mode",
     },
-    apollo: {
-        autoImports: true,
-        authType: "Bearer",
-        clients: {
-            default: {
-                httpEndpoint: "https://api.spacex.land/graphql",
-            },
-        },
-    },
-
     // here we are setting the route rules for the SPA and SSR routes
     router: {
         options: {
