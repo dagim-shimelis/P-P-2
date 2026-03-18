@@ -15,9 +15,7 @@
         class="relative min-h-screen bg-[#1c1c1e] text-green-50 font-lexend overflow-x-hidden w-screen selection:bg-green-400 selection:text-black"
     >
         <NuxtLayout>
-            <lenis>
-                <NuxtPage />
-            </lenis>
+            <NuxtPage />
 
             <!-- Screen Size Indicator (Dev Only) -->
             <div
