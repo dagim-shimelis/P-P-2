@@ -1,8 +1,9 @@
 export default defineNuxtPlugin(() => {
+  const { clarityId } = useRuntimeConfig().public
   const load = () => {
     import('@vercel/analytics').then(({ inject }) => inject())
     import('@microsoft/clarity').then(({ default: clarity }) => {
-      clarity.init('REPLACE_WITH_YOUR_CLARITY_PROJECT_ID')
+      clarity.init(clarityId)
     })
   }
   if ('requestIdleCallback' in window) {

@@ -72,14 +72,14 @@ export default defineNuxtConfig({
             ],
             script: [
                 {
-                    src: 'https://www.googletagmanager.com/gtag/js?id=G-9DEKMC7T9Z',
+                    src: `https://www.googletagmanager.com/gtag/js?id=${process.env.NUXT_PUBLIC_GA_ID}`,
                     async: true,
                 },
                 {
                     innerHTML: `window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-9DEKMC7T9Z');`,
+  gtag('config', '${process.env.NUXT_PUBLIC_GA_ID}');`,
                 },
                 {
                     type: 'application/ld+json',
@@ -144,6 +144,8 @@ export default defineNuxtConfig({
     runtimeConfig: {
         public: {
             mode: process.env.MODE,
+            clarityId: process.env.NUXT_PUBLIC_CLARITY_ID,
+            gaId: process.env.NUXT_PUBLIC_GA_ID,
         },
     },
 });
