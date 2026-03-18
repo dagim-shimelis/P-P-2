@@ -4,6 +4,11 @@ export default defineNuxtConfig({
     app: {
         head: {
             title: "Dagim — Full Stack Engineer & UI/UX Designer",
+            style: [
+                {
+                    innerHTML: 'html,body{background-color:#1c1c1e;color:#f0fdf4;}',
+                },
+            ],
             meta: [
                 {
                     name: "viewport",
@@ -76,6 +81,22 @@ export default defineNuxtConfig({
   gtag('js', new Date());
   gtag('config', 'G-9DEKMC7T9Z');`,
                 },
+                {
+                    type: 'application/ld+json',
+                    innerHTML: JSON.stringify({
+                        '@context': 'https://schema.org',
+                        '@type': 'Person',
+                        name: 'Dagim Shimelis',
+                        url: 'https://dagim.codes',
+                        jobTitle: 'Full Stack Engineer & UI/UX Designer',
+                        description: 'Building thoughtful web experiences from idea to launch. Full stack engineer and UI/UX designer crafting high-quality digital products.',
+                        knowsAbout: ['Web Development', 'UI/UX Design', 'Frontend Development', 'Backend Development', 'Vue.js', 'Nuxt.js', 'TypeScript'],
+                        worksFor: {
+                            '@type': 'Organization',
+                            name: 'Freelance',
+                        },
+                    }),
+                },
             ],
             link: [
                 { rel: 'dns-prefetch', href: 'https://fonts.googleapis.com' },
@@ -105,8 +126,8 @@ export default defineNuxtConfig({
         "@nuxt/image",
     ],
     colorMode: {
-        preference: "system", // default value of $colorMode.preference
-        fallback: "light", // fallback value if not system preference found
+        preference: "dark",
+        fallback: "dark",
         hid: "nuxt-color-mode-script",
         globalName: "__NUXT_COLOR_MODE__",
         componentName: "ColorScheme",

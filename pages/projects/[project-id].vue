@@ -16,6 +16,30 @@
         return findProjectByTitle(route.params.projectid);
     });
 
+    useHead(computed(() => {
+        const p = project.value
+        if (!p) return {}
+        const title = `${p.title} — Dagim Shimelis`
+        const description = p.description || 'A project by Dagim Shimelis, Full Stack Engineer & UI/UX Designer.'
+        const image = p.thumbnailImage ? `https://dagim.codes${p.thumbnailImage}` : 'https://dagim.codes/images/og-image.png'
+        const url = `https://dagim.codes/projects/${p.id}`
+        return {
+            title,
+            meta: [
+                { name: 'description', content: description },
+                { property: 'og:title', content: title },
+                { property: 'og:description', content: description },
+                { property: 'og:image', content: image },
+                { property: 'og:url', content: url },
+                { property: 'og:type', content: 'article' },
+                { name: 'twitter:card', content: 'summary_large_image' },
+                { name: 'twitter:title', content: title },
+                { name: 'twitter:description', content: description },
+                { name: 'twitter:image', content: image },
+            ],
+        }
+    }))
+
     onMounted(() => {
         window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scrolling
     });

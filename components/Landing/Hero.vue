@@ -83,7 +83,7 @@ function runSequence() {
         <Landing-Engine />
 
         <!-- Dark overlay -->
-        <div ref="overlayRef" class="hero-overlay">
+        <div ref="overlayRef" class="hero-overlay" style="position:fixed;inset:0;z-index:40;background:#1c1c1e;display:flex;align-items:center;justify-content:center;pointer-events:none;">
             <div v-if="showSpinner" class="spinner-wrapper">
                 <div class="spinner"></div>
             </div>

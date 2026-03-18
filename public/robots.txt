@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dagim.codes/sitemap.xml
