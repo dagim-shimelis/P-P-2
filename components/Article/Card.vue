@@ -17,10 +17,12 @@
 
         <!-- Image -->
         <div class="relative overflow-hidden grayscale contrast-125 group-hover:grayscale-0 group-hover:contrast-100 transition-all duration-700">
-            <img
+            <NuxtImg
                 :src="articleContent.image"
                 alt="article-image"
                 class="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+                quality="75"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-[#1c1c1e] to-transparent opacity-60"></div>
         </div>

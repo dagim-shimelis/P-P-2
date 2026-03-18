@@ -42,12 +42,6 @@
         "cardDescription": "Sabi is a platform that connects startups and businesses with vetted tech talent, offering a reliable source of skilled professionals to meet their technological needs."
     },
     {
-        "name": "Hire Pilot",
-        "link": "https://hire-pilot.ai/",
-        "thumbnailImage": "/images/projects/hire-pilot.png",
-        "cardDescription": "HirePilot is an AI copilot that streamlines the hiring process by improving decision-making, minimizing biases, and efficiently connecting employers with top talent, making recruitment more effective and fair."
-    },
-    {
         "name": "Foundo",
         "link": "https://foundo.io",
         "thumbnailImage": "/images/projects/foundo.png",
@@ -84,27 +78,37 @@
         "cardDescription": "Zelela is a monthly platform for policy advocacy and networking, aimed at empowering young Ethiopians by addressing challenges in entrepreneurship through skills, finance, advocacy, networking, and bureaucratic solutions."
     },
     {
+        "name": "Papira",
+        "link": "https://papira-staging.vercel.app/",
+        "thumbnailImage": "/images/projects/papira.png",
+        "cardDescription": "An African Skill and Talent platform. A platform for skill development, and professional development. It offers a wide range of courses and training programs."
+    },
+    {
+        "name": "Hire Pilot",
+        "link": "https://hire-pilot.ai/",
+        "broken": true,
+        "thumbnailImage": "/images/projects/hire-pilot.png",
+        "cardDescription": "HirePilot is an AI copilot that streamlines the hiring process by improving decision-making, minimizing biases, and efficiently connecting employers with top talent, making recruitment more effective and fair."
+    },
+    {
         "name": "RAYEE SNV",
         "link": "https://www.rayeesnv.com/",
+        "broken": true,
         "thumbnailImage": "/images/projects/snv.png",
         "cardDescription": "RAYEE integrates a robust data management system with a specialized analytics dashboard, supporting efficient project oversight across multiple regions to empower 240,000 youth, predominantly women, by 2024."
     },
     {
         "name": "Awaqi Centers",
         "link": "https://awaqi-centers.bridges-fc.com/",
+        "broken": true,
         "thumbnailImage": "/images/projects/awaqi.png",
         "cardDescription": "Awaqi Company Centers: Information hubs for Ethiopian youth, enhancing accessibility to Awaqi services. These centers host resources and are strategically located across cities in Ethiopia."
     },
     {
         "name": "Neba's Design",
         "link": "https://nebas.design/",
+        "broken": true,
         "thumbnailImage": "/images/projects/nebas-design.png",
         "cardDescription": "A personal portfolio site for Neba's Design. Neba is a UI/UX designer based in Addis Ababa, Ethiopia. He specializes in UI/UX design, branding, and digital marketing."
-    },
-    {
-        "name": "Papira",
-        "link": "https://papira-staging.vercel.app/",
-        "thumbnailImage": "/images/projects/papira.png",
-        "cardDescription": "An African Skill and Talent platform. A platform for skill development, and professional development. It offers a wide range of courses and training programs."
     }
 ]

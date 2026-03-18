@@ -1,12 +1,25 @@
 <script setup>
-    import { gsap } from "gsap";
-    import { ScrollTrigger } from "gsap/ScrollTrigger";
     import { Carousel, Slide, Pagination } from "vue3-carousel";
     import "vue3-carousel/dist/carousel.css";
     import projects from "@/data/landing-projects.json";
-    gsap.registerPlugin(ScrollTrigger);
 
     const router = useRouter();
+
+    const tooltip = ref({ visible: false, text: "", x: 0, y: 0 });
+
+    function showTooltip(event, text) {
+        tooltip.value = { visible: true, text, x: event.clientX, y: event.clientY };
+    }
+
+    function moveTooltip(event) {
+        tooltip.value.x = event.clientX;
+        tooltip.value.y = event.clientY;
+    }
+
+    function hideTooltip() {
+        tooltip.value.visible = false;
+    }
+
     // carousel settings
     const settings = ref({
         itemsToShow: 1.3,
@@ -28,7 +41,11 @@
         },
     });
 
-    onMounted(() => {
+    onMounted(async () => {
+        const { gsap } = await import("gsap");
+        const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+        gsap.registerPlugin(ScrollTrigger);
+
         /* ---------------------------- Projects Section ---------------------------- */
         const projectsElement = document.querySelector("#projectsList");
 
@@ -85,6 +102,9 @@
                     v-for="(project, i) in projects"
                     :key="i"
                     class="group relative border border-green-400/20 p-4 transition-all duration-500 hover:border-green-400 hover:bg-green-400/5"
+                    @mouseenter="showTooltip($event, project.cardDescription)"
+                    @mousemove="moveTooltip"
+                    @mouseleave="hideTooltip"
                 >
                     <a
                         :href="project.link"
@@ -92,23 +112,28 @@
                         class="block"
                     >
                         <div class="mb-4 overflow-hidden transition-all duration-500">
-                             <img
+                             <NuxtImg
                                 :src="project.thumbnailImage"
                                 alt="project screenshot"
                                 class="object-cover w-full aspect-video border border-green-400/10"
+                                loading="lazy"
+                                quality="75"
                             />
                         </div>
-                        <div class="flex justify-between items-end">
-                            <div>
-                                <p class="text-xs text-green-400 font-mono mb-1">{{ (i + 1).toString().padStart(2, '0') }}</p>
-                                <h3 class="text-2xl font-[700] uppercase tracking-tighter">{{ project.name }}</h3>
+                        <div class="flex flex-col gap-y-3 mt-3">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <p class="text-xs text-green-400 font-mono mb-1">{{ (i + 1).toString().padStart(2, '0') }}</p>
+                                    <h3 class="text-2xl font-[700] uppercase tracking-tighter">{{ project.name }}</h3>
+                                </div>
+                                <span class="text-green-400 group-hover:translate-x-2 transition-transform duration-300 mt-1">→</span>
                             </div>
-                            <span class="text-green-400 group-hover:translate-x-2 transition-transform duration-300">→</span>
+                            <p class="text-xs font-mono text-green-400/60 line-clamp-2">{{ project.cardDescription }}</p>
                         </div>
                     </a>
                 </div>
             </div>
-            <div class="flex justify-center mt-20">
+            <div class="flex justify-center mt-8">
                 <router-link
                     to="/projects"
                     class="btn"
@@ -118,6 +143,37 @@
             </div>
         </div>
     </div>
+
+    <!-- Tooltip -->
+    <Teleport to="body">
+        <div
+            v-if="tooltip.visible"
+            class="project-tooltip"
+            :style="{ top: tooltip.y + 16 + 'px', left: tooltip.x + 'px' }"
+        >
+            <span class="tooltip-prefix">// </span>{{ tooltip.text }}
+        </div>
+    </Teleport>
 </template>
 
-<style scoped></style>
+<style scoped>
+.project-tooltip {
+    position: fixed;
+    z-index: 9999;
+    max-width: 280px;
+    padding: 10px 14px;
+    background: #0d0d0d;
+    border: 1px solid rgba(74, 222, 128, 0.35);
+    color: rgba(74, 222, 128, 0.85);
+    font-family: monospace;
+    font-size: 11px;
+    line-height: 1.6;
+    pointer-events: none;
+    box-shadow: 0 0 20px rgba(74, 222, 128, 0.08);
+    transform: translateX(-50%);
+}
+
+.tooltip-prefix {
+    color: rgba(74, 222, 128, 0.4);
+}
+</style>

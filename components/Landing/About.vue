@@ -113,10 +113,12 @@
                 <!-- Visual/Image -->
                 <div class="flex-1 relative">
                     <div class="relative border border-green-400/20 p-8 backdrop-blur-sm bg-green-400/5 group overflow-hidden">
-                        <img
+                        <NuxtImg
                             class="grayscale contrast-125 opacity-80 group-hover:scale-105 transition-transform duration-700"
                             src="@/assets/image/about-image.png"
                             alt="about-image"
+                            loading="lazy"
+                            quality="80"
                         />
                         <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/80 to-transparent"></div>
                         <div class="absolute -top-2 -right-2 w-4 h-4 border-t-2 border-r-2 border-green-400"></div>

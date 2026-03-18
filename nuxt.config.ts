@@ -65,6 +65,27 @@ export default defineNuxtConfig({
                     content: "https://dagim.codes/images/og-image.png",
                 },
             ],
+            script: [
+                {
+                    src: 'https://www.googletagmanager.com/gtag/js?id=G-9DEKMC7T9Z',
+                    async: true,
+                },
+                {
+                    innerHTML: `window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9DEKMC7T9Z');`,
+                },
+            ],
+            link: [
+                { rel: 'dns-prefetch', href: 'https://fonts.googleapis.com' },
+                { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+                { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+                {
+                    rel: 'stylesheet',
+                    href: 'https://fonts.googleapis.com/css2?family=Lexend:wght@200;400;600;700&family=Chakra+Petch:wght@400;700&display=swap',
+                },
+            ],
         },
     },
     css: ["@/assets/css/main.css"],
@@ -73,15 +94,15 @@ export default defineNuxtConfig({
     },
     image: {
         inject: true,
+        quality: 80,
+        format: ['webp'],
     },
     // plugins: ["@/plugins/htmlLang.js"],
     modules: [
         "@nuxtjs/tailwindcss",
         "@nuxtjs/color-mode",
         "nuxt-icon",
-        "nuxt-lenis",
         "@nuxt/image",
-        "@vercel/analytics/nuxt",
     ],
     colorMode: {
         preference: "system", // default value of $colorMode.preference

@@ -78,11 +78,13 @@
             </div>
             <!-- Main detail header -->
             <div class="!mt-4">
-                <img
+                <NuxtImg
                     :src="project.thumbnailImage"
                     alt="project screenshot"
                     :draggable="false"
                     class="project-section-image"
+                    loading="eager"
+                    quality="80"
                 />
             </div>
             <!-- Main detail info -->
@@ -152,11 +154,13 @@
                         :key="i"
                         class="h-full"
                     >
-                        <img
+                        <NuxtImg
                             :src="mobilePreviewImage"
                             alt="project screenshot"
                             :draggable="false"
                             class="project-mobile-image"
+                            loading="lazy"
+                            quality="75"
                         />
                     </li>
                 </ul>
@@ -171,11 +175,13 @@
                     :key="i"
                 >
                     <div>
-                        <img
+                        <NuxtImg
                             :src="featurePreview.image"
                             alt="project screenshot"
                             :draggable="false"
                             class="project-section-image"
+                            loading="lazy"
+                            quality="75"
                         />
                     </div>
                     <p class="project-section-description">
@@ -191,11 +197,13 @@
                 to="#top"
                 class="group w-fit relative h-[70px]"
             >
-                <img
+                <NuxtImg
                     src="@/assets/image/graphic-lines/arrow-4.png"
                     alt="project screenshot"
                     :draggable="false"
                     class="-top-[40px] w-[100px] xl:w-[100px] group-hover:-translate-y-2 ease-in-out duration-300"
+                    loading="lazy"
+                    quality="80"
                 />
                 <span>Back to top</span></router-link
             >

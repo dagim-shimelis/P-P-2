@@ -19,11 +19,13 @@
                 :key="i"
                 :title="company.name"
             >
-                <img
+                <NuxtImg
                     :src="company.image"
                     :alt="company.name"
                     :draggable="false"
                     class="h-[28px]"
+                    loading="lazy"
+                    quality="80"
                 />
             </li>
         </ul>

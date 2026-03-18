@@ -4,11 +4,16 @@ import { onMounted, onUnmounted, ref } from 'vue';
 const containerRef = ref(null);
 let cleanup = null;
 
-onMounted(async () => {
-  const THREE = await import('three');
-
+onMounted(() => {
   const container = containerRef.value;
   if (!container) return;
+
+  const observer = new IntersectionObserver(
+    async (entries) => {
+      if (!entries[0].isIntersecting) return;
+      observer.disconnect();
+
+      const THREE = await import('three');
 
   const w = container.offsetWidth;
   const h = container.offsetHeight;
@@ -386,6 +391,11 @@ onMounted(async () => {
       container.removeChild(renderer.domElement);
     }
   };
+    },
+    { threshold: 0.1 }
+  );
+
+  observer.observe(container);
 });
 
 onUnmounted(() => {
