@@ -106,13 +106,13 @@ function runSequence() {
 
                 <!-- Subtitle -->
                 <p ref="subtitleRef" class="[font-size:clamp(2rem,3vw,3.5rem)] font-normal tracking-[-0.02em] [text-shadow:0_0_40px_rgba(28,28,30,1),0_0_80px_rgba(28,28,30,0.9)] text-white text-center leading-snug max-w-3xl">
-                    Full Stack Engineer &amp; UI/UX Designer
+                    Frontend Developer &amp; UI Designer
                 </p>
 
                 <!-- Description -->
                 <p ref="descRef" class="font-mono font-normal uppercase text-center leading-relaxed tracking-[0.12em] text-white max-w-xl">
-                    Building thoughtful web experiences
-                    from idea to launch
+                    Thoughtful interfaces. Responsive layouts.
+                    Details that make a difference.
                 </p>
 
                 <!-- Dashed separator -->

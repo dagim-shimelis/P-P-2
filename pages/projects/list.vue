@@ -55,7 +55,14 @@
                         target="_blank"
                         class="block"
                     >
-                        <div class="mb-4 overflow-hidden transition-all duration-500">
+                        <div class="relative mb-4 overflow-hidden transition-all duration-500">
+                            <span
+                                v-if="['Dwight Prompt', 'TriggerNote'].includes(project.name)"
+                                class="absolute right-3 top-3 z-10 inline-flex items-center gap-2 rounded-full border border-green-400/40 bg-[#111813]/95 px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-green-300 shadow-lg backdrop-blur-sm"
+                            >
+                                <span aria-hidden="true" class="h-1.5 w-1.5 rounded-full bg-green-400 shadow-[0_0_8px_rgba(74,222,128,0.6)]"></span>
+                                My startup
+                            </span>
                             <NuxtImg
                                 :src="project.thumbnailImage"
                                 alt="project screenshot"

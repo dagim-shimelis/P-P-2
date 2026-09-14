@@ -19,28 +19,10 @@
             link: "https://legacy.reactjs.org/",
         },
         {
-            name: "NodeJS",
-            icon: "fontisto:nodejs",
-            originalIcon: "logos:nodejs-icon",
-            link: "https://nodejs.org/en",
-        },
-        {
-            name: "MongoDB",
-            icon: "devicon-plain:mongodb-wordmark",
-            originalIcon: "devicon:mongodb-wordmark",
-            link: "https://www.mongodb.com/",
-        },
-        {
             name: "Typescript",
             icon: "cib:typescript",
             originalIcon: "devicon:typescript",
             link: "https://www.typescriptlang.org/",
-        },
-        {
-            name: "GraphQL",
-            icon: "simple-icons:graphql",
-            originalIcon: "logos:graphql",
-            link: "https://graphql.org/",
         },
         {
             name: "Tailwind",
@@ -70,37 +52,36 @@
                 <!-- Text Content -->
                 <div class="flex-1 flex flex-col gap-y-12">
                     <div class="flex flex-col">
-                        <p class="text-xs uppercase tracking-[0.5em] text-green-400 mb-4 font-[600]">About Me</p>
-                        <h2 class="title-big">THE_ENGINEER</h2>
+                        <p class="text-xs uppercase tracking-[0.5em] text-green-400 mb-4 font-[600]">Background</p>
+                        <h2 class="title-big">A Little About Me</h2>
                     </div>
                     <div class="flex flex-col gap-y-6">
                         <p class="para-text">
-                            With 5 years of experience across big corporate
-                            environments and freelance work, I build end-to-end
-                            web experiences — from pixel-perfect interfaces and
-                            thoughtful design systems on the frontend, to robust
-                            APIs and scalable architecture on the backend. I care
-                            about the full picture, making sure every layer works
-                            together seamlessly.
+                            With 5 years of experience across corporate teams and
+                            freelance projects, I bring designs to life on the web.
+                            I focus on responsive layouts, reusable components,
+                            and interactions that feel natural. From Figma to Vue
+                            and Nuxt, I care about the details — typography, spacing,
+                            and motion — that make an interface feel considered.
                         </p>
-                        <div class="grid grid-cols-3 gap-8 mt-8">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-8">
                             <div class="border-l border-green-400/30 pl-6">
                                 <h4 class="text-green-400 font-mono text-xs mb-2 uppercase">Design</h4>
                                 <p class="text-sm">UI/UX, Design Systems, Prototyping</p>
                             </div>
                             <div class="border-l border-green-400/30 pl-6">
                                 <h4 class="text-green-400 font-mono text-xs mb-2 uppercase">Frontend</h4>
-                                <p class="text-sm">Responsive Interfaces, Animations, SPAs</p>
+                                <p class="text-sm">Vue, Nuxt, Responsive Components</p>
                             </div>
                             <div class="border-l border-green-400/30 pl-6">
-                                <h4 class="text-green-400 font-mono text-xs mb-2 uppercase">Backend</h4>
-                                <p class="text-sm">REST & GraphQL APIs, Databases, Auth</p>
+                                <h4 class="text-green-400 font-mono text-xs mb-2 uppercase">Interaction</h4>
+                                <p class="text-sm">Motion, Micro-interactions, GSAP</p>
                             </div>
                         </div>
                     </div>
                     <!-- Tools -->
                     <div class="flex flex-col gap-y-4">
-                        <p class="text-xs uppercase tracking-widest text-green-400/50">Tools I Use</p>
+                        <p class="text-xs uppercase tracking-widest text-green-400/50">My Frontend &amp; Design Toolkit</p>
                         <ul class="flex flex-wrap items-center gap-6">
                             <li v-for="(tool, i) in tools" :key="i" :title="tool.name">
                                 <a :href="tool.link" target="_blank" class="grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110 block">

@@ -2,6 +2,7 @@
     import { Carousel, Slide, Pagination } from "vue3-carousel";
     import "vue3-carousel/dist/carousel.css";
     import projects from "@/data/landing-projects.json";
+    import allProjects from "@/data/projects-list.json";
 
     const router = useRouter();
 
@@ -85,14 +86,14 @@
                 <!-- Title -->
                 <div class="flex flex-col items-center">
                     <p class="text-xs uppercase tracking-[0.5em] text-green-400 mb-4 font-[600]">Selected Work</p>
-                    <h2 class="title-big">THE_PROJECT</h2>
+                    <h2 class="title-big">What I’ve Built</h2>
                 </div>
                 <!-- About me text -->
                 <div class="flex flex-col gap-y-6">
                     <p class="para-text">
-                        A collection of websites and apps I've designed and built.
-                        Each one was a unique challenge that pushed me to think creatively
-                        and deliver real results.
+                        Selected websites and apps that show my approach to
+                        frontend design — clear layouts, considered visual details,
+                        and interfaces brought to life in code.
                     </p>
                 </div>
             </div>
@@ -101,21 +102,33 @@
                 <div
                     v-for="(project, i) in projects"
                     :key="i"
-                    class="group relative border border-green-400/20 p-4 transition-all duration-500 hover:border-green-400 hover:bg-green-400/5"
+                    class="group relative border p-4 transition-all duration-500"
+                    :class="project.broken
+                        ? 'border-green-400/10 opacity-50 cursor-default'
+                        : 'border-green-400/20 hover:border-green-400 hover:bg-green-400/5'"
                     @mouseenter="showTooltip($event, project.cardDescription)"
                     @mousemove="moveTooltip"
                     @mouseleave="hideTooltip"
                 >
-                    <a
-                        :href="project.link"
-                        target="_blank"
+                    <component
+                        :is="project.broken ? 'div' : 'a'"
+                        :href="project.broken ? undefined : project.link"
+                        :target="project.broken ? undefined : '_blank'"
                         class="block"
                     >
-                        <div class="mb-4 overflow-hidden transition-all duration-500">
+                        <div class="relative mb-4 overflow-hidden transition-all duration-500">
+                            <span
+                                v-if="['Dwight Prompt', 'TriggerNote'].includes(project.name)"
+                                class="absolute right-3 top-3 z-10 inline-flex items-center gap-2 rounded-full border border-green-400/40 bg-[#111813]/95 px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-green-300 shadow-lg backdrop-blur-sm"
+                            >
+                                <span aria-hidden="true" class="h-1.5 w-1.5 rounded-full bg-green-400 shadow-[0_0_8px_rgba(74,222,128,0.6)]"></span>
+                                My startup
+                            </span>
                              <NuxtImg
                                 :src="project.thumbnailImage"
                                 alt="project screenshot"
                                 class="object-cover w-full aspect-video border border-green-400/10"
+                                :class="{ grayscale: project.broken }"
                                 loading="lazy"
                                 quality="75"
                             />
@@ -126,11 +139,12 @@
                                     <p class="text-xs text-green-400 font-mono mb-1">{{ (i + 1).toString().padStart(2, '0') }}</p>
                                     <h3 class="text-2xl font-[700] uppercase tracking-tighter">{{ project.name }}</h3>
                                 </div>
-                                <span class="text-green-400 group-hover:translate-x-2 transition-transform duration-300 mt-1">→</span>
+                                <span v-if="!project.broken" class="text-green-400 group-hover:translate-x-2 transition-transform duration-300 mt-1">→</span>
                             </div>
                             <p class="text-xs font-mono text-green-400/60 line-clamp-2">{{ project.cardDescription }}</p>
+                            <p v-if="project.broken" class="text-xs font-mono text-green-400/60">Site no longer online</p>
                         </div>
-                    </a>
+                    </component>
                 </div>
             </div>
             <div class="flex justify-center mt-8">
@@ -138,7 +152,7 @@
                     to="/projects"
                     class="btn"
                 >
-                    View All
+                    View All ({{ allProjects.length }})
                 </router-link>
             </div>
         </div>

@@ -62,7 +62,7 @@
         <div class="side-space relative z-10">
             <div class="flex flex-col items-center mb-24">
                 <p class="text-xs uppercase tracking-[0.5em] text-green-400 mb-4 font-[600]">Writing</p>
-                <h2 class="title-big">THE_THOUGHT</h2>
+                <h2 class="title-big">Things I’ve Learned</h2>
             </div>
             
             <div class="w-full">
@@ -83,7 +83,7 @@
                     </slide>
                 </carousel>
 
-                <div class="mt-12 flex justify-center items-center gap-6">
+                <div v-if="articles.length > (carouselRef?.data.config.itemsToShow ?? 1)" class="mt-12 flex justify-center items-center gap-6">
                     <button
                         @click="carouselRef?.prev()"
                         class="w-10 h-10 border border-green-400/30 flex items-center justify-center text-green-400 hover:bg-green-400/10 hover:border-green-400 transition-all duration-300"

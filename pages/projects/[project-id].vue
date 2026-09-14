@@ -20,7 +20,7 @@
         const p = project.value
         if (!p) return {}
         const title = `${p.title} — Dagim Shimelis`
-        const description = p.description || 'A project by Dagim Shimelis, Full Stack Engineer & UI/UX Designer.'
+        const description = p.description || 'A project by Dagim Shimelis, Frontend Developer & UI Designer.'
         const image = p.thumbnailImage ? `https://dagim.codes${p.thumbnailImage}` : 'https://dagim.codes/images/og-image.png'
         const url = `https://dagim.codes/projects/${p.id}`
         return {

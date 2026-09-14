@@ -8,24 +8,24 @@ const LazyLandingContact = defineAsyncComponent(() => import('~/components/Landi
 
 <template>
     <Head>
-        <Title>Dagim — Full Stack Engineer & UI/UX Designer</Title>
+        <Title>Dagim — Frontend Developer & UI Designer</Title>
         <Meta
             data-n-head="ssr"
             data-hid="og:title"
             property="og:title"
-            content="Dagim — Full Stack Engineer & UI/UX Designer"
+            content="Dagim — Frontend Developer & UI Designer"
         />
         <Meta
             data-n-head="ssr"
             data-hid="og:description"
             property="og:description"
-            content="Building thoughtful web experiences from idea to launch. Full stack engineer and UI/UX designer crafting high-quality digital products."
+            content="Frontend developer and UI designer crafting responsive websites, thoughtful interfaces, and fluid interactions with Vue, Nuxt, and TypeScript."
         />
         <Meta
             data-n-head="ssr"
             data-hid="description"
             name="description"
-            content="Building thoughtful web experiences from idea to launch. Full stack engineer and UI/UX designer crafting high-quality digital products."
+            content="Frontend developer and UI designer crafting responsive websites, thoughtful interfaces, and fluid interactions with Vue, Nuxt, and TypeScript."
         />
         <Meta
             data-n-head="ssr"

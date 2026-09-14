@@ -45,7 +45,12 @@ const copyToClipboard = async (text, id) => {
       <!-- Title -->
       <div class="flex flex-col items-center mb-24">
         <p class="text-xs uppercase tracking-[0.5em] text-green-400 mb-4 font-[600]">Get in Touch</p>
-        <h2 class="title-big">THE_LINK</h2>
+        <h2 class="title-big">Say Hello</h2>
+        <p class="para-text max-w-2xl text-center mt-6">
+          I’m looking for frontend roles where design matters.
+          If your team needs someone who can turn thoughtful designs into
+          polished web interfaces, let’s talk.
+        </p>
       </div>
 
       <div class="max-w-4xl mx-auto flex flex-col gap-6">

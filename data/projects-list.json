@@ -6,10 +6,28 @@
         "cardDescription": "Dwight is a prompt assistant that helps users craft better prompts for AI, enabling more effective and precise responses through improved prompt engineering."
     },
     {
-        "name": "Lunaria",
-        "link": "https://lunaria.tech",
-        "thumbnailImage": "/images/projects/lunaria.png",
-        "cardDescription": "Lunaria is a document intelligence platform that lets you ask your documents anything and get instant answers. No folders, no digging — just AI-powered answers from your PDFs, images, scans, and receipts."
+        "name": "TriggerNote",
+        "link": "https://trigger-note.com/",
+        "thumbnailImage": "/images/projects/trigger-note.png",
+        "cardDescription": "TriggerNote brings your notes into view when you open a matching website, keeping reminders in context. It works locally, with optional cloud sync."
+    },
+    {
+        "name": "Vidspawn",
+        "link": "https://vidspawn.app/",
+        "thumbnailImage": "/images/projects/vidspawn.png",
+        "cardDescription": "Vidspawn is a local-first screen recorder for macOS. Record, transcribe, search, and share videos using your own machine and cloud storage, with MCP support for AI agents."
+    },
+    {
+        "name": "Docspawn",
+        "link": "https://www.docspawn.com/",
+        "thumbnailImage": "/images/projects/docspawn.jpg",
+        "cardDescription": "Docspawn turns existing PDFs into reusable templates with AI-assisted fields. Connect forms, spreadsheets, or CRM data to generate branded documents and deliver them to the right inbox."
+    },
+    {
+        "name": "Sabi",
+        "link": "https://sabi.works",
+        "thumbnailImage": "/images/projects/sabi.png",
+        "cardDescription": "Sabi is a platform that connects startups and businesses with vetted tech talent, offering a reliable source of skilled professionals to meet their technological needs."
     },
     {
         "name": "HahuJobs Primary",
@@ -24,6 +42,12 @@
         "cardDescription": "A cloud platform designed to simplify your HR and recruitment processes, from vacancy announcements and hiring to complete digital HR management. Gives access to all necessary services in one platform."
     },
     {
+        "name": "Supabrain",
+        "link": "https://supabrain.io/",
+        "thumbnailImage": "/images/projects/supabrain.png",
+        "cardDescription": "Supabrain gives AI agents persistent memory across sessions and tools. It stores verified conclusions from past work so agents can recall useful context through a local-first, MCP-native workflow."
+    },
+    {
         "name": "EYEA",
         "link": "https://www.eyea.et/",
         "thumbnailImage": "/images/projects/eyea.png",
@@ -36,22 +60,10 @@
         "cardDescription": "Kena is a capacity-building service product of the EYEA, with an objective to provide training, mentorship, access to finance, and market exposure to youth-founded or run businesses."
     },
     {
-        "name": "Sabi",
-        "link": "https://sabi.works",
-        "thumbnailImage": "/images/projects/sabi.png",
-        "cardDescription": "Sabi is a platform that connects startups and businesses with vetted tech talent, offering a reliable source of skilled professionals to meet their technological needs."
-    },
-    {
-        "name": "Foundo",
-        "link": "https://foundo.io",
-        "thumbnailImage": "/images/projects/foundo.png",
-        "cardDescription": "Foundo is a pioneering card issuing company located in the UK, revolutionizing financial empowerment for businesses worldwide through seamless transactions and global reach."
-    },
-    {
-        "name": "Boosty",
-        "link": "https://tryboosty.com/",
-        "thumbnailImage": "/images/projects/boosty.png",
-        "cardDescription": "Boosty streamlines business formation by handling EIN registration, registered agent services, annual filings, and federal tax filings. A dedicated account manager provides expert guidance, allowing clients to focus on their business operations."
+        "name": "Lunaria",
+        "link": "https://lunaria.tech",
+        "thumbnailImage": "/images/projects/lunaria.png",
+        "cardDescription": "Lunaria is a document intelligence platform that lets you ask your documents anything and get instant answers. No folders, no digging — just AI-powered answers from your PDFs, images, scans, and receipts."
     },
     {
         "name": "Hey Mobile Store",
@@ -110,5 +122,19 @@
         "broken": true,
         "thumbnailImage": "/images/projects/nebas-design.png",
         "cardDescription": "A personal portfolio site for Neba's Design. Neba is a UI/UX designer based in Addis Ababa, Ethiopia. He specializes in UI/UX design, branding, and digital marketing."
+    },
+    {
+        "name": "Foundo",
+        "link": "https://foundo.io",
+        "thumbnailImage": "/images/projects/foundo.png",
+        "cardDescription": "Foundo is a pioneering card issuing company located in the UK, revolutionizing financial empowerment for businesses worldwide through seamless transactions and global reach.",
+        "broken": true
+    },
+    {
+        "name": "Boosty",
+        "link": "https://tryboosty.com/",
+        "thumbnailImage": "/images/projects/boosty.png",
+        "cardDescription": "Boosty streamlines business formation by handling EIN registration, registered agent services, annual filings, and federal tax filings. A dedicated account manager provides expert guidance, allowing clients to focus on their business operations.",
+        "broken": true
     }
 ]
