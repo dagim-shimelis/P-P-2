@@ -12,7 +12,6 @@ const categories = {
 export const work = projects.map(project => ({
     ...project,
     link: project.link.trim(),
-    caseStudy: project.name === 'HahuJobs Primary' ? '/projects/hahujobs-primary' : undefined,
     category: categories[project.name] || 'Web experience',
     personal: ['Dwight Prompt', 'TriggerNote'].includes(project.name),
 }));

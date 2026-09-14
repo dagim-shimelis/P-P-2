@@ -124,10 +124,8 @@ onMounted(() => {
         if (visible) requestDraw();
         else { cancelAnimationFrame(frame); frame = 0; }
     });
-    const themeObserver = new MutationObserver(recolor);
     resizeObserver.observe(element);
     intersectionObserver.observe(element);
-    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-accent'] });
     element.addEventListener('pointermove', move);
     element.addEventListener('pointerleave', reset);
     motion.addEventListener('change', reset);
@@ -141,7 +139,6 @@ onMounted(() => {
         cancelAnimationFrame(frame);
         resizeObserver.disconnect();
         intersectionObserver.disconnect();
-        themeObserver.disconnect();
         element.removeEventListener('pointermove', move);
         element.removeEventListener('pointerleave', reset);
         motion.removeEventListener('change', reset);
