@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="84 84 344 344">
+  <!-- vidspawn rosette, ink-on-transparent, for use on chartreuse (brand)
+       tiles: white fails contrast on #d4f95a, so this is the dark stand-in
+       for mark-white.svg wherever the icon sits on a brand-fill background.
+       Geometry: frontend/src/ui/Logo.tsx in the vidspawn app repo. -->
+  <g fill="#17171b" stroke="#17171b" stroke-width="26" stroke-linejoin="round">
+    <path d="M320.7 117 L210.1 106.7 L237.3 190.4 Z"/>
+    <path d="M320.7 117 L210.1 106.7 L237.3 190.4 Z" transform="rotate(72 256 256)"/>
+    <path d="M320.7 117 L210.1 106.7 L237.3 190.4 Z" transform="rotate(144 256 256)"/>
+    <path d="M320.7 117 L210.1 106.7 L237.3 190.4 Z" transform="rotate(216 256 256)"/>
+    <path d="M320.7 117 L210.1 106.7 L237.3 190.4 Z" transform="rotate(288 256 256)"/>
+  </g>
+</svg>

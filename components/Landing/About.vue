@@ -20,7 +20,6 @@ import { work } from '~/data/portfolio';
                 <div class="personal-stats">
                     <div><span class="stat-value">5<span>+</span></span><p class="eyebrow">Years building for the web</p></div>
                     <div><span class="stat-value">{{ work.length }}<span>+</span></span><p class="eyebrow">Projects in the collection</p></div>
-                    <div><span class="stat-value">01</span><p class="eyebrow">Person, from idea to delivery</p></div>
                 </div>
             </div>
         </div>
