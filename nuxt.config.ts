@@ -3,10 +3,11 @@ export default defineNuxtConfig({
     devtools: { enabled: process.env.MODE == "development" },
     app: {
         head: {
-            title: "Dagim — Full Stack Engineer & UI/UX Designer",
+            htmlAttrs: { lang: "en" },
+            title: "Dagim — Frontend Developer & UI Designer",
             style: [
                 {
-                    innerHTML: 'html,body{background-color:#1c1c1e;color:#f0fdf4;}',
+                    innerHTML: 'html,body{background-color:#141314;color:#eeeeee;}',
                 },
             ],
             meta: [
@@ -16,12 +17,12 @@ export default defineNuxtConfig({
                 },
                 {
                     name: "description",
-                    content: "Building thoughtful web experiences from idea to launch. Full stack engineer and UI/UX designer crafting high-quality digital products.",
+                    content: "Frontend developer and UI designer crafting responsive websites, thoughtful interfaces, and fluid interactions with Vue, Nuxt, and TypeScript.",
                 },
                 { name: "robots", content: "index, follow" },
                 {
                     name: "keywords",
-                    content: "full stack engineer, UI/UX designer, web development, portfolio, Dagim Shimelis",
+                    content: "frontend developer, UI designer, responsive web design, Vue, Nuxt, TypeScript, portfolio, Dagim Shimelis",
                 },
                 // Open Graph
                 {
@@ -30,11 +31,11 @@ export default defineNuxtConfig({
                 },
                 {
                     property: "og:title",
-                    content: "Dagim — Full Stack Engineer & UI/UX Designer",
+                    content: "Dagim — Frontend Developer & UI Designer",
                 },
                 {
                     property: "og:description",
-                    content: "Building thoughtful web experiences from idea to launch. Full stack engineer and UI/UX designer crafting high-quality digital products.",
+                    content: "Frontend developer and UI designer crafting responsive websites, thoughtful interfaces, and fluid interactions with Vue, Nuxt, and TypeScript.",
                 },
                 {
                     property: "og:image",
@@ -59,11 +60,11 @@ export default defineNuxtConfig({
                 },
                 {
                     name: "twitter:title",
-                    content: "Dagim — Full Stack Engineer & UI/UX Designer",
+                    content: "Dagim — Frontend Developer & UI Designer",
                 },
                 {
                     name: "twitter:description",
-                    content: "Building thoughtful web experiences from idea to launch. Full stack engineer and UI/UX designer crafting high-quality digital products.",
+                    content: "Frontend developer and UI designer crafting responsive websites, thoughtful interfaces, and fluid interactions with Vue, Nuxt, and TypeScript.",
                 },
                 {
                     name: "twitter:image",
@@ -88,9 +89,9 @@ export default defineNuxtConfig({
                         '@type': 'Person',
                         name: 'Dagim Shimelis',
                         url: 'https://dagim.codes',
-                        jobTitle: 'Full Stack Engineer & UI/UX Designer',
-                        description: 'Building thoughtful web experiences from idea to launch. Full stack engineer and UI/UX designer crafting high-quality digital products.',
-                        knowsAbout: ['Web Development', 'UI/UX Design', 'Frontend Development', 'Backend Development', 'Vue.js', 'Nuxt.js', 'TypeScript'],
+                        jobTitle: 'Frontend Developer & UI Designer',
+                        description: 'Frontend developer and UI designer crafting responsive websites, thoughtful interfaces, and fluid interactions with Vue, Nuxt, and TypeScript.',
+                        knowsAbout: ['Web Development', 'UI/UX Design', 'Frontend Development', 'Responsive Web Design', 'Vue.js', 'Nuxt.js', 'TypeScript'],
                         worksFor: {
                             '@type': 'Organization',
                             name: 'Freelance',
@@ -99,13 +100,8 @@ export default defineNuxtConfig({
                 },
             ],
             link: [
-                { rel: 'dns-prefetch', href: 'https://fonts.googleapis.com' },
-                { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-                { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-                {
-                    rel: 'stylesheet',
-                    href: 'https://fonts.googleapis.com/css2?family=Lexend:wght@200;400;600;700&family=Chakra+Petch:wght@400;700&display=swap',
-                },
+                { rel: 'icon', type: 'image/svg+xml', href: '/icons/rebrand.svg' },
+                { rel: 'preload', href: '/fonts/geist-mono/regular.ttf', as: 'font', type: 'font/ttf', crossorigin: '' },
             ],
         },
     },

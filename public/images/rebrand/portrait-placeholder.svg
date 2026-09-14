@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1100" viewBox="0 0 800 1100">
+  <defs>
+    <linearGradient id="wall"><stop stop-color="#d8d7d3"/><stop offset="1" stop-color="#a7a6a3"/></linearGradient>
+    <linearGradient id="face"><stop stop-color="#8e8c87"/><stop offset=".55" stop-color="#bcbab3"/><stop offset="1" stop-color="#777570"/></linearGradient>
+    <linearGradient id="shirt"><stop stop-color="#242424"/><stop offset="1" stop-color="#090909"/></linearGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="30"/></filter>
+    <filter id="grain"><feTurbulence baseFrequency=".72" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".06"/></feComponentTransfer><feBlend in="SourceGraphic" mode="multiply"/></filter>
+  </defs>
+  <g filter="url(#grain)">
+    <path fill="url(#wall)" d="M0 0h800v1100H0z"/>
+    <ellipse cx="510" cy="720" rx="175" ry="350" fill="#545350" opacity=".2" filter="url(#blur)"/>
+    <path d="M153 1100l31-326q12-101 126-129l32-54h105l24 56q122 19 158 112l72 341z" fill="url(#shirt)"/>
+    <path d="M342 594l-12 60q48 72 121 3l-14-69z" fill="url(#face)"/>
+    <path d="M295 388q-18-110 103-124 111 8 108 135l-15 112-51 102q-21 32-65 10l-64-77z" fill="url(#face)"/>
+    <path d="M291 412q-40-123 38-154 123-62 174 36 22 40 1 109l-24-71-42-16-93 28-33 86z" fill="#272726"/>
+    <path d="M304 447l27 61-5-63m148-5-18 60 18-19" fill="#62615d"/>
+    <path d="M406 394l-22 102 34 8" fill="none" stroke="#706e69" stroke-width="6" opacity=".5"/>
+    <path d="M342 428l28-3m63 0 29 5m-94 116q33 13 62-4" stroke="#63615c" fill="none" stroke-width="7"/>
+    <path d="M190 805l102 179-20 116m308-307-53 307" stroke="#3a3a38" fill="none" stroke-width="3"/>
+    <path d="M0 1020h800" stroke="#a5a49f" opacity=".35"/>
+  </g>
+</svg>
