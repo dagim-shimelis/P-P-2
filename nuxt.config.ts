@@ -3,10 +3,11 @@ export default defineNuxtConfig({
     devtools: { enabled: process.env.MODE == "development" },
     app: {
         head: {
+            htmlAttrs: { lang: "en" },
             title: "Dagim — Frontend Developer & UI Designer",
             style: [
                 {
-                    innerHTML: 'html,body{background-color:#1c1c1e;color:#f0fdf4;}',
+                    innerHTML: 'html,body{background-color:#141314;color:#eeeeee;}',
                 },
             ],
             meta: [
@@ -99,13 +100,8 @@ export default defineNuxtConfig({
                 },
             ],
             link: [
-                { rel: 'dns-prefetch', href: 'https://fonts.googleapis.com' },
-                { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-                { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-                {
-                    rel: 'stylesheet',
-                    href: 'https://fonts.googleapis.com/css2?family=Lexend:wght@200;400;600;700&family=Chakra+Petch:wght@400;700&display=swap',
-                },
+                { rel: 'icon', type: 'image/svg+xml', href: '/icons/rebrand.svg' },
+                { rel: 'preload', href: '/fonts/geist-mono/regular.ttf', as: 'font', type: 'font/ttf', crossorigin: '' },
             ],
         },
     },

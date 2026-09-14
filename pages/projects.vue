@@ -1,15 +1,8 @@
 <script setup>
-    const route = useRoute();
-    const router = useRouter();
-    onMounted(() => {
-        if (route.path == "/projects") router.push("/projects/list");
-    });
+const route = useRoute();
+if (route.path === '/projects' || route.path === '/projects/') await navigateTo('/projects/list', { replace: true, redirectCode: 301 });
 </script>
 
 <template>
-    <div>
-        <router-view />
-    </div>
+    <NuxtPage />
 </template>
-
-<style scoped></style>
