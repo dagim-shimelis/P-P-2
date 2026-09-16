@@ -106,15 +106,11 @@ export default defineNuxtConfig({
         },
     },
     css: ["@/assets/css/main.css"],
-    build: {
-        transpile: ["primevue", "gsap"],
-    },
     image: {
         inject: true,
         quality: 80,
         format: ['webp'],
     },
-    // plugins: ["@/plugins/htmlLang.js"],
     modules: [
         "@nuxtjs/tailwindcss",
         "@nuxtjs/color-mode",

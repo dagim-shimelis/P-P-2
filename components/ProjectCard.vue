@@ -34,6 +34,5 @@ function moveCursor(event) {
         </component>
         <div class="project-meta"><h3 class="mono">{{ project.name }}</h3><p class="eyebrow">[ {{ project.category }} ] <span aria-hidden="true">—</span> [ {{ project.personal ? 'My startup' : 'Development' }} ]</p></div>
         <p class="project-description">{{ project.cardDescription }}</p>
-        <NuxtLink v-if="project.caseStudy" :to="project.caseStudy" class="text-link project-case-link">Read the case study <span aria-hidden="true">↗</span></NuxtLink>
     </article>
 </template>

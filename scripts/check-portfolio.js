@@ -1,4 +1,4 @@
-// Paste into the browser console on the homepage, work archive, or case study.
+// Paste into the browser console on the homepage or work archive.
 (async () => {
     const passed = [];
     const check = (condition, message) => {
@@ -95,18 +95,14 @@
             check(!document.querySelector('.gallery-controls'), 'Carousel controls are removed');
         }
     }
+    check(document.querySelector('.footer-back-top')?.getAttribute('href') === '#main-content', 'Footer links back to the top of the page');
+    check(!document.querySelector('.footer-tools'), 'Grid and color controls are removed');
     const canvas = document.querySelector('.hero-art canvas');
     if (canvas) {
         await new Promise(resolve => setTimeout(resolve, 2100));
         const pixels = canvas.getContext('2d').getImageData(0, 0, canvas.width, canvas.height).data;
         check(pixels.some((value, index) => index % 4 === 3 && value > 0), 'ASCII portrait has rendered visible pixels');
-        const colorButton = [...document.querySelectorAll('.footer-tools button')].find(button => button.textContent.includes('Change color'));
-        const before = getComputedStyle(document.documentElement).getPropertyValue('--ascii-color');
-        colorButton.click();
-        await settle();
-        check(getComputedStyle(document.documentElement).getPropertyValue('--ascii-color') !== before, 'Accent control changes the artwork palette');
-        colorButton.click(); colorButton.click();
-        await settle();
+
     }
     const assets = [...new Set([...document.images].map(image => image.getAttribute('src')).filter(src => src?.startsWith('/')))];
     const responses = await Promise.all(assets.map(async src => ({ src, response: await fetch(src, { method: 'HEAD' }) })));
