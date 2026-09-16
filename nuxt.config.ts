@@ -1,10 +1,13 @@
+const siteTitle = "Dagim Shimelis — Independent Developer and Designer";
+const siteDescription = "I’m Dagim, a frontend developer and UI designer turning ideas into websites and digital products. Good design, thoughtful code, and care in the details.";
+
 export default defineNuxtConfig({
     ssr: true,
     devtools: { enabled: process.env.MODE == "development" },
     app: {
         head: {
             htmlAttrs: { lang: "en" },
-            title: "Dagim — Frontend Developer & UI Designer",
+            title: siteTitle,
             style: [
                 {
                     innerHTML: 'html,body{background-color:#141314;color:#eeeeee;}',
@@ -17,7 +20,7 @@ export default defineNuxtConfig({
                 },
                 {
                     name: "description",
-                    content: "Frontend developer and UI designer crafting responsive websites, thoughtful interfaces, and fluid interactions with Vue, Nuxt, and TypeScript.",
+                    content: siteDescription,
                 },
                 { name: "robots", content: "index, follow" },
                 {
@@ -31,23 +34,27 @@ export default defineNuxtConfig({
                 },
                 {
                     property: "og:title",
-                    content: "Dagim — Frontend Developer & UI Designer",
+                    content: siteTitle,
                 },
                 {
                     property: "og:description",
-                    content: "Frontend developer and UI designer crafting responsive websites, thoughtful interfaces, and fluid interactions with Vue, Nuxt, and TypeScript.",
+                    content: siteDescription,
                 },
                 {
                     property: "og:image",
-                    content: "https://dagim.codes/images/og-image.png",
+                    content: "https://dagim.codes/images/og-portfolio.png",
+                },
+                {
+                    property: "og:image:alt",
+                    content: "Dagim Shimelis — Good design. Thoughtful code. Orange ASCII artwork on charcoal.",
                 },
                 {
                     property: "og:image:width",
-                    content: "1200",
+                    content: "1731",
                 },
                 {
                     property: "og:image:height",
-                    content: "630",
+                    content: "909",
                 },
                 {
                     property: "og:url",
@@ -60,15 +67,19 @@ export default defineNuxtConfig({
                 },
                 {
                     name: "twitter:title",
-                    content: "Dagim — Frontend Developer & UI Designer",
+                    content: siteTitle,
                 },
                 {
                     name: "twitter:description",
-                    content: "Frontend developer and UI designer crafting responsive websites, thoughtful interfaces, and fluid interactions with Vue, Nuxt, and TypeScript.",
+                    content: siteDescription,
                 },
                 {
                     name: "twitter:image",
-                    content: "https://dagim.codes/images/og-image.png",
+                    content: "https://dagim.codes/images/og-portfolio.png",
+                },
+                {
+                    name: "twitter:image:alt",
+                    content: "Dagim Shimelis — Good design. Thoughtful code. Orange ASCII artwork on charcoal.",
                 },
             ],
             script: [
@@ -90,7 +101,7 @@ export default defineNuxtConfig({
                         name: 'Dagim Shimelis',
                         url: 'https://dagim.codes',
                         jobTitle: 'Frontend Developer & UI Designer',
-                        description: 'Frontend developer and UI designer crafting responsive websites, thoughtful interfaces, and fluid interactions with Vue, Nuxt, and TypeScript.',
+                        description: siteDescription,
                         knowsAbout: ['Web Development', 'UI/UX Design', 'Frontend Development', 'Responsive Web Design', 'Vue.js', 'Nuxt.js', 'TypeScript'],
                         worksFor: {
                             '@type': 'Organization',
