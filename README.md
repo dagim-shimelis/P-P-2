@@ -6,6 +6,12 @@ pnpm dev
 pnpm build
 ```
 
+PostHog: copy `.env.example` to `.env`, set your public project token and region,
+and add the same variables to your hosting provider. Tracking runs in production
+builds only, after the browser becomes idle: initial pageviews, client-side route
+changes, and automatic interaction capture. Session replay is disabled.
+Run `node scripts/check-analytics.mjs` to check initialization and its guards.
+
 The portfolio uses a dark/light editorial layout, orange ASCII artwork, a sticky selected-work index, and large project imagery. The work archive uses a two-column grid, with one column on phones. The site covers Dagim's background, process, projects, writing, and contact details.
 
 - Colors: `#141314`, `#eeeeee`, `#fd551d`; artwork: `#ff6b4a`.

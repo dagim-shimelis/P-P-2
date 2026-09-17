@@ -149,6 +149,8 @@ export default defineNuxtConfig({
             mode: process.env.MODE,
             clarityId: process.env.NUXT_PUBLIC_CLARITY_ID,
             gaId: process.env.NUXT_PUBLIC_GA_ID,
+            posthogKey: '',
+            posthogHost: 'https://us.i.posthog.com',
         },
     },
 });
