@@ -84,16 +84,6 @@ export default defineNuxtConfig({
             ],
             script: [
                 {
-                    src: `https://www.googletagmanager.com/gtag/js?id=${process.env.NUXT_PUBLIC_GA_ID}`,
-                    async: true,
-                },
-                {
-                    innerHTML: `window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', '${process.env.NUXT_PUBLIC_GA_ID}');`,
-                },
-                {
                     type: 'application/ld+json',
                     innerHTML: JSON.stringify({
                         '@context': 'https://schema.org',
@@ -112,7 +102,7 @@ export default defineNuxtConfig({
             ],
             link: [
                 { rel: 'icon', type: 'image/svg+xml', href: '/icons/rebrand.svg' },
-                { rel: 'preload', href: '/fonts/geist-mono/regular.ttf', as: 'font', type: 'font/ttf', crossorigin: '' },
+                { rel: 'preload', href: '/fonts/geist-mono/regular.woff2', as: 'font', type: 'font/woff2', crossorigin: '' },
             ],
         },
     },

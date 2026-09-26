@@ -17,7 +17,7 @@ function moveCursor(event) {
 <template>
     <article class="project-card" :class="{ 'project-archived': project.broken }">
         <component :is="project.broken ? 'div' : 'a'" :href="project.broken ? undefined : project.link" :target="project.broken ? undefined : '_blank'" :rel="project.broken ? undefined : 'noopener noreferrer'" class="project-visual" :class="{ 'cursor-visible': cursorVisible }" :aria-label="project.broken ? undefined : `Visit ${project.name} (opens in a new tab)`" @pointermove="moveCursor" @pointerleave="hideCursor">
-            <img class="project-backdrop" src="/images/rebrand/project-background.jpeg" alt="" aria-hidden="true" loading="lazy" />
+            <img class="project-backdrop" src="/images/rebrand/project-background.webp" alt="" aria-hidden="true" width="736" height="552" loading="lazy" />
             <span class="project-corner eyebrow">{{ project.personal ? 'Independent product' : project.category }}</span>
             <div class="project-preview">
                 <div class="project-window-bar" aria-hidden="true">
@@ -25,7 +25,7 @@ function moveCursor(event) {
                     <span class="project-window-title">{{ project.name }}</span>
                     <span class="project-window-arrow">↗</span>
                 </div>
-                <NuxtImg :src="project.thumbnailImage" :alt="`${project.name} interface`" width="1440" format="webp" :quality="85" loading="lazy" />
+                <NuxtImg :src="project.thumbnailImage" :alt="`${project.name} interface`" width="1440" sizes="88vw md:55vw lg:50vw xl:800px" format="webp" :quality="80" loading="lazy" />
             </div>
             <span class="project-image-number mono" aria-hidden="true">{{ String(index + 1).padStart(2, '0') }}</span>
             <span v-if="!project.broken" class="project-open mono" aria-hidden="true">Visit project ↗</span>

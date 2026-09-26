@@ -42,7 +42,7 @@ watch(() => route.fullPath, () => { if (open.value) closeMenu(); });
                 <p class="eyebrow">Independent developer &amp; designer</p>
                 <a :href="`mailto:${email}`" class="menu-email">{{ email }}</a>
                 <div class="menu-socials"><a v-for="link in socialLinks" :key="link.name" :href="link.url" target="_blank" rel="noopener noreferrer">{{ link.name }} ↗</a></div>
-                <NuxtLink class="menu-portrait" to="/#about" @click="closeMenu"><img src="/images/about-image.png" alt="Dagim working at his desk" width="800" height="800" /><span class="eyebrow">The person behind the pixels ↗</span></NuxtLink>
+                <NuxtLink class="menu-portrait" to="/#about" @click="closeMenu"><img src="/images/about-image.webp" alt="Dagim working at his desk" width="800" height="800" loading="lazy" /><span class="eyebrow">The person behind the pixels ↗</span></NuxtLink>
                 <p class="eyebrow">Addis Ababa, Ethiopia · Working globally</p>
             </div>
         </div>

@@ -8,45 +8,84 @@ const source = readFileSync(new URL('../plugins/analytics.client.ts', import.met
   .replaceAll('import(', 'loadModule(')
 
 for (const isDev of [false, true]) {
-  for (const posthogKey of ['', 'phc_test']) {
+  for (const configured of [false, true]) {
     for (const idle of [false, true]) {
-      const calls = []
-      const pending = []
-      let scheduled
-      runInNewContext(source, {
-        isDev,
-        console,
-        window: idle ? { requestIdleCallback: true } : {},
-        requestIdleCallback: (callback) => { scheduled = callback },
-        setTimeout: (callback) => { scheduled = callback },
-        defineNuxtPlugin: (setup) => setup(),
-        useRuntimeConfig: () => ({ public: { posthogKey, posthogHost: 'https://eu.i.posthog.com' } }),
-        loadModule: (name) => {
-          calls.push(['import', name])
-          const promise = Promise.resolve({
-            inject() {},
-            default: { init: (...args) => calls.push([name, ...args]) },
-          })
-          pending.push(promise)
-          return promise
-        },
-      })
-      assert.equal(calls.length, 0, 'Analytics must wait for idle scheduling')
-      scheduled()
-      await Promise.all(pending)
-      const enabled = !isDev && Boolean(posthogKey)
-      assert.equal(calls.some(([kind, name]) => kind === 'import' && name === 'posthog-js'), enabled)
-      const init = calls.find(([name]) => name === 'posthog-js')
-      assert.equal(Boolean(init), enabled)
-      if (enabled) {
-        assert.equal(init[1], posthogKey)
-        assert.equal(init[2].api_host, 'https://eu.i.posthog.com')
-        assert.equal(init[2].defaults, '2026-05-30')
-        assert.equal(init[2].capture_pageview, 'history_change')
-        assert.equal(init[2].autocapture, true)
-        assert.equal(init[2].disable_session_recording, true)
+      for (const readyState of ['loading', 'complete']) {
+        const calls = []
+        const pending = []
+        let scheduled, loaded
+        const schedule = (callback) => { scheduled = callback }
+        runInNewContext(source, {
+          isDev,
+          console,
+          window: {
+            ...(idle ? { requestIdleCallback: schedule } : {}),
+            addEventListener: (event, callback, options) => {
+              assert.equal(event, 'load')
+              assert.equal(options.once, true)
+              loaded = callback
+            },
+          },
+          document: {
+            readyState,
+            createElement: () => ({}),
+            head: { append: (script) => calls.push(['script', script]) },
+          },
+          setTimeout: schedule,
+          defineNuxtPlugin: (setup) => setup(),
+          useHead: (head) => calls.push(['head', head]),
+          useRuntimeConfig: () => ({ public: {
+            posthogKey: configured ? 'phc_test' : '',
+            posthogHost: 'https://eu.i.posthog.com',
+            gaId: configured ? 'G-TEST' : '',
+            clarityId: configured ? 'clarity_test' : '',
+          } }),
+          loadModule: (name) => {
+            calls.push(['import', name])
+            const promise = Promise.resolve({
+              inject: () => calls.push(['vercel']),
+              default: { init: (...args) => calls.push([name, ...args]) },
+            })
+            pending.push(promise)
+            return promise
+          },
+        })
+        assert.equal(calls.some(([kind]) => kind === 'import' || kind === 'script'), false, 'No analytics downloads during startup')
+        if (isDev) {
+          assert.equal(calls.length, 0)
+          assert.equal(scheduled, undefined)
+          assert.equal(loaded, undefined)
+          continue
+        }
+        if (readyState === 'loading') {
+          assert.equal(scheduled, undefined, 'Idle alone must not start analytics before page load')
+          loaded()
+        }
+        scheduled()
+        await Promise.all(pending)
+        assert.equal(calls.some(([name]) => name === 'vercel'), true)
+        for (const module of ['posthog-js', '@microsoft/clarity']) {
+          assert.equal(calls.some(([kind, name]) => kind === 'import' && name === module), configured)
+        }
+        const script = calls.find(([kind]) => kind === 'script')?.[1]
+        assert.equal(Boolean(script), configured)
+        if (configured) {
+          assert.equal(script.src, 'https://www.googletagmanager.com/gtag/js?id=G-TEST')
+          assert.equal(script.async, true)
+          const queue = {}
+          runInNewContext(calls.find(([kind]) => kind === 'head')[1].script[0].innerHTML, { window: queue, dataLayer: queue.dataLayer = [] })
+          assert.equal(queue.dataLayer[1][0], 'config')
+          assert.equal(queue.dataLayer[1][1], 'G-TEST')
+          const init = calls.find(([name]) => name === 'posthog-js')
+          assert.equal(init[1], 'phc_test')
+          assert.equal(init[2].api_host, 'https://eu.i.posthog.com')
+          assert.equal(init[2].capture_pageview, 'history_change')
+          assert.equal(init[2].autocapture, true)
+          assert.equal(init[2].disable_session_recording, true)
+          assert.equal(init[2].disable_surveys, true)
+        }
       }
     }
   }
 }
-console.log('Analytics checks passed (production/dev, key/no key, idle/timeout).')
+console.log('Analytics checks passed (production/dev, configured/missing IDs, idle/timeout, loading/loaded).')

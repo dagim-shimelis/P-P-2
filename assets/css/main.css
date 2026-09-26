@@ -2,9 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face { font-family: 'Geist Mono'; src: url('/fonts/geist-mono/regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
-@font-face { font-family: 'Fractul'; src: url('/fonts/fractul/FractulAlt-Black.ttf') format('truetype'); font-weight: 900; font-style: normal; font-display: swap; }
-@font-face { font-family: 'Space Grotesk'; src: url('/fonts/space-grotesk/bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Geist Mono'; src: url('/fonts/geist-mono/regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+/* ponytail: brand fonts contain only "dagim" and "vidspawn"; regenerate from the TTFs if these labels change. */
+@font-face { font-family: 'Fractul'; src: url('/fonts/fractul/FractulAlt-Black.woff2') format('woff2'); font-weight: 900; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Space Grotesk'; src: url('/fonts/space-grotesk/bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
 
 :root { --ink: #141314; --paper: #eee; --muted: #a3a1a3; --accent: #fd551d; --ascii-color: #ff6b4a; --line: #eeeeee26; --sans: 'Helvetica Neue', Helvetica, Arial, sans-serif; --mono: 'Geist Mono', monospace; --gutter: clamp(20px, 2.2vw, 32px); }
 html { scroll-behavior: smooth; scroll-padding-top: 100px; background: var(--ink); }
@@ -91,7 +92,7 @@ html:has(dialog[open]) { overflow: hidden; }
 .client-names > a { color: var(--muted); font-size: 10px; white-space: nowrap; }
 .hero-scroll { position: absolute; bottom: 30px; right: var(--gutter); display: flex; align-items: center; gap: 30px; z-index: 2; }
 .hero-scroll > span { font-size: 25px; }
-@keyframes type-arrive { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+@keyframes type-arrive { from { transform: translateY(28px); } to { transform: none; } }
 
 .about-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 9%; }
 .portrait-frame { align-self: start; }

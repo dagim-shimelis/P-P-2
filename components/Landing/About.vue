@@ -7,7 +7,7 @@ import { work } from '~/data/portfolio';
         <div class="section-marker"><span class="eyebrow">01 / The person behind the pixels</span><span class="eyebrow">Based in Addis Ababa, ET</span></div>
         <div class="about-layout">
             <figure class="portrait-frame">
-                <img src="/images/about-image.png" alt="Dagim working at his desk" width="800" height="800" loading="lazy" />
+                <img src="/images/about-image.webp" alt="Dagim working at his desk" width="800" height="800" loading="lazy" />
                 <figcaption class="eyebrow">Dagim Shimelis <span>Portrait / 01</span></figcaption>
             </figure>
             <div class="about-copy">
