@@ -14,58 +14,66 @@ onMounted(() => {
     const context = element.getContext('2d');
     const sample = document.createElement('canvas');
     const source = sample.getContext('2d', { willReadFrequently: true });
-    if (!context || !source) return;
+    const atlas = document.createElement('canvas');
+    const ink = atlas.getContext('2d');
+    if (!context || !source || !ink) return;
 
     const portrait = new Image();
     const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    let pixels, columns, rows, width, height, cell, frame = 0, started = 0;
+    let pixels, columns, rows, width, height, cell, frame = 0;
     let visible = false, removed = false, pointerX = 0, pointerY = 0;
     let hovering = false, impactStarted = 0, impactX = .5, impactY = .5;
     let hoverAmount = 0, targetX = 0, targetY = 0, previousFrame = 0;
     let accent = '#ff6b4a';
     const glyphs = ' .,:;+=xX$&#@';
+    let tile, ratio;
+
+    function prepareGlyphs() {
+        if (!cell) return;
+        tile = Math.ceil(cell * 1.5 * ratio);
+        atlas.width = tile * glyphs.length;
+        atlas.height = tile;
+        ink.font = `${cell * 1.14 * ratio}px "Geist Mono", monospace`;
+        ink.textBaseline = 'top';
+        ink.fillStyle = accent;
+        for (let i = 1; i < glyphs.length; i++) ink.fillText(glyphs[i], i * tile, 0);
+    }
 
     function draw(now) {
         frame = 0;
         if (!pixels || removed) return;
-        if (!started) started = now;
         const ease = 1 - Math.exp(-Math.min(now - previousFrame || 16, 64) / 180);
         previousFrame = now;
         const approach = (value, target) => Math.abs(target - value) < .004 ? target : value + (target - value) * ease;
         hoverAmount = motion.matches ? 0 : approach(hoverAmount, hovering ? 1 : 0);
         pointerX = motion.matches ? 0 : approach(pointerX, targetX);
         pointerY = motion.matches ? 0 : approach(pointerY, targetY);
-        const progress = motion.matches ? 1 : Math.min((now - started) / 1900, 1);
         const impact = motion.matches || !impactStarted ? 1 : Math.min((now - impactStarted) / 800, 1);
         const impactRadius = Math.hypot(width, height) * impact;
         context.clearRect(0, 0, width, height);
-        context.font = `${cell * 1.14}px "Geist Mono", monospace`;
-        context.textBaseline = 'top';
-        context.fillStyle = accent;
+        const isInverted = inverted.value;
         for (let y = 0; y < rows; y++) {
             for (let x = 0; x < columns; x++) {
                 const index = (y * columns + x) * 4;
                 if (pixels[index + 3] < 100) continue;
                 const luminance = (pixels[index] * .2126 + pixels[index + 1] * .7152 + pixels[index + 2] * .0722) / 255;
                 if (luminance < .035) continue;
-                const reveal = (1 - y / rows) * .65 + x / columns * .2;
-                if (progress < reveal) continue;
                 const depth = (luminance - .35) * cell * 2;
                 const distance = Math.hypot(x * cell - (pointerX + 1) * width / 2, y * cell - (pointerY + 1) * height / 2);
                 const influence = hoverAmount * Math.max(0, 1 - distance / (cell * 16));
                 const wave = Math.sin(distance / cell - now * .006) * influence * cell;
                 const reached = impact === 1 || Math.hypot(x * cell - impactX * width, y * cell - impactY * height) < impactRadius;
-                const tone = (reached ? inverted.value : !inverted.value) ? 1 - luminance : luminance;
-                const shimmer = (progress < 1 ? .13 : influence * .2) * Math.sin(x * 12 + y * 8 + now * .01);
-                const glyph = glyphs[Math.max(1, Math.min(glyphs.length - 1, Math.floor((tone + shimmer) * glyphs.length)))];
+                const tone = (reached ? isInverted : !isInverted) ? 1 - luminance : luminance;
+                const shimmer = influence * .2 * Math.sin(x * 12 + y * 8 + now * .01);
+                const glyph = Math.max(1, Math.min(glyphs.length - 1, Math.floor((tone + shimmer) * glyphs.length)));
                 context.globalAlpha = Math.min(1, .3 + tone * .95);
-                context.fillText(glyph, x * cell + pointerX * depth + wave, y * cell + pointerY * depth + wave * .5);
+                context.drawImage(atlas, glyph * tile, 0, tile, tile, x * cell + pointerX * depth + wave, y * cell + pointerY * depth + wave * .5, tile / ratio, tile / ratio);
             }
         }
         context.globalAlpha = 1;
         element.dataset.ready = 'true';
         if (impact === 1) impactStarted = 0;
-        if (visible && (progress < 1 || hoverAmount > 0 || pointerX !== targetX || pointerY !== targetY || impact < 1) && !motion.matches) frame = requestAnimationFrame(draw);
+        if (visible && (hoverAmount > 0 || pointerX !== targetX || pointerY !== targetY || impact < 1) && !motion.matches) frame = requestAnimationFrame(draw);
     }
 
     function requestDraw() {
@@ -78,11 +86,12 @@ onMounted(() => {
         width = box.width;
         height = box.height;
         if (!width || !height) return;
-        const ratio = Math.min(window.devicePixelRatio || 1, 2);
+        ratio = Math.min(window.devicePixelRatio || 1, 2);
         element.width = Math.round(width * ratio);
         element.height = Math.round(height * ratio);
         context.setTransform(ratio, 0, 0, ratio, 0, 0);
         cell = width < 440 ? 6 : 8;
+        prepareGlyphs();
         columns = Math.ceil(width / cell);
         rows = Math.ceil(height / cell);
         sample.width = columns;
@@ -115,6 +124,7 @@ onMounted(() => {
     };
     function recolor() {
         accent = getComputedStyle(element).getPropertyValue('--ascii-color').trim() || '#ff6b4a';
+        prepareGlyphs();
         requestDraw();
     }
 
@@ -132,7 +142,7 @@ onMounted(() => {
     portrait.onload = resize;
     portrait.src = props.src;
     recolor();
-    document.fonts.ready.then(() => { if (!removed) requestDraw(); });
+    document.fonts.ready.then(() => { if (!removed) { prepareGlyphs(); requestDraw(); } });
 
     dispose = () => {
         removed = true;
@@ -154,10 +164,3 @@ onBeforeUnmount(() => dispose());
         <canvas ref="canvas" aria-hidden="true" />
     </component>
 </template>
-
-<style scoped>
-.ascii-portrait { width: 100%; height: 100%; }
-.ascii-interactive,.ascii-interactive:hover { display: block; padding: 0; background: transparent; pointer-events: auto; }
-.ascii-interactive:focus-visible { outline-offset: -6px; }
-canvas { display: block; width: 100%; height: 100%; }
-</style>
