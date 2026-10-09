@@ -9,6 +9,9 @@
     check(document.querySelectorAll('main').length === 1, 'One main landmark');
     check(document.querySelectorAll('h1').length === 1, 'One page heading');
     check(document.documentElement.scrollWidth <= innerWidth + 1, 'No horizontal overflow');
+    const html = await (await fetch(location.pathname)).text();
+    check(html.includes('<!--email_off-->') && html.indexOf('<!--email_off-->') < html.indexOf('id="__nuxt"') && html.lastIndexOf('<!--/email_off-->') > html.indexOf('class="contact-email"'), 'Server markup protects email links from Cloudflare hydration changes');
+    check([...document.querySelectorAll('.footer-links a')].every(link => link.getBoundingClientRect().height >= 44), 'Footer links have touch-sized targets');
     for (const link of document.querySelectorAll('a[href^="#"]')) {
         check(!!document.getElementById(link.hash.slice(1)), `Anchor exists: ${link.hash}`);
     }
