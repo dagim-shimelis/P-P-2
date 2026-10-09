@@ -6,6 +6,10 @@ pnpm dev
 pnpm build
 ```
 
+Sentry: set `NUXT_PUBLIC_SENTRY_DSN` in `.env` and your hosting provider. With a
+DSN configured, the Nuxt SDK reports browser and server errors. Confirm delivery
+by sending a test exception from each side and checking the Sentry project.
+
 PostHog: copy `.env.example` to `.env`, set your public project token and region,
 and add the same variables to your hosting provider. When the token is configured,
 the Nuxt module starts PostHog on the client, including in development. It captures

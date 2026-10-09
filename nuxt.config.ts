@@ -118,6 +118,7 @@ export default defineNuxtConfig({
         "nuxt-icon",
         "@nuxt/image",
         ...(process.env.NUXT_PUBLIC_POSTHOG_KEY ? ["@posthog/nuxt"] : []),
+        ...(process.env.NUXT_PUBLIC_SENTRY_DSN ? ["@sentry/nuxt/module"] : []),
     ],
     posthogConfig: {
         publicKey: process.env.NUXT_PUBLIC_POSTHOG_KEY,
@@ -162,6 +163,8 @@ export default defineNuxtConfig({
     runtimeConfig: {
         public: {
             mode: process.env.MODE,
+            sentryDsn: process.env.NUXT_PUBLIC_SENTRY_DSN || '',
+            sentryEnvironment: process.env.NUXT_PUBLIC_SENTRY_ENVIRONMENT || process.env.NODE_ENV,
             clarityId: process.env.NUXT_PUBLIC_CLARITY_ID,
             gaId: process.env.NUXT_PUBLIC_GA_ID,
             vercelAnalytics: process.env.VERCEL === '1',
