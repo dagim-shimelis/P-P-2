@@ -7,12 +7,20 @@ pnpm build
 ```
 
 PostHog: copy `.env.example` to `.env`, set your public project token and region,
-and add the same variables to your hosting provider. Tracking runs in production
-builds only, after page load and browser idle: initial pageviews, client-side route
-changes, and automatic interaction capture. Session replay and surveys are disabled.
-Google Analytics and Clarity follow the same loading schedule when their public IDs
-are configured; Google Analytics queues the initial pageview before loading its SDK.
-Run `node scripts/check-analytics.mjs` to check initialization and its guards.
+and add the same variables to your hosting provider. When the token is configured,
+the Nuxt module starts PostHog on the client, including in development. It captures
+pageviews, route changes, interactions, and browser exceptions; session replay and
+surveys are disabled. The build attempts source-map upload when the CLI key, project
+ID, and app host are configured. Google Analytics and Clarity load after page load
+and browser idle when their public IDs are configured; Google Analytics queues the initial pageview
+before loading its SDK. Run `node scripts/check-analytics.mjs` to check GA, Clarity,
+and Vercel Analytics scheduling.
+Vercel Analytics loads only on Vercel deployments (`VERCEL=1` at build time).
+ASCII artwork caches its glyphs and uses a CSS reveal at startup; JavaScript animates
+only pointer and click interactions. Run `scripts/check-ascii-art.js` in the browser
+console at desktop and mobile widths to check those interactions and reduced motion.
+The server preserves email markup with Cloudflare's `email_off` comments to avoid
+hydration mismatches; `scripts/check-portfolio.js` checks these and footer touch targets.
 
 The portfolio uses a dark/light editorial layout, orange ASCII artwork, a sticky selected-work index, and large project imagery. The work archive uses a two-column grid, with one column on phones. The site covers Dagim's background, process, projects, writing, and contact details.
 

@@ -35,10 +35,9 @@ for (const isDev of [false, true]) {
           defineNuxtPlugin: (setup) => setup(),
           useHead: (head) => calls.push(['head', head]),
           useRuntimeConfig: () => ({ public: {
-            posthogKey: configured ? 'phc_test' : '',
-            posthogHost: 'https://eu.i.posthog.com',
             gaId: configured ? 'G-TEST' : '',
             clarityId: configured ? 'clarity_test' : '',
+            vercelAnalytics: configured,
           } }),
           loadModule: (name) => {
             calls.push(['import', name])
@@ -63,10 +62,8 @@ for (const isDev of [false, true]) {
         }
         scheduled()
         await Promise.all(pending)
-        assert.equal(calls.some(([name]) => name === 'vercel'), true)
-        for (const module of ['posthog-js', '@microsoft/clarity']) {
-          assert.equal(calls.some(([kind, name]) => kind === 'import' && name === module), configured)
-        }
+        assert.equal(calls.some(([name]) => name === 'vercel'), configured)
+        assert.equal(calls.some(([kind, name]) => kind === 'import' && name === '@microsoft/clarity'), configured)
         const script = calls.find(([kind]) => kind === 'script')?.[1]
         assert.equal(Boolean(script), configured)
         if (configured) {
@@ -76,16 +73,9 @@ for (const isDev of [false, true]) {
           runInNewContext(calls.find(([kind]) => kind === 'head')[1].script[0].innerHTML, { window: queue, dataLayer: queue.dataLayer = [] })
           assert.equal(queue.dataLayer[1][0], 'config')
           assert.equal(queue.dataLayer[1][1], 'G-TEST')
-          const init = calls.find(([name]) => name === 'posthog-js')
-          assert.equal(init[1], 'phc_test')
-          assert.equal(init[2].api_host, 'https://eu.i.posthog.com')
-          assert.equal(init[2].capture_pageview, 'history_change')
-          assert.equal(init[2].autocapture, true)
-          assert.equal(init[2].disable_session_recording, true)
-          assert.equal(init[2].disable_surveys, true)
         }
       }
     }
   }
 }
-console.log('Analytics checks passed (production/dev, configured/missing IDs, idle/timeout, loading/loaded).')
+console.log('GA, Clarity, and Vercel Analytics checks passed (production/dev, configured/missing IDs, idle/timeout, loading/loaded).')

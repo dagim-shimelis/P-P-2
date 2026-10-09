@@ -117,7 +117,31 @@ export default defineNuxtConfig({
         "@nuxtjs/color-mode",
         "nuxt-icon",
         "@nuxt/image",
+        ...(process.env.NUXT_PUBLIC_POSTHOG_KEY ? ["@posthog/nuxt"] : []),
     ],
+    posthogConfig: {
+        publicKey: process.env.NUXT_PUBLIC_POSTHOG_KEY,
+        // The module shares this host with its CLI; keep SDK traffic on the ingestion host below.
+        host: process.env.POSTHOG_CLI_HOST || process.env.NUXT_PUBLIC_POSTHOG_HOST,
+        clientConfig: {
+            api_host: process.env.NUXT_PUBLIC_POSTHOG_HOST,
+            defaults: '2026-05-30',
+            capture_pageview: 'history_change',
+            autocapture: true,
+            person_profiles: 'identified_only',
+            disable_session_recording: true,
+            disable_surveys: true,
+            capture_exceptions: true,
+        },
+        serverConfig: {
+            host: process.env.NUXT_PUBLIC_POSTHOG_HOST,
+        },
+        sourcemaps: {
+            enabled: Boolean(process.env.POSTHOG_CLI_API_KEY && process.env.POSTHOG_CLI_PROJECT_ID && process.env.POSTHOG_CLI_HOST),
+            projectId: process.env.POSTHOG_CLI_PROJECT_ID,
+            personalApiKey: process.env.POSTHOG_CLI_API_KEY,
+        },
+    },
     colorMode: {
         preference: "dark",
         fallback: "dark",
@@ -139,8 +163,7 @@ export default defineNuxtConfig({
             mode: process.env.MODE,
             clarityId: process.env.NUXT_PUBLIC_CLARITY_ID,
             gaId: process.env.NUXT_PUBLIC_GA_ID,
-            posthogKey: '',
-            posthogHost: 'https://us.i.posthog.com',
+            vercelAnalytics: process.env.VERCEL === '1',
         },
     },
 });
