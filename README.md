@@ -9,12 +9,14 @@ pnpm build
 PostHog: copy `.env.example` to `.env`, set your public project token and region,
 and add the same variables to your hosting provider. When the token is configured,
 the Nuxt module starts PostHog on the client, including in development. It captures
-pageviews, route changes, interactions, and browser exceptions; session replay and
-surveys are disabled. The build attempts source-map upload when the CLI key, project
-ID, and app host are configured. Google Analytics and Clarity load after page load
-and browser idle when their public IDs are configured; Google Analytics queues the initial pageview
-before loading its SDK. Run `node scripts/check-analytics.mjs` to check GA, Clarity,
-and Vercel Analytics scheduling.
+pageviews, route changes, interactions, and browser and server exceptions; session
+replay and surveys are disabled. Set `POSTHOG_CLI_API_KEY`, `POSTHOG_CLI_PROJECT_ID`,
+and `POSTHOG_CLI_HOST` in Vercel's build environment for source-map upload. The CLI
+host is the PostHog app host; `NUXT_PUBLIC_POSTHOG_HOST` is the ingestion host.
+Google Analytics and Clarity load after page load and browser idle when their public
+IDs are configured; Google Analytics queues the initial pageview before loading its
+SDK. Run `node scripts/check-analytics.mjs` to check GA, Clarity, and Vercel
+Analytics scheduling.
 Vercel Analytics loads only on Vercel deployments (`VERCEL=1` at build time).
 ASCII artwork caches its glyphs and uses a CSS reveal at startup; JavaScript animates
 only pointer and click interactions. Run `scripts/check-ascii-art.js` in the browser

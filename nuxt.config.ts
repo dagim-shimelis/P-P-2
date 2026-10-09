@@ -135,6 +135,7 @@ export default defineNuxtConfig({
         },
         serverConfig: {
             host: process.env.NUXT_PUBLIC_POSTHOG_HOST,
+            enableExceptionAutocapture: true,
         },
         sourcemaps: {
             enabled: Boolean(process.env.POSTHOG_CLI_API_KEY && process.env.POSTHOG_CLI_PROJECT_ID && process.env.POSTHOG_CLI_HOST),
