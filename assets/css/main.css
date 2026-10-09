@@ -112,8 +112,8 @@ figcaption { margin-top: 12px; display: flex; justify-content: space-between; ga
 .work-intro h2 { font-size: clamp(40px, 3.6vw, 64px); }
 .work-intro > p:not(.eyebrow) { color: var(--muted); font-size: 15px; line-height: 1.65; max-width: 320px; margin-top: 24px; }
 .work-index { display: flex; flex-direction: column; gap: 12px; margin: 40px 0; max-width: 340px; }
-.work-index a { display: flex; align-items: center; gap: 16px; opacity: .45; transition: opacity .25s; }
-.work-index a:hover,.work-index a.active { opacity: 1; }
+.work-index a { display: flex; align-items: center; gap: 16px; color: var(--muted); transition: color .25s; }
+.work-index a:hover,.work-index a.active { color: var(--paper); }
 .work-index img { width: 75px; height: 48px; object-fit: contain; }
 .work-index .mono { font-size: 11px; }
 .work-index .eyebrow { margin-left: auto; }
@@ -197,6 +197,7 @@ blockquote { font-size: clamp(22px, 2.1vw, 34px); line-height: 1.4; letter-spaci
 .footer-center { display: flex; justify-content: space-between; gap: 40px; align-items: end; padding-top: 95px; padding-bottom: 70px; }
 .footer-center > p { font-size: clamp(40px, 5vw, 80px); letter-spacing: -.055em; line-height: 1.05; }
 .footer-links { display: flex; gap: 32px; font-size: 15px; }
+.footer-links a { display: inline-flex; align-items: center; min-height: 44px; }
 .footer-wordmark { position: relative; z-index: 3; pointer-events: none; font: 900 min(24vw, 432px)/.8 'Fractul', var(--sans); letter-spacing: -.075em; text-align: center; padding: 20px 2% 0 0; white-space: nowrap; margin-top: auto; }
 .footer-wordmark span { font: 400 .13em var(--sans); vertical-align: top; margin-top: .18em; display: inline-block; letter-spacing: -.05em; }
 .footer-back-top { min-height: 44px; padding: 0 10px; display: inline-flex; align-items: center; gap: 7px; margin-left: auto; }
