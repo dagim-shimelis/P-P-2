@@ -82,7 +82,7 @@
         }
         filters.find(button => button.textContent === 'Independent products').click();
         await settle();
-        check(document.querySelectorAll('.project-card').length === 2, 'Independent products filter returns both startups');
+        check([...document.querySelectorAll('.project-card h3')].map(heading => heading.textContent).join(',') === 'Dwight Prompt,Sheriff,TriggerNote', 'Independent products filter returns all three projects with Sheriff right after Dwight');
         filters.find(button => button.textContent === 'Archive').click();
         await settle();
         check(document.querySelectorAll('.project-card').length > 0 && !document.querySelector('.project-card a'), 'Archived projects cannot open offline sites');

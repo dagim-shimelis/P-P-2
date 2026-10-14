@@ -6,6 +6,12 @@
         "cardDescription": "Dwight is a prompt assistant that helps users craft better prompts for AI, enabling more effective and precise responses through improved prompt engineering."
     },
     {
+        "name": "Sheriff",
+        "link": "https://sheriff.dagim.codes/",
+        "thumbnailImage": "/images/projects/sheriff.webp",
+        "cardDescription": "Sheriff is an open-source testing assistant for JavaScript and TypeScript. It discovers untested code, writes and runs tests, and keeps them in sync as you ship."
+    },
+    {
         "name": "TriggerNote",
         "link": "https://trigger-note.com/",
         "thumbnailImage": "/images/projects/trigger-note.png",

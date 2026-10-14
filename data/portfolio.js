@@ -2,6 +2,7 @@ import projects from './projects-list.json';
 
 const categories = {
     'Dwight Prompt': 'AI tools',
+    Sheriff: 'Developer tools',
     TriggerNote: 'Productivity',
     Vidspawn: 'Desktop app',
     Docspawn: 'Document automation',
@@ -13,10 +14,10 @@ export const work = projects.map(project => ({
     ...project,
     link: project.link.trim(),
     category: categories[project.name] || 'Web experience',
-    personal: ['Dwight Prompt', 'TriggerNote'].includes(project.name),
+    personal: ['Dwight Prompt', 'Sheriff', 'TriggerNote'].includes(project.name),
 }));
 
-export const selectedWork = ['Dwight Prompt', 'Vidspawn', 'Docspawn', 'TriggerNote', 'Sabi', 'HahuJobs Primary', 'Lunaria']
+export const selectedWork = ['Dwight Prompt', 'Sheriff', 'Vidspawn', 'Docspawn', 'TriggerNote', 'Sabi', 'HahuJobs Primary', 'Lunaria']
     .map(name => work.find(project => project.name === name));
 
 export const email = 'dagimshimelis1992@gmail.com';
