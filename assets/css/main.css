@@ -151,6 +151,8 @@ figcaption { margin-top: 12px; display: flex; justify-content: space-between; ga
 .project-meta h3 { font-size: 16px; line-height: 1.5; }
 .project-meta p { color: var(--muted); font-size: 9px; text-align: right; }
 .project-meta p > span { padding: 0 6px; }
+.project-source { color: var(--paper); text-decoration: underline; text-underline-offset: 3px; margin-left: 8px; }
+.project-source:hover, .project-source:focus-visible { color: var(--accent); }
 .project-description { font-size: 14px; line-height: 1.7; color: var(--muted); margin-top: 14px; max-width: 580px; }
 .project-archived .project-preview { filter: grayscale(1); }
 

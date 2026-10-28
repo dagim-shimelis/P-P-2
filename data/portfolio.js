@@ -4,6 +4,7 @@ const categories = {
     'Dwight Prompt': 'AI tools',
     Sheriff: 'Developer tools',
     TriggerNote: 'Productivity',
+    'Scrimba Progress': 'Browser extension',
     Vidspawn: 'Desktop app',
     Docspawn: 'Document automation',
     Supabrain: 'Developer tools',
@@ -14,7 +15,7 @@ export const work = projects.map(project => ({
     ...project,
     link: project.link.trim(),
     category: categories[project.name] || 'Web experience',
-    personal: ['Dwight Prompt', 'Sheriff', 'TriggerNote'].includes(project.name),
+    personal: ['Dwight Prompt', 'Sheriff', 'TriggerNote', 'Scrimba Progress'].includes(project.name),
 }));
 
 export const selectedWork = ['Dwight Prompt', 'Sheriff', 'Vidspawn', 'Docspawn', 'TriggerNote', 'Sabi', 'HahuJobs Primary', 'Lunaria']

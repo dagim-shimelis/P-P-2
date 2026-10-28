@@ -82,7 +82,7 @@
         }
         filters.find(button => button.textContent === 'Independent products').click();
         await settle();
-        check([...document.querySelectorAll('.project-card h3')].map(heading => heading.textContent).join(',') === 'Dwight Prompt,Sheriff,TriggerNote', 'Independent products filter returns all three projects with Sheriff right after Dwight');
+        check([...document.querySelectorAll('.project-card h3')].map(heading => heading.textContent).join(',') === 'Dwight Prompt,Sheriff,TriggerNote,Scrimba Progress', 'Independent products filter includes Scrimba Progress');
         filters.find(button => button.textContent === 'Archive').click();
         await settle();
         check(document.querySelectorAll('.project-card').length > 0 && !document.querySelector('.project-card a'), 'Archived projects cannot open offline sites');
@@ -90,6 +90,10 @@
         await settle();
         check(document.querySelectorAll('.project-card').length === total, 'All filter restores the complete collection');
         const gallery = document.querySelector('.archive-gallery');
+        const names = [...gallery.querySelectorAll('.project-card h3')].map(heading => heading.textContent);
+        check(names.indexOf('Scrimba Progress') === names.indexOf('Hire Pilot') - 1, 'Scrimba Progress sits immediately before the first archived project');
+        const scrimbaCard = [...gallery.querySelectorAll('.project-card')].find(card => card.querySelector('h3')?.textContent === 'Scrimba Progress');
+        check(scrimbaCard?.querySelector('.project-source')?.href === 'https://github.com/dagim-shimelis/Scrimba-section-progress-extention', 'Scrimba Progress links to its open-source repository');
         if (gallery) {
             const columns = matchMedia('(max-width: 767px)').matches ? 1 : 2;
             const cards = [...gallery.children].map(card => card.getBoundingClientRect());

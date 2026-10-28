@@ -102,6 +102,15 @@
         "cardDescription": "An African Skill and Talent platform. A platform for skill development, and professional development. It offers a wide range of courses and training programs."
     },
     {
+        "name": "Scrimba Progress",
+        "link": "https://scrimba-progress.dagim.codes/",
+        "passionProject": true,
+        "openSource": true,
+        "repository": "https://github.com/dagim-shimelis/Scrimba-section-progress-extention",
+        "thumbnailImage": "/images/projects/scrimba-progress.png",
+        "cardDescription": "A fun, open-source browser extension built as a passion project. It shows your Scrimba section completion percentage and estimated watched time right beside the lesson timer."
+    },
+    {
         "name": "Hire Pilot",
         "link": "https://hire-pilot.ai/",
         "broken": true,

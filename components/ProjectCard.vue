@@ -32,7 +32,7 @@ function moveCursor(event) {
             <span v-else class="project-open mono">Archived / Offline</span>
             <span v-if="!project.broken" class="project-cursor mono" aria-hidden="true">View website ↗</span>
         </component>
-        <div class="project-meta"><h3 class="mono">{{ project.name }}</h3><p class="eyebrow">[ {{ project.category }} ] <span aria-hidden="true">—</span> [ {{ project.personal ? 'My startup' : 'Development' }} ]</p></div>
+        <div class="project-meta"><h3 class="mono">{{ project.name }}</h3><p class="eyebrow">[ {{ project.category }} ] <span aria-hidden="true">—</span> [ {{ project.passionProject ? 'Passion project' : project.personal ? 'My startup' : 'Development' }} ] <a v-if="project.openSource" class="project-source" :href="project.repository" target="_blank" rel="noopener noreferrer" :aria-label="`View ${project.name} source code on GitHub (opens in a new tab)`">[ Open source ↗ ]</a></p></div>
         <p class="project-description">{{ project.cardDescription }}</p>
     </article>
 </template>
