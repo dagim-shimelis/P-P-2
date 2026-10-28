@@ -94,6 +94,8 @@
         check(names.indexOf('Scrimba Progress') === names.indexOf('Hire Pilot') - 1, 'Scrimba Progress sits immediately before the first archived project');
         const scrimbaCard = [...gallery.querySelectorAll('.project-card')].find(card => card.querySelector('h3')?.textContent === 'Scrimba Progress');
         check(scrimbaCard?.querySelector('.project-source')?.href === 'https://github.com/dagim-shimelis/Scrimba-section-progress-extention', 'Scrimba Progress links to its open-source repository');
+        const sheriffCard = [...gallery.querySelectorAll('.project-card')].find(card => card.querySelector('h3')?.textContent === 'Sheriff');
+        check(sheriffCard?.querySelector('.project-source')?.href === 'https://github.com/dagim-shimelis/sheriff', 'Sheriff links to its open-source repository');
         if (gallery) {
             const columns = matchMedia('(max-width: 767px)').matches ? 1 : 2;
             const cards = [...gallery.children].map(card => card.getBoundingClientRect());
