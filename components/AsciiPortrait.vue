@@ -160,7 +160,7 @@ onBeforeUnmount(() => dispose());
 </script>
 
 <template>
-    <component :is="interactive ? 'button' : 'div'" class="ascii-portrait" :class="{ 'ascii-interactive': interactive }" :type="interactive ? 'button' : undefined" :aria-hidden="interactive ? undefined : 'true'" :aria-label="interactive ? label : undefined" :aria-pressed="interactive ? inverted : undefined" @click="changeArtwork($event)">
+    <component :is="interactive ? 'button' : 'div'" class="ascii-portrait" :class="{ 'ascii-interactive': interactive }" :type="interactive ? 'button' : undefined" :aria-hidden="interactive ? undefined : 'true'" :aria-label="interactive ? label : undefined" :aria-pressed="interactive ? inverted : undefined" :data-click-sound="interactive ? 'illustration' : undefined" @click="changeArtwork($event)">
         <canvas ref="canvas" aria-hidden="true" />
     </component>
 </template>

@@ -3,6 +3,7 @@ import { email, socialLinks } from '~/data/portfolio';
 const route = useRoute();
 const menu = ref(null);
 const open = ref(false);
+const soundEnabled = useState('click-sounds-enabled', () => true);
 const navigation = [
     { name: 'Home', to: '/' },
     { name: 'Work', to: '/projects/list' },
@@ -27,7 +28,7 @@ watch(() => route.fullPath, () => { if (open.value) closeMenu(); });
             <NuxtLink to="/#contact" class="button">Let's talk <span aria-hidden="true">↗</span></NuxtLink>
         </div>
     </header>
-    <dialog id="site-menu" ref="menu" class="site-menu" aria-label="Site navigation" @close="open = false" @click="event => { if (event.target === menu) closeMenu(); }">
+    <dialog id="site-menu" data-click-sound="self-action" ref="menu" class="site-menu" aria-label="Site navigation" @close="open = false" @click="event => { if (event.target === menu) closeMenu(); }">
         <div class="menu-top page-gutter">
             <NuxtLink to="/" class="wordmark" @click="closeMenu">dagim<span>✳</span></NuxtLink>
             <button class="menu-toggle mono" autofocus @click="closeMenu">Close <span aria-hidden="true">×</span></button>
@@ -44,6 +45,7 @@ watch(() => route.fullPath, () => { if (open.value) closeMenu(); });
                 <div class="menu-socials"><a v-for="link in socialLinks" :key="link.name" :href="link.url" target="_blank" rel="noopener noreferrer">{{ link.name }} ↗</a></div>
                 <NuxtLink class="menu-portrait" to="/#about" @click="closeMenu"><img src="/images/about-image.webp" alt="Dagim working at his desk" width="800" height="800" loading="lazy" /><span class="eyebrow">The person behind the pixels ↗</span></NuxtLink>
                 <p class="eyebrow">Addis Ababa, Ethiopia · Working globally</p>
+                <button class="button" data-click-sound="off" :aria-pressed="soundEnabled" @click="soundEnabled = !soundEnabled">Click sounds: {{ soundEnabled ? 'on' : 'off' }}</button>
             </div>
         </div>
     </dialog>
