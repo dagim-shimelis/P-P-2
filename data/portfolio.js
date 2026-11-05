@@ -25,6 +25,6 @@ export const email = 'dagimshimelis1992@gmail.com';
 export const socialLinks = [
     { name: 'GitHub', url: 'https://github.com/dagim-shimelis' },
     { name: 'LinkedIn', url: 'https://www.linkedin.com/in/dagim-shimelis/' },
-    { name: 'X', url: 'https://x.com/Dagim__Shimelis' },
+    { name: 'X', url: 'https://x.com/dagim_codes' },
     { name: 'Medium', url: 'https://medium.com/@dagimshimelis1992' },
 ];
