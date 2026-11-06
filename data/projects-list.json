@@ -149,9 +149,8 @@
     },
     {
         "name": "Boosty",
-        "link": "https://tryboosty.com/",
+        "link": "https://boostyglobal.com/",
         "thumbnailImage": "/images/projects/boosty.png",
-        "cardDescription": "Boosty streamlines business formation by handling EIN registration, registered agent services, annual filings, and federal tax filings. A dedicated account manager provides expert guidance, allowing clients to focus on their business operations.",
-        "broken": true
+        "cardDescription": "Boosty streamlines business formation by handling EIN registration, registered agent services, annual filings, and federal tax filings. A dedicated account manager provides expert guidance, allowing clients to focus on their business operations."
     }
 ]
