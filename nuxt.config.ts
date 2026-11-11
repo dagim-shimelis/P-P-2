@@ -107,6 +107,9 @@ export default defineNuxtConfig({
         },
     },
     css: ["@/assets/css/main.css"],
+    routeRules: {
+        '/ele/**': { headers: { 'X-Robots-Tag': 'noindex, nofollow, noarchive, nosnippet' } },
+    },
     image: {
         inject: true,
         quality: 80,

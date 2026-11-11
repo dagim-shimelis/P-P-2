@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /ele
 
 Sitemap: https://dagim.codes/sitemap.xml
