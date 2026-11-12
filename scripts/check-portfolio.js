@@ -48,14 +48,13 @@
         preview.style.removeProperty('--cursor-x');
         preview.style.removeProperty('--cursor-y');
     }
-    const menu = document.querySelector('#site-menu');
-    if (menu) {
-        document.querySelector('[aria-controls="site-menu"]').click();
-        await settle();
-        check(menu.open && menu.contains(document.activeElement), 'Menu opens and receives focus');
-        menu.querySelector('button').click();
-        await settle();
-        check(!menu.open && document.querySelector('[aria-controls="site-menu"]').getAttribute('aria-expanded') === 'false', 'Menu closes and resets its state');
+    const headerNav = document.querySelector('.header-nav');
+    if (headerNav) {
+        const links = [...headerNav.querySelectorAll('.header-link')];
+        const labels = links.map(link => link.querySelector('.roll span')?.textContent);
+        check(labels.join(',') === 'Home,Work,About,Notes,Contact', 'Header lists Home, Work, About, Notes, Contact');
+        check(links.every(link => link.getBoundingClientRect().height >= 44), 'Header links have touch-sized targets');
+        check(links.filter(link => link.classList.contains('is-active')).length === 1, 'Exactly one header link is marked active');
     }
     const next = document.querySelector('[aria-label="Next testimonial"]');
     if (next) {
