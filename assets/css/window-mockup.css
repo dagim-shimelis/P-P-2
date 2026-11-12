@@ -1,0 +1,158 @@
+/* macOS window chrome used by project previews. */
+.project-visual {
+    position: relative;
+    isolation: isolate;
+    aspect-ratio: 4 / 3;
+    display: grid;
+    place-items: center;
+    padding: 48px 8%;
+    overflow: hidden;
+    color: var(--ink);
+    background: var(--surface-strong);
+}
+
+.project-preview {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, .18);
+    border-radius: clamp(10px, 1.1vw, 14px);
+    box-shadow:
+        0 22px 48px rgba(21, 31, 29, .22),
+        0 7px 16px rgba(21, 31, 29, .14),
+        0 1px 2px rgba(0, 0, 0, .24);
+    transform: translateY(0) translateZ(0);
+    transition: transform .35s cubic-bezier(.2, .8, .2, 1), box-shadow .35s ease;
+}
+
+.project-visual:hover .project-preview {
+    box-shadow:
+        0 28px 58px rgba(21, 31, 29, .25),
+        0 10px 20px rgba(21, 31, 29, .15),
+        0 1px 2px rgba(0, 0, 0, .24);
+    transform: translateY(-5px) translateZ(0);
+}
+
+.project-window-bar {
+    position: relative;
+    height: clamp(30px, 3vw, 42px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 clamp(12px, 1.45vw, 18px);
+    color: #404040;
+    background: linear-gradient(180deg, rgba(250, 250, 250, .98), rgba(229, 229, 229, .98));
+    border-bottom: 1px solid rgba(0, 0, 0, .15);
+    box-shadow: inset 0 1px rgba(255, 255, 255, .9);
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    user-select: none;
+}
+
+.project-window-controls {
+    position: absolute;
+    left: clamp(11px, 1.25vw, 15px);
+    top: 50%;
+    display: flex;
+    align-items: center;
+    gap: clamp(5px, .65vw, 8px);
+    transform: translateY(-50%);
+}
+
+.project-window-controls i {
+    position: relative;
+    display: block;
+    width: clamp(9px, .95vw, 12px);
+    height: clamp(9px, .95vw, 12px);
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, .16);
+    border-radius: 50%;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, .45);
+}
+
+.project-window-controls i:nth-child(1) { background: #ff5f57; }
+.project-window-controls i:nth-child(2) { background: #febc2e; }
+.project-window-controls i:nth-child(3) { background: #28c840; }
+
+.project-window-controls i::before,
+.project-window-controls i::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    opacity: 0;
+    transition: opacity .12s ease;
+}
+
+.project-preview:hover .project-window-controls i::before,
+.project-preview:hover .project-window-controls i::after {
+    opacity: .72;
+}
+
+/* Close glyph */
+.project-window-controls i:nth-child(1)::before,
+.project-window-controls i:nth-child(1)::after {
+    width: 6px;
+    height: 1px;
+    background: #7e0703;
+}
+.project-window-controls i:nth-child(1)::before { transform: translate(-50%, -50%) rotate(45deg); }
+.project-window-controls i:nth-child(1)::after { transform: translate(-50%, -50%) rotate(-45deg); }
+
+/* Minimise glyph */
+.project-window-controls i:nth-child(2)::before {
+    width: 6px;
+    height: 1px;
+    background: #8b5700;
+    transform: translate(-50%, -50%);
+}
+.project-window-controls i:nth-child(2)::after { display: none; }
+
+/* Full-screen glyph */
+.project-window-controls i:nth-child(3)::before,
+.project-window-controls i:nth-child(3)::after {
+    width: 3px;
+    height: 3px;
+}
+.project-window-controls i:nth-child(3)::before {
+    border-top: 1px solid #086d18;
+    border-left: 1px solid #086d18;
+    transform: translate(-88%, -88%);
+}
+.project-window-controls i:nth-child(3)::after {
+    border-right: 1px solid #086d18;
+    border-bottom: 1px solid #086d18;
+    transform: translate(-12%, -12%);
+}
+
+.project-window-title {
+    max-width: 58%;
+    overflow: hidden;
+    color: rgba(20, 20, 20, .72);
+    font-size: clamp(9px, .82vw, 12px);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -.01em;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-shadow: 0 1px rgba(255, 255, 255, .72);
+}
+
+.project-preview img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    background: #fff;
+}
+
+@media (max-width: 520px) {
+    .project-visual { padding: 42px 5%; }
+    .project-window-title { max-width: 52%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .project-preview { transition: none; }
+    .project-visual:hover .project-preview { transform: none; }
+}

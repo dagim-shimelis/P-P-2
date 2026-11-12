@@ -5,7 +5,7 @@ const props = defineProps({
     label: { type: String, default: 'Invert ASCII artwork' },
 });
 const canvas = ref(null);
-const inverted = ref(false);
+const inverted = ref(true);
 let changeArtwork = () => {};
 let dispose = () => {};
 

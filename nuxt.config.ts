@@ -3,6 +3,16 @@ const siteDescription = "I’m Dagim, a frontend developer and UI designer turni
 
 export default defineNuxtConfig({
     ssr: true,
+    // Ignore non-app directories (tooling + build output). Without this, the dev
+    // file-watcher recurses into them (e.g. .deepsec/node_modules with 30k files)
+    // and exhausts the OS file-watch limit on macOS -> "EMFILE: too many open files, watch".
+    ignore: [
+        '.deepsec',
+        '.remember',
+        '.taste-skill',
+        'output',
+        'artifacts',
+    ],
     devtools: { enabled: process.env.MODE == "development" },
     app: {
         head: {
@@ -10,7 +20,7 @@ export default defineNuxtConfig({
             title: siteTitle,
             style: [
                 {
-                    innerHTML: 'html,body{background-color:#141314;color:#eeeeee;}',
+                    innerHTML: 'html,body{background-color:#f7f9f7;color:#193632;}',
                 },
             ],
             meta: [
@@ -23,6 +33,7 @@ export default defineNuxtConfig({
                     content: siteDescription,
                 },
                 { name: "robots", content: "index, follow" },
+                { name: "theme-color", content: "#f7f9f7" },
                 {
                     name: "keywords",
                     content: "frontend developer, UI designer, responsive web design, Vue, Nuxt, TypeScript, portfolio, Dagim Shimelis",
@@ -46,7 +57,7 @@ export default defineNuxtConfig({
                 },
                 {
                     property: "og:image:alt",
-                    content: "Dagim Shimelis — Good design. Thoughtful code. Orange ASCII artwork on charcoal.",
+                    content: "Dagim Shimelis — Good design. Thoughtful code. Black-and-white ASCII portrait.",
                 },
                 {
                     property: "og:image:width",
@@ -79,7 +90,7 @@ export default defineNuxtConfig({
                 },
                 {
                     name: "twitter:image:alt",
-                    content: "Dagim Shimelis — Good design. Thoughtful code. Orange ASCII artwork on charcoal.",
+                    content: "Dagim Shimelis — Good design. Thoughtful code. Black-and-white ASCII portrait.",
                 },
             ],
             script: [
@@ -148,8 +159,8 @@ export default defineNuxtConfig({
         },
     },
     colorMode: {
-        preference: "dark",
-        fallback: "dark",
+        preference: "light",
+        fallback: "light",
         hid: "nuxt-color-mode-script",
         globalName: "__NUXT_COLOR_MODE__",
         componentName: "ColorScheme",

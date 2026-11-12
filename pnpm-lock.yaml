@@ -19,13 +19,16 @@ importers:
         version: 1.11.0(db0@0.3.4)(ioredis@5.10.0)(magicast@0.5.2)
       '@posthog/nuxt':
         specifier: ^1.7.91
-        version: 1.7.91(magicast@0.5.2)
+        version: 1.7.91(magicast@0.5.2)(react@19.3.1)
       '@sentry/nuxt':
         specifier: ^11.6.0
         version: 11.6.0(@babel/core@7.29.0)(@nuxt/schema@3.21.2)(confbox@0.2.4)(dotenv@17.4.2)(giget@3.1.2)(jiti@1.21.7)(magic-string@0.30.21)(mlly@1.8.1)(nuxt@3.21.2(@parcel/watcher@2.5.6)(@vue/compiler-sfc@3.5.30)(cac@6.7.14)(db0@0.3.4)(ioredis@5.10.0)(magicast@0.5.2)(rollup-plugin-visualizer@6.0.11(rollup@4.59.0))(rollup@4.59.0)(terser@5.46.1)(typescript@5.9.3)(vite@7.3.1(jiti@2.6.1)(terser@5.46.1)(yaml@2.8.2))(yaml@2.8.2))(oxc-parser@0.117.0)(rollup@4.59.0)(vue@3.5.30(typescript@5.9.3))
       '@vercel/analytics':
         specifier: ^2.0.1
-        version: 2.0.1(nuxt@3.21.2(@parcel/watcher@2.5.6)(@vue/compiler-sfc@3.5.30)(cac@6.7.14)(db0@0.3.4)(ioredis@5.10.0)(magicast@0.5.2)(rollup-plugin-visualizer@6.0.11(rollup@4.59.0))(rollup@4.59.0)(terser@5.46.1)(typescript@5.9.3)(vite@7.3.1(jiti@2.6.1)(terser@5.46.1)(yaml@2.8.2))(yaml@2.8.2))(vue-router@4.6.4(vue@3.5.30(typescript@5.9.3)))(vue@3.5.30(typescript@5.9.3))
+        version: 2.0.1(nuxt@3.21.2(@parcel/watcher@2.5.6)(@vue/compiler-sfc@3.5.30)(cac@6.7.14)(db0@0.3.4)(ioredis@5.10.0)(magicast@0.5.2)(rollup-plugin-visualizer@6.0.11(rollup@4.59.0))(rollup@4.59.0)(terser@5.46.1)(typescript@5.9.3)(vite@7.3.1(jiti@2.6.1)(terser@5.46.1)(yaml@2.8.2))(yaml@2.8.2))(react@19.3.1)(vue-router@4.6.4(vue@3.5.30(typescript@5.9.3)))(vue@3.5.30(typescript@5.9.3))
+      hazeglow:
+        specifier: ^0.6.1
+        version: 0.6.1(react@19.3.1)
     devDependencies:
       '@nuxt/devtools':
         specifier: latest
@@ -2524,6 +2527,11 @@ packages:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
 
+  hazeglow@0.6.1:
+    resolution: {integrity: sha512-eN4TtGTwKJBXeofM8GZphzR1eyyPJhZq+sSyKAWAlx7aQLBDIGTvV0SvEQ9xiyi/KbZ3l4nt99g7sLzrQk97pg==}
+    peerDependencies:
+      react: ^18 || ^19
+
   hookable@5.5.3:
     resolution: {integrity: sha512-Yc+BQe8SvoXH1643Qez1zqLRmbA5rCL+sSmk6TVos0LWVfNIB7PGncdlId77WzLGSIB5KaWgTaNTs2lNVEI6VQ==}
 
@@ -3488,6 +3496,10 @@ packages:
   rc@1.2.8:
     resolution: {integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==}
     hasBin: true
+
+  react@19.3.1:
+    resolution: {integrity: sha512-QNhWdt7nrgVWWQG58QuGsAR3jv3Hbe4mb4vz7w2csnHavciZJgda1CPNaldF6eVxv90ud3jUXpKlHL69gO38yw==}
+    engines: {node: '>=0.10.0'}
 
   read-cache@1.0.0:
     resolution: {integrity: sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==}
@@ -5477,13 +5489,13 @@ snapshots:
     dependencies:
       '@posthog/types': 1.415.2
 
-  '@posthog/nuxt@1.7.91(magicast@0.5.2)':
+  '@posthog/nuxt@1.7.91(magicast@0.5.2)(react@19.3.1)':
     dependencies:
       '@nuxt/kit': 4.4.2(magicast@0.5.2)
       '@posthog/cli': 0.16.2
       '@posthog/core': 1.57.3
       '@posthog/plugin-utils': 2.0.0
-      posthog-js: 1.433.8
+      posthog-js: 1.433.8(react@19.3.1)
       posthog-node: 5.55.1
     transitivePeerDependencies:
       - '@types/react'
@@ -5795,9 +5807,10 @@ snapshots:
       unhead: 2.1.12
       vue: 3.5.30(typescript@5.9.3)
 
-  '@vercel/analytics@2.0.1(nuxt@3.21.2(@parcel/watcher@2.5.6)(@vue/compiler-sfc@3.5.30)(cac@6.7.14)(db0@0.3.4)(ioredis@5.10.0)(magicast@0.5.2)(rollup-plugin-visualizer@6.0.11(rollup@4.59.0))(rollup@4.59.0)(terser@5.46.1)(typescript@5.9.3)(vite@7.3.1(jiti@2.6.1)(terser@5.46.1)(yaml@2.8.2))(yaml@2.8.2))(vue-router@4.6.4(vue@3.5.30(typescript@5.9.3)))(vue@3.5.30(typescript@5.9.3))':
+  '@vercel/analytics@2.0.1(nuxt@3.21.2(@parcel/watcher@2.5.6)(@vue/compiler-sfc@3.5.30)(cac@6.7.14)(db0@0.3.4)(ioredis@5.10.0)(magicast@0.5.2)(rollup-plugin-visualizer@6.0.11(rollup@4.59.0))(rollup@4.59.0)(terser@5.46.1)(typescript@5.9.3)(vite@7.3.1(jiti@2.6.1)(terser@5.46.1)(yaml@2.8.2))(yaml@2.8.2))(react@19.3.1)(vue-router@4.6.4(vue@3.5.30(typescript@5.9.3)))(vue@3.5.30(typescript@5.9.3))':
     optionalDependencies:
       nuxt: 3.21.2(@parcel/watcher@2.5.6)(@vue/compiler-sfc@3.5.30)(cac@6.7.14)(db0@0.3.4)(ioredis@5.10.0)(magicast@0.5.2)(rollup-plugin-visualizer@6.0.11(rollup@4.59.0))(rollup@4.59.0)(terser@5.46.1)(typescript@5.9.3)(vite@7.3.1(jiti@2.6.1)(terser@5.46.1)(yaml@2.8.2))(yaml@2.8.2)
+      react: 19.3.1
       vue: 3.5.30(typescript@5.9.3)
       vue-router: 4.6.4(vue@3.5.30(typescript@5.9.3))
 
@@ -6836,6 +6849,10 @@ snapshots:
   hasown@2.0.2:
     dependencies:
       function-bind: 1.1.2
+
+  hazeglow@0.6.1(react@19.3.1):
+    dependencies:
+      react: 19.3.1
 
   hookable@5.5.3: {}
 
@@ -8015,7 +8032,7 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  posthog-js@1.433.8:
+  posthog-js@1.433.8(react@19.3.1):
     dependencies:
       '@posthog/browser-common': 0.9.0
       '@posthog/core': 1.54.2
@@ -8027,6 +8044,8 @@ snapshots:
       query-selector-shadow-dom: 1.0.1
       web-vitals: 6.2.2
       web-vitals-soft-navs: web-vitals@6.2.1
+    optionalDependencies:
+      react: 19.3.1
     transitivePeerDependencies:
       - preact-render-to-string
 
@@ -8100,6 +8119,8 @@ snapshots:
       minimist: 1.2.8
       strip-json-comments: 2.0.1
     optional: true
+
+  react@19.3.1: {}
 
   read-cache@1.0.0:
     dependencies:
