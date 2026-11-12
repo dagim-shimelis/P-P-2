@@ -45,6 +45,8 @@ button:enabled:hover,.button:hover { background: color-mix(in srgb, var(--accent
 .contact-actions button.button { color: var(--ink); background: var(--paper); }
 .contact-actions button.button:hover { background: var(--surface); }
 .button > span { font: 23px/1 var(--sans); }
+/* The ↓ glyph's ink sits low in its fallback font — lift it to optically center with the label. */
+.button > .arrow-down { transform: translateY(-.15em); }
 .text-link { display: inline-flex; align-items: center; gap: 20px; font-size: 14px; padding: 12px 0; border-bottom: 1px solid currentColor; width: fit-content; }
 .text-link span { transition: transform .25s; }
 .text-link:hover span { transform: translate(3px,-3px); }

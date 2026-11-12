@@ -72,7 +72,7 @@ onBeforeUnmount(() => {
                 </NuxtLink>
             </nav>
             <div class="header-actions">
-                <a href="/file/DagimShimelisResume.pdf" class="button" download>Get Resume <span aria-hidden="true">↓</span></a>
+                <a href="/file/DagimShimelisResume.pdf" class="button" download>Get Resume <span class="arrow-down" aria-hidden="true">↓</span></a>
                 <NuxtLink to="/#contact" class="button">Let's talk <span aria-hidden="true">↗</span></NuxtLink>
             </div>
             <button class="menu-toggle mono" aria-controls="mobile-panel" :aria-expanded="open" @click="open = !open">
@@ -88,7 +88,7 @@ onBeforeUnmount(() => {
                 </NuxtLink>
             </nav>
             <div class="mobile-actions">
-                <a href="/file/DagimShimelisResume.pdf" class="button" download>Get Resume <span aria-hidden="true">↓</span></a>
+                <a href="/file/DagimShimelisResume.pdf" class="button" download>Get Resume <span class="arrow-down" aria-hidden="true">↓</span></a>
                 <NuxtLink to="/#contact" class="button">Let's talk <span aria-hidden="true">↗</span></NuxtLink>
             </div>
             <button class="button mobile-sound" data-click-sound="off" :aria-pressed="soundEnabled" @click="soundEnabled = !soundEnabled">Click sounds: {{ soundEnabled ? 'on' : 'off' }}</button>
