@@ -16,7 +16,7 @@ onBeforeUnmount(() => clearTimeout(timer));
 </script>
 
 <template>
-    <section id="contact" class="contact-section light-section section-space page-gutter" aria-labelledby="contact-heading">
+    <section id="contact" class="contact-section section-space page-gutter" aria-labelledby="contact-heading">
         <div class="section-marker"><h2 id="contact-heading">Make something<br />good together.</h2><span class="eyebrow">06 / Your idea, my inbox</span></div>
         <div class="contact-layout">
             <figure class="contact-portrait"><img src="/images/rebrand/contact-portrait.webp" alt="Dagim relaxing with a kitten" width="800" height="1267" loading="lazy" /><figcaption class="eyebrow">A person on the other side.</figcaption></figure>

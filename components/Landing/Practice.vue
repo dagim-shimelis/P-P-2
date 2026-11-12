@@ -1,5 +1,5 @@
 <template>
-    <section class="practice-section light-section section-space page-gutter" aria-labelledby="practice-heading">
+    <section class="practice-section section-space page-gutter" aria-labelledby="practice-heading">
         <div class="section-marker"><span class="eyebrow">03 / How I work</span><span class="eyebrow">Design ↔ Development</span></div>
         <div class="practice-layout">
             <div class="practice-copy">

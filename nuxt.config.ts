@@ -20,7 +20,7 @@ export default defineNuxtConfig({
             title: siteTitle,
             style: [
                 {
-                    innerHTML: 'html,body{background-color:#f7f9f7;color:#193632;}',
+                    innerHTML: 'html,body{background-color:#f8f7f4;color:#141314;}',
                 },
             ],
             meta: [
@@ -33,7 +33,7 @@ export default defineNuxtConfig({
                     content: siteDescription,
                 },
                 { name: "robots", content: "index, follow" },
-                { name: "theme-color", content: "#f7f9f7" },
+                { name: "theme-color", content: "#f8f7f4" },
                 {
                     name: "keywords",
                     content: "frontend developer, UI designer, responsive web design, Vue, Nuxt, TypeScript, portfolio, Dagim Shimelis",

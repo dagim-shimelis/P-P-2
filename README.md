@@ -30,7 +30,7 @@ hydration mismatches; `scripts/check-portfolio.js` checks these and footer touch
 
 The portfolio uses a light editorial layout with black-and-white artwork and photography, a sticky selected-work index, and large project imagery. The work archive uses a two-column grid, with one column on phones. The site covers Dagim's background, process, projects, writing, and contact details.
 
-- Colors: paper `#f7f9f7`, ink `#193632`, accent `#08725e`; surfaces `#e8f0ec` and `#d9e9e1`; muted text `#4d6761`. All artwork and photography render in black and white; the ASCII artwork uses the ink/accent palette, and the OG share image (`public/images/og-portfolio.png`) is monochrome.
+- Colors: paper `#f8f7f4`, ink `#141314`, accent `#fd551d`; surfaces `#f1ede8` and `#e9e2db`; muted text `#665e59`. All artwork and photography render in black and white; the ASCII artwork uses the ink/orange palette, and the OG share image (`public/images/og-portfolio.png`) is monochrome.
 - Type: Helvetica Neue (approved substitute for Aktiv Grotesk), self-hosted Geist Mono, and the existing Fractul font for the wordmark. WOFF2 files are served instead of TTFs; Fractul is subset to `dagim` and Space Grotesk to `vidspawn`. Keep the original TTFs to regenerate these subsets if the labels change.
 - Project content: `data/projects-list.json`; selection and presentation: `data/portfolio.js`.
 - The About and menu portraits use the WebP copy at `public/images/about-image.webp`, loaded lazily, including inside the closed menu. Contact uses `public/images/rebrand/contact-portrait.webp`, framed with a square CSS crop. The workspace section uses `public/images/rebrand/workspace.webp` with a 4:5 crop and a black-and-white CSS filter.

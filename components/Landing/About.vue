@@ -3,7 +3,7 @@ import { work } from '~/data/portfolio';
 </script>
 
 <template>
-    <section id="about" class="about-section light-section section-space page-gutter" aria-labelledby="about-heading">
+    <section id="about" class="about-section section-space page-gutter" aria-labelledby="about-heading">
         <div class="section-marker"><span class="eyebrow">01 / The person behind the pixels</span><span class="eyebrow">Based in Addis Ababa, ET</span></div>
         <div class="about-layout">
             <figure class="portrait-frame">
