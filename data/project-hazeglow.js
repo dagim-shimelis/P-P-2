@@ -36,8 +36,8 @@ function makeConfig(name, palette) {
         loop: 0,
         hover: 0,
         hoverMode: 'pull',
-        effect: 'none',
-        effectSize: 4,
+        effect: 'ascii',
+        effectSize: 2,
         effectAmount: 0.15,
     });
 }
@@ -94,8 +94,8 @@ const sheriffConfig = parseConfig({
     loop: 0,
     hover: 0,
     hoverMode: 'pull',
-    effect: 'none',
-    effectSize: 4,
+    effect: 'ascii',
+    effectSize: 2,
     effectAmount: 0.15,
 });
 
@@ -126,8 +126,8 @@ const sabiConfig = parseConfig({
     loop: 0,
     hover: 0,
     hoverMode: 'pull',
-    effect: 'none',
-    effectSize: 4,
+    effect: 'ascii',
+    effectSize: 2,
     effectAmount: 0.15,
 });
 

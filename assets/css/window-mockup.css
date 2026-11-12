@@ -132,7 +132,7 @@
     max-width: 58%;
     overflow: hidden;
     color: rgba(20, 20, 20, .72);
-    font-size: clamp(9px, .82vw, 12px);
+    font-size: clamp(10px, .82vw, 12px);
     font-weight: 500;
     line-height: 1;
     letter-spacing: -.01em;
