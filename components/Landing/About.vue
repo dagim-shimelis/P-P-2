@@ -14,7 +14,7 @@ import { work } from '~/data/portfolio';
                 <h2 id="about-heading">One person.<br />Many ways to make<br />something good.</h2>
                 <div class="about-description">
                     <p>I'm Dagim, a frontend developer and UI designer. I care about how things look, how they work, and the small details that make them feel right.</p>
-                    <p>Over five years of working with corporate teams, startups, and my own ideas, I've turned designs into responsive websites and useful products. From Figma to Vue and Nuxt, I stay close to the whole process.</p>
+                    <p>Over six years of working with corporate teams, startups, and my own ideas, I've turned designs into responsive websites and useful products. From Figma to Vue and Nuxt, I stay close to the whole process.</p>
                 </div>
                 <a class="text-link" href="/file/DagimShimelisResume.pdf" download>Get my résumé <span aria-hidden="true">↗</span></a>
                 <div class="personal-stats">
