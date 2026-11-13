@@ -136,12 +136,28 @@ const darkProjects = new Set([
     'Scrimba Progress', 'RAYEE SNV', "Neba's Design",
 ]);
 
+export function hazeglowAssetSlug(name) {
+    return name
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-|-$/g, '');
+}
+
+function withMedia(name, entry) {
+    const slug = hazeglowAssetSlug(name);
+    return {
+        ...entry,
+        poster: `/media/hazeglow/${slug}.png`,
+        video: `/media/hazeglow/${slug}.mp4`,
+    };
+}
+
 export const projectHazeglow = Object.fromEntries([
-    ...Object.entries(palettes).map(([name, palette]) => [name, {
+    ...Object.entries(palettes).map(([name, palette]) => [name, withMedia(name, {
         config: makeConfig(name, palette),
         dark: darkProjects.has(name),
         fallback: palette[0],
-    }]),
-    ['Sheriff', { config: sheriffConfig, dark: true, fallback: '#162b30' }],
-    ['Sabi', { config: sabiConfig, dark: false, fallback: '#efff8c' }],
+    })]),
+    ['Sheriff', withMedia('Sheriff', { config: sheriffConfig, dark: true, fallback: '#162b30' })],
+    ['Sabi', withMedia('Sabi', { config: sabiConfig, dark: false, fallback: '#efff8c' })],
 ]);

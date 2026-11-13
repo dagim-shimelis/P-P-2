@@ -21,7 +21,7 @@ function moveCursor(event) {
 <template>
     <article class="project-card" :class="{ 'project-archived': project.broken }">
         <component :is="project.broken ? 'div' : 'a'" :href="project.broken ? undefined : project.link" :target="project.broken ? undefined : '_blank'" :rel="project.broken ? undefined : 'noopener noreferrer'" class="project-visual" :class="{ 'cursor-visible': cursorVisible, 'project-visual-hazeglow': projectHaze, 'project-visual-hazeglow-dark': projectHaze?.dark }" :style="projectHaze ? { backgroundColor: projectHaze.fallback } : undefined" :aria-label="project.broken ? undefined : `Visit ${project.name} (opens in a new tab)`" @pointermove="moveCursor" @pointerleave="hideCursor">
-            <HazeglowCanvas v-if="projectHaze" :config="projectHaze.config" />
+            <HazeglowMedia v-if="projectHaze" :poster="projectHaze.poster" :video="projectHaze.video" />
             <span v-if="!project.broken && !project.openSource && (project.personal || project.category !== 'Web experience')" class="project-corner eyebrow">{{ project.personal ? 'Independent product' : project.category }}</span>
 
             <!-- Realistic macOS-style title bar -->
