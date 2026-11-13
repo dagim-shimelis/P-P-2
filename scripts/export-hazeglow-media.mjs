@@ -118,7 +118,7 @@ try {
             continue;
         }
 
-        console.log(`[${entryIndex + 1}/${entries.length}] ${name}: rendering ${totalFrames} frames`);
+        console.log(`[${entryIndex + 1}/${entries.length}] ${name}: rendering ${totalFrames} ping-pong frames`);
         await page.evaluate(({ config, width, height }) => {
             window.hazeglowExport.setup(config, width, height);
         }, { config: media.config, width, height });
@@ -127,7 +127,14 @@ try {
         const encoderExit = once(encoder, 'exit');
 
         for (let frameIndex = 0; frameIndex < totalFrames; frameIndex += 1) {
-            await page.evaluate((time) => window.hazeglowExport.render(time), frameIndex / fps);
+            // A triangular time curve makes the second half retrace the first.
+            // The end frame is included once, while the start frame is not
+            // duplicated at the file boundary, preventing a pause or jump.
+            const phase = frameIndex / totalFrames;
+            const renderTime = phase <= 0.5
+                ? phase * duration
+                : (1 - phase) * duration;
+            await page.evaluate((time) => window.hazeglowExport.render(time), renderTime);
             const frame = await canvas.screenshot({ type: 'png' });
             if (frameIndex === 0) await writeFile(posterPath, frame);
             await writeFrame(encoder.stdin, frame);
