@@ -171,6 +171,8 @@ figcaption { margin-top: 12px; display: flex; justify-content: space-between; ga
 .project-corner,
 .project-image-number,
 .project-open {
+    position: absolute;
+    z-index: 2;
     color: #fff;
     background: rgba(20, 19, 20, .55);
     padding: 4px 12px;
@@ -179,9 +181,9 @@ figcaption { margin-top: 12px; display: flex; justify-content: space-between; ga
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
 }
-.project-corner { position: absolute; top: 23px; left: 24px; font-size: 11px; }
-.project-image-number { position: absolute; bottom: 18px; left: 24px; font-size: 12px; }
-.project-open { position: absolute; bottom: 18px; right: 24px; font-size: 11px; }
+.project-corner { top: 23px; left: 24px; font-size: 11px; }
+.project-image-number { bottom: 18px; left: 24px; font-size: 12px; }
+.project-open { bottom: 18px; right: 24px; font-size: 11px; }
 .project-cursor { display: none; position: absolute; z-index: 2; left: clamp(84px, var(--cursor-x, 50%), calc(100% - 84px)); top: clamp(32px, var(--cursor-y, 50%), calc(100% - 32px)); width: 152px; height: 48px; place-items: center; border-radius: 999px; background: var(--accent); color: var(--accent-ink); font-size: 11px; pointer-events: none; opacity: 0; transform: translate(-50%, -50%) scale(.9); transition: opacity .18s, transform .18s; }
 @media (hover: hover) and (pointer: fine) {
     .project-cursor { display: grid; }
