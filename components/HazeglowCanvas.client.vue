@@ -5,10 +5,18 @@ const props = defineProps({
     config: { type: Object, required: true },
 });
 
+// Browsers cap live WebGL contexts (~8-16) and force-loss the oldest ones beyond
+// that, which shows up as frozen/black canvases. Keep created renderers alive
+// across visibility changes and evict only the least-recently-used hidden ones
+// beyond a small pool, so fast scrolling never churns context creation.
+const MAX_CONTEXTS = 8;
+const contextPool = [];
+
 const container = ref(null);
 const canvas = ref(null);
 const active = ref(false);
 let renderer;
+let rendererHandle;
 let resizeObserver;
 let intersectionObserver;
 let motionQuery;
@@ -59,9 +67,32 @@ function resize() {
     renderFrame();
 }
 
+function disposeRenderer() {
+    activationId += 1;
+    stopAnimation();
+    renderer?.dispose();
+    renderer = undefined;
+    rendererHandle = undefined;
+    active.value = false;
+}
+
+function promoteRenderer() {
+    if (!rendererHandle) return;
+    const index = contextPool.indexOf(rendererHandle);
+    if (index !== -1) contextPool.splice(index, 1);
+    contextPool.unshift(rendererHandle);
+    for (let i = contextPool.length - 1; i >= MAX_CONTEXTS; i--) {
+        const candidate = contextPool[i];
+        if (candidate.isVisible()) continue;
+        contextPool.splice(i, 1);
+        candidate.dispose();
+    }
+}
+
 async function activate() {
-    if (renderer || active.value) {
+    if (renderer) {
         startAnimation();
+        promoteRenderer();
         return;
     }
 
@@ -72,16 +103,17 @@ async function activate() {
 
     renderer = createRenderer(canvas.value);
     if (!renderer) return;
+    rendererHandle = { isVisible: () => visible, dispose: disposeRenderer };
     resize();
     startAnimation();
+    promoteRenderer();
 }
 
 function deactivate() {
-    activationId += 1;
+    // Keep the renderer alive so re-entering the viewport is instant and no
+    // WebGL contexts are created/disposed while scrolling fast. Only the
+    // animation loop stops until the card is visible again.
     stopAnimation();
-    renderer?.dispose();
-    renderer = undefined;
-    active.value = false;
 }
 
 function handleVisibilityChange() {
@@ -115,7 +147,11 @@ onMounted(async () => {
 });
 
 onBeforeUnmount(() => {
-    deactivate();
+    if (rendererHandle) {
+        const index = contextPool.indexOf(rendererHandle);
+        if (index !== -1) contextPool.splice(index, 1);
+    }
+    disposeRenderer();
     resizeObserver?.disconnect();
     intersectionObserver?.disconnect();
     motionQuery?.removeEventListener('change', handleMotionChange);

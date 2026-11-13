@@ -113,7 +113,7 @@ export default defineNuxtConfig({
             ],
             link: [
                 { rel: 'icon', type: 'image/svg+xml', href: '/icons/rebrand.svg' },
-                { rel: 'preload', href: '/fonts/geist-mono/regular.woff2', as: 'font', type: 'font/woff2', crossorigin: '' },
+                { rel: 'preload', href: '/fonts/inter/variable.woff2', as: 'font', type: 'font/woff2', crossorigin: '' },
             ],
         },
     },

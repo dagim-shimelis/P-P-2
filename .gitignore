@@ -28,3 +28,5 @@ logs
 
 # Generated local artifacts
 /output/
+/.deepsec/
+/.taste-skill/

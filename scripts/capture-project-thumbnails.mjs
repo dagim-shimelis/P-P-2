@@ -85,11 +85,15 @@ try {
         });
 
         try {
+            await page.route(/(googlesyndication|doubleclick|googleadservices)\./i, (route) => route.abort());
             console.log(`[${index + 1}/${entries.length}] ${project.name}: ${project.link.trim()}`);
             await page.goto(project.link.trim(), { waitUntil: 'domcontentloaded', timeout: 45000 });
             await page.waitForTimeout(4500);
             await dismissObstructions(page);
-            await page.evaluate(() => window.scrollTo(0, 0));
+            await page.evaluate(() => {
+                document.querySelectorAll('ins.adsbygoogle, iframe[src*="doubleclick"], iframe[src*="googlesyndication"]').forEach((element) => element.remove());
+                window.scrollTo(0, 0);
+            });
             await page.waitForTimeout(500);
             await page.screenshot({ path: temporaryPath, type: 'png', fullPage: false });
             await convertToWebp(temporaryPath, outputPath);

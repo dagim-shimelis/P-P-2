@@ -1,12 +1,19 @@
 <script setup>
 import { projectHazeglow } from '~/data/project-hazeglow';
+import { onSharedWindowScroll } from '~/utils/useSharedScroll';
 
-const props = defineProps({ project: { type: Object, required: true }, index: { type: Number, default: 0 } });
+const props = defineProps({
+    project: { type: Object, required: true },
+    index: { type: Number, default: 0 },
+    // Above-fold cards load their first image eagerly so the page looks fully
+    // loaded on arrival instead of popping in on scroll.
+    eager: { type: Boolean, default: false },
+});
 const projectHaze = computed(() => projectHazeglow[props.project.name]);
 const cursorVisible = ref(false);
 const hideCursor = () => { cursorVisible.value = false; };
-onMounted(() => window.addEventListener('scroll', hideCursor, { capture: true, passive: true }));
-onBeforeUnmount(() => window.removeEventListener('scroll', hideCursor, true));
+const stopScrollHide = onSharedWindowScroll(hideCursor);
+onBeforeUnmount(stopScrollHide);
 
 function moveCursor(event) {
     if (props.project.broken || event.pointerType === 'touch') return;
@@ -21,7 +28,7 @@ function moveCursor(event) {
 <template>
     <article class="project-card" :class="{ 'project-archived': project.broken }">
         <component :is="project.broken ? 'div' : 'a'" :href="project.broken ? undefined : project.link" :target="project.broken ? undefined : '_blank'" :rel="project.broken ? undefined : 'noopener noreferrer'" class="project-visual" :class="{ 'cursor-visible': cursorVisible, 'project-visual-hazeglow': projectHaze, 'project-visual-hazeglow-dark': projectHaze?.dark }" :style="projectHaze ? { backgroundColor: projectHaze.fallback } : undefined" :aria-label="project.broken ? undefined : `Visit ${project.name} (opens in a new tab)`" @pointermove="moveCursor" @pointerleave="hideCursor">
-            <HazeglowMedia v-if="projectHaze" :poster="projectHaze.poster" :video="projectHaze.video" />
+            <HazeglowMedia v-if="projectHaze" :poster="projectHaze.poster" :video="projectHaze.video" :eager="eager" />
             <span v-if="!project.broken && !project.openSource && (project.personal || project.category !== 'Web experience')" class="project-corner eyebrow">{{ project.personal ? 'Independent product' : project.category }}</span>
 
             <!-- Realistic macOS-style title bar -->
@@ -30,7 +37,7 @@ function moveCursor(event) {
                     <span class="project-window-controls"><i></i><i></i><i></i></span>
                     <span class="project-window-title">{{ project.name }}</span>
                 </div>
-                <ProgressiveProjectImage :src="project.thumbnailImage" :alt="`${project.name} interface`" />
+                <ProgressiveProjectImage :src="project.thumbnailImage" :alt="`${project.name} interface`" :eager="eager" />
             </div>
 
             <span class="project-image-number mono" aria-hidden="true">{{ String(index + 1).padStart(2, '0') }}</span>
