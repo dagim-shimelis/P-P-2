@@ -1,7 +1,7 @@
 import { createServer } from 'node:http';
 import { once } from 'node:events';
 import { createReadStream, existsSync } from 'node:fs';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, writeFile, unlink } from 'node:fs/promises';
 import { spawn } from 'node:child_process';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -78,10 +78,22 @@ function startEncoder(outputPath) {
     const ffmpeg = spawn('ffmpeg', [
         '-hide_banner', '-loglevel', 'error', '-y',
         '-f', 'image2pipe', '-framerate', String(fps), '-vcodec', 'png', '-i', 'pipe:0',
-        '-an', '-c:v', 'libx264', '-preset', 'medium', '-crf', '20',
+        '-an', '-c:v', 'libx264', '-preset', 'slow', '-crf', '24',
         '-pix_fmt', 'yuv420p', '-movflags', '+faststart', outputPath,
     ], { stdio: ['pipe', 'inherit', 'inherit'] });
     return ffmpeg;
+}
+
+// Grain-heavy gradient frames compress terribly as PNG (~1.2MB each); WebP at
+// the size the cards actually display keeps the same look for a fraction of it.
+async function exportPoster(posterPath, pngBuffer) {
+    const tempPng = posterPath.replace(/\.webp$/, '.png');
+    await writeFile(tempPng, pngBuffer);
+    await new Promise((resolveConvert, rejectConvert) => {
+        const cwebp = spawn('cwebp', ['-q', '72', '-resize', '1080', '810', tempPng, '-o', posterPath], { stdio: 'inherit' });
+        cwebp.on('exit', code => code === 0 ? resolveConvert() : rejectConvert(new Error(`cwebp exited with code ${code}`)));
+    });
+    await unlink(tempPng);
 }
 
 async function writeFrame(stream, frame) {
@@ -136,7 +148,7 @@ try {
                 : (1 - phase) * duration;
             await page.evaluate((time) => window.hazeglowExport.render(time), renderTime);
             const frame = await canvas.screenshot({ type: 'png' });
-            if (frameIndex === 0) await writeFile(posterPath, frame);
+            if (frameIndex === 0) await exportPoster(posterPath, frame);
             await writeFrame(encoder.stdin, frame);
             if ((frameIndex + 1) % fps === 0) {
                 process.stdout.write(`  ${frameIndex + 1}/${totalFrames} frames\r`);

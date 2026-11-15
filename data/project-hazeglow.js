@@ -147,7 +147,7 @@ function withMedia(name, entry) {
     const slug = hazeglowAssetSlug(name);
     return {
         ...entry,
-        poster: `/media/hazeglow/${slug}.png`,
+        poster: `/media/hazeglow/${slug}.webp`,
         video: `/media/hazeglow/${slug}.mp4`,
     };
 }
