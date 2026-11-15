@@ -1,6 +1,15 @@
 <script setup>
 import { socialLinks } from '~/data/portfolio';
 const soundEnabled = useState('click-sounds-enabled', () => true);
+
+const route = useRoute();
+const requestURL = useRequestURL();
+// Current page URL: reactive to client-side navigation, with an SSR fallback.
+const pageUrl = computed(() => {
+    const origin = import.meta.client ? window.location.origin : requestURL.origin;
+    return origin + route.fullPath;
+});
+const destroyUrl = computed(() => `https://destroy.spritefusion.com/?from=badge&url=${encodeURIComponent(pageUrl.value)}`);
 </script>
 
 <template>
@@ -9,6 +18,6 @@ const soundEnabled = useState('click-sounds-enabled', () => true);
         <div class="footer-center"><p>Thanks for<br />stopping by.</p><div class="footer-links"><NuxtLink to="/projects/list">The work ↗</NuxtLink><NuxtLink to="/#about">The person ↗</NuxtLink><a :href="socialLinks[0].url" target="_blank" rel="noopener noreferrer">The code ↗</a></div></div>
         <div class="footer-hands"><AsciiPortrait src="/images/rebrand/hand-left.webp" interactive label="Invert left ASCII hand" /><AsciiPortrait class="footer-hand-right" src="/images/rebrand/hand-right.webp" interactive label="Invert right ASCII hand" /></div>
         <div class="footer-wordmark" aria-hidden="true">dagim<span>✳</span></div>
-        <div class="footer-bottom eyebrow"><span>© {{ new Date().getFullYear() }} Dagim Shimelis</span><span>Addis Ababa → Everywhere</span><button class="footer-sound" data-click-sound="off" :aria-pressed="soundEnabled" @click="soundEnabled = !soundEnabled">Click sounds: {{ soundEnabled ? 'on' : 'off' }}</button><a class="footer-back-top" href="#main-content">Back to top <span aria-hidden="true">↑</span></a></div>
+        <div class="footer-bottom eyebrow"><span>© {{ new Date().getFullYear() }} Dagim Shimelis</span><span>Addis Ababa → Everywhere</span><button class="footer-sound" data-click-sound="off" :aria-pressed="soundEnabled" @click="soundEnabled = !soundEnabled">Click sounds: {{ soundEnabled ? 'on' : 'off' }}</button><a class="footer-destroy" :href="destroyUrl" target="_blank" rel="noopener noreferrer">Destroy this site <span aria-hidden="true">💥</span></a><a class="footer-back-top" href="#main-content">Back to top <span aria-hidden="true">↑</span></a></div>
     </footer>
 </template>

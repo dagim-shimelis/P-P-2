@@ -255,10 +255,15 @@ blockquote { font-size: clamp(22px, 2.1vw, 34px); line-height: 1.4; letter-spaci
 .footer-links a { display: inline-flex; align-items: center; min-height: 44px; }
 .footer-wordmark { position: relative; z-index: 3; pointer-events: none; font: 900 min(24vw, 432px)/.8 'Fractul', var(--sans); letter-spacing: -.075em; text-align: center; padding: 20px 2% 0 0; white-space: nowrap; margin-top: auto; }
 .footer-wordmark span { font: 400 .13em var(--sans); vertical-align: top; margin-top: .18em; display: inline-block; letter-spacing: -.05em; }
-.footer-back-top { min-height: 44px; padding: 0 10px; display: inline-flex; align-items: center; gap: 7px; margin-left: auto; }
+.footer-back-top { min-height: 44px; padding: 0 10px; display: inline-flex; align-items: center; gap: 7px; }
 .footer-bottom { position: relative; z-index: 3; display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 30px; border-top: 1px solid var(--line); padding: 22px 0; font-size: 13px; }
 .footer-sound { background: transparent; color: var(--muted); transition: color .2s, background .2s; }
 .footer-sound:enabled:hover { background: transparent; color: var(--accent); }
+.footer-destroy { min-height: 44px; padding: 0 16px; display: inline-flex; align-items: center; gap: 8px; margin-left: auto; color: var(--accent-ink); background: var(--accent); border: 1px solid var(--accent); border-radius: 999px; white-space: nowrap; transition: color .2s, border-color .2s, transform .2s; }
+.footer-destroy:enabled:hover { color: var(--accent-ink); border-color: var(--ink); transform: translateY(-2px); }
+.footer-destroy span[aria-hidden] { min-width: 22px; height: 22px; display: inline-flex; align-items: center; justify-content: center; background: #fff; color: initial; border-radius: 50%; font-size: 12px; line-height: 1; }
+.footer-destroy:focus-visible { outline-offset: 3px; }
+@media (max-width: 640px) { .footer-destroy { min-height: 40px; padding: 0 12px; font-size: 11px; } }
 
 .archive-page { padding-top: 180px; padding-bottom: 100px; }
 .archive-heading > .eyebrow { color: var(--muted); margin-bottom: 35px; }
