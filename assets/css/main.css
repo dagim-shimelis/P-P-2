@@ -198,6 +198,7 @@ figcaption { margin-top: 12px; display: flex; justify-content: space-between; ga
 .project-source { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; margin-left: 8px; }
 .project-source:hover, .project-source:focus-visible { color: var(--accent); }
 .project-description { font-size: 15px; line-height: 1.7; color: var(--muted); margin-top: 14px; max-width: 580px; }
+.project-case-study { margin-top: 14px; font-weight: 600; }
 .project-stamp { position: absolute; z-index: 4; top: 14px; left: 14px; width: clamp(78px, 7vw, 106px); height: auto; overflow: visible; color: #111; pointer-events: none; }
 .open-source-stamp { color: var(--accent); }
 .project-stamp-band text { fill: currentColor; font-family: 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif; font-size: 40px; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; }

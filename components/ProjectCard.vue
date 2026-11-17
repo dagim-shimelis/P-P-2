@@ -65,5 +65,6 @@ function moveCursor(event) {
 
         <div class="project-meta"><h3 class="mono">{{ project.name }}</h3><p class="eyebrow">[ {{ project.category }} ] <span aria-hidden="true">—</span> [ {{ project.passionProject ? 'Passion project' : project.personal ? 'My startup' : 'Development' }} ] <a v-if="project.openSource" class="project-source" :href="project.repository" target="_blank" rel="noopener noreferrer" :aria-label="`View ${project.name} source code on GitHub (opens in a new tab)`">[ Open source ↗ ]</a></p></div>
         <p class="project-description">{{ project.cardDescription }}</p>
+        <NuxtLink v-if="project.caseStudy" :to="project.caseStudy" class="text-link project-case-study">Read case study <span aria-hidden="true">→</span></NuxtLink>
     </article>
 </template>

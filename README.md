@@ -6,6 +6,10 @@ pnpm dev
 pnpm build
 ```
 
+Development uses `.nuxt`; production builds use `.nuxt-production` so build checks
+can run without corrupting the active preview. Keep only one `pnpm dev` process
+per worktree. Do not delete or regenerate `.nuxt` while that server is running.
+
 Sentry: set `NUXT_PUBLIC_SENTRY_DSN` in `.env` and your hosting provider. With a
 DSN configured, the Nuxt SDK reports browser and server errors. Confirm delivery
 by sending a test exception from each side and checking the Sentry project.

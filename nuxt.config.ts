@@ -3,6 +3,10 @@ const siteDescription = "I’m Dagim, a frontend developer and UI designer turni
 
 export default defineNuxtConfig({
     ssr: true,
+    // Production verification must not overwrite the running dev server's .nuxt files.
+    $production: {
+        buildDir: '.nuxt-production',
+    },
     // Ignore non-app directories (tooling + build output). Without this, the dev
     // file-watcher recurses into them (e.g. .deepsec/node_modules with 30k files)
     // and exhausts the OS file-watch limit on macOS -> "EMFILE: too many open files, watch".
@@ -10,6 +14,7 @@ export default defineNuxtConfig({
         '.deepsec',
         '.remember',
         '.taste-skill',
+        '.nuxt-production',
         'output',
         'artifacts',
     ],

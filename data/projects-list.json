@@ -2,6 +2,7 @@
     {
         "name": "Dwight Prompt",
         "link": "https://www.dwightprompt.com/",
+        "caseStudy": "/projects/dwight",
         "thumbnailImage": "/images/projects/dwight-prompt-1080.webp",
         "cardDescription": "Dwight is a prompt assistant that helps users craft better prompts for AI, enabling more effective and precise responses through improved prompt engineering."
     },
@@ -10,6 +11,7 @@
         "link": "https://sheriff.dagim.codes/",
         "openSource": true,
         "repository": "https://github.com/dagim-shimelis/sheriff",
+        "caseStudy": "/projects/sheriff",
         "thumbnailImage": "/images/projects/sheriff-1080.webp",
         "cardDescription": "Sheriff is an open-source testing assistant for JavaScript and TypeScript. It discovers untested code, writes and runs tests, and keeps them in sync as you ship."
     },
