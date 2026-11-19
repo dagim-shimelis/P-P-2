@@ -1,5 +1,5 @@
-const siteTitle = "Dagim Shimelis — Independent Developer and Designer";
-const siteDescription = "I’m Dagim, a frontend developer and UI designer turning ideas into websites and digital products. Good design, thoughtful code, and care in the details.";
+const siteTitle = "Dagim Shimelis — Full-Stack Product Engineer & Designer";
+const siteDescription = "I’m Dagim, a full-stack product engineer and designer building thoughtful digital products from interface to infrastructure. Good design, reliable systems, and care in the details.";
 
 export default defineNuxtConfig({
     ssr: true,
@@ -41,7 +41,7 @@ export default defineNuxtConfig({
                 { name: "theme-color", content: "#f8f7f4" },
                 {
                     name: "keywords",
-                    content: "frontend developer, UI designer, responsive web design, Vue, Nuxt, TypeScript, portfolio, Dagim Shimelis",
+                    content: "full-stack product engineer, product engineer, full-stack developer, software engineer, UI designer, product design, web applications, APIs, Vue, Nuxt, NestJS, TypeScript, PostgreSQL, Dagim Shimelis",
                 },
                 // Open Graph
                 {
@@ -62,7 +62,7 @@ export default defineNuxtConfig({
                 },
                 {
                     property: "og:image:alt",
-                    content: "Dagim Shimelis — Good design. Thoughtful code. Black-and-white ASCII portrait.",
+                    content: "Portfolio of Dagim Shimelis, Full-Stack Product Engineer and Designer — Good design, thoughtful code, and a black-and-white ASCII portrait.",
                 },
                 {
                     property: "og:image:width",
@@ -95,7 +95,7 @@ export default defineNuxtConfig({
                 },
                 {
                     name: "twitter:image:alt",
-                    content: "Dagim Shimelis — Good design. Thoughtful code. Black-and-white ASCII portrait.",
+                    content: "Portfolio of Dagim Shimelis, Full-Stack Product Engineer and Designer — Good design, thoughtful code, and a black-and-white ASCII portrait.",
                 },
             ],
             script: [
@@ -106,12 +106,32 @@ export default defineNuxtConfig({
                         '@type': 'Person',
                         name: 'Dagim Shimelis',
                         url: 'https://dagim.codes',
-                        jobTitle: 'Frontend Developer & UI Designer',
+                        jobTitle: 'Full-Stack Product Engineer & Designer',
                         description: siteDescription,
-                        knowsAbout: ['Web Development', 'UI/UX Design', 'Frontend Development', 'Responsive Web Design', 'Vue.js', 'Nuxt.js', 'TypeScript'],
+                        image: 'https://dagim.codes/images/og-portfolio.png',
+                        sameAs: [
+                            'https://github.com/dagim-shimelis',
+                            'https://www.linkedin.com/in/dagim-shimelis/',
+                            'https://x.com/dagim_codes',
+                            'https://medium.com/@dagimshimelis1992',
+                        ],
+                        knowsAbout: [
+                            'Full-Stack Product Engineering',
+                            'Product Design',
+                            'Web Application Development',
+                            'API Design',
+                            'Frontend Development',
+                            'Backend Development',
+                            'UI/UX Design',
+                            'Vue.js',
+                            'Nuxt.js',
+                            'NestJS',
+                            'TypeScript',
+                            'PostgreSQL',
+                        ],
                         worksFor: {
                             '@type': 'Organization',
-                            name: 'Freelance',
+                            name: 'Independent',
                         },
                     }),
                 },

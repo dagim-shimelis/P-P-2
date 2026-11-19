@@ -1,7 +1,7 @@
 <template>
     <section id="home" class="hero page-gutter" aria-labelledby="hero-heading">
         <div class="hero-copy">
-            <p class="eyebrow hero-eyebrow"><span class="status-dot"></span> Dagim Shimelis · Independent developer &amp; designer</p>
+            <p class="eyebrow hero-eyebrow"><span class="status-dot"></span> Dagim Shimelis · Full-stack product engineer &amp; designer</p>
             <h1 id="hero-heading"><span>Good design.</span><br /><span>Thoughtful code.</span></h1>
             <p class="hero-description">I turn ideas into websites and digital products.<br class="desktop-only" /> Built with care. Made to feel a little different.</p>
             <div class="hero-actions">

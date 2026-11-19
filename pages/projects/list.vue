@@ -8,7 +8,7 @@ const filteredWork = computed(() => work.filter(project => {
     if (filter.value === 'Archive') return project.broken;
     return true;
 }));
-useSeoMeta({ title: 'Selected work — Dagim Shimelis', description: 'A collection of independent products, websites, and collaborations by frontend developer and UI designer Dagim Shimelis.' });
+useSeoMeta({ title: 'Selected work — Dagim Shimelis', description: 'A collection of digital products, full-stack web applications, interfaces, and collaborations by product engineer and designer Dagim Shimelis.' });
 </script>
 
 <template>
