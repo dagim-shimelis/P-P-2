@@ -22,6 +22,15 @@
         "cardDescription": "TriggerNote brings your notes into view when you open a matching website, keeping reminders in context. It works locally, with optional cloud sync."
     },
     {
+        "name": "Lofi Music",
+        "link": "https://lofimusic.dagim.codes/",
+        "passionProject": true,
+        "openSource": true,
+        "repository": "https://github.com/dagim-shimelis/lofi-for-programming",
+        "thumbnailImage": "/images/projects/lofi-music-1080.webp",
+        "cardDescription": "A fun, open-source SoundCloud lofi player built for focused coding sessions. Lofi Music pairs a distraction-free interface with curated playlists and keyboard-first controls."
+    },
+    {
         "name": "Vidspawn",
         "link": "https://vidspawn.app/",
         "thumbnailImage": "/images/projects/vidspawn-1080.webp",

@@ -45,6 +45,7 @@ function makeConfig(name, palette) {
 const palettes = {
     'Dwight Prompt': ['#E4E4E5', '#BFC0C1', '#ABACAD', '#242424', '#646464', '#4D3C38', '#877D7D'],
     TriggerNote: ['#F5F4F1', '#2B2D30', '#3F3E3F', '#DAD3B9', '#515254', '#ADADAE', '#CE935A'],
+    'Lofi Music': ['#E7E9DF', '#C9D1B7', '#96A27B', '#56634B', '#303A2E', '#171C18', '#D7B98A'],
     Vidspawn: ['#F7F6F2', '#F4F4EE', '#18181B', '#D3CEB5', '#A0A09E', '#5F5F59', '#B3CA68'],
     Docspawn: ['#F9FAFC', '#F6F5F6', '#BFC8CC', '#A0A0A1', '#646464', '#272727', '#758D85'],
     'HahuJobs Primary': ['#0A2426', '#243846', '#165859', '#07988C', '#3E565B', '#639495', '#4E9492'],
